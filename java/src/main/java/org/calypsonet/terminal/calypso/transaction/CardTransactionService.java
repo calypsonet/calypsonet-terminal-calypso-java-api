@@ -149,8 +149,7 @@ public interface CardTransactionService {
    * <p>See {@link CalypsoCard#isPinBlocked} and {@link CalypsoCard#getPinAttemptRemaining} methods.
    *
    * @return The object instance.
-   * @throws CalypsoCardTransactionIllegalStateException If the PIN feature is not available for
-   *     this card.
+   * @throws UnsupportedOperationException If the PIN feature is not available for this card.
    * @since 1.0
    */
   CardTransactionService prepareCheckPinStatus();
@@ -270,7 +269,7 @@ public interface CardTransactionService {
    * @return The object instance.
    * @throws IllegalArgumentException If the desired value is out of range or if the command is
    *     inconsistent
-   * @throws CalypsoCardTransactionIllegalStateException If the current counter value is unknown.
+   * @throws IllegalStateException If the current counter value is unknown.
    * @since 1.0
    */
   CardTransactionService prepareSetCounter(byte sfi, int counterNumber, int newValue);
@@ -289,8 +288,7 @@ public interface CardTransactionService {
    * @param svAction The type of action: DO a debit or a positive reload, UNDO an undebit or a.
    *     negative reload
    * @return The object instance.
-   * @throws CalypsoCardTransactionIllegalStateException If the SV feature is not available for this
-   *     card.
+   * @throws UnsupportedOperationException If the SV feature is not available for this card.
    * @since 1.0
    */
   CardTransactionService prepareSvGet(SvOperation svOperation, SvAction svAction);
@@ -309,9 +307,8 @@ public interface CardTransactionService {
    * @param time 2-byte free value.
    * @param free 2-byte free value.
    * @return The object instance.
-   * @throws CalypsoCardTransactionIllegalStateException If the SV feature is not available for this
-   *     card.
-   * @throws CalypsoCardTransactionException If a functional error occurs (including card and SAM IO
+   * @throws UnsupportedOperationException If the SV feature is not available for this card.
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */
@@ -329,9 +326,8 @@ public interface CardTransactionService {
    * @param amount The value to be reloaded, positive integer in the range 0..8388607 for a DO.
    *     action, in the range 0..8388608 for an UNDO action.
    * @return The object instance.
-   * @throws CalypsoCardTransactionIllegalStateException If the SV feature is not available for this
-   *     card.
-   * @throws CalypsoCardTransactionException If a functional error occurs (including card and SAM IO
+   * @throws UnsupportedOperationException If the SV feature is not available for this card.
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */
@@ -418,7 +414,7 @@ public interface CardTransactionService {
    * <p>This command is usually executed within a secure session with the SESSION_LVL_DEBIT key
    * (depends on the access rights given to this command in the file structure of the card).
    *
-   * @throws CalypsoCardTransactionIllegalStateException If the card is already invalidated.
+   * @throws IllegalStateException If the card is already invalidated.
    * @return The Object instance.
    * @since 1.0
    */
@@ -431,7 +427,7 @@ public interface CardTransactionService {
    * (depends on the access rights given to this command in the file structure of the card).
    *
    * @return The Object instance.
-   * @throws CalypsoCardTransactionIllegalStateException If the card is not invalidated.
+   * @throws IllegalStateException If the card is not invalidated.
    * @since 1.0
    */
   CardTransactionService prepareRehabilitate();
@@ -474,7 +470,7 @@ public interface CardTransactionService {
    * </ul>
    *
    * @return The object instance.
-   * @throws CalypsoCardTransactionException If a functional error occurs (including card and SAM IO
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */
@@ -498,10 +494,10 @@ public interface CardTransactionService {
    *
    * @param pin The PIN code value (4-byte long byte array).
    * @return The object instance.
-   * @throws CalypsoCardTransactionException If a functional error occurs (including card and SAM IO
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @throws CalypsoCardTransactionIllegalStateException If the PIN feature is not available for
-   *     this card or if commands have been prepared before invoking this process method.
+   * @throws UnsupportedOperationException If the PIN feature is not available for this card or if
+   *     commands have been prepared before invoking this process method.
    * @since 1.0
    */
   CardTransactionService processVerifyPin(byte[] pin);
@@ -542,7 +538,7 @@ public interface CardTransactionService {
    * <p>As a prerequisite for invoking this method, since the Calypso Secure Session involves the
    * use of a SAM, the CardTransactionService must have been built in secure mode, i.e. the
    * constructor used must be the one expecting a reference to a valid {@link CardSecuritySetting}
-   * object, otherwise a {@link CalypsoCardTransactionIllegalStateException} is raised.
+   * object, otherwise a {@link IllegalStateException} is raised.
    *
    * <p>The secure session is opened with the {@link WriteAccessLevel} passed as an argument
    * depending on whether it is a personalization, reload or debit transaction profile..
@@ -552,9 +548,8 @@ public interface CardTransactionService {
    *
    * <ul>
    *   <li>If the session was opened with the default atomic mode and the previously prepared
-   *       commands will cause the buffer to be exceeded, then an {@link
-   *       CalypsoAtomicTransactionException} is raised and no transmission to the card is made.
-   *       <br>
+   *       commands will cause the buffer to be exceeded, then an {@link AtomicTransactionException}
+   *       is raised and no transmission to the card is made. <br>
    *   <li>If the session was opened with the multiple session mode and the buffer is to be exceeded
    *       then a split into several secure sessions is performed automatically. However, regardless
    *       of the number of intermediate sessions performed, a secure session is opened at the end
@@ -592,8 +587,8 @@ public interface CardTransactionService {
    *   <li>All data received in response to the open secure session command and the responses to the
    *       prepared commands are also stored for later calculation of the digest.
    *   <li>If a list of authorized KVCs has been defined in {@link CardSecuritySetting} and the KVC
-   *       of the card does not belong to this list then a {@link CalypsoUnauthorizedKvcException}
-   *       is thrown.
+   *       of the card does not belong to this list then a {@link UnauthorizedKvcException} is
+   *       thrown.
    * </ul>
    *
    * <p>All unexpected results (communication errors, data or security errors, etc. are notified to
@@ -604,11 +599,10 @@ public interface CardTransactionService {
    *
    * @param WriteAccessLevel An {@link WriteAccessLevel} enum entry.
    * @return The object instance.
-   * @throws CalypsoCardTransactionIllegalStateException if no {@link CardSecuritySetting} is
-   *     available
-   * @throws CalypsoAtomicTransactionException if the card session buffer were to overflow
-   * @throws CalypsoUnauthorizedKvcException If the card KVC is not authorized
-   * @throws CalypsoCardTransactionException If a functional error occurs (including card and SAM IO
+   * @throws IllegalStateException if no {@link CardSecuritySetting} is available
+   * @throws AtomicTransactionException if the card session buffer were to overflow
+   * @throws UnauthorizedKvcException If the card KVC is not authorized
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */
@@ -661,7 +655,7 @@ public interface CardTransactionService {
    *       possibly SV signature) are sent to the SAM for verification.
    * </ul>
    *
-   * @throws CalypsoCardTransactionException If a functional error occurs (including card and SAM IO
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */
@@ -674,7 +668,7 @@ public interface CardTransactionService {
    *
    * <p>Clean up internal data and status.
    *
-   * @throws CalypsoCardTransactionException If a functional error occurs (including card and SAM IO
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */

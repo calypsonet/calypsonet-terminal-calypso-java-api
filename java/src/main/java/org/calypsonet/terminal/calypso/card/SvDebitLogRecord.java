@@ -18,30 +18,30 @@ package org.calypsonet.terminal.calypso.card;
  */
 public interface SvDebitLogRecord {
   /**
-   * Gets the raw data of the SV load log record.
+   * Gets the raw data of the SV debit log record.
    *
    * @return A byte array.
    */
   byte[] getRawData();
 
   /**
-   * Gets the load date as an array of bytes
+   * Gets the debit date as an array of bytes
    *
    * @return A 2-byte byte array
    * @since 1.0
    */
-  byte[] getLoadDate();
+  byte[] getDebitDate();
 
   /**
-   * Gets the load time as an array of bytes
+   * Gets the debit time as an array of bytes
    *
    * @return A 2-byte byte array
    * @since 1.0
    */
-  byte[] getLoadTime();
+  byte[] getDebitTime();
 
   /**
-   * Gets the load amount value
+   * Gets the debit amount value
    *
    * @return An int
    * @since 1.0
@@ -57,7 +57,7 @@ public interface SvDebitLogRecord {
   int getBalance();
 
   /**
-   * Gets the KVC of the load key (as given in the last SV Reload)
+   * Gets the KVC of the debit key (as given in the last SV Debit)
    *
    * @return A byte
    * @since 1.0
@@ -73,18 +73,18 @@ public interface SvDebitLogRecord {
   byte[] getSamId();
 
   /**
-   * Gets the SAM transaction number as an array of bytes
+   * Gets the SAM transaction number value as an int
    *
-   * @return A 3-byte byte array
+   * @return An int
    * @since 1.0
    */
-  byte[] getSamTNum();
+  int getSamTNum();
 
   /**
-   * Gets the SV transaction number as an array of bytes
+   * Gets the SV transaction number value as an int
    *
-   * @return A 2-byte byte array
+   * @return An int
    * @since 1.0
    */
-  byte[] getSvTNum();
+  int getSvTNum();
 }

@@ -23,20 +23,19 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
 public interface CalypsoCardSelection extends CardSelection {
 
   /**
-   * Requests an protocol-based filtering by defining an expected card.
+   * Requests a protocol-based filtering by defining an expected card.
    *
    * <p>If the card protocol is set, only cards using that protocol will match the card selector.
    *
    * @param cardProtocol A not empty String.
    * @return The object instance.
    * @throws IllegalArgumentException If the argument is null or empty.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoCardSelection filterByCardProtocol(String cardProtocol);
 
   /**
-   * Requests an power-on data-based filtering by defining a regular expression that will be applied
+   * Requests a power-on data-based filtering by defining a regular expression that will be applied
    * to the card's power-on data.
    *
    * <p>If it is set, only the cards whose power-on data is recognized by the provided regular
@@ -45,7 +44,6 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param powerOnDataRegex A valid regular expression
    * @return The object instance.
    * @throws IllegalArgumentException If the provided regular expression is null, empty or invalid.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoCardSelection filterByPowerOnData(String powerOnDataRegex);
@@ -59,7 +57,6 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param aid A byte array containing 5 to 16 bytes.
    * @return The object instance.
    * @throws IllegalArgumentException If the provided array is null or out of range.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoCardSelection filterByDfName(byte[] aid);
@@ -74,7 +71,6 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param aid A hexadecimal string representation of 5 to 16 bytes.
    * @return The object instance.
    * @throws IllegalArgumentException If the provided AID is null, invalid or out of range.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoCardSelection filterByDfName(String aid);
@@ -87,7 +83,6 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param fileOccurrence The {@link CalypsoCardSelection.FileOccurrence}.
    * @return The object instance.
    * @throws IllegalArgumentException If fileOccurrence is null.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoCardSelection setFileOccurrence(FileOccurrence fileOccurrence);
@@ -100,7 +95,6 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param fileControlInformation The {@link CalypsoCardSelection.FileControlInformation}.
    * @return The object instance.
    * @throws IllegalArgumentException If fileControlInformation is null.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoCardSelection setFileControlInformation(FileControlInformation fileControlInformation);

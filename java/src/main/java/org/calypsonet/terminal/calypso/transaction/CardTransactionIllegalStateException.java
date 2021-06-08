@@ -11,24 +11,11 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/**
- * Indicates that the "Stored Value" session is not authentic because the signature of the card is
- * incorrect.
- */
-public class CalypsoSvAuthenticationException extends CalypsoCardTransactionException {
+/** Indicates an improper use of the {@link CardTransactionService} API. */
+public class CardTransactionIllegalStateException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoSvAuthenticationException(String message) {
+  public CardTransactionIllegalStateException(String message) {
     super(message);
-  }
-
-  /**
-   * Encapsulates lower level exception.
-   *
-   * @param message message to identify the exception context.
-   * @param cause the cause.
-   */
-  public CalypsoSvAuthenticationException(String message, Throwable cause) {
-    super(message, cause);
   }
 }

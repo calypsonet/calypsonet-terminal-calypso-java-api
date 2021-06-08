@@ -11,11 +11,17 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates that the card is revoked. */
-public class CalypsoCardRevokedException extends CalypsoCardTransactionException {
+/**
+ * Indicates an anomaly in the SAM.<br>
+ * This can occur if the SAM is not Calypso compliant.
+ */
+public class SamAnomalyException extends CardTransactionException {
 
-  /** @param message the message to identify the exception context */
-  public CalypsoCardRevokedException(String message) {
-    super(message);
+  /**
+   * @param message message to identify the exception context.
+   * @param cause the cause.
+   */
+  public SamAnomalyException(String message, Throwable cause) {
+    super(message, cause);
   }
 }

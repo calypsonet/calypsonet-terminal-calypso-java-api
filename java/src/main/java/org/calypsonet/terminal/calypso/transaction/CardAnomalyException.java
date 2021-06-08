@@ -12,23 +12,16 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates that the card has correctly closed the secure session, but the support is not authentic
- * because the signature of the card is incorrect.
+ * Indicates an anomaly in the card.<br>
+ * This can occur if the card is not Calypso compliant.
  */
-public class CalypsoSessionAuthenticationException extends CalypsoCardTransactionException {
-
-  /** @param message the message to identify the exception context */
-  public CalypsoSessionAuthenticationException(String message) {
-    super(message);
-  }
+public class CardAnomalyException extends CardTransactionException {
 
   /**
-   * Encapsulates lower level exception.
-   *
    * @param message message to identify the exception context.
    * @param cause the cause.
    */
-  public CalypsoSessionAuthenticationException(String message, Throwable cause) {
+  public CardAnomalyException(String message, Throwable cause) {
     super(message, cause);
   }
 }

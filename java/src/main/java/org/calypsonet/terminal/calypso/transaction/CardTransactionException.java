@@ -12,19 +12,23 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates that the card has refused the secure session closing.<br>
- * This is usually due to an incorrect SAM signature, or that the secure session has been altered by
- * other APDU commands that would have interfered with it.<br>
- * In this case, the card has rolledbacked the data set by cancelling all updates except for PIN
- * verification attempts.
+ * The exception {@code CardTransactionException} is the parent abstract class of all Calypso card
+ * transaction functional exceptions.
  */
-public class CalypsoCardCloseSecureSessionException extends CalypsoCardTransactionException {
+public abstract class CardTransactionException extends RuntimeException {
+
+  /** @param message the message to identify the exception context */
+  protected CardTransactionException(String message) {
+    super(message);
+  }
 
   /**
+   * Encapsulates a lower level card transaction exception
+   *
    * @param message message to identify the exception context.
    * @param cause the cause.
    */
-  public CalypsoCardCloseSecureSessionException(String message, Exception cause) {
+  protected CardTransactionException(String message, Throwable cause) {
     super(message, cause);
   }
 }

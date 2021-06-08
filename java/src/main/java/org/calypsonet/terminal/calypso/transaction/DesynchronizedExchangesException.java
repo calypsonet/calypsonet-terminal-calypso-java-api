@@ -11,21 +11,14 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates a communication error with the SAM (e.g timeout, network,...). */
-public class CalypsoSamIOException extends CalypsoCardTransactionException {
+/**
+ * Indicates a desynchronization of the APDU exchanges.<br>
+ * This means that the number of APDU requests is different from the number of APDU responses.
+ */
+public class DesynchronizedExchangesException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoSamIOException(String message) {
+  public DesynchronizedExchangesException(String message) {
     super(message);
-  }
-
-  /**
-   * Encapsulates a lower level exception
-   *
-   * @param message message to identify the exception context.
-   * @param cause the cause.
-   */
-  public CalypsoSamIOException(String message, Throwable cause) {
-    super(message, cause);
   }
 }

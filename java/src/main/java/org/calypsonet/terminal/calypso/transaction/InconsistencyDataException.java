@@ -1,5 +1,5 @@
 /* **************************************************************************************
- * Copyright (c) 2018 Calypso Networks Association https://calypsonet.org/
+ * Copyright (c) 2020 Calypso Networks Association https://calypsonet.org/
  *
  * See the NOTICE file(s) distributed with this work for additional information
  * regarding copyright ownership.
@@ -11,11 +11,15 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates that the current card has an unauthorized KVC. */
-public class CalypsoUnauthorizedKvcException extends CalypsoCardTransactionException {
+/**
+ * Indicates an inconsistency in the card data.<br>
+ * This can occur, for example, if data read in session is different from data read outside the
+ * session.
+ */
+public class InconsistencyDataException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoUnauthorizedKvcException(String message) {
+  public InconsistencyDataException(String message) {
     super(message);
   }
 }
