@@ -12,7 +12,7 @@
 package org.calypsonet.terminal.calypso.card;
 
 /**
- * All metadata of a Calypso EF.
+ * Calypso EF metadata.
  *
  * @since 1.0
  */
@@ -85,14 +85,6 @@ public interface FileHeader {
    * @since 1.0
    */
   byte[] getKeyIndexes();
-
-  /**
-   * Returns true if EF is a shared file.
-   *
-   * @return True if the EF is a shared file.
-   * @since 1.0
-   */
-  boolean isShared();
 
   /**
    * Gets the shared reference of a shared file.

@@ -14,23 +14,11 @@ package org.calypsonet.terminal.calypso.sam;
 import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 
 /**
- * All known information about the current SAM.
+ * A static and partial view of the SAM's content.
  *
  * @since 1.0
  */
 public interface CalypsoSam extends SmartCard {
-
-  /**
-   * All Calypso SAM products supported by this API.
-   *
-   * @since 1.0
-   */
-  public enum ProductType {
-    SAM_C1,
-    SAM_S1E1,
-    SAM_S1Dx,
-    CSAM_F
-  }
 
   /**
    * Gets the SAM product type.
@@ -103,4 +91,16 @@ public interface CalypsoSam extends SmartCard {
    * @since 1.0
    */
   byte getSoftwareRevision();
+
+  /**
+   * All Calypso SAM products supported by this API.
+   *
+   * @since 1.0
+   */
+  public enum ProductType {
+    SAM_C1,
+    SAM_S1E1,
+    SAM_S1Dx,
+    CSAM_F
+  }
 }

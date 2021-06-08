@@ -17,11 +17,12 @@ import java.util.NoSuchElementException;
 import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 
 /**
- * All known information about the card being processed: from the selection stage to the end of the
- * transaction.
+ * A dynamic view of the card's content, regularly updated from the selection stage to the end of
+ * the transaction.
  *
- * <p>An instance of CalypsoCard is obtained by casting the SmartCard object from the selection
- * process defined by the <b>Terminal Reader API</b>.
+ * <p>An instance of CalypsoCard is obtained by casting the {@link SmartCard} object from the
+ * selection process defined by the <b>Terminal Reader API</b> and updated by the {@link
+ * org.calypsonet.terminal.calypso.transaction.CardTransactionService}.
  *
  * <p>The various information contained in CalypsoCard includes:
  *
@@ -41,23 +42,9 @@ import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 public interface CalypsoCard extends SmartCard {
 
   /**
-   * All Calypso Card products supported by this API.
-   *
-   * @since 1.0
-   */
-  public enum ProductType {
-    PRIME_REV1_0,
-    PRIME_REV2_4,
-    PRIME_REV3,
-    HCE,
-    LIGHT,
-    BASIC
-  }
-
-  /**
    * Gets the card product type.
    *
-   * @return The identified product type.
+   * @return A not null reference.
    * @since 1.0
    */
   ProductType getProductType();
@@ -73,7 +60,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>The AID selects the application by specifying all or part of the targeted DF Name (5 bytes
    * minimum).
    *
-   * @return a byte array containing the DF Name bytes (5 to 16 bytes)
+   * @return A not null byte array containing the DF Name bytes (5 to 16 bytes)
    * @since 1.0
    */
   byte[] getDfName();
@@ -85,78 +72,77 @@ public interface CalypsoCard extends SmartCard {
    * The difference with getCalypsoSerialNumber is that the two possible bytes (MSB) of validity
    * date are here forced to zero.
    *
-   * @return a byte array containing the Application Serial Number (8 bytes)
+   * @return A not null byte array containing the Application Serial Number (8 bytes).
    * @since 1.0
    */
   byte[] getApplicationSerialNumber();
 
   /**
-   * Gets the Calypso startup information field as an HEX String
+   * Gets the raw Calypso startup information.
    *
-   * @return the startup info field from the FCI as an HEX string
+   * @return A not null byte array.
    * @since 1.0
    */
   byte[] getStartupInfoRawData();
 
   /**
-   * The platform identification byte is the reference of the chip
+   * Gets the platform identification byte which is the reference of the chip.
    *
-   * @return the platform identification byte
+   * @return The platform identification byte.
    * @since 1.0
    */
   byte getPlatform();
 
   /**
-   * The Application Type byte determines the Calypso Revision and various options
+   * Gets the Application Type byte which determines the Calypso product type and various options.
    *
-   * @return the Application Type byte
+   * @return The Application Type byte.
    * @since 1.0
    */
   byte getApplicationType();
 
   /**
-   * The Application Subtype indicates to the terminal a reference to the file structure of the
-   * Calypso DF.
+   * Gets the Application Subtype that provides a reference to the file structure of the Calypso DF.
    *
-   * @return the Application Subtype byte
+   * @return The Application Subtype byte
    * @since 1.0
    */
   byte getApplicationSubtype();
 
   /**
-   * The Software Issuer byte indicates the entity responsible for the software of the selected
-   * application.
+   * Gets the Software Issuer byte that indicates the entity responsible for the software of the
+   * selected application.
    *
-   * @return the Software Issuer byte
+   * @return The Software Issuer byte.
    * @since 1.0
    */
   byte getSoftwareIssuer();
 
   /**
-   * The Software Version field may be set to any fixed value by the Software Issuer of the Calypso
-   * application.
+   * Gets the Software Version field that may be set to any fixed value by the Software Issuer of
+   * the Calypso application.
    *
-   * @return the Software Version byte
+   * @return The Software Version byte.
    * @since 1.0
    */
   byte getSoftwareVersion();
 
   /**
-   * The Software Revision field may be set to any fixed value by the Software Issuer of the Calypso
-   * application.
+   * Gets the Software Revision field that may be set to any fixed value by the Software Issuer of
+   * the Calypso application.
    *
-   * @return the Software Revision byte
+   * @return The Software Revision byte.
    * @since 1.0
    */
   byte getSoftwareRevision();
 
   /**
-   * Get the session modification byte from the startup info structure.
+   * Gets the session modification byte from the startup info structure.
    *
    * <p>Depending on the type of card, the session modification byte indicates the maximum number of
    * bytes that can be modified or the number of possible write commands in a session.
    *
-   * @return the Session Modifications byte
+   * @return The Session Modification byte.
    * @since 1.0
    */
   byte getSessionModification();
@@ -166,7 +152,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * <p>This boolean is interpreted from the Application Type byte
    *
-   * @return True if the Confidential Session Mode is supported
+   * @return True if the Confidential Session Mode is supported.
    * @since 1.0
    */
   boolean isConfidentialSessionModeSupported();
@@ -176,7 +162,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * <p>This boolean is interpreted from the Application Type byte
    *
-   * @return True if the ratification command is required
+   * @return True if the ratification command is required.
    * @since 1.0
    */
   boolean isDeselectRatificationSupported();
@@ -186,7 +172,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * <p>This boolean is interpreted from the Application Type byte
    *
-   * @return True if the Public Authentication is supported
+   * @return True if the Public Authentication is supported.
    * @since 1.0
    */
   boolean isPublicAuthenticationSupported();
@@ -200,8 +186,9 @@ public interface CalypsoCard extends SmartCard {
   DirectoryHeader getDirectoryHeader();
 
   /**
-   * Gets a reference to the {@link ElementaryFile} that has the provided SFI value.<br>
-   * Note that if a secure session is actually running, then the object contains all session
+   * Gets a reference to the {@link ElementaryFile} that has the provided SFI value.
+   *
+   * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
    *
    * @param sfi the SFI to search.
@@ -212,8 +199,9 @@ public interface CalypsoCard extends SmartCard {
   ElementaryFile getFileBySfi(byte sfi);
 
   /**
-   * Gets a reference to the {@link ElementaryFile} that has the provided LID value.<br>
-   * Note that if a secure session is actually running, then the object contains all session
+   * Gets a reference to the {@link ElementaryFile} that has the provided LID value.
+   *
+   * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
    *
    * @param lid the LID to search.
@@ -224,11 +212,12 @@ public interface CalypsoCard extends SmartCard {
   ElementaryFile getFileByLid(short lid);
 
   /**
-   * Gets a reference to a map of all known Elementary Files by their associated SFI.<br>
-   * Note that if a secure session is actually running, then the map contains all session
+   * Gets a reference to a map of all known Elementary Files by their associated SFI.
+   *
+   * <p>Note that if a secure session is actually running, then the map contains all session
    * modifications, which can be canceled if the secure session fails.
    *
-   * @return a not null reference (may be empty if no one EF is set).
+   * @return A not null reference (may be empty if no one EF is set).
    * @since 1.0
    */
   Map<Byte, ElementaryFile> getAllFiles();
@@ -236,7 +225,7 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Tells if the card has been invalidated or not.
    *
-   * <p>An invalidated card has 6283 as status word in response to the Select Application command.
+   * <p>An invalidated card has 6283h as status word in response to the Select Application command.
    *
    * @return True if the card has been invalidated.
    * @since 1.0
@@ -247,7 +236,7 @@ public interface CalypsoCard extends SmartCard {
    * Tells if the last session with this card has been ratified or not.
    *
    * @return True if the card has been ratified.
-   * @throws IllegalStateException if these methods is invoked when no session has been opened
+   * @throws IllegalStateException If these methods is invoked when no session has been opened.
    * @since 1.0
    */
   boolean isDfRatified();
@@ -257,7 +246,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * <p>This boolean is interpreted from the Application Type byte
    *
-   * @return True if the card has the PIN feature
+   * @return True if the card has the PIN feature.
    * @since 1.0
    */
   boolean isPinFeatureAvailable();
@@ -267,7 +256,7 @@ public interface CalypsoCard extends SmartCard {
    * reached.
    *
    * @return True if the PIN status is blocked
-   * @throws IllegalStateException if the PIN has not been checked
+   * @throws IllegalStateException If the PIN has not been checked.
    * @since 1.0
    */
   boolean isPinBlocked();
@@ -275,8 +264,8 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Gives the number of erroneous PIN presentations remaining before blocking.
    *
-   * @return the number of remaining attempts
-   * @throws IllegalStateException if the PIN has not been checked
+   * @return The number of remaining attempts.
+   * @throws IllegalStateException If the PIN has not been checked.
    * @since 1.0
    */
   int getPinAttemptRemaining();
@@ -295,7 +284,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the current SV balance value
    *
    * @return An int
-   * @throws IllegalStateException if no SV Get command has been executed
+   * @throws IllegalStateException If no SV Get command has been executed.
    * @since 1.0
    */
   int getSvBalance();
@@ -304,7 +293,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the last SV transaction number
    *
    * @return An int
-   * @throws IllegalStateException if no SV Get command has been executed
+   * @throws IllegalStateException If no SV Get command has been executed.
    * @since 1.0
    */
   int getSvLastTNum();
@@ -312,8 +301,7 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Gets a reference to the last {@link SvLoadLogRecord}
    *
-   * @return a last SV load log record object or null if not available
-   * @throws NoSuchElementException if requested log is not found.
+   * @return A last SV load log record object or null if not available.
    * @since 1.0
    */
   SvLoadLogRecord getSvLoadLogRecord();
@@ -321,8 +309,7 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Gets a reference to the last {@link SvDebitLogRecord}
    *
-   * @return a last SV debit log record object or null if not available
-   * @throws NoSuchElementException if requested log is not found.
+   * @return A last SV debit log record object or null if not available.
    * @since 1.0
    */
   SvDebitLogRecord getSvDebitLogLastRecord();
@@ -330,9 +317,22 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Gets list of references to the {@link SvDebitLogRecord} read from the card.
    *
-   * @return a list of SV debit log record objects or null if not available
-   * @throws NoSuchElementException if requested log is not found.
+   * @return A empty list if no log records are available.
    * @since 1.0
    */
   List<SvDebitLogRecord> getSvDebitLogAllRecords();
+
+  /**
+   * All Calypso Card products supported by this API.
+   *
+   * @since 1.0
+   */
+  public enum ProductType {
+    PRIME_REV1_0,
+    PRIME_REV2_4,
+    PRIME_REV3,
+    HCE,
+    LIGHT,
+    BASIC
+  }
 }

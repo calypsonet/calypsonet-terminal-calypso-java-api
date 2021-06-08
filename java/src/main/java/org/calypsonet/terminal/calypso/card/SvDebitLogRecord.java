@@ -12,15 +12,17 @@
 package org.calypsonet.terminal.calypso.card;
 
 /**
- * This POJO contains the data of a Stored Value debit log.
+ * Record of a Stored Value debit log.
  *
  * @since 1.0
  */
 public interface SvDebitLogRecord {
+
   /**
    * Gets the raw data of the SV debit log record.
    *
    * @return A byte array.
+   * @since 1.0
    */
   byte[] getRawData();
 

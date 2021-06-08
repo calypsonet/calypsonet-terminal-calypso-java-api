@@ -12,7 +12,7 @@
 package org.calypsonet.terminal.calypso.card;
 
 /**
- * This POJO contains the data of a Stored Value load log.
+ * Record of a Stored Value load log.
  *
  * @since 1.0
  */
@@ -22,6 +22,7 @@ public interface SvLoadLogRecord {
    * Gets the raw data of the SV load log record.
    *
    * @return A byte array.
+   * @since 1.0
    */
   byte[] getRawData();
 

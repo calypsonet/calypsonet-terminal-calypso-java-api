@@ -4,7 +4,6 @@
 plugins {
     `java`
     id("com.diffplug.spotless") version "5.10.2"
-    jacoco
 }
 buildscript {
     repositories {
@@ -14,7 +13,7 @@ buildscript {
         maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
     }
     dependencies {
-        classpath("org.eclipse.keyple:keyple-gradle:0.2.6-SNAPSHOT")
+        classpath("org.eclipse.keyple:keyple-gradle:0.2.8")
     }
 }
 apply(plugin = "org.eclipse.keyple")
@@ -60,15 +59,6 @@ tasks {
     test {
         testLogging {
             events("passed", "skipped", "failed")
-        }
-        finalizedBy("jacocoTestReport")
-    }
-    jacocoTestReport {
-        dependsOn("test")
-        reports {
-            xml.isEnabled = true
-            csv.isEnabled = false
-            html.isEnabled = true
         }
     }
 }

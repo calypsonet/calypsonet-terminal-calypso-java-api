@@ -11,11 +11,10 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.card;
 
-import java.util.NoSuchElementException;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 
 /**
- * All metadata of a Calypso DF.
+ * Calypso DF metadata.
  *
  * @since 1.0
  */
@@ -24,7 +23,7 @@ public interface DirectoryHeader {
   /**
    * Gets the associated LID.
    *
-   * @return The LID
+   * @return The LID.
    * @since 1.0
    */
   short getLid();
@@ -32,7 +31,7 @@ public interface DirectoryHeader {
   /**
    * Gets the DF status.
    *
-   * @return The DF status byte
+   * @return The DF status byte.
    * @since 1.0
    */
   byte getDfStatus();
@@ -40,7 +39,7 @@ public interface DirectoryHeader {
   /**
    * Gets a reference to access conditions.
    *
-   * @return A not empty byte array
+   * @return A not empty byte array.
    * @since 1.0
    */
   byte[] getAccessConditions();
@@ -48,19 +47,10 @@ public interface DirectoryHeader {
   /**
    * Gets a reference to keys indexes.
    *
-   * @return A not empty byte array
+   * @return A not empty byte array.
    * @since 1.0
    */
   byte[] getKeyIndexes();
-
-  /**
-   * Returns true if the KIF for the provided write access level is available.
-   *
-   * @param writeAccessLevel The write access level (should be not null).
-   * @return True if the KIF for the provided writeAccessLevel is available
-   * @since 1.0
-   */
-  boolean isKifAvailable(WriteAccessLevel writeAccessLevel);
 
   /**
    * Gets the KIF associated to the provided write access level.
@@ -68,19 +58,9 @@ public interface DirectoryHeader {
    * @param writeAccessLevel The write access level (should be not null).
    * @return The KIF value.
    * @throws IllegalArgumentException if writeAccessLevel is null.
-   * @throws NoSuchElementException if KIF is not found.
    * @since 1.0
    */
   byte getKif(WriteAccessLevel writeAccessLevel);
-
-  /**
-   * Returns true if the KVC for the provided write access level is available.
-   *
-   * @param writeAccessLevel The write access level (should be not null).
-   * @return True if the KVC for the provided writeAccessLevel is available
-   * @since 1.0
-   */
-  boolean isKvcAvailable(WriteAccessLevel writeAccessLevel);
 
   /**
    * Gets the KVC associated to the provided write access level.
@@ -88,7 +68,6 @@ public interface DirectoryHeader {
    * @param writeAccessLevel The write access level (should be not null).
    * @return The KVC value.
    * @throws IllegalArgumentException if writeAccessLevel is null.
-   * @throws NoSuchElementException if KVC is not found.
    * @since 1.0
    */
   byte getKvc(WriteAccessLevel writeAccessLevel);

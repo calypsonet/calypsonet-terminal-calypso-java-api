@@ -12,15 +12,16 @@
 package org.calypsonet.terminal.calypso.card;
 
 /**
- * Description of a Calypso EF.
+ * Calypso Elementary File.
  *
  * @since 1.0
  */
 public interface ElementaryFile {
+
   /**
    * Gets the associated SFI.
    *
-   * @return The SFI
+   * @return The SFI.
    * @since 1.0
    */
   byte getSfi();
@@ -28,7 +29,7 @@ public interface ElementaryFile {
   /**
    * Gets the file header.
    *
-   * @return A header reference or null if header is not yet set.
+   * @return Null if header is not yet set.
    * @since 1.0
    */
   FileHeader getHeader();

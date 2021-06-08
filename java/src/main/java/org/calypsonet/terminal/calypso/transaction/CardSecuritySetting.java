@@ -15,8 +15,7 @@ import java.util.List;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 
 /**
- * This POJO contains all the needed data to manage the security operations of a Calypso
- * transaction.
+ * Data to manage the security operations of a Calypso transaction.
  *
  * <p>Fluent setters allow to define all the required parameters, among which the resource profile
  * of the SAM card is the only mandatory one.

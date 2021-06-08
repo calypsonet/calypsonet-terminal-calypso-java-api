@@ -29,7 +29,6 @@ public interface CalypsoSamSelection extends CardSelection {
    * @param productType The SAM product type.
    * @return The object instance.
    * @throws IllegalArgumentException If productType is null.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoSamSelection filterByProductType(CalypsoSam.ProductType productType);
@@ -53,7 +52,6 @@ public interface CalypsoSamSelection extends CardSelection {
    * @param serialNumberRegex A regular expression.
    * @return The object instance.
    * @throws IllegalArgumentException If samSerialNumberRegex is null, empty or invalid.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
   CalypsoSamSelection filterBySerialNumber(String serialNumberRegex);
@@ -63,11 +61,10 @@ public interface CalypsoSamSelection extends CardSelection {
    *
    * <p>The Unlock command will be executed only after a successful filtering.
    *
-   * @param samUnlockData A hexadecimal representation of the 16 or 32 digit long unlock value.
+   * @param unlockData A hexadecimal representation of the 16 or 32 digit long unlock value.
    * @return The object instance.
    * @throws IllegalArgumentException If unlockData is null, malformed or out of range.
-   * @throws IllegalStateException If this parameter has already been set.
    * @since 1.0
    */
-  CalypsoSamSelection setSamUnlockData(String samUnlockData);
+  CalypsoSamSelection setUnlockData(String unlockData);
 }

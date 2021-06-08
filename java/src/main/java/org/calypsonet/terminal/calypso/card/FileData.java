@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
 import java.util.SortedMap;
 
 /**
- * All known data of a Calypso EF.
+ * Calypso EF content.
  *
  * @since 1.0
  */
@@ -70,8 +70,8 @@ public interface FileData {
    * record #1.<br>
    * e.g. if numCounter == 2, then value is extracted from bytes indexes [3,4,5].
    *
-   * @param numCounter the counter number (should be {@code >=} 1).
-   * @return the counter value.
+   * @param numCounter The counter number (should be {@code >=} 1).
+   * @return The counter value or 0 if record #1 or numCounter is not set.
    * @throws IllegalArgumentException if numCounter is {@code <} 1.
    * @throws NoSuchElementException if record #1 or numCounter is not set.
    * @throws IndexOutOfBoundsException if numCounter has a truncated value (when size of record #1

@@ -41,7 +41,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * <p>If it is set, only the cards whose power-on data is recognized by the provided regular
    * expression will match the card selector.
    *
-   * @param powerOnDataRegex A valid regular expression
+   * @param powerOnDataRegex A valid regular expression.
    * @return The object instance.
    * @throws IllegalArgumentException If the provided regular expression is null, empty or invalid.
    * @since 1.0
@@ -126,7 +126,7 @@ public interface CalypsoCardSelection extends CardSelection {
    *
    * @param lid LID of the EF to select as a byte array
    * @return The object instance.
-   * @throws IllegalArgumentException If the argument is not an array of 2 bytes
+   * @throws IllegalArgumentException If the argument is not an array of 2 bytes.
    * @since 1.0
    */
   CalypsoCardSelection prepareSelectFile(byte[] lid);
@@ -134,7 +134,7 @@ public interface CalypsoCardSelection extends CardSelection {
   /**
    * Adds a command APDU to select file with an LID provided as a short.
    *
-   * @param lid A short
+   * @param lid A short.
    * @return The object instance.
    * @since 1.0
    */
@@ -144,8 +144,9 @@ public interface CalypsoCardSelection extends CardSelection {
    * Adds a command APDU to select file according to the provided {@link SelectFileControl} enum
    * entry indicating the navigation case: FIRST, NEXT or CURRENT.
    *
-   * @param selectControl A {@link SelectFileControl} enum entry
+   * @param selectControl A {@link SelectFileControl} enum entry.
    * @return The object instance.
+   * @throws IllegalArgumentException If the argument is null.
    * @since 1.0
    */
   CalypsoCardSelection prepareSelectFile(SelectFileControl selectControl);
@@ -154,9 +155,9 @@ public interface CalypsoCardSelection extends CardSelection {
    * Adds a command APDU to read a single record from the indicated EF.
    *
    * @param sfi The SFI of the EF to read
-   * @param recordNumber The record number to read
+   * @param recordNumber The record number to read.
    * @return The object instance.
-   * @throws IllegalArgumentException If one of the provided argument is out of range
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CalypsoCardSelection prepareReadRecordFile(byte sfi, int recordNumber);
