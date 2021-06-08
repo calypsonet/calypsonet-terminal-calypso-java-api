@@ -496,8 +496,9 @@ public interface CardTransactionService {
    * @return The object instance.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @throws UnsupportedOperationException If the PIN feature is not available for this card or if
-   *     commands have been prepared before invoking this process method.
+   * @throws UnsupportedOperationException If the PIN feature is not available for this card
+   * @throws IllegalStateException If commands have been prepared before invoking this process
+   *     method.
    * @since 1.0
    */
   CardTransactionService processVerifyPin(byte[] pin);
@@ -600,8 +601,6 @@ public interface CardTransactionService {
    * @param WriteAccessLevel An {@link WriteAccessLevel} enum entry.
    * @return The object instance.
    * @throws IllegalStateException if no {@link CardSecuritySetting} is available
-   * @throws AtomicTransactionException if the card session buffer were to overflow
-   * @throws UnauthorizedKvcException If the card KVC is not authorized
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
