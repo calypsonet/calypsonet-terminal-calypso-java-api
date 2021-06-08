@@ -11,11 +11,21 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates an improper use of the {@link CardTransactionService} API. */
-public class CalypsoCardTransactionIllegalStateException extends CalypsoCardTransactionException {
+/** Indicates a communication error with the SAM (e.g timeout, network,...). */
+public class SamIOException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoCardTransactionIllegalStateException(String message) {
+  public SamIOException(String message) {
     super(message);
+  }
+
+  /**
+   * Encapsulates a lower level exception
+   *
+   * @param message message to identify the exception context.
+   * @param cause the cause.
+   */
+  public SamIOException(String message, Throwable cause) {
+    super(message, cause);
   }
 }

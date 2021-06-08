@@ -11,25 +11,11 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/**
- * Indicates that the card has correctly closed the secure session, but that it is impossible to
- * check the authenticity of the support because the SAM is no more available (timeout, network
- * problem,...).
- */
-public class CalypsoAuthenticationNotVerifiedException extends CalypsoCardTransactionException {
+/** Indicates that the card is revoked. */
+public class CardRevokedException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoAuthenticationNotVerifiedException(String message) {
+  public CardRevokedException(String message) {
     super(message);
-  }
-
-  /**
-   * Encapsulates lower level exception.
-   *
-   * @param message message to identify the exception context.
-   * @param cause the cause.
-   */
-  public CalypsoAuthenticationNotVerifiedException(String message, Throwable cause) {
-    super(message, cause);
   }
 }

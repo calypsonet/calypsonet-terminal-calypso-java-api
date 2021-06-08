@@ -11,14 +11,11 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/**
- * Indicates that the transaction cannot be done in an atomic way because the capacity of the
- * session buffer is not sufficient.
- */
-public class CalypsoAtomicTransactionException extends CalypsoCardTransactionException {
+/** Indicates that the SAM is revoked. */
+public class SamRevokedException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoAtomicTransactionException(String message) {
+  public SamRevokedException(String message) {
     super(message);
   }
 }

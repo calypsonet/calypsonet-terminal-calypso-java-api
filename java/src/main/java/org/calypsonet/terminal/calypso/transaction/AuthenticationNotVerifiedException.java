@@ -12,16 +12,24 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates an anomaly in the SAM.<br>
- * This can occur if the SAM is not Calypso compliant.
+ * Indicates that the card has correctly closed the secure session, but that it is impossible to
+ * check the authenticity of the support because the SAM is no more available (timeout, network
+ * problem,...).
  */
-public class CalypsoSamAnomalyException extends CalypsoCardTransactionException {
+public class AuthenticationNotVerifiedException extends CardTransactionException {
+
+  /** @param message the message to identify the exception context */
+  public AuthenticationNotVerifiedException(String message) {
+    super(message);
+  }
 
   /**
+   * Encapsulates lower level exception.
+   *
    * @param message message to identify the exception context.
    * @param cause the cause.
    */
-  public CalypsoSamAnomalyException(String message, Throwable cause) {
+  public AuthenticationNotVerifiedException(String message, Throwable cause) {
     super(message, cause);
   }
 }

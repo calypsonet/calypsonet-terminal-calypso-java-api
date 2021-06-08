@@ -12,23 +12,13 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * The exception {@code CalypsoCardTransactionException} is the parent abstract class of all Calypso
- * card transaction functional exceptions.
+ * Indicates that the transaction cannot be done in an atomic way because the capacity of the
+ * session buffer is not sufficient.
  */
-public abstract class CalypsoCardTransactionException extends RuntimeException {
+public class AtomicTransactionException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  protected CalypsoCardTransactionException(String message) {
+  public AtomicTransactionException(String message) {
     super(message);
-  }
-
-  /**
-   * Encapsulates a lower level card transaction exception
-   *
-   * @param message message to identify the exception context.
-   * @param cause the cause.
-   */
-  protected CalypsoCardTransactionException(String message, Throwable cause) {
-    super(message, cause);
   }
 }

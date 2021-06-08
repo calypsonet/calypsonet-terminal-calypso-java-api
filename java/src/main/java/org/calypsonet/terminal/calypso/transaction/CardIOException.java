@@ -11,17 +11,21 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/**
- * Indicates an anomaly in the card.<br>
- * This can occur if the card is not Calypso compliant.
- */
-public class CalypsoCardAnomalyException extends CalypsoCardTransactionException {
+/** Indicates a communication error with the card. */
+public class CardIOException extends CardTransactionException {
+
+  /** @param message the message to identify the exception context */
+  public CardIOException(String message) {
+    super(message);
+  }
 
   /**
+   * Encapsulates a lower level exception
+   *
    * @param message message to identify the exception context.
    * @param cause the cause.
    */
-  public CalypsoCardAnomalyException(String message, Throwable cause) {
+  public CardIOException(String message, Throwable cause) {
     super(message, cause);
   }
 }

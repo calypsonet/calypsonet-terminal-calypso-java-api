@@ -12,14 +12,19 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates an inconsistency in the card data.<br>
- * This can occur, for example, if data read in session is different from data read outside the
- * session.
+ * Indicates that the card has refused the secure session closing.<br>
+ * This is usually due to an incorrect SAM signature, or that the secure session has been altered by
+ * other APDU commands that would have interfered with it.<br>
+ * In this case, the card has rolledbacked the data set by cancelling all updates except for PIN
+ * verification attempts.
  */
-public class CalypsoInconsistencyDataException extends CalypsoCardTransactionException {
+public class CardCloseSecureSessionException extends CardTransactionException {
 
-  /** @param message the message to identify the exception context */
-  public CalypsoInconsistencyDataException(String message) {
-    super(message);
+  /**
+   * @param message message to identify the exception context.
+   * @param cause the cause.
+   */
+  public CardCloseSecureSessionException(String message, Exception cause) {
+    super(message, cause);
   }
 }

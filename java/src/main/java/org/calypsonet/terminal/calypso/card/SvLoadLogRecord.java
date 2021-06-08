@@ -82,18 +82,18 @@ public interface SvLoadLogRecord {
   byte[] getSamId();
 
   /**
-   * Gets the SAM transaction number as an array of bytes
+   * Gets the SAM transaction number value as an int
    *
-   * @return A 3-byte byte array
+   * @return An int
    * @since 1.0
    */
-  byte[] getSamTNum();
+  int getSamTNum();
 
   /**
-   * Gets the SV transaction number as an array of bytes
+   * Gets the SV transaction number value as an int
    *
-   * @return A 2-byte byte array
+   * @return An int
    * @since 1.0
    */
-  byte[] getSvTNum();
+  int getSvTNum();
 }

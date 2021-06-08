@@ -1,5 +1,5 @@
 /* **************************************************************************************
- * Copyright (c) 2020 Calypso Networks Association https://calypsonet.org/
+ * Copyright (c) 2018 Calypso Networks Association https://calypsonet.org/
  *
  * See the NOTICE file(s) distributed with this work for additional information
  * regarding copyright ownership.
@@ -11,11 +11,11 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates that the SAM is revoked. */
-public class CalypsoSamRevokedException extends CalypsoCardTransactionException {
+/** Indicates that the current card has an unauthorized KVC. */
+public class UnauthorizedKvcException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoSamRevokedException(String message) {
+  public UnauthorizedKvcException(String message) {
     super(message);
   }
 }

@@ -12,13 +12,23 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates a desynchronization of the APDU exchanges.<br>
- * This means that the number of APDU requests is different from the number of APDU responses.
+ * Indicates that the card has correctly closed the secure session, but the support is not authentic
+ * because the signature of the card is incorrect.
  */
-public class CalypsoDesynchronizedExchangesException extends CalypsoCardTransactionException {
+public class SessionAuthenticationException extends CardTransactionException {
 
   /** @param message the message to identify the exception context */
-  public CalypsoDesynchronizedExchangesException(String message) {
+  public SessionAuthenticationException(String message) {
     super(message);
+  }
+
+  /**
+   * Encapsulates lower level exception.
+   *
+   * @param message message to identify the exception context.
+   * @param cause the cause.
+   */
+  public SessionAuthenticationException(String message, Throwable cause) {
+    super(message, cause);
   }
 }
