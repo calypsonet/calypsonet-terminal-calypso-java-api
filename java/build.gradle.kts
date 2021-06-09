@@ -13,7 +13,7 @@ buildscript {
         maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
     }
     dependencies {
-        classpath("org.eclipse.keyple:keyple-gradle:0.2.8")
+        classpath("org.eclipse.keyple:keyple-gradle:0.2.+")
     }
 }
 apply(plugin = "org.eclipse.keyple")
