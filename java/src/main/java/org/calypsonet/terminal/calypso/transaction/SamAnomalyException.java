@@ -12,14 +12,18 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates an anomaly in the SAM.<br>
- * This can occur if the SAM is not Calypso compliant.
+ * Indicates an anomaly in the SAM.
+ *
+ * <p>This can occur if the SAM is not Calypso compliant.
+ *
+ * @since 1.0
  */
 public class SamAnomalyException extends CardTransactionException {
 
   /**
-   * @param message message to identify the exception context.
-   * @param cause the cause.
+   * @param message Message to identify the exception context.
+   * @param cause The cause.
+   * @since 1.0
    */
   public SamAnomalyException(String message, Throwable cause) {
     super(message, cause);

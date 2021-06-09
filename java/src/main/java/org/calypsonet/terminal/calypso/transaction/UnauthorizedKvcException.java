@@ -11,10 +11,17 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates that the current card has an unauthorized KVC. */
+/**
+ * Indicates that the current card has an unauthorized KVC.
+ *
+ * @since 1.0
+ */
 public class UnauthorizedKvcException extends CardTransactionException {
 
-  /** @param message the message to identify the exception context */
+  /**
+   * @param message The message to identify the exception context
+   * @since 1.0
+   */
   public UnauthorizedKvcException(String message) {
     super(message);
   }

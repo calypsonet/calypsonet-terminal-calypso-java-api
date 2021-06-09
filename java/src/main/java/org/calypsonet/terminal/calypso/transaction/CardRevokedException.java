@@ -11,10 +11,17 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates that the card is revoked. */
+/**
+ * Indicates that the card is revoked.
+ *
+ * @since 1.0
+ */
 public class CardRevokedException extends CardTransactionException {
 
-  /** @param message the message to identify the exception context */
+  /**
+   * @param message The message to identify the exception context
+   * @since 1.0
+   */
   public CardRevokedException(String message) {
     super(message);
   }

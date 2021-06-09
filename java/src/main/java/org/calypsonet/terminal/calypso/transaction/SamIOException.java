@@ -11,10 +11,17 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-/** Indicates a communication error with the SAM (e.g timeout, network,...). */
+/**
+ * Indicates a communication error with the SAM (e.g timeout, network,...).
+ *
+ * @since 1.0
+ */
 public class SamIOException extends CardTransactionException {
 
-  /** @param message the message to identify the exception context */
+  /**
+   * @param message The message to identify the exception context
+   * @since 1.0
+   */
   public SamIOException(String message) {
     super(message);
   }
@@ -22,8 +29,9 @@ public class SamIOException extends CardTransactionException {
   /**
    * Encapsulates a lower level exception
    *
-   * @param message message to identify the exception context.
-   * @param cause the cause.
+   * @param message Message to identify the exception context.
+   * @param cause The cause.
+   * @since 1.0
    */
   public SamIOException(String message, Throwable cause) {
     super(message, cause);

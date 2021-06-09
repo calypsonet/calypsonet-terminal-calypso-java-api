@@ -44,12 +44,36 @@ import org.calypsonet.terminal.reader.CardReader;
  */
 public interface CardTransactionService {
 
+  /**
+   * Gets the reader used to communicate with the card on which the transaction is performed.
+   *
+   * @return A not null reference.
+   * @since 1.0
+   */
   CardReader getCardReader();
 
+  /**
+   * Gets the card on which the transaction is performed.
+   *
+   * @return A not null reference.
+   * @since 1.0
+   */
   CalypsoCard getCalypsoCard();
 
+  /**
+   * Gets the settings defining the security parameters of the transaction.
+   *
+   * @return Null if the transaction does not use security settings.
+   * @since 1.0
+   */
   CardSecuritySetting getCardSecuritySetting();
 
+  /**
+   * Gets the audit data of the transaction.
+   *
+   * @return Null if there is no audit data.
+   * @since 1.0
+   */
   String getTransactionAuditData();
 
   /**
@@ -59,23 +83,25 @@ public interface CardTransactionService {
    * {@link CalypsoCard#getFileBySfi(byte)} and {@link ElementaryFile#getHeader()} methods.
    *
    * @param lid The LID of the EF to select.
-   * @return The object instance.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided lid is not 2 bytes long.
    * @since 1.0
    */
   CardTransactionService prepareSelectFile(byte[] lid);
 
   /**
-   * Schedules the execution of a <b>Select File</b> command using a navigation control defined by
-   * the ISO standard.
+   * Schedules the execution of a <b>Select File</b> command using a navigation selectFileControl
+   * defined by the ISO standard.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
    * {@link CalypsoCard#getFileBySfi(byte)} and {@link ElementaryFile#getHeader()} methods.
    *
-   * @param control A {@link SelectFileControl} enum entry.
-   * @return The object instance.
+   * @param selectFileControl A {@link SelectFileControl} enum entry.
+   * @return The current instance.
+   * @throws IllegalArgumentException If selectFileControl is null.
    * @since 1.0
    */
-  CardTransactionService prepareSelectFile(SelectFileControl control);
+  CardTransactionService prepareSelectFile(SelectFileControl selectFileControl);
 
   /**
    * Schedules the execution of a <b>Read Records</b> command to read a single record from the
@@ -89,8 +115,8 @@ public interface CardTransactionService {
    *
    * @param sfi The SFI of the EF to read.
    * @param recordNumber The record number to read.
-   * @return The object instance.
-   * @throws IllegalArgumentException If one of the provided argument is out of range
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided arguments is out of range.
    * @since 1.0
    */
   CardTransactionService prepareReadRecordFile(byte sfi, int recordNumber);
@@ -110,8 +136,8 @@ public interface CardTransactionService {
    *     records)
    * @param numberOfRecords The number of records expected.
    * @param recordSize The record length.
-   * @return The object instance.
-   * @throws IllegalArgumentException If one of the provided argument is out of range
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareReadRecordFile(
@@ -132,8 +158,8 @@ public interface CardTransactionService {
    *
    * @param sfi The SFI of the EF.
    * @param countersNumber The number of the last counter to be read.
-   * @return The object instance.
-   * @throws IllegalArgumentException If one of the provided argument is out of range
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareReadCounterFile(byte sfi, int countersNumber);
@@ -148,7 +174,7 @@ public interface CardTransactionService {
    *
    * <p>See {@link CalypsoCard#isPinBlocked} and {@link CalypsoCard#getPinAttemptRemaining} methods.
    *
-   * @return The object instance.
+   * @return The current instance.
    * @throws UnsupportedOperationException If the PIN feature is not available for this card.
    * @since 1.0
    */
@@ -164,8 +190,8 @@ public interface CardTransactionService {
    *
    * @param sfi The sfi to select.
    * @param recordData The new record data to write.
-   * @return The object instance.
-   * @throws IllegalArgumentException If the command is inconsistent
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareAppendRecord(byte sfi, byte[] recordData);
@@ -182,9 +208,8 @@ public interface CardTransactionService {
    * @param recordNumber The record number to update.
    * @param recordData The new record data. If length {@code <} RecSize, bytes beyond length are.
    *     left unchanged.
-   * @return The object instance.
-   * @throws IllegalArgumentException If record number is {@code <} 1
-   * @throws IllegalArgumentException If the request is inconsistent
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareUpdateRecord(byte sfi, int recordNumber, byte[] recordData);
@@ -201,9 +226,8 @@ public interface CardTransactionService {
    * @param recordNumber The record number to write.
    * @param recordData The data to overwrite in the record. If length {@code <} RecSize, bytes.
    *     beyond length are left unchanged.
-   * @return The object instance.
-   * @throws IllegalArgumentException If record number is {@code <} 1
-   * @throws IllegalArgumentException If the request is inconsistent
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareWriteRecord(byte sfi, int recordNumber, byte[] recordData);
@@ -218,9 +242,8 @@ public interface CardTransactionService {
    * @param sfi SFI of the file to select or 00h for current EF.
    * @param incValue Value to add to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
-   * @return The object instance.
-   * @throws IllegalArgumentException If the decrement value is out of range
-   * @throws IllegalArgumentException If the command is inconsistent
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareIncreaseCounter(byte sfi, int counterNumber, int incValue);
@@ -235,9 +258,8 @@ public interface CardTransactionService {
    * @param sfi SFI of the file to select or 00h for current EF.
    * @param decValue Value to subtract to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
-   * @return The object instance.
-   * @throws IllegalArgumentException If the decrement value is out of range
-   * @throws IllegalArgumentException If the command is inconsistent
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareDecreaseCounter(byte sfi, int counterNumber, int decValue);
@@ -266,9 +288,8 @@ public interface CardTransactionService {
    * @param sfi SFI of the file to select or 00h for current EF.
    * @param newValue The desired value for the counter (defined as a positive int {@code <=}
    *     16777215 [FFFFFFh])
-   * @return The object instance.
-   * @throws IllegalArgumentException If the desired value is out of range or if the command is
-   *     inconsistent
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @throws IllegalStateException If the current counter value is unknown.
    * @since 1.0
    */
@@ -287,7 +308,8 @@ public interface CardTransactionService {
    * @param svOperation Informs about the nature of the intended operation: debit or reload.
    * @param svAction The type of action: DO a debit or a positive reload, UNDO an undebit or a.
    *     negative reload
-   * @return The object instance.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the arguments is null.
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
    * @since 1.0
    */
@@ -306,7 +328,8 @@ public interface CardTransactionService {
    * @param date 2-byte free value.
    * @param time 2-byte free value.
    * @param free 2-byte free value.
-   * @return The object instance.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
@@ -325,7 +348,8 @@ public interface CardTransactionService {
    *
    * @param amount The value to be reloaded, positive integer in the range 0..8388607 for a DO.
    *     action, in the range 0..8388608 for an UNDO action.
-   * @return The object instance.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided argument is out of range.
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
@@ -350,7 +374,8 @@ public interface CardTransactionService {
    *     subtracted and 0..32768 when added.
    * @param date 2-byte free value.
    * @param time 2-byte free value.
-   * @return The object instance.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareSvDebit(int amount, byte[] date, byte[] time);
@@ -377,7 +402,8 @@ public interface CardTransactionService {
    *
    * @param amount The amount to be subtracted or added, positive integer in the range 0..32767 when
    *     subtracted and 0..32768 when added.
-   * @return The Object instance.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
   CardTransactionService prepareSvDebit(int amount);
@@ -401,9 +427,9 @@ public interface CardTransactionService {
    *
    * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link CalypsoCard#getSvLoadLogRecord()}
    * ()}, {@link CalypsoCard#getSvDebitLogLastRecord()}, {@link
-   * CalypsoCard#getSvDebitLogAllRecords()}. *
+   * CalypsoCard#getSvDebitLogAllRecords()}.
    *
-   * @return The Object instance.
+   * @return The current instance.
    * @since 1.0
    */
   CardTransactionService prepareSvReadAllLogs();
@@ -415,7 +441,7 @@ public interface CardTransactionService {
    * (depends on the access rights given to this command in the file structure of the card).
    *
    * @throws IllegalStateException If the card is already invalidated.
-   * @return The Object instance.
+   * @return The current instance.
    * @since 1.0
    */
   CardTransactionService prepareInvalidate();
@@ -426,7 +452,7 @@ public interface CardTransactionService {
    * <p>This command is usually executed within a secure session with the SESSION_LVL_PERSO key
    * (depends on the access rights given to this command in the file structure of the card).
    *
-   * @return The Object instance.
+   * @return The current instance.
    * @throws IllegalStateException If the card is not invalidated.
    * @since 1.0
    */
@@ -445,7 +471,7 @@ public interface CardTransactionService {
    * <p>In case the transaction was interrupted (exception), an additional invocation of
    * processCardCommands must be made to effectively close the channel.
    *
-   * @return The object instance.
+   * @return The current instance.
    * @since 1.0
    */
   CardTransactionService prepareReleaseCardChannel();
@@ -469,7 +495,7 @@ public interface CardTransactionService {
    *       necessary to respect the capacity of the card buffer.
    * </ul>
    *
-   * @return The object instance.
+   * @return The current instance.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
@@ -493,12 +519,13 @@ public interface CardTransactionService {
    * <p>The card channel is closed if prepareReleaseCardChannel is called before this command.
    *
    * @param pin The PIN code value (4-byte long byte array).
-   * @return The object instance.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @return The current instance.
    * @throws UnsupportedOperationException If the PIN feature is not available for this card
+   * @throws IllegalArgumentException If the provided argument is out of range.
    * @throws IllegalStateException If commands have been prepared before invoking this process
    *     method.
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
+   *     errors)
    * @since 1.0
    */
   CardTransactionService processVerifyPin(byte[] pin);
@@ -513,8 +540,13 @@ public interface CardTransactionService {
    * <p>E.g. "1234" will be transmitted as { 0x31,0x32,0x33,0x34 }
    *
    * @param pin An ASCII string (4-character long).
-   * @return The object instance.
-   * @see #processVerifyPin(byte[])
+   * @return The current instance.
+   * @throws UnsupportedOperationException If the PIN feature is not available for this card
+   * @throws IllegalArgumentException If the provided argument is out of range.
+   * @throws IllegalStateException If commands have been prepared before invoking this process
+   *     method.
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
+   *     errors)
    * @since 1.0
    */
   CardTransactionService processVerifyPin(String pin);
@@ -598,14 +630,15 @@ public interface CardTransactionService {
    * <p><i>Note: to understand in detail how the secure session works please refer to the card
    * specification documents.</i>
    *
-   * @param WriteAccessLevel An {@link WriteAccessLevel} enum entry.
-   * @return The object instance.
-   * @throws IllegalStateException if no {@link CardSecuritySetting} is available
+   * @param writeAccessLevel An {@link WriteAccessLevel} enum entry.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided argument is null.
+   * @throws IllegalStateException If no {@link CardSecuritySetting} is available
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */
-  CardTransactionService processOpening(WriteAccessLevel WriteAccessLevel);
+  CardTransactionService processOpening(WriteAccessLevel writeAccessLevel);
 
   /**
    * Terminates the Secure Session sequence started with {@link #processOpening(WriteAccessLevel)}.
@@ -654,6 +687,7 @@ public interface CardTransactionService {
    *       possibly SV signature) are sent to the SAM for verification.
    * </ul>
    *
+   * @throws IllegalStateException If no session is open.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
@@ -667,6 +701,7 @@ public interface CardTransactionService {
    *
    * <p>Clean up internal data and status.
    *
+   * @throws IllegalStateException If no session is open.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0

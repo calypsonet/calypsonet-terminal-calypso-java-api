@@ -17,14 +17,19 @@ package org.calypsonet.terminal.calypso.transaction;
  * @since 1.0
  */
 public enum SvAction {
+
   /**
    * In the case of a {@link SvOperation#RELOAD}, loads a positive amount; in the case of a {@link
    * SvOperation#DEBIT}, debits a positive amount
+   *
+   * @since 1.0
    */
   DO,
   /**
    * In the case of a {@link SvOperation#RELOAD}, loads a negative amount; in the case of a {@link
    * SvOperation#DEBIT}, cancels, totally or partially, a previous debit.
+   *
+   * @since 1.0
    */
   UNDO
 }

@@ -34,7 +34,7 @@ public interface FileData {
   /**
    * Gets a reference to the known content of a specific record.
    *
-   * @param numRecord the record number.
+   * @param numRecord The record number.
    * @return a not empty reference to the record content.
    * @throws NoSuchElementException if record #numRecord is not set.
    * @since 1.0
@@ -44,9 +44,9 @@ public interface FileData {
   /**
    * Gets a copy of a known content subset of a specific record from dataOffset to dataLength.
    *
-   * @param numRecord the record number.
-   * @param dataOffset the offset index (should be {@code >=} 0).
-   * @param dataLength the data length (should be {@code >=} 1).
+   * @param numRecord The record number.
+   * @param dataOffset The offset index (should be {@code >=} 0).
+   * @param dataLength The data length (should be {@code >=} 1).
    * @return a copy not empty of the record subset content.
    * @throws IllegalArgumentException if dataOffset {@code <} 0 or dataLength {@code <} 1.
    * @throws NoSuchElementException if record #numRecord is not set.

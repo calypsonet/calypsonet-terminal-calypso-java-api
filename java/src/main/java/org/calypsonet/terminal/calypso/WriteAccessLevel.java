@@ -12,29 +12,38 @@
 package org.calypsonet.terminal.calypso;
 
 /**
- * Definition of the write access levels of the Calypso card Secure Session inducing the use of the
- * issuer, reload or debit key.
+ * Enumeration of the write access levels for the Calypso card Secure Session.
+ *
+ * <p>Each level induces the use of one of the 3 session key levels.
  *
  * @since 1.0
  */
 public enum WriteAccessLevel {
 
   /**
-   * For card personalization operations.
+   * For personalization, load and debit operations.
+   *
+   * <p>The <b>issuer key</b> will be used.
    *
    * @since 1.0
    */
   PERSONALIZATION,
+
   /**
-   * For reloading/selling operations.
+   * For load and debit operations only.
+   *
+   * <p>The <b>load key</b> will be used.
    *
    * @since 1.0
    */
   LOAD,
+
   /**
-   * For debit/validation operations.
+   * For debit operations only.
+   *
+   * <p>The <b>debit key</b> will be used.
    *
    * @since 1.0
    */
-  DEBIT;
+  DEBIT
 }

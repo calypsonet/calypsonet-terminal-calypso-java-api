@@ -17,8 +17,16 @@ package org.calypsonet.terminal.calypso.transaction;
  * @since 1.0
  */
 public enum SvOperation {
-  /** Increase the balance of the stored value */
+  /**
+   * Increase the balance of the stored value
+   *
+   * @since 1.0
+   */
   RELOAD,
-  /** Decrease the balance of the stored value */
+  /**
+   * Decrease the balance of the stored value
+   *
+   * @since 1.0
+   */
   DEBIT
 }

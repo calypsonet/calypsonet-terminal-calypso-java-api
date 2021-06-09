@@ -68,10 +68,6 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Gets the Calypso application serial number as an array of bytes.
    *
-   * <p>The serial number for the application, is unique ID for the card. <br>
-   * The difference with getCalypsoSerialNumber is that the two possible bytes (MSB) of validity
-   * date are here forced to zero.
-   *
    * @return A not null byte array containing the Application Serial Number (8 bytes).
    * @since 1.0
    */
@@ -191,7 +187,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
    *
-   * @param sfi the SFI to search.
+   * @param sfi The SFI to search.
    * @return a not null reference.
    * @throws NoSuchElementException if requested EF is not found.
    * @since 1.0
@@ -204,7 +200,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
    *
-   * @param lid the LID to search.
+   * @param lid The LID to search.
    * @return a not null reference.
    * @throws NoSuchElementException if requested EF is not found.
    * @since 1.0

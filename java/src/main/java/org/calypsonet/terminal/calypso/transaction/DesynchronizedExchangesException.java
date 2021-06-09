@@ -12,12 +12,18 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates a desynchronization of the APDU exchanges.<br>
- * This means that the number of APDU requests is different from the number of APDU responses.
+ * Indicates a desynchronization of the APDU exchanges.
+ *
+ * <p>This means that the number of APDU requests is different from the number of APDU responses.
+ *
+ * @since 1.0
  */
 public class DesynchronizedExchangesException extends CardTransactionException {
 
-  /** @param message the message to identify the exception context */
+  /**
+   * @param message The message to identify the exception context
+   * @since 1.0
+   */
   public DesynchronizedExchangesException(String message) {
     super(message);
   }

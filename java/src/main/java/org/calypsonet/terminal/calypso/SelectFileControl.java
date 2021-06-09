@@ -12,16 +12,31 @@
 package org.calypsonet.terminal.calypso;
 
 /**
- * Definitions governing the expected behavior of the selection command (see the specifics of this
- * command in the ISO7816-4 standard and the Calypso specification)
+ * Enumeration of all expected behaviors of the selection command (see the specifics of this command
+ * in the ISO7816-4 standard and the Calypso specification).
  *
  * @since 1.0
  */
 public enum SelectFileControl {
-  /** The first EF of the current Calypso DF */
+
+  /**
+   * The first EF of the current Calypso DF
+   *
+   * @since 1.0
+   */
   FIRST_EF,
-  /** The next EF of the current Calypso DF */
+
+  /**
+   * The next EF of the current Calypso DF
+   *
+   * @since 1.0
+   */
   NEXT_EF,
-  /** The Calypso DF */
+
+  /**
+   * The Calypso DF
+   *
+   * @since 1.0
+   */
   CURRENT_DF
 }

@@ -12,12 +12,16 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * The exception {@code CardTransactionException} is the parent abstract class of all Calypso card
- * transaction functional exceptions.
+ * Parent abstract class of all Calypso card transaction functional exceptions.
+ *
+ * @since 1.0
  */
 public abstract class CardTransactionException extends RuntimeException {
 
-  /** @param message the message to identify the exception context */
+  /**
+   * @param message The message to identify the exception context
+   * @since 1.0
+   */
   protected CardTransactionException(String message) {
     super(message);
   }
@@ -25,8 +29,9 @@ public abstract class CardTransactionException extends RuntimeException {
   /**
    * Encapsulates a lower level card transaction exception
    *
-   * @param message message to identify the exception context.
-   * @param cause the cause.
+   * @param message Message to identify the exception context.
+   * @param cause The cause.
+   * @since 1.0
    */
   protected CardTransactionException(String message, Throwable cause) {
     super(message, cause);
