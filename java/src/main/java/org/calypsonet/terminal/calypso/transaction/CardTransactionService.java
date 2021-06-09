@@ -437,8 +437,8 @@ public interface CardTransactionService {
   /**
    * Schedules the execution of a <b>Invalidate</b> command.
    *
-   * <p>This command is usually executed within a secure session with the SESSION_LVL_DEBIT key
-   * (depends on the access rights given to this command in the file structure of the card).
+   * <p>This command is usually executed within a secure session with the DEBIT key (depends on the
+   * access rights given to this command in the file structure of the card).
    *
    * @throws IllegalStateException If the card is already invalidated.
    * @return The current instance.
@@ -449,7 +449,7 @@ public interface CardTransactionService {
   /**
    * Schedules the execution of a <b>Rehabilitate</b> command.
    *
-   * <p>This command is usually executed within a secure session with the SESSION_LVL_PERSO key
+   * <p>This command is usually executed within a secure session with the PERSONALIZATION key
    * (depends on the access rights given to this command in the file structure of the card).
    *
    * @return The current instance.

@@ -26,6 +26,18 @@ import org.calypsonet.terminal.reader.CardReader;
 public interface CardSecuritySetting {
 
   /**
+   * Defines the SAM and the reader through which it is accessible to be used to handle the relevant
+   * cryptographic operations.
+   *
+   * @param samReader The SAM reader.
+   * @param calypsoSam The Calypso SAM.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the arguments is null.
+   * @since 1.0
+   */
+  CardSecuritySetting setSamResource(CardReader samReader, CalypsoSam calypsoSam);
+
+  /**
    * Enables multiple session mode to allow more changes to the card than the session buffer can
    * handle.
    *
