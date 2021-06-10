@@ -42,7 +42,7 @@ import org.calypsonet.terminal.reader.CardReader;
  *
  * @since 1.0
  */
-public interface CardTransactionService {
+public interface CardTransactionManager {
 
   /**
    * Gets the reader used to communicate with the card on which the transaction is performed.
@@ -87,7 +87,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If the provided lid is not 2 bytes long.
    * @since 1.0
    */
-  CardTransactionService prepareSelectFile(byte[] lid);
+  CardTransactionManager prepareSelectFile(byte[] lid);
 
   /**
    * Schedules the execution of a <b>Select File</b> command using a navigation selectFileControl
@@ -101,7 +101,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If selectFileControl is null.
    * @since 1.0
    */
-  CardTransactionService prepareSelectFile(SelectFileControl selectFileControl);
+  CardTransactionManager prepareSelectFile(SelectFileControl selectFileControl);
 
   /**
    * Schedules the execution of a <b>Read Records</b> command to read a single record from the
@@ -119,7 +119,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided arguments is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareReadRecordFile(byte sfi, int recordNumber);
+  CardTransactionManager prepareReadRecordFile(byte sfi, int recordNumber);
 
   /**
    * Schedules the execution of a <b>Read Records</b> command to read one or more records from the
@@ -140,7 +140,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareReadRecordFile(
+  CardTransactionManager prepareReadRecordFile(
       byte sfi, int firstRecordNumber, int numberOfRecords, int recordSize);
 
   /**
@@ -162,7 +162,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareReadCounterFile(byte sfi, int countersNumber);
+  CardTransactionManager prepareReadCounterFile(byte sfi, int countersNumber);
 
   /**
    * Schedules the execution of a <b>Verify Pin</b> command without PIN presentation in order to get
@@ -178,7 +178,7 @@ public interface CardTransactionService {
    * @throws UnsupportedOperationException If the PIN feature is not available for this card.
    * @since 1.0
    */
-  CardTransactionService prepareCheckPinStatus();
+  CardTransactionManager prepareCheckPinStatus();
 
   /**
    * Schedules the execution of a <b>Append Record</b> command to adds the data provided in the
@@ -194,7 +194,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareAppendRecord(byte sfi, byte[] recordData);
+  CardTransactionManager prepareAppendRecord(byte sfi, byte[] recordData);
 
   /**
    * Schedules the execution of a <b>Update Record</b> command to overwrites the target file's
@@ -212,7 +212,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareUpdateRecord(byte sfi, int recordNumber, byte[] recordData);
+  CardTransactionManager prepareUpdateRecord(byte sfi, int recordNumber, byte[] recordData);
 
   /**
    * Schedules the execution of a <b>Write Record</b> command to updates the target file's record
@@ -230,7 +230,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareWriteRecord(byte sfi, int recordNumber, byte[] recordData);
+  CardTransactionManager prepareWriteRecord(byte sfi, int recordNumber, byte[] recordData);
 
   /**
    * Schedules the execution of a <b>Increase command</b> command to increase the target counter.
@@ -246,7 +246,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareIncreaseCounter(byte sfi, int counterNumber, int incValue);
+  CardTransactionManager prepareIncreaseCounter(byte sfi, int counterNumber, int incValue);
 
   /**
    * Schedules the execution of a <b>Decrease command</b> command to decrease the target counter.
@@ -262,7 +262,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareDecreaseCounter(byte sfi, int counterNumber, int decValue);
+  CardTransactionManager prepareDecreaseCounter(byte sfi, int counterNumber, int decValue);
 
   /**
    * Schedules the execution of a command to set the value of the target counter.
@@ -293,7 +293,7 @@ public interface CardTransactionService {
    * @throws IllegalStateException If the current counter value is unknown.
    * @since 1.0
    */
-  CardTransactionService prepareSetCounter(byte sfi, int counterNumber, int newValue);
+  CardTransactionManager prepareSetCounter(byte sfi, int counterNumber, int newValue);
 
   /**
    * Schedules the execution of a <b>SV Get</b> command to prepare an SV operation or simply
@@ -313,7 +313,7 @@ public interface CardTransactionService {
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
    * @since 1.0
    */
-  CardTransactionService prepareSvGet(SvOperation svOperation, SvAction svAction);
+  CardTransactionManager prepareSvGet(SvOperation svOperation, SvAction svAction);
 
   /**
    * Schedules the execution of a <b>SV Reload</b> command to increase the current SV balance and
@@ -335,7 +335,7 @@ public interface CardTransactionService {
    *     errors)
    * @since 1.0
    */
-  CardTransactionService prepareSvReload(int amount, byte[] date, byte[] time, byte[] free);
+  CardTransactionManager prepareSvReload(int amount, byte[] date, byte[] time, byte[] free);
 
   /**
    * Schedules the execution of a <b>SV Reload</b> command to increase the current SV balance.
@@ -355,7 +355,7 @@ public interface CardTransactionService {
    *     errors)
    * @since 1.0
    */
-  CardTransactionService prepareSvReload(int amount);
+  CardTransactionManager prepareSvReload(int amount);
 
   /**
    * Schedules the execution of a <b>SV Debit</b> or <b>SV Undebit</b> command to increase the
@@ -378,7 +378,7 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareSvDebit(int amount, byte[] date, byte[] time);
+  CardTransactionManager prepareSvDebit(int amount, byte[] date, byte[] time);
 
   /**
    * Schedules the execution of a <b>SV Debit</b> or <b>SV Undebit</b> command to increase the
@@ -406,10 +406,12 @@ public interface CardTransactionService {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0
    */
-  CardTransactionService prepareSvDebit(int amount);
+  CardTransactionManager prepareSvDebit(int amount);
 
   /**
    * Schedules the execution of <b>Read Records</b> commands to read all SV logs.
+   *
+   * <p>This method is
    *
    * <p>The SV transaction logs are contained in two files with fixed identifiers:
    *
@@ -432,7 +434,7 @@ public interface CardTransactionService {
    * @return The current instance.
    * @since 1.0
    */
-  CardTransactionService prepareSvReadAllLogs();
+  CardTransactionManager prepareSvReadAllLogs();
 
   /**
    * Schedules the execution of a <b>Invalidate</b> command.
@@ -444,7 +446,7 @@ public interface CardTransactionService {
    * @return The current instance.
    * @since 1.0
    */
-  CardTransactionService prepareInvalidate();
+  CardTransactionManager prepareInvalidate();
 
   /**
    * Schedules the execution of a <b>Rehabilitate</b> command.
@@ -456,7 +458,7 @@ public interface CardTransactionService {
    * @throws IllegalStateException If the card is not invalidated.
    * @since 1.0
    */
-  CardTransactionService prepareRehabilitate();
+  CardTransactionManager prepareRehabilitate();
 
   /**
    * Requests the closing of the card channel.
@@ -474,7 +476,7 @@ public interface CardTransactionService {
    * @return The current instance.
    * @since 1.0
    */
-  CardTransactionService prepareReleaseCardChannel();
+  CardTransactionManager prepareReleaseCardChannel();
 
   /**
    * Process all previously prepared card commands outside or inside a Secure Session.
@@ -500,7 +502,7 @@ public interface CardTransactionService {
    *     errors)
    * @since 1.0
    */
-  CardTransactionService processCardCommands();
+  CardTransactionManager processCardCommands();
 
   /**
    * Performs a PIN verification, in order to authenticate the card holder and/or unlock access to
@@ -511,9 +513,9 @@ public interface CardTransactionService {
    * (by default the transmission is encrypted).
    *
    * <p>If the execution is done out of session but an encrypted transmission is requested, then
-   * CardTransactionService must be constructed with {@link CardSecuritySetting}
+   * CardTransactionManager must be constructed with {@link CardSecuritySetting}
    *
-   * <p>If CardTransactionService is constructed without {@link CardSecuritySetting} the
+   * <p>If CardTransactionManager is constructed without {@link CardSecuritySetting} the
    * transmission in done in plain.
    *
    * <p>The card channel is closed if prepareReleaseCardChannel is called before this command.
@@ -528,7 +530,7 @@ public interface CardTransactionService {
    *     errors)
    * @since 1.0
    */
-  CardTransactionService processVerifyPin(byte[] pin);
+  CardTransactionManager processVerifyPin(byte[] pin);
 
   /**
    * Invokes {@link #processVerifyPin(byte[])} with a string converted into an array of bytes as
@@ -549,7 +551,7 @@ public interface CardTransactionService {
    *     errors)
    * @since 1.0
    */
-  CardTransactionService processVerifyPin(String pin);
+  CardTransactionManager processVerifyPin(String pin);
 
   /**
    * Opens a Calypso Secure Session and then executes all previously prepared commands.
@@ -566,10 +568,10 @@ public interface CardTransactionService {
    *
    * <p>Each of the steps in this sequence may or may not be preceded by the preparation of one or
    * more commands and ends with an update of the {@link CalypsoCard} object provided when
-   * CardTransactionService was created.
+   * CardTransactionManager was created.
    *
    * <p>As a prerequisite for invoking this method, since the Calypso Secure Session involves the
-   * use of a SAM, the CardTransactionService must have been built in secure mode, i.e. the
+   * use of a SAM, the CardTransactionManager must have been built in secure mode, i.e. the
    * constructor used must be the one expecting a reference to a valid {@link CardSecuritySetting}
    * object, otherwise a {@link IllegalStateException} is raised.
    *
@@ -620,7 +622,7 @@ public interface CardTransactionService {
    *   <li>All data received in response to the open secure session command and the responses to the
    *       prepared commands are also stored for later calculation of the digest.
    *   <li>If a list of authorized KVCs has been defined in {@link CardSecuritySetting} and the KVC
-   *       of the card does not belong to this list then a {@link UnauthorizedKvcException} is
+   *       of the card does not belong to this list then a {@link UnauthorizedKeyException} is
    *       thrown.
    * </ul>
    *
@@ -638,7 +640,7 @@ public interface CardTransactionService {
    *     errors)
    * @since 1.0
    */
-  CardTransactionService processOpening(WriteAccessLevel writeAccessLevel);
+  CardTransactionManager processOpening(WriteAccessLevel writeAccessLevel);
 
   /**
    * Terminates the Secure Session sequence started with {@link #processOpening(WriteAccessLevel)}.

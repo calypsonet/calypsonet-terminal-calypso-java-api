@@ -22,7 +22,7 @@ import org.calypsonet.terminal.reader.selection.spi.SmartCard;
  *
  * <p>An instance of CalypsoCard is obtained by casting the {@link SmartCard} object from the
  * selection process defined by the <b>Terminal Reader API</b> and updated by the {@link
- * org.calypsonet.terminal.calypso.transaction.CardTransactionService}.
+ * org.calypsonet.terminal.calypso.transaction.CardTransactionManager}.
  *
  * <p>The various information contained in CalypsoCard includes:
  *
@@ -34,7 +34,7 @@ import org.calypsonet.terminal.reader.selection.spi.SmartCard;
  *   <li>The management information of the modification buffer
  *   <li>The invalidation status
  *   <li>The files, counters, SV data read or modified during the execution of the processes defined
- *       by the card transaction service.
+ *       by the card transaction manager.
  * </ul>
  *
  * @since 1.0
@@ -144,36 +144,6 @@ public interface CalypsoCard extends SmartCard {
   byte getSessionModification();
 
   /**
-   * Indicates whether the Confidential Session Mode is supported or not (since rev 3.2).
-   *
-   * <p>This boolean is interpreted from the Application Type byte
-   *
-   * @return True if the Confidential Session Mode is supported.
-   * @since 1.0
-   */
-  boolean isConfidentialSessionModeSupported();
-
-  /**
-   * Indicates if the ratification is done on deselect (ratification command not necessary)
-   *
-   * <p>This boolean is interpreted from the Application Type byte
-   *
-   * @return True if the ratification command is required.
-   * @since 1.0
-   */
-  boolean isDeselectRatificationSupported();
-
-  /**
-   * Indicates whether the Public Authentication is supported or not (since rev 3.3).
-   *
-   * <p>This boolean is interpreted from the Application Type byte
-   *
-   * @return True if the Public Authentication is supported.
-   * @since 1.0
-   */
-  boolean isPublicAuthenticationSupported();
-
-  /**
    * Gets the DF metadata.
    *
    * @return Null if is not set.
@@ -236,6 +206,36 @@ public interface CalypsoCard extends SmartCard {
    * @since 1.0
    */
   boolean isDfRatified();
+
+  /**
+   * Indicates whether the Public Key Authentication is supported or not (since rev 3.3).
+   *
+   * <p>This boolean is interpreted from the Application Type byte
+   *
+   * @return True if the Public Key Authentication is supported.
+   * @since 1.0
+   */
+  boolean isPkiModeSupported();
+
+  /**
+   * Indicates whether the Extended Mode is supported or not (since rev 3.2).
+   *
+   * <p>This boolean is interpreted from the Application Type byte
+   *
+   * @return True if the Extended Mode is supported.
+   * @since 1.0
+   */
+  boolean isExtendedModeSupported();
+
+  /**
+   * Indicates if the ratification is done on deselect (ratification command not necessary).
+   *
+   * <p>This boolean is interpreted from the Application Type byte
+   *
+   * @return True if the ratification on deselect is supported.
+   * @since 1.0
+   */
+  boolean isRatificationOnDeselectSupported();
 
   /**
    * Indicates whether the card has the Calypso PIN feature.

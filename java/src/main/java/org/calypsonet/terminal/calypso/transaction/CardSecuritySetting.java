@@ -264,20 +264,20 @@ public interface CardSecuritySetting {
    *
    * @param kif The KIF value.
    * @param kvc The KVC value.
-   * @return True if the KIF/KVC pair is authorized.
+   * @return False if KIF or KVC is null or unauthorized.
    * @since 1.0
    */
-  boolean isSessionKeyAuthorized(byte kif, byte kvc);
+  boolean isSessionKeyAuthorized(Byte kif, Byte kvc);
 
   /**
    * Indicates if the KIF/KVC pair is authorized for a SV operation.
    *
    * @param kif The KIF value.
    * @param kvc The KVC value.
-   * @return True if the KIF/KVC pair is authorized.
+   * @return False if KIF or KVC is null or unauthorized.
    * @since 1.0
    */
-  boolean isSvKeyAuthorized(byte kif, byte kvc);
+  boolean isSvKeyAuthorized(Byte kif, Byte kvc);
 
   /**
    * Gets the KIF value of the PIN ciphering key.
@@ -285,7 +285,7 @@ public interface CardSecuritySetting {
    * @return Null if no KIF is available.
    * @since 1.0
    */
-  byte getPinCipheringKif();
+  Byte getPinCipheringKif();
 
   /**
    * Gets the KVC value of the PIN ciphering key.
@@ -293,5 +293,5 @@ public interface CardSecuritySetting {
    * @return Null if no KVC is available.
    * @since 1.0
    */
-  byte getPinCipheringKvc();
+  Byte getPinCipheringKvc();
 }
