@@ -32,7 +32,8 @@ public interface CardSecuritySetting {
    * @param samReader The SAM reader.
    * @param calypsoSam The Calypso SAM.
    * @return The current instance.
-   * @throws IllegalArgumentException If one of the arguments is null.
+   * @throws IllegalArgumentException If one of the arguments is null or if the product type of
+   *     {@link CalypsoSam} is equal to {@link CalypsoSam.ProductType#UNKNOWN}.
    * @since 1.0
    */
   CardSecuritySetting setSamResource(CardReader samReader, CalypsoSam calypsoSam);
@@ -175,7 +176,8 @@ public interface CardSecuritySetting {
   /**
    * Gets the SAM used for secured operations.
    *
-   * @return Null if no SAM is set.
+   * @return Null if no SAM is set or a {@link CalypsoSam} having a {@link CalypsoSam.ProductType}
+   *     different from {@link CalypsoSam.ProductType#UNKNOWN}.
    * @since 1.0
    */
   CalypsoSam getCalypsoSam();

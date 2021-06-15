@@ -97,10 +97,41 @@ public interface CalypsoSam extends SmartCard {
    *
    * @since 1.0
    */
-  public enum ProductType {
+  enum ProductType {
+
+    /**
+     * SAM C1
+     *
+     * @since 1.0
+     */
     SAM_C1,
+
+    /**
+     * SAM S1E1
+     *
+     * @since 1.0
+     */
     SAM_S1E1,
+
+    /**
+     * SAM S1Dx
+     *
+     * @since 1.0
+     */
     SAM_S1Dx,
-    CSAM_F
+
+    /**
+     * SAM CSAM_F
+     *
+     * @since 1.0
+     */
+    CSAM_F,
+
+    /**
+     * Unidentified smart card.
+     *
+     * @since 1.0
+     */
+    UNKNOWN
   }
 }

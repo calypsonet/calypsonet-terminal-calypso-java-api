@@ -323,12 +323,56 @@ public interface CalypsoCard extends SmartCard {
    *
    * @since 1.0
    */
-  public enum ProductType {
-    PRIME_REV1_0,
-    PRIME_REV2_4,
-    PRIME_REV3,
+  enum ProductType {
+
+    /**
+     * Card Calypso Prime revision 1.x
+     *
+     * @since 1.0
+     */
+    PRIME_REViSION_1,
+
+    /**
+     * Card Calypso Prime revision 2.x
+     *
+     * @since 1.0
+     */
+    PRIME_REViSION_2,
+
+    /**
+     * Card Calypso Prime revision 3.x
+     *
+     * @since 1.0
+     */
+    PRIME_REViSION_3,
+
+    /**
+     * Applet Calypso HCE (Host Card Emulation) .
+     *
+     * @since 1.0
+     */
     HCE,
+
+    /**
+     * Card Calypso Light
+     *
+     * @since 1.0
+     */
     LIGHT,
-    BASIC
+
+    /**
+     * Card Calypso Basic
+     *
+     * @since 1.0
+     */
+    BASIC,
+
+    /**
+     * Application type is equal to 0 or FFh or if the data provided by the selection process is not
+     * properly formatted (bad TLV data).
+     *
+     * @since 1.0
+     */
+    UNKNOWN
   }
 }
