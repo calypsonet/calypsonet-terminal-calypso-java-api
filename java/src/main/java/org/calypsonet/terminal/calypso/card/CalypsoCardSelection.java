@@ -11,6 +11,7 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.card;
 
+import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.reader.selection.spi.CardSelection;
 
@@ -161,6 +162,19 @@ public interface CalypsoCardSelection extends CardSelection {
    * @since 1.0
    */
   CalypsoCardSelection prepareReadRecordFile(byte sfi, int recordNumber);
+
+  /**
+   * Adds a command APDU to retrieve the data indicated by the provided tag.
+   *
+   * <p>This method can be used to obtain FCI information when it is not provided directly by the
+   * select application (e.g. OMAPI case).
+   *
+   * @param tag The tag to use.
+   * @return The object instance.
+   * @throws IllegalArgumentException If selectFileControl is null or unsupported.
+   * @since 1.0
+   */
+  CalypsoCardSelection prepareGetData(GetDataTag tag);
 
   /**
    * Navigation options through the different applications contained in the card according to the

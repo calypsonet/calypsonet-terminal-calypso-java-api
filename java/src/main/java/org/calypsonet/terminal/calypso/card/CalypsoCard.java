@@ -329,6 +329,7 @@ public interface CalypsoCard extends SmartCard {
     PRIME_REV3,
     HCE,
     LIGHT,
-    BASIC
+    BASIC,
+    UNKNOWN
   }
 }

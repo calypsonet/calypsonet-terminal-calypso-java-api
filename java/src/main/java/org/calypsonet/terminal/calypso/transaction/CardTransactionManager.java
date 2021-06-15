@@ -11,6 +11,7 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
+import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 import org.calypsonet.terminal.calypso.card.CalypsoCard;
@@ -102,6 +103,18 @@ public interface CardTransactionManager {
    * @since 1.0
    */
   CardTransactionManager prepareSelectFile(SelectFileControl selectFileControl);
+
+  /**
+   * Adds a command APDU to retrieve the data indicated by the provided tag.
+   *
+   * <p>The data returned by the command is used to update the current {@link CalypsoCard} object.
+   *
+   * @param tag The tag to use.
+   * @return The object instance.
+   * @throws IllegalArgumentException If selectFileControl is null or unsupported.
+   * @since 1.0
+   */
+  CardTransactionManager prepareGetData(GetDataTag tag);
 
   /**
    * Schedules the execution of a <b>Read Records</b> command to read a single record from the
