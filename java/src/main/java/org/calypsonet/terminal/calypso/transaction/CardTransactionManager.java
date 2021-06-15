@@ -56,7 +56,8 @@ public interface CardTransactionManager {
   /**
    * Gets the card on which the transaction is performed.
    *
-   * @return A not null reference.
+   * @return A not null {@link CalypsoCard} having a {@link CalypsoCard.ProductType} different from
+   *     {@link CalypsoCard.ProductType#UNKNOWN}.
    * @since 1.0
    */
   CalypsoCard getCalypsoCard();
@@ -111,7 +112,9 @@ public interface CardTransactionManager {
    *
    * @param tag The tag to use.
    * @return The object instance.
-   * @throws IllegalArgumentException If selectFileControl is null or unsupported.
+   * @throws IllegalArgumentException If tag is null.
+   * @throws UnsupportedOperationException If the Get Data command with the provided tag is not
+   *     supported.
    * @since 1.0
    */
   CardTransactionManager prepareGetData(GetDataTag tag);

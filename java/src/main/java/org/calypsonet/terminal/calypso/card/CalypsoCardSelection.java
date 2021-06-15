@@ -171,7 +171,9 @@ public interface CalypsoCardSelection extends CardSelection {
    *
    * @param tag The tag to use.
    * @return The object instance.
-   * @throws IllegalArgumentException If selectFileControl is null or unsupported.
+   * @throws IllegalArgumentException If tag is null.
+   * @throws UnsupportedOperationException If the Get Data command with the provided tag is not
+   *     supported.
    * @since 1.0
    */
   CalypsoCardSelection prepareGetData(GetDataTag tag);
