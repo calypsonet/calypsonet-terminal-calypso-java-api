@@ -50,6 +50,14 @@ public interface CalypsoCard extends SmartCard {
   ProductType getProductType();
 
   /**
+   * Indicates if the card is a Calypso HCE (Host Card Emulation) .
+   *
+   * @return True if the card is a Calypso HCE.
+   * @since 1.0
+   */
+  boolean isHce();
+
+  /**
    * Gets the DF name as an array of bytes.
    *
    * <p>The DF name is the name of the application DF as defined in ISO/IEC 7816-4.
@@ -345,13 +353,6 @@ public interface CalypsoCard extends SmartCard {
      * @since 1.0
      */
     PRIME_REViSION_3,
-
-    /**
-     * Applet Calypso HCE (Host Card Emulation) .
-     *
-     * @since 1.0
-     */
-    HCE,
 
     /**
      * Card Calypso Light
