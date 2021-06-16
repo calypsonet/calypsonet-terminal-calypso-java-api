@@ -338,21 +338,21 @@ public interface CalypsoCard extends SmartCard {
      *
      * @since 1.0
      */
-    PRIME_REViSION_1,
+    PRIME_REVISION_1,
 
     /**
      * Card Calypso Prime revision 2.x
      *
      * @since 1.0
      */
-    PRIME_REViSION_2,
+    PRIME_REVISION_2,
 
     /**
      * Card Calypso Prime revision 3.x
      *
      * @since 1.0
      */
-    PRIME_REViSION_3,
+    PRIME_REVISION_3,
 
     /**
      * Card Calypso Light
