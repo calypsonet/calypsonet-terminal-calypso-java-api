@@ -26,7 +26,7 @@ jobs:
           gpg --pinentry-mode loopback --passphrase "${{ secrets.OSSRH_GPG_SECRET_PASSWORD }}" --export-secret-key 568FD16F857171A0EC6D2C40742C84722FD2B235 > ~/.gradle/maven-central.gpg
           gpg --list-secret-keys --keyid-format LONG
       - name: Build and Publish
-        working-directory: ./java
+        working-directory: .
         run: |
           ./gradlew setVersion -P version=$(echo "${{ github.ref }}" | sed -e "s,^refs/tags/,,")
           ./gradlew release --info --stacktrace

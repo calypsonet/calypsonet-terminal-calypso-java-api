@@ -17,5 +17,5 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: Build and Test
-        working-directory: ./java
+        working-directory: .
         run: ./gradlew build test --info --stacktrace
