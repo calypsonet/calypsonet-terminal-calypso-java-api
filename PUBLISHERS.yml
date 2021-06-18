@@ -1,4 +1,4 @@
-url: https://github.com/calypsonet/calypsonet-terminal-card
+url: https://github.com/calypsonet/calypsonet-terminal-card-java-api
 organization:
   name: Calypso Networks Association
   url: https://calypsonet.org/
@@ -16,9 +16,7 @@ developers:
   - name: Pierre Terrée
     email: pierre.terree@calypsonet.org
 scm:
-  connection: scm:git:git://github.com/calypsonet/calypsonet-terminal-card.git
-  developerConnection: scm:git:https://github.com/calypsonet/calypsonet-terminal-card.git
-  url: https://github.com/calypsonet/calypsonet-terminal-card
+  connection: scm:git:git://github.com/calypsonet/calypsonet-terminal-card-java-api.git
+  developerConnection: scm:git:https://github.com/calypsonet/calypsonet-terminal-card-java-api.git
+  url: https://github.com/calypsonet/calypsonet-terminal-card-java-api
 ciManagement:
-#  system: Jenkins
-#  url: https://ci.eclipse.org/keyple/job/Keyple/job/calypsonet-terminal-card-api/
