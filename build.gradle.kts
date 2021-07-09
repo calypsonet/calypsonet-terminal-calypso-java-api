@@ -27,7 +27,7 @@ repositories {
     maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots")
 }
 dependencies {
-    implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.0-rc3")
+    implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.0-SNAPSHOT") { isChanging = true }
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.assertj:assertj-core:3.15.0")
 }
