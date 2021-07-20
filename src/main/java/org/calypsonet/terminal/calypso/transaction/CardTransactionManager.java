@@ -548,6 +548,8 @@ public interface CardTransactionManager {
    */
   CardTransactionManager processVerifyPin(byte[] pin);
 
+  CardTransactionManager processChangePin(byte[] pin);
+
   /**
    * Invokes {@link #processVerifyPin(byte[])} with a string converted into an array of bytes as
    * argument.
