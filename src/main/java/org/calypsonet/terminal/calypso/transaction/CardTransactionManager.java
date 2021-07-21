@@ -548,7 +548,26 @@ public interface CardTransactionManager {
    */
   CardTransactionManager processVerifyPin(byte[] pin);
 
-  CardTransactionManager processChangePin(byte[] pin);
+  /**
+   * Replaces the current PIN with the new value provided.
+   *
+   * <p>This command can be performed only out of a secure session. The new PIN code can be
+   * transmitted in plain text or encrypted according to the parameter set in CardSecuritySetting
+   * (by default the transmission is encrypted).
+   *
+   * <p>When the PIN is transmitted plain, this command must be preceded by a successful Verify PIN
+   * command (see {@link #processVerifyPin(byte[])}).
+   *
+   * @param newPin The new PIN code value (4-byte long byte array).
+   * @return The current instance.
+   * @throws UnsupportedOperationException If the PIN feature is not available for this card
+   * @throws IllegalArgumentException If the provided argument is out of range.
+   * @throws IllegalStateException If the command is executed while a secure session is open.
+   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
+   *     errors)
+   * @since 1.0
+   */
+  CardTransactionManager processChangePin(byte[] newPin);
 
   /**
    * Invokes {@link #processVerifyPin(byte[])} with a string converted into an array of bytes as
