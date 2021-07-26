@@ -549,25 +549,25 @@ public interface CardTransactionManager {
   CardTransactionManager processVerifyPin(byte[] pin);
 
   /**
-   * Invokes {@link #processVerifyPin(byte[])} with a string converted into an array of bytes as
-   * argument.
+   * Replaces the current PIN with the new value provided.
    *
-   * <p>The provided String is converted into an array of bytes and processed with {@link
-   * #processVerifyPin(byte[])}.
+   * <p>This command can be performed only out of a secure session. The new PIN code can be
+   * transmitted in plain text or encrypted according to the parameter set in CardSecuritySetting
+   * (by default the transmission is encrypted).
    *
-   * <p>E.g. "1234" will be transmitted as { 0x31,0x32,0x33,0x34 }
+   * <p>When the PIN is transmitted plain, this command must be preceded by a successful Verify PIN
+   * command (see {@link #processVerifyPin(byte[])}).
    *
-   * @param pin An ASCII string (4-character long).
+   * @param newPin The new PIN code value (4-byte long byte array).
    * @return The current instance.
    * @throws UnsupportedOperationException If the PIN feature is not available for this card
    * @throws IllegalArgumentException If the provided argument is out of range.
-   * @throws IllegalStateException If commands have been prepared before invoking this process
-   *     method.
+   * @throws IllegalStateException If the command is executed while a secure session is open.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0
    */
-  CardTransactionManager processVerifyPin(String pin);
+  CardTransactionManager processChangePin(byte[] newPin);
 
   /**
    * Opens a Calypso Secure Session and then executes all previously prepared commands.
