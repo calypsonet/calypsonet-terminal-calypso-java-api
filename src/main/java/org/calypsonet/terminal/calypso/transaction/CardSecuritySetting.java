@@ -176,21 +176,4 @@ public interface CardSecuritySetting {
    * @since 1.0
    */
   CardSecuritySetting setPinModificationCipheringKey(byte kif, byte kvc);
-
-  /**
-   * Gets the associated SAM reader to use for secured operations.
-   *
-   * @return Null if no SAM reader is set.
-   * @since 1.0
-   */
-  CardReader getSamReader();
-
-  /**
-   * Gets the SAM used for secured operations.
-   *
-   * @return Null if no SAM is set or a {@link CalypsoSam} having a {@link CalypsoSam.ProductType}
-   *     different from {@link CalypsoSam.ProductType#UNKNOWN}.
-   * @since 1.0
-   */
-  CalypsoSam getCalypsoSam();
 }
