@@ -14,13 +14,13 @@ package org.calypsonet.terminal.calypso.transaction;
 /**
  * Indicates that the SAM is revoked.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class SamRevokedException extends CardTransactionException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   public SamRevokedException(String message) {
     super(message);

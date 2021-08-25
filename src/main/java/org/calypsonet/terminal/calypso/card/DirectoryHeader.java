@@ -16,7 +16,7 @@ import org.calypsonet.terminal.calypso.WriteAccessLevel;
 /**
  * Calypso DF metadata.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface DirectoryHeader {
 
@@ -24,7 +24,7 @@ public interface DirectoryHeader {
    * Gets the associated LID.
    *
    * @return The LID.
-   * @since 1.0
+   * @since 1.0.0
    */
   short getLid();
 
@@ -32,7 +32,7 @@ public interface DirectoryHeader {
    * Gets the DF status.
    *
    * @return The DF status byte.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getDfStatus();
 
@@ -40,7 +40,7 @@ public interface DirectoryHeader {
    * Gets a reference to access conditions.
    *
    * @return A not empty byte array.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getAccessConditions();
 
@@ -48,7 +48,7 @@ public interface DirectoryHeader {
    * Gets a reference to keys indexes.
    *
    * @return A not empty byte array.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getKeyIndexes();
 
@@ -58,7 +58,7 @@ public interface DirectoryHeader {
    * @param writeAccessLevel The write access level (should be not null).
    * @return The KIF value.
    * @throws IllegalArgumentException if writeAccessLevel is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getKif(WriteAccessLevel writeAccessLevel);
 
@@ -68,7 +68,7 @@ public interface DirectoryHeader {
    * @param writeAccessLevel The write access level (should be not null).
    * @return The KVC value.
    * @throws IllegalArgumentException if writeAccessLevel is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getKvc(WriteAccessLevel writeAccessLevel);
 }

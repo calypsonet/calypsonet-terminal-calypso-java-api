@@ -14,7 +14,7 @@ package org.calypsonet.terminal.calypso.card;
 /**
  * Record of a Stored Value load log.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface SvLoadLogRecord {
 
@@ -22,7 +22,7 @@ public interface SvLoadLogRecord {
    * Gets the raw data of the SV load log record.
    *
    * @return A byte array.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getRawData();
 
@@ -30,7 +30,7 @@ public interface SvLoadLogRecord {
    * Gets the load date as an array of bytes
    *
    * @return A 2-byte byte array
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getLoadDate();
 
@@ -38,7 +38,7 @@ public interface SvLoadLogRecord {
    * Gets the load time as an array of bytes
    *
    * @return A 2-byte byte array
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getLoadTime();
 
@@ -46,7 +46,7 @@ public interface SvLoadLogRecord {
    * Gets the load amount value
    *
    * @return An int
-   * @since 1.0
+   * @since 1.0.0
    */
   int getAmount();
 
@@ -54,7 +54,7 @@ public interface SvLoadLogRecord {
    * Gets the SV balance value
    *
    * @return An int
-   * @since 1.0
+   * @since 1.0.0
    */
   int getBalance();
 
@@ -62,7 +62,7 @@ public interface SvLoadLogRecord {
    * Gets the free bytes as an array of bytes
    *
    * @return A 2-byte byte array
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getFreeData();
 
@@ -70,7 +70,7 @@ public interface SvLoadLogRecord {
    * Gets the KVC of the load key (as given in the last SV Reload)
    *
    * @return A byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getKvc();
 
@@ -78,7 +78,7 @@ public interface SvLoadLogRecord {
    * Gets the SAM ID as an array of bytes
    *
    * @return A 4-byte byte array
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getSamId();
 
@@ -86,7 +86,7 @@ public interface SvLoadLogRecord {
    * Gets the SAM transaction number value as an int
    *
    * @return An int
-   * @since 1.0
+   * @since 1.0.0
    */
   int getSamTNum();
 
@@ -94,7 +94,7 @@ public interface SvLoadLogRecord {
    * Gets the SV transaction number value as an int
    *
    * @return An int
-   * @since 1.0
+   * @since 1.0.0
    */
   int getSvTNum();
 }

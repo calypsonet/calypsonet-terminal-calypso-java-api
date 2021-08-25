@@ -15,13 +15,13 @@ package org.calypsonet.terminal.calypso.transaction;
  * Indicates that the transaction cannot be done in an atomic way because the capacity of the
  * session buffer is not sufficient.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class AtomicTransactionException extends CardTransactionException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   public AtomicTransactionException(String message) {
     super(message);

@@ -15,13 +15,13 @@ package org.calypsonet.terminal.calypso.transaction;
  * Indicates that the "Stored Value" session is not authentic because the signature of the card is
  * incorrect.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class SvAuthenticationException extends CardTransactionException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   public SvAuthenticationException(String message) {
     super(message);
@@ -32,7 +32,7 @@ public class SvAuthenticationException extends CardTransactionException {
    *
    * @param message Message to identify the exception context.
    * @param cause The cause.
-   * @since 1.0
+   * @since 1.0.0
    */
   public SvAuthenticationException(String message, Throwable cause) {
     super(message, cause);

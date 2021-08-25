@@ -41,7 +41,7 @@ import org.calypsonet.terminal.reader.CardReader;
  *
  * <p>Technical or data errors, security conditions, etc. are reported as exceptions.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface CardTransactionManager {
 
@@ -49,7 +49,7 @@ public interface CardTransactionManager {
    * Gets the reader used to communicate with the card on which the transaction is performed.
    *
    * @return A not null reference.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardReader getCardReader();
 
@@ -58,7 +58,7 @@ public interface CardTransactionManager {
    *
    * @return A not null {@link CalypsoCard} having a {@link CalypsoCard.ProductType} different from
    *     {@link CalypsoCard.ProductType#UNKNOWN}.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCard getCalypsoCard();
 
@@ -66,7 +66,7 @@ public interface CardTransactionManager {
    * Gets the settings defining the security parameters of the transaction.
    *
    * @return Null if the transaction does not use security settings.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting getCardSecuritySetting();
 
@@ -74,7 +74,7 @@ public interface CardTransactionManager {
    * Gets the audit data of the transaction.
    *
    * @return Null if there is no audit data.
-   * @since 1.0
+   * @since 1.0.0
    */
   String getTransactionAuditData();
 
@@ -87,7 +87,7 @@ public interface CardTransactionManager {
    * @param lid The LID of the EF to select.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided lid is not 2 bytes long.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSelectFile(byte[] lid);
 
@@ -101,7 +101,7 @@ public interface CardTransactionManager {
    * @param selectFileControl A {@link SelectFileControl} enum entry.
    * @return The current instance.
    * @throws IllegalArgumentException If selectFileControl is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSelectFile(SelectFileControl selectFileControl);
 
@@ -115,7 +115,7 @@ public interface CardTransactionManager {
    * @throws IllegalArgumentException If tag is null.
    * @throws UnsupportedOperationException If the Get Data command with the provided tag is not
    *     supported.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareGetData(GetDataTag tag);
 
@@ -133,7 +133,7 @@ public interface CardTransactionManager {
    * @param recordNumber The record number to read.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided arguments is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareReadRecordFile(byte sfi, int recordNumber);
 
@@ -154,7 +154,7 @@ public interface CardTransactionManager {
    * @param recordSize The record length.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareReadRecordFile(
       byte sfi, int firstRecordNumber, int numberOfRecords, int recordSize);
@@ -176,7 +176,7 @@ public interface CardTransactionManager {
    * @param countersNumber The number of the last counter to be read.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareReadCounterFile(byte sfi, int countersNumber);
 
@@ -192,7 +192,7 @@ public interface CardTransactionManager {
    *
    * @return The current instance.
    * @throws UnsupportedOperationException If the PIN feature is not available for this card.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareCheckPinStatus();
 
@@ -208,7 +208,7 @@ public interface CardTransactionManager {
    * @param recordData The new record data to write.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareAppendRecord(byte sfi, byte[] recordData);
 
@@ -226,7 +226,7 @@ public interface CardTransactionManager {
    *     left unchanged.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareUpdateRecord(byte sfi, int recordNumber, byte[] recordData);
 
@@ -244,7 +244,7 @@ public interface CardTransactionManager {
    *     beyond length are left unchanged.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareWriteRecord(byte sfi, int recordNumber, byte[] recordData);
 
@@ -260,7 +260,7 @@ public interface CardTransactionManager {
    *     [FFFFFFh])
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareIncreaseCounter(byte sfi, int counterNumber, int incValue);
 
@@ -276,7 +276,7 @@ public interface CardTransactionManager {
    *     [FFFFFFh])
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareDecreaseCounter(byte sfi, int counterNumber, int decValue);
 
@@ -307,7 +307,7 @@ public interface CardTransactionManager {
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @throws IllegalStateException If the current counter value is unknown.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSetCounter(byte sfi, int counterNumber, int newValue);
 
@@ -327,7 +327,7 @@ public interface CardTransactionManager {
    * @return The current instance.
    * @throws IllegalArgumentException If one of the arguments is null.
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSvGet(SvOperation svOperation, SvAction svAction);
 
@@ -349,7 +349,7 @@ public interface CardTransactionManager {
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSvReload(int amount, byte[] date, byte[] time, byte[] free);
 
@@ -369,7 +369,7 @@ public interface CardTransactionManager {
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSvReload(int amount);
 
@@ -392,7 +392,7 @@ public interface CardTransactionManager {
    * @param time 2-byte free value.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSvDebit(int amount, byte[] date, byte[] time);
 
@@ -420,7 +420,7 @@ public interface CardTransactionManager {
    *     subtracted and 0..32768 when added.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSvDebit(int amount);
 
@@ -448,7 +448,7 @@ public interface CardTransactionManager {
    *
    * @return The current instance.
    * @throws UnsupportedOperationException If the application is not of type Stored Value.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareSvReadAllLogs();
 
@@ -460,7 +460,7 @@ public interface CardTransactionManager {
    *
    * @throws IllegalStateException If the card is already invalidated.
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareInvalidate();
 
@@ -472,7 +472,7 @@ public interface CardTransactionManager {
    *
    * @return The current instance.
    * @throws IllegalStateException If the card is not invalidated.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareRehabilitate();
 
@@ -490,7 +490,7 @@ public interface CardTransactionManager {
    * processCardCommands must be made to effectively close the channel.
    *
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager prepareReleaseCardChannel();
 
@@ -516,7 +516,7 @@ public interface CardTransactionManager {
    * @return The current instance.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager processCardCommands();
 
@@ -544,7 +544,7 @@ public interface CardTransactionManager {
    *     method.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager processVerifyPin(byte[] pin);
 
@@ -565,7 +565,7 @@ public interface CardTransactionManager {
    * @throws IllegalStateException If the command is executed while a secure session is open.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager processChangePin(byte[] newPin);
 
@@ -654,7 +654,7 @@ public interface CardTransactionManager {
    * @throws IllegalStateException If no {@link CardSecuritySetting} is available
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager processOpening(WriteAccessLevel writeAccessLevel);
 
@@ -709,7 +709,7 @@ public interface CardTransactionManager {
    * @throws IllegalStateException If no session is open.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager processClosing();
 
@@ -724,7 +724,7 @@ public interface CardTransactionManager {
    * @throws IllegalStateException If no session is open.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
-   * @since 1.0
+   * @since 1.0.0
    */
   CardTransactionManager processCancel();
 }

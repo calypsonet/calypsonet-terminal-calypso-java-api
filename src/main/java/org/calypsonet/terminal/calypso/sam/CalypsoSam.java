@@ -16,7 +16,7 @@ import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 /**
  * A static and partial view of the SAM's content.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface CalypsoSam extends SmartCard {
 
@@ -24,7 +24,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets the SAM product type.
    *
    * @return The identified product type.
-   * @since 1.0
+   * @since 1.0.0
    */
   ProductType getProductType();
 
@@ -32,7 +32,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets a text description of the SAM.
    *
    * @return A not null String.
-   * @since 1.0
+   * @since 1.0.0
    */
   String getProductInfo();
 
@@ -40,7 +40,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets the SAM serial number as an array of bytes
    *
    * @return A not null array of bytes
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getSerialNumber();
 
@@ -48,7 +48,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets the platform identifier
    *
    * @return A byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getPlatform();
 
@@ -56,7 +56,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets the application type
    *
    * @return A byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getApplicationType();
 
@@ -64,7 +64,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets the application subtype
    *
    * @return A byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getApplicationSubType();
 
@@ -72,7 +72,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets the software issuer identifier
    *
    * @return A byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getSoftwareIssuer();
 
@@ -80,7 +80,7 @@ public interface CalypsoSam extends SmartCard {
    * Gets the software version number
    *
    * @return A byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getSoftwareVersion();
 
@@ -88,49 +88,49 @@ public interface CalypsoSam extends SmartCard {
    * Gets the software revision number
    *
    * @return A byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getSoftwareRevision();
 
   /**
    * All Calypso SAM products supported by this API.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   enum ProductType {
 
     /**
      * SAM C1
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     SAM_C1,
 
     /**
      * SAM S1E1
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     SAM_S1E1,
 
     /**
      * SAM S1Dx
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     SAM_S1DX,
 
     /**
      * SAM CSAM_F
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     CSAM_F,
 
     /**
      * Unidentified smart card.
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     UNKNOWN
   }

@@ -14,13 +14,13 @@ package org.calypsonet.terminal.calypso.transaction;
 /**
  * Indicates that the card is revoked.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class CardRevokedException extends CardTransactionException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   public CardRevokedException(String message) {
     super(message);

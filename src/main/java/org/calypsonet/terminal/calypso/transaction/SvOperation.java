@@ -14,19 +14,19 @@ package org.calypsonet.terminal.calypso.transaction;
 /**
  * Defines the type of Stored Value operation to be performed.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public enum SvOperation {
   /**
    * Increase the balance of the stored value
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   RELOAD,
   /**
    * Decrease the balance of the stored value
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   DEBIT
 }

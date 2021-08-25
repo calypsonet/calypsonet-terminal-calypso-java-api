@@ -16,20 +16,20 @@ package org.calypsonet.terminal.calypso;
  *
  * <p>May not be applicable to all products.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public enum GetDataTag {
 
   /**
    * FCP for the current file, as returned by Select File.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   FCP_FOR_CURRENT_FILE,
   /**
    * FCI for the current DF, as returned by Select Application.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   FCI_FOR_CURRENT_DF
 }

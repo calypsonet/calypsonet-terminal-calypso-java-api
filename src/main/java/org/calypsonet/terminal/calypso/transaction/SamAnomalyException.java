@@ -16,14 +16,14 @@ package org.calypsonet.terminal.calypso.transaction;
  *
  * <p>This can occur if the SAM is not Calypso compliant.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class SamAnomalyException extends CardTransactionException {
 
   /**
    * @param message Message to identify the exception context.
    * @param cause The cause.
-   * @since 1.0
+   * @since 1.0.0
    */
   public SamAnomalyException(String message, Throwable cause) {
     super(message, cause);

@@ -37,7 +37,7 @@ import org.calypsonet.terminal.reader.selection.spi.SmartCard;
  *       by the card transaction manager.
  * </ul>
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface CalypsoCard extends SmartCard {
 
@@ -45,7 +45,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the card product type.
    *
    * @return A not null reference.
-   * @since 1.0
+   * @since 1.0.0
    */
   ProductType getProductType();
 
@@ -53,7 +53,7 @@ public interface CalypsoCard extends SmartCard {
    * Indicates if the card is a Calypso HCE (Host Card Emulation) .
    *
    * @return True if the card is a Calypso HCE.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isHce();
 
@@ -69,7 +69,7 @@ public interface CalypsoCard extends SmartCard {
    * minimum).
    *
    * @return A not null byte array containing the DF Name bytes (5 to 16 bytes)
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getDfName();
 
@@ -77,7 +77,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the Calypso application serial number as an array of bytes.
    *
    * @return A not null byte array containing the Application Serial Number (8 bytes).
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getApplicationSerialNumber();
 
@@ -85,7 +85,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the raw Calypso startup information.
    *
    * @return A not null byte array.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getStartupInfoRawData();
 
@@ -93,7 +93,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the platform identification byte which is the reference of the chip.
    *
    * @return The platform identification byte.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getPlatform();
 
@@ -101,7 +101,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the Application Type byte which determines the Calypso product type and various options.
    *
    * @return The Application Type byte.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getApplicationType();
 
@@ -109,7 +109,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the Application Subtype that provides a reference to the file structure of the Calypso DF.
    *
    * @return The Application Subtype byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getApplicationSubtype();
 
@@ -118,7 +118,7 @@ public interface CalypsoCard extends SmartCard {
    * selected application.
    *
    * @return The Software Issuer byte.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getSoftwareIssuer();
 
@@ -127,7 +127,7 @@ public interface CalypsoCard extends SmartCard {
    * the Calypso application.
    *
    * @return The Software Version byte.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getSoftwareVersion();
 
@@ -136,7 +136,7 @@ public interface CalypsoCard extends SmartCard {
    * the Calypso application.
    *
    * @return The Software Revision byte.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getSoftwareRevision();
 
@@ -147,7 +147,7 @@ public interface CalypsoCard extends SmartCard {
    * bytes that can be modified or the number of possible write commands in a session.
    *
    * @return The Session Modification byte.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getSessionModification();
 
@@ -155,7 +155,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets the DF metadata.
    *
    * @return Null if is not set.
-   * @since 1.0
+   * @since 1.0.0
    */
   DirectoryHeader getDirectoryHeader();
 
@@ -168,7 +168,7 @@ public interface CalypsoCard extends SmartCard {
    * @param sfi The SFI to search.
    * @return a not null reference.
    * @throws NoSuchElementException if requested EF is not found.
-   * @since 1.0
+   * @since 1.0.0
    */
   ElementaryFile getFileBySfi(byte sfi);
 
@@ -181,7 +181,7 @@ public interface CalypsoCard extends SmartCard {
    * @param lid The LID to search.
    * @return a not null reference.
    * @throws NoSuchElementException if requested EF is not found.
-   * @since 1.0
+   * @since 1.0.0
    */
   ElementaryFile getFileByLid(short lid);
 
@@ -192,7 +192,7 @@ public interface CalypsoCard extends SmartCard {
    * modifications, which can be canceled if the secure session fails.
    *
    * @return A not null reference (may be empty if no one EF is set).
-   * @since 1.0
+   * @since 1.0.0
    */
   Map<Byte, ElementaryFile> getAllFiles();
 
@@ -202,7 +202,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>An invalidated card has 6283h as status word in response to the Select Application command.
    *
    * @return True if the card has been invalidated.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isDfInvalidated();
 
@@ -211,7 +211,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return True if the card has been ratified.
    * @throws IllegalStateException If these methods is invoked when no session has been opened.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isDfRatified();
 
@@ -221,7 +221,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>This boolean is interpreted from the Application Type byte
    *
    * @return True if the Public Key Authentication is supported.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isPkiModeSupported();
 
@@ -231,7 +231,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>This boolean is interpreted from the Application Type byte
    *
    * @return True if the Extended Mode is supported.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isExtendedModeSupported();
 
@@ -241,7 +241,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>This boolean is interpreted from the Application Type byte
    *
    * @return True if the ratification on deselect is supported.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isRatificationOnDeselectSupported();
 
@@ -251,7 +251,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>This boolean is interpreted from the Application Type byte
    *
    * @return True if the card has the PIN feature.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isPinFeatureAvailable();
 
@@ -261,7 +261,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return True if the PIN status is blocked
    * @throws IllegalStateException If the PIN has not been checked.
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isPinBlocked();
 
@@ -270,7 +270,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return The number of remaining attempts.
    * @throws IllegalStateException If the PIN has not been checked.
-   * @since 1.0
+   * @since 1.0.0
    */
   int getPinAttemptRemaining();
 
@@ -280,7 +280,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>This boolean is interpreted from the Application Type byte
    *
    * @return True if the card has the Stored Value feature
-   * @since 1.0
+   * @since 1.0.0
    */
   boolean isSvFeatureAvailable();
 
@@ -289,7 +289,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return An int
    * @throws IllegalStateException If no SV Get command has been executed.
-   * @since 1.0
+   * @since 1.0.0
    */
   int getSvBalance();
 
@@ -298,7 +298,7 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return An int
    * @throws IllegalStateException If no SV Get command has been executed.
-   * @since 1.0
+   * @since 1.0.0
    */
   int getSvLastTNum();
 
@@ -306,7 +306,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets a reference to the last {@link SvLoadLogRecord}
    *
    * @return A last SV load log record object or null if not available.
-   * @since 1.0
+   * @since 1.0.0
    */
   SvLoadLogRecord getSvLoadLogRecord();
 
@@ -314,7 +314,7 @@ public interface CalypsoCard extends SmartCard {
    * Gets a reference to the last {@link SvDebitLogRecord}
    *
    * @return A last SV debit log record object or null if not available.
-   * @since 1.0
+   * @since 1.0.0
    */
   SvDebitLogRecord getSvDebitLogLastRecord();
 
@@ -322,49 +322,49 @@ public interface CalypsoCard extends SmartCard {
    * Gets list of references to the {@link SvDebitLogRecord} read from the card.
    *
    * @return A empty list if no log records are available.
-   * @since 1.0
+   * @since 1.0.0
    */
   List<SvDebitLogRecord> getSvDebitLogAllRecords();
 
   /**
    * All Calypso Card products supported by this API.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   enum ProductType {
 
     /**
      * Card Calypso Prime revision 1.x
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     PRIME_REVISION_1,
 
     /**
      * Card Calypso Prime revision 2.x
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     PRIME_REVISION_2,
 
     /**
      * Card Calypso Prime revision 3.x
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     PRIME_REVISION_3,
 
     /**
      * Card Calypso Light
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     LIGHT,
 
     /**
      * Card Calypso Basic
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     BASIC,
 
@@ -372,7 +372,7 @@ public interface CalypsoCard extends SmartCard {
      * Application type is equal to 0 or FFh or if the data provided by the selection process is not
      * properly formatted (bad TLV data).
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     UNKNOWN
   }

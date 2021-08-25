@@ -16,13 +16,13 @@ package org.calypsonet.terminal.calypso.transaction;
  *
  * <p>This means that the number of APDU requests is different from the number of APDU responses.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class DesynchronizedExchangesException extends CardTransactionException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   public DesynchronizedExchangesException(String message) {
     super(message);

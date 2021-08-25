@@ -14,13 +14,13 @@ package org.calypsonet.terminal.calypso.transaction;
 /**
  * Parent abstract class of all Calypso card transaction functional exceptions.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public abstract class CardTransactionException extends RuntimeException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   protected CardTransactionException(String message) {
     super(message);
@@ -31,7 +31,7 @@ public abstract class CardTransactionException extends RuntimeException {
    *
    * @param message Message to identify the exception context.
    * @param cause The cause.
-   * @since 1.0
+   * @since 1.0.0
    */
   protected CardTransactionException(String message, Throwable cause) {
     super(message, cause);

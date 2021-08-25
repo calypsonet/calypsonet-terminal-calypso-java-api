@@ -14,7 +14,7 @@ package org.calypsonet.terminal.calypso.card;
 /**
  * Calypso EF metadata.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface FileHeader {
 
@@ -22,7 +22,7 @@ public interface FileHeader {
    * Gets the associated LID.
    *
    * @return The LID
-   * @since 1.0
+   * @since 1.0.0
    */
   short getLid();
 
@@ -30,7 +30,7 @@ public interface FileHeader {
    * Gets the DF status.
    *
    * @return The DF status byte
-   * @since 1.0
+   * @since 1.0.0
    */
   byte getDfStatus();
 
@@ -38,7 +38,7 @@ public interface FileHeader {
    * Gets the Elementary File type.
    *
    * @return A not null file type.
-   * @since 1.0
+   * @since 1.0.0
    */
   ElementaryFile.Type getEfType();
 
@@ -52,7 +52,7 @@ public interface FileHeader {
    * </ul>
    *
    * @return The number of records.
-   * @since 1.0
+   * @since 1.0.0
    */
   int getRecordsNumber();
 
@@ -66,7 +66,7 @@ public interface FileHeader {
    * </ul>
    *
    * @return The size of a record.
-   * @since 1.0
+   * @since 1.0.0
    */
   int getRecordSize();
 
@@ -74,7 +74,7 @@ public interface FileHeader {
    * Gets a reference to the access conditions.
    *
    * @return A not empty byte array reference.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getAccessConditions();
 
@@ -82,7 +82,7 @@ public interface FileHeader {
    * Gets a reference to the keys indexes.
    *
    * @return A not empty byte array reference.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getKeyIndexes();
 
@@ -90,7 +90,7 @@ public interface FileHeader {
    * Gets the shared reference of a shared file.
    *
    * @return Null if file is not shared.
-   * @since 1.0
+   * @since 1.0.0
    */
   Short getSharedReference();
 }

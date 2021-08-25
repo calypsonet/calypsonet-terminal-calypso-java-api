@@ -20,14 +20,14 @@ package org.calypsonet.terminal.calypso.transaction;
  * <p>In this case, the card has rollback the data set by cancelling all updates except for PIN
  * verification attempts.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class CardCloseSecureSessionException extends CardTransactionException {
 
   /**
    * @param message Message to identify the exception context.
    * @param cause The cause.
-   * @since 1.0
+   * @since 1.0.0
    */
   public CardCloseSecureSessionException(String message, Exception cause) {
     super(message, cause);

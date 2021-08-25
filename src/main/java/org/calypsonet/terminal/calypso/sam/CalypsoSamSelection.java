@@ -17,7 +17,7 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  * SAM specific {@link CardSelection} providing means to filter SAM and define optional commands to
  * be executed during the selection phase such as the Unlock command.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface CalypsoSamSelection extends CardSelection {
 
@@ -29,7 +29,7 @@ public interface CalypsoSamSelection extends CardSelection {
    * @param productType The SAM product type.
    * @return The object instance.
    * @throws IllegalArgumentException If productType is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoSamSelection filterByProductType(CalypsoSam.ProductType productType);
 
@@ -52,7 +52,7 @@ public interface CalypsoSamSelection extends CardSelection {
    * @param serialNumberRegex A regular expression.
    * @return The object instance.
    * @throws IllegalArgumentException If samSerialNumberRegex is null, empty or invalid.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoSamSelection filterBySerialNumber(String serialNumberRegex);
 
@@ -64,7 +64,7 @@ public interface CalypsoSamSelection extends CardSelection {
    * @param unlockData A hexadecimal representation of the 16 or 32 digit long unlock value.
    * @return The object instance.
    * @throws IllegalArgumentException If unlockData is null, malformed or out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoSamSelection setUnlockData(String unlockData);
 }

@@ -16,7 +16,7 @@ package org.calypsonet.terminal.calypso;
  *
  * <p>Each level induces the use of one of the 3 session key levels.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public enum WriteAccessLevel {
 
@@ -25,7 +25,7 @@ public enum WriteAccessLevel {
    *
    * <p>The <b>issuer key</b> will be used.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   PERSONALIZATION,
 
@@ -34,7 +34,7 @@ public enum WriteAccessLevel {
    *
    * <p>The <b>load key</b> will be used.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   LOAD,
 
@@ -43,7 +43,7 @@ public enum WriteAccessLevel {
    *
    * <p>The <b>debit key</b> will be used.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   DEBIT
 }

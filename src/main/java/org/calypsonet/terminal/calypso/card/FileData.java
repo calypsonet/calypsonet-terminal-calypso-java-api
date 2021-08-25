@@ -17,7 +17,7 @@ import java.util.SortedMap;
 /**
  * Calypso EF content.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface FileData {
 
@@ -27,7 +27,7 @@ public interface FileData {
    *
    * @return a not empty reference to the record content.
    * @throws NoSuchElementException if record #1 is not set.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getContent();
 
@@ -37,7 +37,7 @@ public interface FileData {
    * @param numRecord The record number.
    * @return a not empty reference to the record content.
    * @throws NoSuchElementException if record #numRecord is not set.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getContent(int numRecord);
 
@@ -52,7 +52,7 @@ public interface FileData {
    * @throws NoSuchElementException if record #numRecord is not set.
    * @throws IndexOutOfBoundsException if dataOffset {@code >=} content length or (dataOffset +
    *     dataLength) {@code >} content length.
-   * @since 1.0
+   * @since 1.0.0
    */
   byte[] getContent(int numRecord, int dataOffset, int dataLength);
 
@@ -60,7 +60,7 @@ public interface FileData {
    * Gets a reference to all known records content.
    *
    * @return a not null map eventually empty if there's no content.
-   * @since 1.0
+   * @since 1.0.0
    */
   SortedMap<Integer, byte[]> getAllRecordsContent();
 
@@ -76,7 +76,7 @@ public interface FileData {
    * @throws NoSuchElementException if record #1 or numCounter is not set.
    * @throws IndexOutOfBoundsException if numCounter has a truncated value (when size of record #1
    *     modulo 3 != 0).
-   * @since 1.0
+   * @since 1.0.0
    */
   int getContentAsCounterValue(int numCounter);
 
@@ -88,7 +88,7 @@ public interface FileData {
    *
    * @return a not empty object.
    * @throws NoSuchElementException if record #1 is not set.
-   * @since 1.0
+   * @since 1.0.0
    */
   SortedMap<Integer, Integer> getAllCountersValue();
 }

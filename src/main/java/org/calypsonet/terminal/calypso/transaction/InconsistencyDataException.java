@@ -17,13 +17,13 @@ package org.calypsonet.terminal.calypso.transaction;
  * <p>This can occur, for example, if data read in session is different from data read outside the
  * session.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class InconsistencyDataException extends CardTransactionException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   public InconsistencyDataException(String message) {
     super(message);

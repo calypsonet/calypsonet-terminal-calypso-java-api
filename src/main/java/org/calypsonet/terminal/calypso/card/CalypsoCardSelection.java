@@ -19,7 +19,7 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  * Card specific {@link CardSelection} providing means to filter cards, select applications and
  * define optional commands to be executed during the selection phase.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface CalypsoCardSelection extends CardSelection {
 
@@ -31,7 +31,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param cardProtocol A not empty String.
    * @return The object instance.
    * @throws IllegalArgumentException If the argument is null or empty.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection filterByCardProtocol(String cardProtocol);
 
@@ -45,7 +45,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param powerOnDataRegex A valid regular expression.
    * @return The object instance.
    * @throws IllegalArgumentException If the provided regular expression is null, empty or invalid.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection filterByPowerOnData(String powerOnDataRegex);
 
@@ -58,7 +58,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param aid A byte array containing 5 to 16 bytes.
    * @return The object instance.
    * @throws IllegalArgumentException If the provided array is null or out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection filterByDfName(byte[] aid);
 
@@ -72,7 +72,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param aid A hexadecimal string representation of 5 to 16 bytes.
    * @return The object instance.
    * @throws IllegalArgumentException If the provided AID is null, invalid or out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection filterByDfName(String aid);
 
@@ -84,7 +84,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param fileOccurrence The {@link CalypsoCardSelection.FileOccurrence}.
    * @return The object instance.
    * @throws IllegalArgumentException If fileOccurrence is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection setFileOccurrence(FileOccurrence fileOccurrence);
 
@@ -96,7 +96,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param fileControlInformation The {@link CalypsoCardSelection.FileControlInformation}.
    * @return The object instance.
    * @throws IllegalArgumentException If fileControlInformation is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection setFileControlInformation(FileControlInformation fileControlInformation);
 
@@ -108,7 +108,7 @@ public interface CalypsoCardSelection extends CardSelection {
    *
    * @param statusWord A positive int &le; {@code FFFFh}.
    * @return The object instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection addSuccessfulStatusWord(int statusWord);
 
@@ -118,7 +118,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * <p>Invalidated cards are rejected by default.
    *
    * @return The object instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection acceptInvalidatedCard();
 
@@ -128,7 +128,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param lid LID of the EF to select as a byte array
    * @return The object instance.
    * @throws IllegalArgumentException If the argument is not an array of 2 bytes.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection prepareSelectFile(byte[] lid);
 
@@ -137,7 +137,7 @@ public interface CalypsoCardSelection extends CardSelection {
    *
    * @param lid A short.
    * @return The object instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection prepareSelectFile(short lid);
 
@@ -148,7 +148,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param selectControl A {@link SelectFileControl} enum entry.
    * @return The object instance.
    * @throws IllegalArgumentException If the argument is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection prepareSelectFile(SelectFileControl selectControl);
 
@@ -159,7 +159,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param recordNumber The record number to read.
    * @return The object instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection prepareReadRecordFile(byte sfi, int recordNumber);
 
@@ -174,7 +174,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @throws IllegalArgumentException If tag is null.
    * @throws UnsupportedOperationException If the Get Data command with the provided tag is not
    *     supported.
-   * @since 1.0
+   * @since 1.0.0
    */
   CalypsoCardSelection prepareGetData(GetDataTag tag);
 
@@ -182,31 +182,31 @@ public interface CalypsoCardSelection extends CardSelection {
    * Navigation options through the different applications contained in the card according to the
    * ISO7816-4 standard.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   enum FileOccurrence {
     /**
      * First occurrence.
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     FIRST,
     /**
      * Last occurrence.
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     LAST,
     /**
      * Next occurrence.
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     NEXT,
     /**
      * Previous occurrence.
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     PREVIOUS
   }
@@ -215,19 +215,19 @@ public interface CalypsoCardSelection extends CardSelection {
    * Types of templates available in return for the Select Application command, according to the
    * ISO7816-4 standard.
    *
-   * @since 1.0
+   * @since 1.0.0
    */
   enum FileControlInformation {
     /**
      * File control information.
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     FCI,
     /**
      * No response expected.
      *
-     * @since 1.0
+     * @since 1.0.0
      */
     NO_RESPONSE
   }

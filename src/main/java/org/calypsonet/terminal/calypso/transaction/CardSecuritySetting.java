@@ -21,7 +21,7 @@ import org.calypsonet.terminal.reader.CardReader;
  * <p>Fluent setters allow to define all the required parameters, among which the resource profile
  * of the SAM card is the only mandatory one.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public interface CardSecuritySetting {
 
@@ -34,7 +34,7 @@ public interface CardSecuritySetting {
    * @return The current instance.
    * @throws IllegalArgumentException If one of the arguments is null or if the product type of
    *     {@link CalypsoSam} is equal to {@link CalypsoSam.ProductType#UNKNOWN}.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting setSamResource(CardReader samReader, CalypsoSam calypsoSam);
 
@@ -43,7 +43,7 @@ public interface CardSecuritySetting {
    * handle.
    *
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting enableMultipleSession();
 
@@ -52,7 +52,7 @@ public interface CardSecuritySetting {
    * terminal from receiving the acknowledgement of the session closing.
    *
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting enableRatificationMechanism();
 
@@ -60,7 +60,7 @@ public interface CardSecuritySetting {
    * Enables the PIN transmission in plain text.
    *
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting enablePinPlainTransmission();
 
@@ -68,7 +68,7 @@ public interface CardSecuritySetting {
    * Enables the collection of transaction data for a later security audit.
    *
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting enableTransactionAudit();
 
@@ -78,7 +78,7 @@ public interface CardSecuritySetting {
    * <p>The default value is false.
    *
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting enableSvLoadAndDebitLog();
 
@@ -88,7 +88,7 @@ public interface CardSecuritySetting {
    * <p>The default value is false.
    *
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting authorizeSvNegativeBalance();
 
@@ -100,7 +100,7 @@ public interface CardSecuritySetting {
    * @param kif The KIF value to use.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided writeAccessLevel is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting assignKif(WriteAccessLevel writeAccessLevel, byte kvc, byte kif);
 
@@ -112,7 +112,7 @@ public interface CardSecuritySetting {
    * @param kif The KIF value to use.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided writeAccessLevel is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting assignDefaultKif(WriteAccessLevel writeAccessLevel, byte kif);
 
@@ -123,7 +123,7 @@ public interface CardSecuritySetting {
    * @param kvc The KVC to use.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided writeAccessLevel is null.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting assignDefaultKvc(WriteAccessLevel writeAccessLevel, byte kvc);
 
@@ -136,7 +136,7 @@ public interface CardSecuritySetting {
    * @param kif The KIF value.
    * @param kvc The KVC value.
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting addAuthorizedSessionKey(byte kif, byte kvc);
 
@@ -149,7 +149,7 @@ public interface CardSecuritySetting {
    * @param kif The KIF value.
    * @param kvc The KVC value.
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting addAuthorizedSvKey(byte kif, byte kvc);
 
@@ -161,7 +161,7 @@ public interface CardSecuritySetting {
    * @param kif The KIF value.
    * @param kvc The KVC value.
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting setPinVerificationCipheringKey(byte kif, byte kvc);
 
@@ -173,7 +173,7 @@ public interface CardSecuritySetting {
    * @param kif The KIF value.
    * @param kvc The KVC value.
    * @return The current instance.
-   * @since 1.0
+   * @since 1.0.0
    */
   CardSecuritySetting setPinModificationCipheringKey(byte kif, byte kvc);
 }

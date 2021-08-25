@@ -14,13 +14,13 @@ package org.calypsonet.terminal.calypso.transaction;
 /**
  * Indicates a communication error with the card.
  *
- * @since 1.0
+ * @since 1.0.0
  */
 public class CardIOException extends CardTransactionException {
 
   /**
    * @param message The message to identify the exception context
-   * @since 1.0
+   * @since 1.0.0
    */
   public CardIOException(String message) {
     super(message);
@@ -31,7 +31,7 @@ public class CardIOException extends CardTransactionException {
    *
    * @param message Message to identify the exception context.
    * @param cause The cause.
-   * @since 1.0
+   * @since 1.0.0
    */
   public CardIOException(String message, Throwable cause) {
     super(message, cause);
