@@ -2,7 +2,7 @@
 //  GRADLE CONFIGURATION
 ///////////////////////////////////////////////////////////////////////////////
 plugins {
-    `java`
+    java
     id("com.diffplug.spotless") version "5.10.2"
 }
 buildscript {
