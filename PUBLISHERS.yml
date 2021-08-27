@@ -7,8 +7,8 @@ licenses:
     url: https://www.eclipse.org/legal/epl-2.0/
     distribution: repo
 developers:
-  - name: Keyple Support
-    email: keyple-dev@eclipse.org
+  - name: Calypso Networks Association Technical Team
+    email: support-dev@calypsonet.org
 scm:
   connection: scm:git:git://github.com/calypsonet/calypsonet-terminal-calypso-java-api.git
   developerConnection: scm:git:https://github.com/calypsonet/calypsonet-terminal-calypso-java-api.git
