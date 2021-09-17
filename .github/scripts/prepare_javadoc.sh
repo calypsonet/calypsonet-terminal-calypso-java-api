@@ -44,7 +44,7 @@ do
   for diagram in `ls $directory/api_*.svg | cut -f2 -d'/'`
   do
     name=`echo "$diagram" | tr _ " " | cut -f1 -d'.' | sed -r 's/^api/API/g'`
-    diagrams="$diagrams, [$name]($directory/$diagram)"
+    diagrams="$diagrams<br>[$name]($directory/$diagram)"
   done
   echo "| $directory | [API documentation]($directory)$diagrams |" >> list_versions.md
 done
