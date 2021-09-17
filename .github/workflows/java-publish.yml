@@ -28,3 +28,12 @@ jobs:
       - name: Build and Publish
         working-directory: .
         run: ./gradlew build test publish --info --stacktrace
+      - name: Prepare Javadoc locally
+        working-directory: .
+        run: ./.github/scripts/prepare_javadoc.sh
+      - name: Deploy Javadoc to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./${{ github.event.repository.name }}
+          enable_jekyll: true
