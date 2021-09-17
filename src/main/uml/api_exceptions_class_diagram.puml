@@ -1,0 +1,161 @@
+@startuml
+title
+    Calypsonet - Exceptions of calypsonet-terminal-calypso-java-api - 1.0 (10/06/2021)
+end title
+
+' == THEME ==
+
+'Couleurs issues de : https://htmlcolorcodes.com/fr/tableau-de-couleur/tableau-de-couleur-design-plat/
+!define C_GREY1 F8F9F9
+!define C_GREY2 F2F3F4
+!define C_GREY3 E5E7E9
+!define C_GREY4 D7DBDD
+!define C_GREY5 CACFD2
+!define C_GREY6 BDC3C7
+!define C_LINK 3498DB
+!define C_USE 27AE60
+
+skinparam Shadowing false
+skinparam ClassFontStyle italic
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #E9F7EF
+skinparam ClassBorderColor<<green>> #27AE60
+hide <<green>> stereotype
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+' == CONTENT ==
+
+package "org.calypsonet.terminal.calypso" as api {
+
+    package transaction {
+
+        +abstract class "<<RuntimeException>>\nCardTransactionException" as CardTransactionException {
+            #CardTransactionException (String message)
+            #CardTransactionException (String message, Throwable cause)
+        }
+
+        +class "AtomicTransactionException" as AtomicTransactionException extends CardTransactionException {
+            +AtomicTransactionException (
+                \tString message)
+        }
+        note bottom of AtomicTransactionException: Session buffer would overflow for atomic transaction
+
+        +class "AuthenticationNotVerifiedException" as AuthenticationNotVerifiedException extends CardTransactionException {
+            +AuthenticationNotVerifiedException (
+                \tString message)
+            +AuthenticationNotVerifiedException (
+                \tString message, Throwable cause)
+        }
+        note bottom of AuthenticationNotVerifiedException: R-APDU of CloseSecureSession eq 9000 but SAM no more available
+
+        +class "CardAnomalyException" as CardAnomalyException extends CardTransactionException {
+            +CardAnomalyException (
+                \tString message, Throwable cause)
+        }
+        note bottom of CardAnomalyException: Unexpected Card behaviour
+
+        +class "CardCloseSecureSessionException" as CardCloseSecureSessionException extends CardTransactionException {
+            +CardCloseSecureSessionException (
+                \tString message, Throwable cause)
+        }
+        note bottom of CardCloseSecureSessionException: R-APDU of CloseSecureSession != 9000
+
+        +class "CardIOException" as CardIOException extends CardTransactionException {
+            +CardIOException (
+                \tString message)
+            +CardIOException (
+                \tString message, Throwable cause)
+        }
+
+        +class "CardRevokedException" as CardRevokedException extends CardTransactionException {
+            +CardRevokedException (
+                \tString message)
+        }
+
+        +class "DesynchronizedExchangesException" as DesynchronizedExchangesException extends CardTransactionException {
+            +DesynchronizedExchangesException (
+                \tString message)
+        }
+        note bottom of DesynchronizedExchangesException: R-APDU number != C-APDU number
+
+        +class "InconsistencyDataException" as InconsistencyDataException extends CardTransactionException {
+            +InconsistencyDataException (
+                \tString message)
+        }
+        note bottom of InconsistencyDataException: Data read in session != Data read outside session
+
+        +class "SamAnomalyException" as SamAnomalyException extends CardTransactionException {
+            +SamAnomalyException (
+                \tString message, Throwable cause)
+        }
+        note bottom of SamAnomalyException: Unexpected SAM behaviour
+
+        +class "SamIOException" as SamIOException extends CardTransactionException {
+            +SamIOException (
+                \tString message)
+            +SamIOException (
+                \tString message, Throwable cause)
+        }
+
+        +class "SamRevokedException" as SamRevokedException extends CardTransactionException {
+            +SamRevokedException (
+                \tString message)
+        }
+
+        +class "SessionAuthenticationException" as SessionAuthenticationException extends CardTransactionException {
+            +SessionAuthenticationException (
+                \tString message)
+            +SessionAuthenticationException (
+                \tString message, Throwable cause)
+        }
+        note bottom of SessionAuthenticationException: R-APDU of DigestAuthenticate eq 6985
+
+        +class "SvAuthenticationException" as SvAuthenticationException extends CardTransactionException {
+            +SvAuthenticationException (
+                \tString message)
+            +SvAuthenticationException (
+                \tString message, Throwable cause)
+        }
+        note bottom of SvAuthenticationException: R-APDU of SvCheck eq 6985
+
+        +class "UnauthorizedKeyException" as UnauthorizedKeyException extends CardTransactionException {
+            +UnauthorizedKeyException (
+                \tString message)
+        }
+
+    }
+}
+
+' Associations
+
+' == LAYOUT ==
+
+'CardTransactionException -[hidden]left- AtomicTransactionException
+
+' == STYLE ==
+
+package api #C_GREY1 {}
+package transaction #C_GREY2 {}
+
+
+@enduml
