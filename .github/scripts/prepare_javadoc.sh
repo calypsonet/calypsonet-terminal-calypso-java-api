@@ -12,7 +12,6 @@ fi
 echo "Computed current API version: $version"
 
 repository_name=`git rev-parse --show-toplevel | xargs basename`
-echo $repository_name
 
 echo "Clone $repository_name..."
 git clone https://github.com/calypsonet/$repository_name.git
