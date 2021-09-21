@@ -115,6 +115,8 @@ public interface CalypsoCardSelection extends CardSelection {
   /**
    * Request to accept invalidated cards during the selection stage.
    *
+   * <p>Caution: this functionality is operational only from PRIME revision 3 cards.
+   *
    * <p>Invalidated cards are rejected by default.
    *
    * @return The object instance.

@@ -197,11 +197,18 @@ public interface CalypsoCard extends SmartCard {
   Map<Byte, ElementaryFile> getAllFiles();
 
   /**
-   * Tells if the card has been invalidated or not.
+   * Tells if the current DF is invalidated or not.
    *
-   * <p>An invalidated card has 6283h as status word in response to the Select Application command.
+   * <p>The invalidation status is determined either from the response to the Select Application
+   * command or from the response to a Select File (DF) command.
    *
-   * @return True if the card has been invalidated.
+   * <p>For a PRIME_REVISION_3 card, a 6283h status word is returned in response to the Select
+   * Application command when the corresponding DF is invalidated.
+   *
+   * <p>For older Calypso cards it may be necessary to execute a Select File command in order to
+   * determine the invalidation status.
+   *
+   * @return True if the current DF has been invalidated.
    * @since 1.0.0
    */
   boolean isDfInvalidated();
