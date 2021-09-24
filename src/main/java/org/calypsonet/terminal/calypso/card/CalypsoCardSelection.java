@@ -19,6 +19,13 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  * Card specific {@link CardSelection} providing means to filter cards, select applications and
  * define optional commands to be executed during the selection phase.
  *
+ * <p>Note: by default, the selection process ignores PRIME revision 3 cards that have been
+ * invalidated. The {@link CalypsoCardSelection#acceptInvalidatedCard()} method must be invoked to
+ * stop ignoring them.<br>
+ * This feature does not apply to earlier revisions for which it is necessary to run a Select File
+ * (DF) command to determine the invalidation status. In this case, the rejection or acceptance of
+ * invalidated cards will have to be handled by the application.
+ *
  * @since 1.0.0
  */
 public interface CalypsoCardSelection extends CardSelection {
@@ -115,9 +122,8 @@ public interface CalypsoCardSelection extends CardSelection {
   /**
    * Request to accept invalidated cards during the selection stage.
    *
-   * <p>Caution: this functionality is operational only from PRIME revision 3 cards.
-   *
-   * <p>Invalidated cards are rejected by default.
+   * <p>Caution: this functionality is operational only from PRIME revision 3 cards. Invalidated
+   * cards are rejected by default.
    *
    * @return The object instance.
    * @since 1.0.0
