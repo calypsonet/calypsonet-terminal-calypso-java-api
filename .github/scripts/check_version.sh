@@ -11,7 +11,8 @@ if [ "$tag" != "" ]; then
 fi
 
 echo "1:$version"
-echo "2:$(git tag -l "$version")"
+echo "2:`git tag -l "$version"`"
+echo "3:$(git tag -l "$version")"
 
 if [ $(git tag -l "$version") ]; then
   echo "ERROR: Version '$version' has already been released."
