@@ -1,7 +1,10 @@
 #!/bin/sh
 
 tag=$1
+echo "Input tag: '$tag'"
+
 version=`grep "^version" gradle.properties | cut -d= -f2 | tr -d "[:space:]"`
+echo "Version in 'gradle.properties' file: '$version'"
 
 if [ "$tag" != "" ]; then
   if [ "$tag" != "$version" ]; then
@@ -10,13 +13,10 @@ if [ "$tag" != "" ]; then
   fi
 fi
 
+echo "Fetch tags..."
 git fetch --tags
 
 if [ $(git tag -l "$version") ]; then
   echo "ERROR: version '$version' has already been released"
   exit 1
 fi
-
-echo "Version is OK"
-
-
