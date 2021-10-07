@@ -16,6 +16,9 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
+      - name: Check version
+        working-directory: .
+        run: ./.github/scripts/check_version.sh
       - name: Build and Test
         working-directory: .
         run: ./gradlew build test --info --stacktrace
