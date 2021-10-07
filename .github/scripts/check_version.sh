@@ -17,5 +17,6 @@ if [ $(git tag -l "$version") ]; then
   exit 1
 fi
 
+echo "Version is OK"
 
 
