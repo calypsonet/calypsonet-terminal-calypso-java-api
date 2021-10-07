@@ -10,6 +10,8 @@ if [ "$tag" != "" ]; then
   fi
 fi
 
+git fetch --tags
+
 echo "1:$version"
 echo "2:`git tag -l "$version"`"
 echo "3:$(git tag -l "$version")"
