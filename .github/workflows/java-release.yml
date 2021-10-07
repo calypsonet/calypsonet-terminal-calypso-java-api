@@ -25,6 +25,9 @@ jobs:
           cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
           gpg --pinentry-mode loopback --passphrase "${{ secrets.OSSRH_GPG_SECRET_PASSWORD }}" --export-secret-key 568FD16F857171A0EC6D2C40742C84722FD2B235 > ~/.gradle/maven-central.gpg
           gpg --list-secret-keys --keyid-format LONG
+      - name: Check version
+        working-directory: .
+        run: ./.github/scripts/check_version.sh $(echo "${{ github.ref }}" | sed -e "s,^refs/tags/,,")
       - name: Build and Publish
         working-directory: .
         run: |
