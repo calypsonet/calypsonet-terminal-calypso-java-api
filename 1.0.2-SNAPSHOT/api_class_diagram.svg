@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="4772.5px" preserveAspectRatio="none" style="width:5782px;height:4772px;background:#FFFFFF;" version="1.1" viewBox="0 0 5782 4772" width="5782.5px" zoomAndPan="magnify"><defs><filter height="1" id="b1do45z70cbkgc0" width="1" x="0" y="0"><feFlood flood-color="#FFFF00" result="flood"/><feComposite in="SourceGraphic" in2="flood" operator="over"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="45" lengthAdjust="spacing" textLength="1402.5" x="2173.75" y="46.7139">Calypsonet - calypsonet-terminal-calypso-java-api - 1.0.+ (26/07/2021)</text><rect fill="#DDDDDD" height="157.0703" rx="12.5" ry="12.5" style="stroke:#000000;stroke-width:2.5;" width="720" x="2513.75" y="76.6016"/><text fill="#000000" font-family="sans-serif" font-size="35" lengthAdjust="spacing" text-decoration="underline" textLength="220" x="2528.75" y="125.4346">Colors legend</text><text fill="#000000" font-family="sans-serif" font-size="35" lengthAdjust="spacing" textLength="10" x="2758.75" y="125.4346">:</text><ellipse cx="2542.5" cy="158.3984" fill="#000000" rx="6.25" ry="6.25" style="stroke:#000000;stroke-width:0.0;"/><text fill="#000000" font-family="sans-serif" font-size="35" lengthAdjust="spacing" text-decoration="underline" textLength="472.5" x="2561.25" y="169.458">External public API references</text><text fill="#000000" font-family="sans-serif" font-size="35" lengthAdjust="spacing" textLength="10" x="3043.75" y="169.458">:</text><rect fill="#000000" height="8.75" style="stroke:#000000;stroke-width:0.0;" width="8.75" x="2581.25" y="201.1719"/><text fill="#000000" filter="url(#b1do45z70cbkgc0)" font-family="sans-serif" font-size="35" font-weight="bold" lengthAdjust="spacing" textLength="625" x="2593.75" y="213.4814">calypsonet-terminal-reader-java-api</text><!--MD5=[7442f3b126ee602ae02566c1a49e158a]
+cluster api--><polygon fill="#F8F9F9" points="40,271.1719,610,271.1719,627.5,330.1953,5740,330.1953,5740,4757.4219,40,4757.4219,40,271.1719" style="stroke:#000000;stroke-width:3.75;"/><line style="stroke:#000000;stroke-width:3.75;" x1="40" x2="627.5" y1="330.1953" y2="330.1953"/><text fill="#000000" font-family="sans-serif" font-size="35" font-weight="bold" lengthAdjust="spacing" textLength="555" x="50" y="312.5049">org.calypsonet.terminal.calypso</text><!--MD5=[fc5f7357635190d92cef7ec8135ac887]
+cluster card--><polygon fill="#F2F3F4" points="100,857.4219,192.5,857.4219,210,916.4453,3495,916.4453,3495,4204.9219,100,4204.9219,100,857.4219" style="stroke:#000000;stroke-width:3.75;"/><line style="stroke:#000000;stroke-width:3.75;" x1="100" x2="210" y1="916.4453" y2="916.4453"/><text fill="#000000" font-family="sans-serif" font-size="35" font-weight="bold" lengthAdjust="spacing" textLength="77.5" x="110" y="898.7549">card</text><!--MD5=[98d4fa74a8fc0b7c744d347d810a7562]
+cluster sam--><polygon fill="#F2F3F4" points="4000,3581.1719,4085,3581.1719,4102.5,3640.1953,5680,3640.1953,5680,4697.4219,4000,4697.4219,4000,3581.1719" style="stroke:#000000;stroke-width:3.75;"/><line style="stroke:#000000;stroke-width:3.75;" x1="4000" x2="4102.5" y1="3640.1953" y2="3640.1953"/><text fill="#000000" font-family="sans-serif" font-size="35" font-weight="bold" lengthAdjust="spacing" textLength="70" x="4010" y="3622.5049">sam</text><!--MD5=[f9c58d90839a0c7c212d8c6553ac9eb7]
+cluster transaction--><polygon fill="#F2F3F4" points="3555,746.1719,3767.5,746.1719,3785,805.1953,5475,805.1953,5475,3456.1719,3555,3456.1719,3555,746.1719" style="stroke:#000000;stroke-width:3.75;"/><line style="stroke:#000000;stroke-width:3.75;" x1="3555" x2="3785" y1="805.1953" y2="805.1953"/><text fill="#000000" font-family="sans-serif" font-size="35" font-weight="bold" lengthAdjust="spacing" textLength="197.5" x="3565" y="787.5049">transaction</text><!--MD5=[120218adfd8782b0057db0a1b8294250]
+class ApiProperties--><rect codeLine="55" fill="#FEFECE" height="154.5898" id="ApiProperties" style="stroke:#D4AC0D;stroke-width:3.75;" width="472.5" x="2333.75" y="396.1719"/><ellipse cx="2371.25" cy="436.1719" fill="#ADD1B2" rx="27.5" ry="27.5" style="stroke:#ADD1B2;stroke-width:2.5;"/><path d="M2376.25,427.4219 Q2376.7578,426.1719 2377.3438,425.5469 Q2377.9297,424.9219 2378.5938,424.9219 Q2379.7656,424.9219 2380.5078,425.625 Q2381.25,426.3281 2381.25,427.9688 L2381.25,431.875 Q2381.25,433.5156 2380.5469,434.2188 Q2379.8438,434.9219 2378.75,434.9219 Q2377.7734,434.9219 2377.1484,434.4922 Q2376.5234,434.0625 2376.25,432.9297 Q2376.1328,432.1484 2375.7031,431.7188 Q2374.9219,430.8984 2373.5156,430.4297 Q2372.1094,429.9219 2370.7031,429.9219 Q2368.9453,429.9219 2367.4609,430.625 Q2366.0156,431.3281 2364.8828,432.8906 Q2363.75,434.4531 2363.75,436.6016 L2363.75,438.9063 Q2363.75,441.4844 2365.8594,443.2031 Q2367.9688,444.9219 2371.7188,444.9219 Q2373.9453,444.9219 2375.5078,444.4141 Q2376.4063,444.1406 2377.4219,443.2422 Q2378.0859,442.7344 2378.4375,442.5781 Q2378.7891,442.4219 2379.2188,442.4219 Q2380.0391,442.4219 2380.625,443.0859 Q2381.25,443.7109 2381.25,444.6094 Q2381.25,445.4688 2380.3906,446.4844 Q2379.1406,447.9688 2377.1484,448.7891 Q2374.5313,449.9219 2371.3281,449.9219 Q2367.5781,449.9219 2364.5703,448.4375 Q2362.1484,447.2656 2360.4297,444.7266 Q2358.75,442.1875 2358.75,439.1797 L2358.75,436.4453 Q2358.75,433.3203 2360.2344,430.5859 Q2361.7578,427.8516 2364.375,426.4063 Q2367.0313,424.9219 2370,424.9219 Q2371.7969,424.9219 2373.3594,425.5469 Q2374.9219,426.1719 2376.25,427.4219 Z " fill="#000000"/><ellipse cx="2418.75" cy="434.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="60" x="2433.75" y="448.4473">final</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="297.5" x="2501.25" y="448.4473">CalypsoApiProperties</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2336.25" x2="2803.75" y1="476.1719" y2="476.1719"/><ellipse cx="2361.25" cy="503.6719" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" font-weight="bold" lengthAdjust="spacing" text-decoration="underline" textLength="57.5" x="2383.75" y="514.7192">final</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" text-decoration="underline" textLength="190" x="2448.75" y="514.7192">String VERSION</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2336.25" x2="2803.75" y1="530.7617" y2="530.7617"/><!--MD5=[d40df061e984b253aad79dc56dfef347]
+class WriteAccessLevel--><rect codeLine="58" fill="#FEFECE" height="223.7695" id="WriteAccessLevel" style="stroke:#D4AC0D;stroke-width:3.75;" width="350" x="3602.5" y="3802.4219"/><ellipse cx="3640" cy="3842.4219" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M3636.25,3844.9219 L3636.25,3849.9219 L3646.25,3849.9219 L3646.25,3847.4219 L3646.25,3846.2109 L3647.8125,3844.9219 L3648.75,3844.9219 L3649.6875,3844.9219 L3651.25,3846.2109 L3651.25,3847.4219 L3651.25,3854.9219 L3631.25,3854.9219 L3630.0391,3854.9219 L3628.75,3853.3594 L3628.75,3852.4219 L3628.75,3851.4844 L3630.0391,3849.9219 L3631.25,3849.9219 L3631.25,3849.9219 L3631.25,3834.9219 L3631.25,3834.9219 L3630.0391,3834.9219 L3628.75,3833.3594 L3628.75,3832.4219 L3628.75,3831.4844 L3630.0391,3829.9219 L3631.25,3829.9219 L3651.25,3829.9219 L3651.25,3837.4219 L3651.25,3838.6328 L3649.6875,3839.9219 L3648.75,3839.9219 L3647.8125,3839.9219 L3646.25,3838.6328 L3646.25,3837.4219 L3646.25,3834.9219 L3636.25,3834.9219 L3636.25,3839.9219 L3638.75,3839.9219 L3638.75,3838.7109 L3638.75,3838.7109 L3640.3125,3837.4219 L3641.25,3837.4219 L3642.1875,3837.4219 L3643.75,3838.7109 L3643.75,3839.9219 L3643.75,3844.9219 L3643.75,3846.1328 L3642.1875,3847.4219 L3642.1875,3847.4219 L3641.25,3847.4219 L3640.3125,3847.4219 L3638.75,3846.1328 L3638.75,3846.1328 L3638.75,3844.9219 L3636.25,3844.9219 Z " fill="#000000"/><ellipse cx="3687.5" cy="3841.1719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="242.5" x="3702.5" y="3854.6973">WriteAccessLevel</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3605" x2="3950" y1="3882.4219" y2="3882.4219"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="237.5" x="3617.5" y="3920.9692">PERSONALIZATION</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="72.5" x="3617.5" y="3955.5591">LOAD</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="70" x="3617.5" y="3990.1489">DEBIT</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3605" x2="3950" y1="4006.1914" y2="4006.1914"/><!--MD5=[858307e347215d8034d295bce1f15f07]
+class SelectFileControl--><rect codeLine="63" fill="#FEFECE" height="223.7695" id="SelectFileControl" style="stroke:#D4AC0D;stroke-width:3.75;" width="342.5" x="2943.75" y="361.1719"/><ellipse cx="2981.25" cy="401.1719" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M2977.5,403.6719 L2977.5,408.6719 L2987.5,408.6719 L2987.5,406.1719 L2987.5,404.9609 L2989.0625,403.6719 L2990,403.6719 L2990.9375,403.6719 L2992.5,404.9609 L2992.5,406.1719 L2992.5,413.6719 L2972.5,413.6719 L2971.2891,413.6719 L2970,412.1094 L2970,411.1719 L2970,410.2344 L2971.2891,408.6719 L2972.5,408.6719 L2972.5,408.6719 L2972.5,393.6719 L2972.5,393.6719 L2971.2891,393.6719 L2970,392.1094 L2970,391.1719 L2970,390.2344 L2971.2891,388.6719 L2972.5,388.6719 L2992.5,388.6719 L2992.5,396.1719 L2992.5,397.3828 L2990.9375,398.6719 L2990,398.6719 L2989.0625,398.6719 L2987.5,397.3828 L2987.5,396.1719 L2987.5,393.6719 L2977.5,393.6719 L2977.5,398.6719 L2980,398.6719 L2980,397.4609 L2980,397.4609 L2981.5625,396.1719 L2982.5,396.1719 L2983.4375,396.1719 L2985,397.4609 L2985,398.6719 L2985,403.6719 L2985,404.8828 L2983.4375,406.1719 L2983.4375,406.1719 L2982.5,406.1719 L2981.5625,406.1719 L2980,404.8828 L2980,404.8828 L2980,403.6719 L2977.5,403.6719 Z " fill="#000000"/><ellipse cx="3028.75" cy="399.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="235" x="3043.75" y="413.4473">SelectFileControl</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2946.25" x2="3283.75" y1="441.1719" y2="441.1719"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="115" x="2958.75" y="479.7192">FIRST_EF</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="110" x="2958.75" y="514.3091">NEXT_EF</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="165" x="2958.75" y="548.8989">CURRENT_DF</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2946.25" x2="3283.75" y1="564.9414" y2="564.9414"/><!--MD5=[97e08845a712c8f45c07bef0bf0d44ef]
+class GetDataTag--><rect codeLine="68" fill="#FEFECE" height="189.1797" id="GetDataTag" style="stroke:#D4AC0D;stroke-width:3.75;" width="342.5" x="3398.75" y="378.6719"/><ellipse cx="3467.75" cy="418.6719" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M3464,421.1719 L3464,426.1719 L3474,426.1719 L3474,423.6719 L3474,422.4609 L3475.5625,421.1719 L3476.5,421.1719 L3477.4375,421.1719 L3479,422.4609 L3479,423.6719 L3479,431.1719 L3459,431.1719 L3457.7891,431.1719 L3456.5,429.6094 L3456.5,428.6719 L3456.5,427.7344 L3457.7891,426.1719 L3459,426.1719 L3459,426.1719 L3459,411.1719 L3459,411.1719 L3457.7891,411.1719 L3456.5,409.6094 L3456.5,408.6719 L3456.5,407.7344 L3457.7891,406.1719 L3459,406.1719 L3479,406.1719 L3479,413.6719 L3479,414.8828 L3477.4375,416.1719 L3476.5,416.1719 L3475.5625,416.1719 L3474,414.8828 L3474,413.6719 L3474,411.1719 L3464,411.1719 L3464,416.1719 L3466.5,416.1719 L3466.5,414.9609 L3466.5,414.9609 L3468.0625,413.6719 L3469,413.6719 L3469.9375,413.6719 L3471.5,414.9609 L3471.5,416.1719 L3471.5,421.1719 L3471.5,422.3828 L3469.9375,423.6719 L3469.9375,423.6719 L3469,423.6719 L3468.0625,423.6719 L3466.5,422.3828 L3466.5,422.3828 L3466.5,421.1719 L3464,421.1719 Z " fill="#000000"/><ellipse cx="3522.25" cy="417.4219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="165" x="3537.25" y="430.9473">GetDataTag</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3401.25" x2="3738.75" y1="458.6719" y2="458.6719"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="312.5" x="3413.75" y="497.2192">FCP_FOR_CURRENT_FILE</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="285" x="3413.75" y="531.8091">FCI_FOR_CURRENT_DF</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3401.25" x2="3738.75" y1="547.8516" y2="547.8516"/><!--MD5=[dedf7a414a26192be9658079488df692]
+class CalypsoCardSelection--><rect codeLine="73" fill="#FEFECE" height="797.6758" id="CalypsoCardSelection" style="stroke:#D4AC0D;stroke-width:3.75;" width="1177.5" x="183.75" y="1258.6719"/><ellipse cx="594.375" cy="1308.9063" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M596.875,1301.4063 L596.875,1316.4063 L601.875,1316.4063 L603.0859,1316.4063 L604.375,1317.9688 L604.375,1318.9063 L604.375,1319.8438 L603.0859,1321.4063 L601.875,1321.4063 L586.875,1321.4063 L585.6641,1321.4063 L584.375,1319.8438 L584.375,1318.9063 L584.375,1317.9688 L585.6641,1316.4063 L586.875,1316.4063 L591.875,1316.4063 L591.875,1301.4063 L586.875,1301.4063 L585.6641,1301.4063 L584.375,1299.8438 L584.375,1298.9063 L584.375,1297.9688 L585.6641,1296.4063 L586.875,1296.4063 L601.875,1296.4063 L603.0859,1296.4063 L604.375,1297.9688 L604.375,1298.9063 L604.375,1299.8438 L603.0859,1301.4063 L601.875,1301.4063 L596.875,1301.4063 Z " fill="#000000"/><ellipse cx="658.125" cy="1307.6563" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="694.375" y="1302.3145">&lt;&lt;</text><text fill="#000000" filter="url(#b1do45z70cbkgc0)" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="195" x="729.375" y="1302.3145">CardSelection</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="924.375" y="1302.3145">&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="307.5" x="673.125" y="1340.0488">CalypsoCardSelection</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="186.25" x2="1358.75" y1="1359.1406" y2="1359.1406"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="186.25" x2="1358.75" y1="1379.1406" y2="1379.1406"/><ellipse cx="211.25" cy="1406.6406" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="770" x="233.75" y="1417.688">CalypsoCardSelection filterByCardProtocol (String cardProtocol)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="241.25" y="1452.2778"/><ellipse cx="211.25" cy="1475.8203" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="880" x="233.75" y="1486.8677">CalypsoCardSelection filterByPowerOnData (String powerOnDataRegex)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="241.25" y="1521.4575"/><ellipse cx="211.25" cy="1545" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="590" x="233.75" y="1556.0474">CalypsoCardSelection filterByDfName (byte[] aid)</text><ellipse cx="211.25" cy="1579.5898" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="592.5" x="233.75" y="1590.6372">CalypsoCardSelection filterByDfName (String aid)</text><ellipse cx="211.25" cy="1614.1797" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="895" x="233.75" y="1625.2271">CalypsoCardSelection setFileOccurrence (FileOccurrence fileOccurrence)</text><ellipse cx="211.25" cy="1648.7695" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1112.5" x="233.75" y="1659.8169">CalypsoCardSelection setFileControlInformation (FileControlInformation fileControlInformation)</text><ellipse cx="211.25" cy="1683.3594" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="800" x="233.75" y="1694.4067">CalypsoCardSelection addSuccessfulStatusWord (int statusWord)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="241.25" y="1728.9966"/><ellipse cx="211.25" cy="1752.5391" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="567.5" x="233.75" y="1763.5864">CalypsoCardSelection acceptInvalidatedCard ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="241.25" y="1798.1763"/><ellipse cx="211.25" cy="1821.7188" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="610" x="233.75" y="1832.7661">CalypsoCardSelection prepareSelectFile (byte[] lid)</text><ellipse cx="211.25" cy="1856.3086" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="605" x="233.75" y="1867.356">CalypsoCardSelection prepareSelectFile (short lid)</text><ellipse cx="211.25" cy="1890.8984" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="875" x="233.75" y="1901.9458">CalypsoCardSelection prepareSelectFile (SelectFileControl selectControl)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="241.25" y="1936.5356"/><ellipse cx="211.25" cy="1960.0781" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="680" x="233.75" y="1971.1255">CalypsoCardSelection prepareGetData (GetDataTag tag)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="241.25" y="2005.7153"/><ellipse cx="211.25" cy="2029.2578" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="897.5" x="233.75" y="2040.3052">CalypsoCardSelection prepareReadRecordFile (byte sfi, int recordNumber)</text><!--MD5=[986279e3cfc2043660398b1cf71c65a2]
+class FileOccurrence--><rect codeLine="94" fill="#FEFECE" height="258.3594" id="FileOccurrence" style="stroke:#D4AC0D;stroke-width:3.75;" width="315" x="642.5" y="2916.1719"/><ellipse cx="680" cy="2956.1719" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M676.25,2958.6719 L676.25,2963.6719 L686.25,2963.6719 L686.25,2961.1719 L686.25,2959.9609 L687.8125,2958.6719 L688.75,2958.6719 L689.6875,2958.6719 L691.25,2959.9609 L691.25,2961.1719 L691.25,2968.6719 L671.25,2968.6719 L670.0391,2968.6719 L668.75,2967.1094 L668.75,2966.1719 L668.75,2965.2344 L670.0391,2963.6719 L671.25,2963.6719 L671.25,2963.6719 L671.25,2948.6719 L671.25,2948.6719 L670.0391,2948.6719 L668.75,2947.1094 L668.75,2946.1719 L668.75,2945.2344 L670.0391,2943.6719 L671.25,2943.6719 L691.25,2943.6719 L691.25,2951.1719 L691.25,2952.3828 L689.6875,2953.6719 L688.75,2953.6719 L687.8125,2953.6719 L686.25,2952.3828 L686.25,2951.1719 L686.25,2948.6719 L676.25,2948.6719 L676.25,2953.6719 L678.75,2953.6719 L678.75,2952.4609 L678.75,2952.4609 L680.3125,2951.1719 L681.25,2951.1719 L682.1875,2951.1719 L683.75,2952.4609 L683.75,2953.6719 L683.75,2958.6719 L683.75,2959.8828 L682.1875,2961.1719 L682.1875,2961.1719 L681.25,2961.1719 L680.3125,2961.1719 L678.75,2959.8828 L678.75,2959.8828 L678.75,2958.6719 L676.25,2958.6719 Z " fill="#000000"/><ellipse cx="727.5" cy="2954.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="207.5" x="742.5" y="2968.4473">FileOccurrence</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="645" x2="955" y1="2996.1719" y2="2996.1719"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="70" x="657.5" y="3034.7192">FIRST</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="67.5" x="657.5" y="3069.3091">LAST</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="65" x="657.5" y="3103.8989">NEXT</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="127.5" x="657.5" y="3138.4888">PREVIOUS</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="645" x2="955" y1="3154.5313" y2="3154.5313"/><!--MD5=[7db03ef0d09735de9c956eac87f10fc3]
+class FileControlInformation--><rect codeLine="100" fill="#FEFECE" height="189.1797" id="FileControlInformation" style="stroke:#D4AC0D;stroke-width:3.75;" width="415" x="140" y="2949.9219"/><ellipse cx="177.5" cy="2989.9219" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M173.75,2992.4219 L173.75,2997.4219 L183.75,2997.4219 L183.75,2994.9219 L183.75,2993.7109 L185.3125,2992.4219 L186.25,2992.4219 L187.1875,2992.4219 L188.75,2993.7109 L188.75,2994.9219 L188.75,3002.4219 L168.75,3002.4219 L167.5391,3002.4219 L166.25,3000.8594 L166.25,2999.9219 L166.25,2998.9844 L167.5391,2997.4219 L168.75,2997.4219 L168.75,2997.4219 L168.75,2982.4219 L168.75,2982.4219 L167.5391,2982.4219 L166.25,2980.8594 L166.25,2979.9219 L166.25,2978.9844 L167.5391,2977.4219 L168.75,2977.4219 L188.75,2977.4219 L188.75,2984.9219 L188.75,2986.1328 L187.1875,2987.4219 L186.25,2987.4219 L185.3125,2987.4219 L183.75,2986.1328 L183.75,2984.9219 L183.75,2982.4219 L173.75,2982.4219 L173.75,2987.4219 L176.25,2987.4219 L176.25,2986.2109 L176.25,2986.2109 L177.8125,2984.9219 L178.75,2984.9219 L179.6875,2984.9219 L181.25,2986.2109 L181.25,2987.4219 L181.25,2992.4219 L181.25,2993.6328 L179.6875,2994.9219 L179.6875,2994.9219 L178.75,2994.9219 L177.8125,2994.9219 L176.25,2993.6328 L176.25,2993.6328 L176.25,2992.4219 L173.75,2992.4219 Z " fill="#000000"/><ellipse cx="225" cy="2988.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="307.5" x="240" y="3002.1973">FileControlInformation</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="142.5" x2="552.5" y1="3029.9219" y2="3029.9219"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="37.5" x="155" y="3068.4692">FCI</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="187.5" x="155" y="3103.0591">NO_RESPONSE</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="142.5" x2="552.5" y1="3119.1016" y2="3119.1016"/><!--MD5=[57d9060bfed72118962c04165c3e8b58]
+class CalypsoCard--><rect codeLine="104" fill="#FEFECE" height="1420.293" id="CalypsoCard" style="stroke:#D4AC0D;stroke-width:3.75;" width="705" x="2330" y="947.4219"/><ellipse cx="2548.125" cy="997.6563" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M2550.625,990.1563 L2550.625,1005.1563 L2555.625,1005.1563 L2556.8359,1005.1563 L2558.125,1006.7188 L2558.125,1007.6563 L2558.125,1008.5938 L2556.8359,1010.1563 L2555.625,1010.1563 L2540.625,1010.1563 L2539.4141,1010.1563 L2538.125,1008.5938 L2538.125,1007.6563 L2538.125,1006.7188 L2539.4141,1005.1563 L2540.625,1005.1563 L2545.625,1005.1563 L2545.625,990.1563 L2540.625,990.1563 L2539.4141,990.1563 L2538.125,988.5938 L2538.125,987.6563 L2538.125,986.7188 L2539.4141,985.1563 L2540.625,985.1563 L2555.625,985.1563 L2556.8359,985.1563 L2558.125,986.7188 L2558.125,987.6563 L2558.125,988.5938 L2556.8359,990.1563 L2555.625,990.1563 L2550.625,990.1563 Z " fill="#000000"/><ellipse cx="2611.875" cy="996.4063" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="2626.875" y="991.0645">&lt;&lt;</text><text fill="#000000" filter="url(#b1do45z70cbkgc0)" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="150" x="2661.875" y="991.0645">SmartCard</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="2811.875" y="991.0645">&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="180" x="2646.875" y="1028.7988">CalypsoCard</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2332.5" x2="3032.5" y1="1047.8906" y2="1047.8906"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2332.5" x2="3032.5" y1="1067.8906" y2="1067.8906"/><ellipse cx="2357.5" cy="1095.3906" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="377.5" x="2380" y="1106.438">ProductType getProductType ()</text><ellipse cx="2357.5" cy="1129.9805" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="197.5" x="2380" y="1141.0278">boolean isHce ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2387.5" y="1175.6177"/><ellipse cx="2357.5" cy="1199.1602" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="235" x="2380" y="1210.2075">byte[] getDfName ()</text><ellipse cx="2357.5" cy="1233.75" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="432.5" x="2380" y="1244.7974">byte[] getApplicationSerialNumber ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2387.5" y="1279.3872"/><ellipse cx="2357.5" cy="1302.9297" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="385" x="2380" y="1313.9771">byte[] getStartupInfoRawData ()</text><ellipse cx="2357.5" cy="1337.5195" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="222.5" x="2380" y="1348.5669">byte getPlatform ()</text><ellipse cx="2357.5" cy="1372.1094" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="317.5" x="2380" y="1383.1567">byte getApplicationType ()</text><ellipse cx="2357.5" cy="1406.6992" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="357.5" x="2380" y="1417.7466">byte getApplicationSubtype ()</text><ellipse cx="2357.5" cy="1441.2891" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="315" x="2380" y="1452.3364">byte getSoftwareIssuer ()</text><ellipse cx="2357.5" cy="1475.8789" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="335" x="2380" y="1486.9263">byte getSoftwareVersion ()</text><ellipse cx="2357.5" cy="1510.4688" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="342.5" x="2380" y="1521.5161">byte getSoftwareRevision ()</text><ellipse cx="2357.5" cy="1545.0586" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="365" x="2380" y="1556.106">byte getSessionModification ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2387.5" y="1590.6958"/><ellipse cx="2357.5" cy="1614.2383" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="467.5" x="2380" y="1625.2856">DirectoryHeader getDirectoryHeader ()</text><ellipse cx="2357.5" cy="1648.8281" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="440" x="2380" y="1659.8755">ElementaryFile getFileBySfi (byte sfi)</text><ellipse cx="2357.5" cy="1683.418" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="447.5" x="2380" y="1694.4653">ElementaryFile getFileByLid (short lid)</text><ellipse cx="2357.5" cy="1718.0078" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="480" x="2380" y="1729.0552">Map&lt;Byte, ElementaryFile&gt; getAllFiles ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2387.5" y="1763.645"/><ellipse cx="2357.5" cy="1787.1875" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="305" x="2380" y="1798.2349">boolean isDfInvalidated ()</text><ellipse cx="2357.5" cy="1821.7773" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="267.5" x="2380" y="1832.8247">boolean isDfRatified ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2387.5" y="1867.4146"/><ellipse cx="2357.5" cy="1890.957" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="372.5" x="2380" y="1902.0044">boolean isPkiModeSupported ()</text><ellipse cx="2357.5" cy="1925.5469" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="452.5" x="2380" y="1936.5942">boolean isExtendedModeSupported ()</text><ellipse cx="2357.5" cy="1960.1367" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="547.5" x="2380" y="1971.1841">boolean isRatificationOnDeselectSupported ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2387.5" y="2005.7739"/><ellipse cx="2357.5" cy="2029.3164" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="387.5" x="2380" y="2040.3638">boolean isPinFeatureAvailable ()</text><ellipse cx="2357.5" cy="2063.9063" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="280" x="2380" y="2074.9536">boolean isPinBlocked ()</text><ellipse cx="2357.5" cy="2098.4961" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="350" x="2380" y="2109.5435">int getPinAttemptRemaining ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2387.5" y="2144.1333"/><ellipse cx="2357.5" cy="2167.6758" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="385" x="2380" y="2178.7231">boolean isSvFeatureAvailable ()</text><ellipse cx="2357.5" cy="2202.2656" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="230" x="2380" y="2213.313">int getSvBalance ()</text><ellipse cx="2357.5" cy="2236.8555" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="252.5" x="2380" y="2247.9028">int getSvLastTNum ()</text><ellipse cx="2357.5" cy="2271.4453" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="522.5" x="2380" y="2282.4927">SvLoadLogRecord getSvLoadLogRecord ()</text><ellipse cx="2357.5" cy="2306.0352" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="575" x="2380" y="2317.0825">SvDebitLogRecord getSvDebitLogLastRecord ()</text><ellipse cx="2357.5" cy="2340.625" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="640" x="2380" y="2351.6724">List&lt;SvDebitLogRecord&gt; getSvDebitLogAllRecords ()</text><!--MD5=[0b9f931ff20ef873cbf798587ab2189f]
+class DirectoryHeader--><rect codeLine="143" fill="#FEFECE" height="396.7188" id="DirectoryHeader" style="stroke:#D4AC0D;stroke-width:3.75;" width="690" x="2397.5" y="2846.1719"/><ellipse cx="2605.625" cy="2886.1719" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M2608.125,2878.6719 L2608.125,2893.6719 L2613.125,2893.6719 L2614.3359,2893.6719 L2615.625,2895.2344 L2615.625,2896.1719 L2615.625,2897.1094 L2614.3359,2898.6719 L2613.125,2898.6719 L2598.125,2898.6719 L2596.9141,2898.6719 L2595.625,2897.1094 L2595.625,2896.1719 L2595.625,2895.2344 L2596.9141,2893.6719 L2598.125,2893.6719 L2603.125,2893.6719 L2603.125,2878.6719 L2598.125,2878.6719 L2596.9141,2878.6719 L2595.625,2877.1094 L2595.625,2876.1719 L2595.625,2875.2344 L2596.9141,2873.6719 L2598.125,2873.6719 L2613.125,2873.6719 L2614.3359,2873.6719 L2615.625,2875.2344 L2615.625,2876.1719 L2615.625,2877.1094 L2614.3359,2878.6719 L2613.125,2878.6719 L2608.125,2878.6719 Z " fill="#000000"/><ellipse cx="2669.375" cy="2884.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="225" x="2684.375" y="2898.4473">DirectoryHeader</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2400" x2="3085" y1="2926.1719" y2="2926.1719"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2400" x2="3085" y1="2946.1719" y2="2946.1719"/><ellipse cx="2425" cy="2973.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="170" x="2447.5" y="2984.7192">short getLid ()</text><ellipse cx="2425" cy="3008.2617" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="230" x="2447.5" y="3019.3091">byte getDfStatus ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2455" y="3053.8989"/><ellipse cx="2425" cy="3077.4414" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="360" x="2447.5" y="3088.4888">byte[] getAccessConditions ()</text><ellipse cx="2425" cy="3112.0313" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="282.5" x="2447.5" y="3123.0786">byte[] getKeyIndexes ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="2455" y="3157.6685"/><ellipse cx="2425" cy="3181.2109" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="610" x="2447.5" y="3192.2583">byte getKif (WriteAccessLevel writeAccessLevel)</text><ellipse cx="2425" cy="3215.8008" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="625" x="2447.5" y="3226.8481">byte getKvc (WriteAccessLevel writeAccessLevel)</text><!--MD5=[96ed275c747ab8e5816af3c7b7a6d739]
+class ElementaryFile--><rect codeLine="153" fill="#FEFECE" height="223.7695" id="ElementaryFile" style="stroke:#D4AC0D;stroke-width:3.75;" width="352.5" x="1956.25" y="2932.4219"/><ellipse cx="2010.625" cy="2972.4219" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M2013.125,2964.9219 L2013.125,2979.9219 L2018.125,2979.9219 L2019.3359,2979.9219 L2020.625,2981.4844 L2020.625,2982.4219 L2020.625,2983.3594 L2019.3359,2984.9219 L2018.125,2984.9219 L2003.125,2984.9219 L2001.9141,2984.9219 L2000.625,2983.3594 L2000.625,2982.4219 L2000.625,2981.4844 L2001.9141,2979.9219 L2003.125,2979.9219 L2008.125,2979.9219 L2008.125,2964.9219 L2003.125,2964.9219 L2001.9141,2964.9219 L2000.625,2963.3594 L2000.625,2962.4219 L2000.625,2961.4844 L2001.9141,2959.9219 L2003.125,2959.9219 L2018.125,2959.9219 L2019.3359,2959.9219 L2020.625,2961.4844 L2020.625,2962.4219 L2020.625,2963.3594 L2019.3359,2964.9219 L2018.125,2964.9219 L2013.125,2964.9219 Z " fill="#000000"/><ellipse cx="2061.875" cy="2971.1719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="207.5" x="2076.875" y="2984.6973">ElementaryFile</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1958.75" x2="2306.25" y1="3012.4219" y2="3012.4219"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1958.75" x2="2306.25" y1="3032.4219" y2="3032.4219"/><ellipse cx="1983.75" cy="3059.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="157.5" x="2006.25" y="3070.9692">byte getSfi ()</text><ellipse cx="1983.75" cy="3094.5117" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="287.5" x="2006.25" y="3105.5591">FileHeader getHeader ()</text><ellipse cx="1983.75" cy="3129.1016" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="222.5" x="2006.25" y="3140.1489">FileData getData ()</text><!--MD5=[486f9787c412818ec30cf5d906211656]
+class FileHeader--><rect codeLine="158" fill="#FEFECE" height="500.4883" id="FileHeader" style="stroke:#D4AC0D;stroke-width:3.75;" width="462.5" x="1901.25" y="3664.9219"/><ellipse cx="2031.875" cy="3704.9219" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M2034.375,3697.4219 L2034.375,3712.4219 L2039.375,3712.4219 L2040.5859,3712.4219 L2041.875,3713.9844 L2041.875,3714.9219 L2041.875,3715.8594 L2040.5859,3717.4219 L2039.375,3717.4219 L2024.375,3717.4219 L2023.1641,3717.4219 L2021.875,3715.8594 L2021.875,3714.9219 L2021.875,3713.9844 L2023.1641,3712.4219 L2024.375,3712.4219 L2029.375,3712.4219 L2029.375,3697.4219 L2024.375,3697.4219 L2023.1641,3697.4219 L2021.875,3695.8594 L2021.875,3694.9219 L2021.875,3693.9844 L2023.1641,3692.4219 L2024.375,3692.4219 L2039.375,3692.4219 L2040.5859,3692.4219 L2041.875,3693.9844 L2041.875,3694.9219 L2041.875,3695.8594 L2040.5859,3697.4219 L2039.375,3697.4219 L2034.375,3697.4219 Z " fill="#000000"/><ellipse cx="2095.625" cy="3703.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="152.5" x="2110.625" y="3717.1973">FileHeader</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1903.75" x2="2361.25" y1="3744.9219" y2="3744.9219"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1903.75" x2="2361.25" y1="3764.9219" y2="3764.9219"/><ellipse cx="1928.75" cy="3792.4219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="170" x="1951.25" y="3803.4692">short getLid ()</text><ellipse cx="1928.75" cy="3827.0117" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="230" x="1951.25" y="3838.0591">byte getDfStatus ()</text><ellipse cx="1928.75" cy="3861.6016" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="397.5" x="1951.25" y="3872.6489">ElementaryFile.Type getEfType ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1958.75" y="3907.2388"/><ellipse cx="1928.75" cy="3930.7813" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="295" x="1951.25" y="3941.8286">int getRecordsNumber ()</text><ellipse cx="1928.75" cy="3965.3711" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="240" x="1951.25" y="3976.4185">int getRecordSize ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1958.75" y="4011.0083"/><ellipse cx="1928.75" cy="4034.5508" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="360" x="1951.25" y="4045.5981">byte[] getAccessConditions ()</text><ellipse cx="1928.75" cy="4069.1406" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="282.5" x="1951.25" y="4080.188">byte[] getKeyIndexes ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1958.75" y="4114.7778"/><ellipse cx="1928.75" cy="4138.3203" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="352.5" x="1951.25" y="4149.3677">Short getSharedReference ()</text><!--MD5=[b2892fca6bf934519171596a14a2d163]
+class FileType--><rect codeLine="171" fill="#FEFECE" height="292.9492" id="FileType" style="stroke:#D4AC0D;stroke-width:3.75;" width="325" x="2587.5" y="3768.6719"/><ellipse cx="2692.5" cy="3808.6719" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M2688.75,3811.1719 L2688.75,3816.1719 L2698.75,3816.1719 L2698.75,3813.6719 L2698.75,3812.4609 L2700.3125,3811.1719 L2701.25,3811.1719 L2702.1875,3811.1719 L2703.75,3812.4609 L2703.75,3813.6719 L2703.75,3821.1719 L2683.75,3821.1719 L2682.5391,3821.1719 L2681.25,3819.6094 L2681.25,3818.6719 L2681.25,3817.7344 L2682.5391,3816.1719 L2683.75,3816.1719 L2683.75,3816.1719 L2683.75,3801.1719 L2683.75,3801.1719 L2682.5391,3801.1719 L2681.25,3799.6094 L2681.25,3798.6719 L2681.25,3797.7344 L2682.5391,3796.1719 L2683.75,3796.1719 L2703.75,3796.1719 L2703.75,3803.6719 L2703.75,3804.8828 L2702.1875,3806.1719 L2701.25,3806.1719 L2700.3125,3806.1719 L2698.75,3804.8828 L2698.75,3803.6719 L2698.75,3801.1719 L2688.75,3801.1719 L2688.75,3806.1719 L2691.25,3806.1719 L2691.25,3804.9609 L2691.25,3804.9609 L2692.8125,3803.6719 L2693.75,3803.6719 L2694.6875,3803.6719 L2696.25,3804.9609 L2696.25,3806.1719 L2696.25,3811.1719 L2696.25,3812.3828 L2694.6875,3813.6719 L2694.6875,3813.6719 L2693.75,3813.6719 L2692.8125,3813.6719 L2691.25,3812.3828 L2691.25,3812.3828 L2691.25,3811.1719 L2688.75,3811.1719 Z " fill="#000000"/><ellipse cx="2755" cy="3807.4219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="67.5" x="2770" y="3820.9473">Type</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2590" x2="2910" y1="3848.6719" y2="3848.6719"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="90" x="2602.5" y="3887.2192">LINEAR</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="97.5" x="2602.5" y="3921.8091">BINARY</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="92.5" x="2602.5" y="3956.3989">CYCLIC</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="137.5" x="2602.5" y="3990.9888">COUNTERS</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="295" x="2602.5" y="4025.5786">SIMULATED_COUNTERS</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="2590" x2="2910" y1="4041.6211" y2="4041.6211"/><!--MD5=[9e0c9777a80d688403528ae1660d9a4a]
+class FileData--><rect codeLine="178" fill="#FEFECE" height="362.1289" id="FileData" style="stroke:#D4AC0D;stroke-width:3.75;" width="835" x="977.5" y="3733.6719"/><ellipse cx="1313.125" cy="3773.6719" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M1315.625,3766.1719 L1315.625,3781.1719 L1320.625,3781.1719 L1321.8359,3781.1719 L1323.125,3782.7344 L1323.125,3783.6719 L1323.125,3784.6094 L1321.8359,3786.1719 L1320.625,3786.1719 L1305.625,3786.1719 L1304.4141,3786.1719 L1303.125,3784.6094 L1303.125,3783.6719 L1303.125,3782.7344 L1304.4141,3781.1719 L1305.625,3781.1719 L1310.625,3781.1719 L1310.625,3766.1719 L1305.625,3766.1719 L1304.4141,3766.1719 L1303.125,3764.6094 L1303.125,3763.6719 L1303.125,3762.7344 L1304.4141,3761.1719 L1305.625,3761.1719 L1320.625,3761.1719 L1321.8359,3761.1719 L1323.125,3762.7344 L1323.125,3763.6719 L1323.125,3764.6094 L1321.8359,3766.1719 L1320.625,3766.1719 L1315.625,3766.1719 Z " fill="#000000"/><ellipse cx="1376.875" cy="3772.4219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="115" x="1391.875" y="3785.9473">FileData</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="980" x2="1810" y1="3813.6719" y2="3813.6719"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="980" x2="1810" y1="3833.6719" y2="3833.6719"/><ellipse cx="1005" cy="3861.1719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="232.5" x="1027.5" y="3872.2192">byte[] getContent ()</text><ellipse cx="1005" cy="3895.7617" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="405" x="1027.5" y="3906.8091">byte[] getContent (int numRecord)</text><ellipse cx="1005" cy="3930.3516" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="770" x="1027.5" y="3941.3989">byte[] getContent (int numRecord, int dataOffset, int dataLength)</text><ellipse cx="1005" cy="3964.9414" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="622.5" x="1027.5" y="3975.9888">SortedMap&lt;Integer, byte[]&gt; getAllRecordsContent ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1035" y="4010.5786"/><ellipse cx="1005" cy="4034.1211" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="572.5" x="1027.5" y="4045.1685">int getContentAsCounterValue (int numCounter)</text><ellipse cx="1005" cy="4068.7109" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="622.5" x="1027.5" y="4079.7583">SortedMap&lt;Integer, Integer&gt; getAllCountersValue ()</text><!--MD5=[e000c089c172563ba3d8f11f76ec265c]
+class CardProductType--><rect codeLine="187" fill="#FEFECE" height="327.5391" id="CardProductType" style="stroke:#D4AC0D;stroke-width:3.75;" width="280" x="3175" y="2881.1719"/><ellipse cx="3212.5" cy="2921.1719" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M3208.75,2923.6719 L3208.75,2928.6719 L3218.75,2928.6719 L3218.75,2926.1719 L3218.75,2924.9609 L3220.3125,2923.6719 L3221.25,2923.6719 L3222.1875,2923.6719 L3223.75,2924.9609 L3223.75,2926.1719 L3223.75,2933.6719 L3203.75,2933.6719 L3202.5391,2933.6719 L3201.25,2932.1094 L3201.25,2931.1719 L3201.25,2930.2344 L3202.5391,2928.6719 L3203.75,2928.6719 L3203.75,2928.6719 L3203.75,2913.6719 L3203.75,2913.6719 L3202.5391,2913.6719 L3201.25,2912.1094 L3201.25,2911.1719 L3201.25,2910.2344 L3202.5391,2908.6719 L3203.75,2908.6719 L3223.75,2908.6719 L3223.75,2916.1719 L3223.75,2917.3828 L3222.1875,2918.6719 L3221.25,2918.6719 L3220.3125,2918.6719 L3218.75,2917.3828 L3218.75,2916.1719 L3218.75,2913.6719 L3208.75,2913.6719 L3208.75,2918.6719 L3211.25,2918.6719 L3211.25,2917.4609 L3211.25,2917.4609 L3212.8125,2916.1719 L3213.75,2916.1719 L3214.6875,2916.1719 L3216.25,2917.4609 L3216.25,2918.6719 L3216.25,2923.6719 L3216.25,2924.8828 L3214.6875,2926.1719 L3214.6875,2926.1719 L3213.75,2926.1719 L3212.8125,2926.1719 L3211.25,2924.8828 L3211.25,2924.8828 L3211.25,2923.6719 L3208.75,2923.6719 Z " fill="#000000"/><ellipse cx="3260" cy="2919.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="172.5" x="3275" y="2933.4473">ProductType</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3177.5" x2="3452.5" y1="2961.1719" y2="2961.1719"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="235" x="3190" y="2999.7192">PRIME_REVISION_1</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="235" x="3190" y="3034.3091">PRIME_REVISION_2</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="235" x="3190" y="3068.8989">PRIME_REVISION_3</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="72.5" x="3190" y="3103.4888">LIGHT</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="77.5" x="3190" y="3138.0786">BASIC</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="132.5" x="3190" y="3172.6685">UNKNOWN</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3177.5" x2="3452.5" y1="3188.7109" y2="3188.7109"/><!--MD5=[c749d7bba5587d09bce06f9a9a7e89ad]
+class SvLoadLogRecord--><rect codeLine="195" fill="#FEFECE" height="569.668" id="SvLoadLogRecord" style="stroke:#D4AC0D;stroke-width:3.75;" width="365" x="1045" y="2759.9219"/><ellipse cx="1082.5" cy="2799.9219" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M1085,2792.4219 L1085,2807.4219 L1090,2807.4219 L1091.2109,2807.4219 L1092.5,2808.9844 L1092.5,2809.9219 L1092.5,2810.8594 L1091.2109,2812.4219 L1090,2812.4219 L1075,2812.4219 L1073.7891,2812.4219 L1072.5,2810.8594 L1072.5,2809.9219 L1072.5,2808.9844 L1073.7891,2807.4219 L1075,2807.4219 L1080,2807.4219 L1080,2792.4219 L1075,2792.4219 L1073.7891,2792.4219 L1072.5,2790.8594 L1072.5,2789.9219 L1072.5,2788.9844 L1073.7891,2787.4219 L1075,2787.4219 L1090,2787.4219 L1091.2109,2787.4219 L1092.5,2788.9844 L1092.5,2789.9219 L1092.5,2790.8594 L1091.2109,2792.4219 L1090,2792.4219 L1085,2792.4219 Z " fill="#000000"/><ellipse cx="1130" cy="2798.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="257.5" x="1145" y="2812.1973">SvLoadLogRecord</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1047.5" x2="1407.5" y1="2839.9219" y2="2839.9219"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1047.5" x2="1407.5" y1="2859.9219" y2="2859.9219"/><ellipse cx="1072.5" cy="2887.4219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="252.5" x="1095" y="2898.4692">byte[] getRawData ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1102.5" y="2933.0591"/><ellipse cx="1072.5" cy="2956.6016" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="255" x="1095" y="2967.6489">byte[] getLoadDate ()</text><ellipse cx="1072.5" cy="2991.1914" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="255" x="1095" y="3002.2388">byte[] getLoadTime ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1102.5" y="3036.8286"/><ellipse cx="1072.5" cy="3060.3711" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="192.5" x="1095" y="3071.4185">int getAmount ()</text><ellipse cx="1072.5" cy="3094.9609" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="197.5" x="1095" y="3106.0083">int getBalance ()</text><ellipse cx="1072.5" cy="3129.5508" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="250" x="1095" y="3140.5981">byte[] getFreeData ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1102.5" y="3175.188"/><ellipse cx="1072.5" cy="3198.7305" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="172.5" x="1095" y="3209.7778">byte getKvc ()</text><ellipse cx="1072.5" cy="3233.3203" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="212.5" x="1095" y="3244.3677">byte[] getSamId ()</text><ellipse cx="1072.5" cy="3267.9102" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="220" x="1095" y="3278.9575">int getSamTNum ()</text><ellipse cx="1072.5" cy="3302.5" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="200" x="1095" y="3313.5474">int getSvTNum ()</text><!--MD5=[f7bb9a4e07bc41a393fc40394d0e062c]
+class SvDebitLogRecord--><rect codeLine="210" fill="#FEFECE" height="535.0781" id="SvDebitLogRecord" style="stroke:#D4AC0D;stroke-width:3.75;" width="370" x="1497.5" y="2777.4219"/><ellipse cx="1535" cy="2817.4219" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M1537.5,2809.9219 L1537.5,2824.9219 L1542.5,2824.9219 L1543.7109,2824.9219 L1545,2826.4844 L1545,2827.4219 L1545,2828.3594 L1543.7109,2829.9219 L1542.5,2829.9219 L1527.5,2829.9219 L1526.2891,2829.9219 L1525,2828.3594 L1525,2827.4219 L1525,2826.4844 L1526.2891,2824.9219 L1527.5,2824.9219 L1532.5,2824.9219 L1532.5,2809.9219 L1527.5,2809.9219 L1526.2891,2809.9219 L1525,2808.3594 L1525,2807.4219 L1525,2806.4844 L1526.2891,2804.9219 L1527.5,2804.9219 L1542.5,2804.9219 L1543.7109,2804.9219 L1545,2806.4844 L1545,2807.4219 L1545,2808.3594 L1543.7109,2809.9219 L1542.5,2809.9219 L1537.5,2809.9219 Z " fill="#000000"/><ellipse cx="1582.5" cy="2816.1719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="262.5" x="1597.5" y="2829.6973">SvDebitLogRecord</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1500" x2="1865" y1="2857.4219" y2="2857.4219"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="1500" x2="1865" y1="2877.4219" y2="2877.4219"/><ellipse cx="1525" cy="2904.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="252.5" x="1547.5" y="2915.9692">byte[] getRawData ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1555" y="2950.5591"/><ellipse cx="1525" cy="2974.1016" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="255" x="1547.5" y="2985.1489">byte[] getDebitDate ()</text><ellipse cx="1525" cy="3008.6914" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="255" x="1547.5" y="3019.7388">byte[] getDebitTime ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1555" y="3054.3286"/><ellipse cx="1525" cy="3077.8711" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="192.5" x="1547.5" y="3088.9185">int getAmount ()</text><ellipse cx="1525" cy="3112.4609" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="197.5" x="1547.5" y="3123.5083">int getBalance ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="1555" y="3158.0981"/><ellipse cx="1525" cy="3181.6406" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="172.5" x="1547.5" y="3192.688">byte getKvc ()</text><ellipse cx="1525" cy="3216.2305" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="212.5" x="1547.5" y="3227.2778">byte[] getSamId ()</text><ellipse cx="1525" cy="3250.8203" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="220" x="1547.5" y="3261.8677">int getSamTNum ()</text><ellipse cx="1525" cy="3285.4102" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="200" x="1547.5" y="3296.4575">int getSvTNum ()</text><!--MD5=[c337779d2dbd9414fdf26e542ab5c644]
+class CalypsoSamSelection--><rect codeLine="226" fill="#FEFECE" height="278.8281" id="CalypsoSamSelection" style="stroke:#D4AC0D;stroke-width:3.75;" width="1067.5" x="4571.25" y="3774.9219"/><ellipse cx="4928.125" cy="3825.1563" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M4930.625,3817.6563 L4930.625,3832.6563 L4935.625,3832.6563 L4936.8359,3832.6563 L4938.125,3834.2188 L4938.125,3835.1563 L4938.125,3836.0938 L4936.8359,3837.6563 L4935.625,3837.6563 L4920.625,3837.6563 L4919.4141,3837.6563 L4918.125,3836.0938 L4918.125,3835.1563 L4918.125,3834.2188 L4919.4141,3832.6563 L4920.625,3832.6563 L4925.625,3832.6563 L4925.625,3817.6563 L4920.625,3817.6563 L4919.4141,3817.6563 L4918.125,3816.0938 L4918.125,3815.1563 L4918.125,3814.2188 L4919.4141,3812.6563 L4920.625,3812.6563 L4935.625,3812.6563 L4936.8359,3812.6563 L4938.125,3814.2188 L4938.125,3815.1563 L4938.125,3816.0938 L4936.8359,3817.6563 L4935.625,3817.6563 L4930.625,3817.6563 Z " fill="#000000"/><ellipse cx="4991.875" cy="3823.9063" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="5026.875" y="3818.5645">&lt;&lt;</text><text fill="#000000" filter="url(#b1do45z70cbkgc0)" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="195" x="5061.875" y="3818.5645">CardSelection</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="5256.875" y="3818.5645">&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="305" x="5006.875" y="3856.2988">CalypsoSamSelection</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="4573.75" x2="5636.25" y1="3875.3906" y2="3875.3906"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="4573.75" x2="5636.25" y1="3895.3906" y2="3895.3906"/><ellipse cx="4598.75" cy="3922.8906" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1002.5" x="4621.25" y="3933.938">CalypsoSamSelection filterByProductType (CalypsoSam.ProductType productType)</text><ellipse cx="4598.75" cy="3957.4805" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="852.5" x="4621.25" y="3968.5278">CalypsoSamSelection filterBySerialNumber (String serialNumberRegex)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="4628.75" y="4003.1177"/><ellipse cx="4598.75" cy="4026.6602" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="677.5" x="4621.25" y="4037.7075">CalypsoSamSelection setUnlockData (String unlockData)</text><!--MD5=[f25ff1fa8fa59bbc0543eaadeb7d653a]
+class CalypsoSam--><rect codeLine="232" fill="#FEFECE" height="486.3672" id="CalypsoSam" style="stroke:#D4AC0D;stroke-width:3.75;" width="442.5" x="4041.25" y="3671.1719"/><ellipse cx="4130.5" cy="3721.4063" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M4133,3713.9063 L4133,3728.9063 L4138,3728.9063 L4139.2109,3728.9063 L4140.5,3730.4688 L4140.5,3731.4063 L4140.5,3732.3438 L4139.2109,3733.9063 L4138,3733.9063 L4123,3733.9063 L4121.7891,3733.9063 L4120.5,3732.3438 L4120.5,3731.4063 L4120.5,3730.4688 L4121.7891,3728.9063 L4123,3728.9063 L4128,3728.9063 L4128,3713.9063 L4123,3713.9063 L4121.7891,3713.9063 L4120.5,3712.3438 L4120.5,3711.4063 L4120.5,3710.4688 L4121.7891,3708.9063 L4123,3708.9063 L4138,3708.9063 L4139.2109,3708.9063 L4140.5,3710.4688 L4140.5,3711.4063 L4140.5,3712.3438 L4139.2109,3713.9063 L4138,3713.9063 L4133,3713.9063 Z " fill="#000000"/><ellipse cx="4189.5" cy="3720.1563" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="4204.5" y="3714.8145">&lt;&lt;</text><text fill="#000000" filter="url(#b1do45z70cbkgc0)" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="150" x="4239.5" y="3714.8145">SmartCard</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="35" x="4389.5" y="3714.8145">&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="177.5" x="4225.75" y="3752.5488">CalypsoSam</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="4043.75" x2="4481.25" y1="3771.6406" y2="3771.6406"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="4043.75" x2="4481.25" y1="3791.6406" y2="3791.6406"/><ellipse cx="4068.75" cy="3819.1406" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="377.5" x="4091.25" y="3830.188">ProductType getProductType ()</text><ellipse cx="4068.75" cy="3853.7305" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="280" x="4091.25" y="3864.7778">String getProductInfo ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="4098.75" y="3899.3677"/><ellipse cx="4068.75" cy="3922.9102" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="300" x="4091.25" y="3933.9575">byte[] getSerialNumber ()</text><ellipse cx="4068.75" cy="3957.5" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="222.5" x="4091.25" y="3968.5474">byte getPlatform ()</text><ellipse cx="4068.75" cy="3992.0898" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="317.5" x="4091.25" y="4003.1372">byte getApplicationType ()</text><ellipse cx="4068.75" cy="4026.6797" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="365" x="4091.25" y="4037.7271">byte getApplicationSubType ()</text><ellipse cx="4068.75" cy="4061.2695" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="315" x="4091.25" y="4072.3169">byte getSoftwareIssuer ()</text><ellipse cx="4068.75" cy="4095.8594" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="335" x="4091.25" y="4106.9067">byte getSoftwareVersion ()</text><ellipse cx="4068.75" cy="4130.4492" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="342.5" x="4091.25" y="4141.4966">byte getSoftwareRevision ()</text><!--MD5=[64db2d10778acf6b7b903aeb76cb16f8]
+class SamProductType--><rect codeLine="244" fill="#FEFECE" height="292.9492" id="SamProductType" style="stroke:#D4AC0D;stroke-width:3.75;" width="280" x="4225" y="4364.9219"/><ellipse cx="4262.5" cy="4404.9219" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M4258.75,4407.4219 L4258.75,4412.4219 L4268.75,4412.4219 L4268.75,4409.9219 L4268.75,4408.7109 L4270.3125,4407.4219 L4271.25,4407.4219 L4272.1875,4407.4219 L4273.75,4408.7109 L4273.75,4409.9219 L4273.75,4417.4219 L4253.75,4417.4219 L4252.5391,4417.4219 L4251.25,4415.8594 L4251.25,4414.9219 L4251.25,4413.9844 L4252.5391,4412.4219 L4253.75,4412.4219 L4253.75,4412.4219 L4253.75,4397.4219 L4253.75,4397.4219 L4252.5391,4397.4219 L4251.25,4395.8594 L4251.25,4394.9219 L4251.25,4393.9844 L4252.5391,4392.4219 L4253.75,4392.4219 L4273.75,4392.4219 L4273.75,4399.9219 L4273.75,4401.1328 L4272.1875,4402.4219 L4271.25,4402.4219 L4270.3125,4402.4219 L4268.75,4401.1328 L4268.75,4399.9219 L4268.75,4397.4219 L4258.75,4397.4219 L4258.75,4402.4219 L4261.25,4402.4219 L4261.25,4401.2109 L4261.25,4401.2109 L4262.8125,4399.9219 L4263.75,4399.9219 L4264.6875,4399.9219 L4266.25,4401.2109 L4266.25,4402.4219 L4266.25,4407.4219 L4266.25,4408.6328 L4264.6875,4409.9219 L4264.6875,4409.9219 L4263.75,4409.9219 L4262.8125,4409.9219 L4261.25,4408.6328 L4261.25,4408.6328 L4261.25,4407.4219 L4258.75,4407.4219 Z " fill="#000000"/><ellipse cx="4310" cy="4403.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="172.5" x="4325" y="4417.1973">ProductType</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="4227.5" x2="4502.5" y1="4444.9219" y2="4444.9219"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="105" x="4240" y="4483.4692">SAM_C1</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="135" x="4240" y="4518.0591">SAM_S1E1</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="137.5" x="4240" y="4552.6489">SAM_S1Dx</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="105" x="4240" y="4587.2388">CSAM_F</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="132.5" x="4240" y="4621.8286">UNKNOWN</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="4227.5" x2="4502.5" y1="4637.8711" y2="4637.8711"/><!--MD5=[92be3b4089a2693ac3db71f8eb03f488]
+class CardTransactionManager--><rect codeLine="253" fill="#FEFECE" height="1641.9531" id="CardTransactionManager" style="stroke:#D4AC0D;stroke-width:3.75;" width="1512.5" x="3656.25" y="836.1719"/><ellipse cx="4214.375" cy="876.1719" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M4216.875,868.6719 L4216.875,883.6719 L4221.875,883.6719 L4223.0859,883.6719 L4224.375,885.2344 L4224.375,886.1719 L4224.375,887.1094 L4223.0859,888.6719 L4221.875,888.6719 L4206.875,888.6719 L4205.6641,888.6719 L4204.375,887.1094 L4204.375,886.1719 L4204.375,885.2344 L4205.6641,883.6719 L4206.875,883.6719 L4211.875,883.6719 L4211.875,868.6719 L4206.875,868.6719 L4205.6641,868.6719 L4204.375,867.1094 L4204.375,866.1719 L4204.375,865.2344 L4205.6641,863.6719 L4206.875,863.6719 L4221.875,863.6719 L4223.0859,863.6719 L4224.375,865.2344 L4224.375,866.1719 L4224.375,867.1094 L4223.0859,868.6719 L4221.875,868.6719 L4216.875,868.6719 Z " fill="#000000"/><ellipse cx="4278.125" cy="874.9219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="347.5" x="4293.125" y="888.4473">CardTransactionManager</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3658.75" x2="5166.25" y1="916.1719" y2="916.1719"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3658.75" x2="5166.25" y1="936.1719" y2="936.1719"/><ellipse cx="3683.75" cy="963.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" filter="url(#b1do45z70cbkgc0)" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="145" x="3706.25" y="974.7192">CardReader</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="210" x="3858.75" y="974.7192">getCardReader ()</text><ellipse cx="3683.75" cy="998.2617" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="382.5" x="3706.25" y="1009.3091">CalypsoCard getCalypsoCard ()</text><ellipse cx="3683.75" cy="1032.8516" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="552.5" x="3706.25" y="1043.8989">CardSecuritySetting getCardSecuritySetting ()</text><ellipse cx="3683.75" cy="1067.4414" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="402.5" x="3706.25" y="1078.4888">String getTransactionAuditData ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="1113.0786"/><ellipse cx="3683.75" cy="1136.6211" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="650" x="3706.25" y="1147.6685">CardTransactionManager prepareSelectFile (byte[] lid)</text><ellipse cx="3683.75" cy="1171.2109" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="955" x="3706.25" y="1182.2583">CardTransactionManager prepareSelectFile (SelectFileControl selectFileControl)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="1216.8481"/><ellipse cx="3683.75" cy="1240.3906" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="720" x="3706.25" y="1251.438">CardTransactionManager prepareGetData (GetDataTag tag)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="1286.0278"/><ellipse cx="3683.75" cy="1309.5703" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="937.5" x="3706.25" y="1320.6177">CardTransactionManager prepareReadRecordFile (byte sfi, int recordNumber)</text><ellipse cx="3683.75" cy="1344.1602" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1447.5" x="3706.25" y="1355.2075">CardTransactionManager prepareReadRecordFile (byte sfi, int firstRecordNumber, int numberOfRecords, int recordSize)</text><ellipse cx="3683.75" cy="1378.75" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="972.5" x="3706.25" y="1389.7974">CardTransactionManager prepareReadCounterFile (byte sfi, int countersNumber)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="1424.3872"/><ellipse cx="3683.75" cy="1447.9297" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="622.5" x="3706.25" y="1458.9771">CardTransactionManager prepareCheckPinStatus ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="1493.5669"/><ellipse cx="3683.75" cy="1517.1094" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="932.5" x="3706.25" y="1528.1567">CardTransactionManager prepareAppendRecord (byte sfi, byte[] recordData)</text><ellipse cx="3683.75" cy="1551.6992" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1145" x="3706.25" y="1562.7466">CardTransactionManager prepareUpdateRecord (byte sfi, int recordNumber, byte[] recordData)</text><ellipse cx="3683.75" cy="1586.2891" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1122.5" x="3706.25" y="1597.3364">CardTransactionManager prepareWriteRecord (byte sfi, int recordNumber, byte[] recordData)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="1631.9263"/><ellipse cx="3683.75" cy="1655.4688" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1115" x="3706.25" y="1666.5161">CardTransactionManager prepareIncreaseCounter (byte sfi, int counterNumber, int incValue)</text><ellipse cx="3683.75" cy="1690.0586" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1137.5" x="3706.25" y="1701.106">CardTransactionManager prepareDecreaseCounter (byte sfi, int counterNumber, int decValue)</text><ellipse cx="3683.75" cy="1724.6484" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1070" x="3706.25" y="1735.6958">CardTransactionManager prepareSetCounter (byte sfi, int counterNumber, int newValue)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="1770.2856"/><ellipse cx="3683.75" cy="1793.8281" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1055" x="3706.25" y="1804.8755">CardTransactionManager prepareSvGet (SvOperation svOperation, SvAction svAction)</text><ellipse cx="3683.75" cy="1828.418" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1092.5" x="3706.25" y="1839.4653">CardTransactionManager prepareSvReload (int amount, byte[] date, byte[] time, byte[] free)</text><ellipse cx="3683.75" cy="1863.0078" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="672.5" x="3706.25" y="1874.0552">CardTransactionManager prepareSvReload (int amount)</text><ellipse cx="3683.75" cy="1897.5977" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="930" x="3706.25" y="1908.645">CardTransactionManager prepareSvDebit (int amount, byte[] date, byte[] time)</text><ellipse cx="3683.75" cy="1932.1875" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="650" x="3706.25" y="1943.2349">CardTransactionManager prepareSvDebit (int amount)</text><ellipse cx="3683.75" cy="1966.7773" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="620" x="3706.25" y="1977.8247">CardTransactionManager prepareSvReadAllLogs ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="2012.4146"/><ellipse cx="3683.75" cy="2035.957" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="547.5" x="3706.25" y="2047.0044">CardTransactionManager prepareInvalidate ()</text><ellipse cx="3683.75" cy="2070.5469" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="572.5" x="3706.25" y="2081.5942">CardTransactionManager prepareRehabilitate ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="2116.1841"/><ellipse cx="3683.75" cy="2139.7266" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="687.5" x="3706.25" y="2150.7739">CardTransactionManager prepareReleaseCardChannel ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="2185.3638"/><ellipse cx="3683.75" cy="2208.9063" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="630" x="3706.25" y="2219.9536">CardTransactionManager processCardCommands ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="2254.5435"/><ellipse cx="3683.75" cy="2278.0859" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="660" x="3706.25" y="2289.1333">CardTransactionManager processVerifyPin (byte[] pin)</text><ellipse cx="3683.75" cy="2312.6758" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="732.5" x="3706.25" y="2323.7231">CardTransactionManager processChangePin (byte[] newPin)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3713.75" y="2358.313"/><ellipse cx="3683.75" cy="2381.8555" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="992.5" x="3706.25" y="2392.9028">CardTransactionManager processOpening (WriteAccessLevel writeAccessLevel)</text><ellipse cx="3683.75" cy="2416.4453" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="527.5" x="3706.25" y="2427.4927">CardTransactionManager processClosing ()</text><ellipse cx="3683.75" cy="2451.0352" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="522.5" x="3706.25" y="2462.0825">CardTransactionManager processCancel ()</text><!--MD5=[80899d8261aafdb2d3733adc7bf0e757]
+class SvOperation--><rect codeLine="299" fill="#FEFECE" height="189.1797" id="SvOperation" style="stroke:#D4AC0D;stroke-width:3.75;" width="277.5" x="5156.25" y="2949.9219"/><ellipse cx="5193.75" cy="2989.9219" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M5190,2992.4219 L5190,2997.4219 L5200,2997.4219 L5200,2994.9219 L5200,2993.7109 L5201.5625,2992.4219 L5202.5,2992.4219 L5203.4375,2992.4219 L5205,2993.7109 L5205,2994.9219 L5205,3002.4219 L5185,3002.4219 L5183.7891,3002.4219 L5182.5,3000.8594 L5182.5,2999.9219 L5182.5,2998.9844 L5183.7891,2997.4219 L5185,2997.4219 L5185,2997.4219 L5185,2982.4219 L5185,2982.4219 L5183.7891,2982.4219 L5182.5,2980.8594 L5182.5,2979.9219 L5182.5,2978.9844 L5183.7891,2977.4219 L5185,2977.4219 L5205,2977.4219 L5205,2984.9219 L5205,2986.1328 L5203.4375,2987.4219 L5202.5,2987.4219 L5201.5625,2987.4219 L5200,2986.1328 L5200,2984.9219 L5200,2982.4219 L5190,2982.4219 L5190,2987.4219 L5192.5,2987.4219 L5192.5,2986.2109 L5192.5,2986.2109 L5194.0625,2984.9219 L5195,2984.9219 L5195.9375,2984.9219 L5197.5,2986.2109 L5197.5,2987.4219 L5197.5,2992.4219 L5197.5,2993.6328 L5195.9375,2994.9219 L5195.9375,2994.9219 L5195,2994.9219 L5194.0625,2994.9219 L5192.5,2993.6328 L5192.5,2993.6328 L5192.5,2992.4219 L5190,2992.4219 Z " fill="#000000"/><ellipse cx="5241.25" cy="2988.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="170" x="5256.25" y="3002.1973">SvOperation</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="5158.75" x2="5431.25" y1="3029.9219" y2="3029.9219"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="105" x="5171.25" y="3068.4692">RELOAD</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="70" x="5171.25" y="3103.0591">DEBIT</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="5158.75" x2="5431.25" y1="3119.1016" y2="3119.1016"/><!--MD5=[3a20855ad37700d9231151c7156c605b]
+class SvAction--><rect codeLine="303" fill="#FEFECE" height="189.1797" id="SvAction" style="stroke:#D4AC0D;stroke-width:3.75;" width="227.5" x="3596.25" y="2949.9219"/><ellipse cx="3633.75" cy="2989.9219" fill="#EB937F" rx="27.5" ry="27.5" style="stroke:#EB93DF;stroke-width:2.5;"/><path d="M3630,2992.4219 L3630,2997.4219 L3640,2997.4219 L3640,2994.9219 L3640,2993.7109 L3641.5625,2992.4219 L3642.5,2992.4219 L3643.4375,2992.4219 L3645,2993.7109 L3645,2994.9219 L3645,3002.4219 L3625,3002.4219 L3623.7891,3002.4219 L3622.5,3000.8594 L3622.5,2999.9219 L3622.5,2998.9844 L3623.7891,2997.4219 L3625,2997.4219 L3625,2997.4219 L3625,2982.4219 L3625,2982.4219 L3623.7891,2982.4219 L3622.5,2980.8594 L3622.5,2979.9219 L3622.5,2978.9844 L3623.7891,2977.4219 L3625,2977.4219 L3645,2977.4219 L3645,2984.9219 L3645,2986.1328 L3643.4375,2987.4219 L3642.5,2987.4219 L3641.5625,2987.4219 L3640,2986.1328 L3640,2984.9219 L3640,2982.4219 L3630,2982.4219 L3630,2987.4219 L3632.5,2987.4219 L3632.5,2986.2109 L3632.5,2986.2109 L3634.0625,2984.9219 L3635,2984.9219 L3635.9375,2984.9219 L3637.5,2986.2109 L3637.5,2987.4219 L3637.5,2992.4219 L3637.5,2993.6328 L3635.9375,2994.9219 L3635.9375,2994.9219 L3635,2994.9219 L3634.0625,2994.9219 L3632.5,2993.6328 L3632.5,2993.6328 L3632.5,2992.4219 L3630,2992.4219 Z " fill="#000000"/><ellipse cx="3681.25" cy="2988.6719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="120" x="3696.25" y="3002.1973">SvAction</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3598.75" x2="3821.25" y1="3029.9219" y2="3029.9219"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="37.5" x="3611.25" y="3068.4692">DO</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="72.5" x="3611.25" y="3103.0591">UNDO</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3598.75" x2="3821.25" y1="3119.1016" y2="3119.1016"/><!--MD5=[902430ab886935d86a17fe3ee56b883e]
+class CardSecuritySetting--><rect codeLine="307" fill="#FEFECE" height="742.6172" id="CardSecuritySetting" style="stroke:#D4AC0D;stroke-width:3.75;" width="1157.5" x="3911.25" y="2673.6719"/><ellipse cx="4329.375" cy="2713.6719" fill="#B4A7E5" rx="27.5" ry="27.5" style="stroke:#B4A7E5;stroke-width:2.5;"/><path d="M4331.875,2706.1719 L4331.875,2721.1719 L4336.875,2721.1719 L4338.0859,2721.1719 L4339.375,2722.7344 L4339.375,2723.6719 L4339.375,2724.6094 L4338.0859,2726.1719 L4336.875,2726.1719 L4321.875,2726.1719 L4320.6641,2726.1719 L4319.375,2724.6094 L4319.375,2723.6719 L4319.375,2722.7344 L4320.6641,2721.1719 L4321.875,2721.1719 L4326.875,2721.1719 L4326.875,2706.1719 L4321.875,2706.1719 L4320.6641,2706.1719 L4319.375,2704.6094 L4319.375,2703.6719 L4319.375,2702.7344 L4320.6641,2701.1719 L4321.875,2701.1719 L4336.875,2701.1719 L4338.0859,2701.1719 L4339.375,2702.7344 L4339.375,2703.6719 L4339.375,2704.6094 L4338.0859,2706.1719 L4336.875,2706.1719 L4331.875,2706.1719 Z " fill="#000000"/><ellipse cx="4393.125" cy="2712.4219" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="30" font-style="italic" lengthAdjust="spacing" textLength="272.5" x="4408.125" y="2725.9473">CardSecuritySetting</text><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3913.75" x2="5066.25" y1="2753.6719" y2="2753.6719"/><line style="stroke:#D4AC0D;stroke-width:3.75;" x1="3913.75" x2="5066.25" y1="2773.6719" y2="2773.6719"/><ellipse cx="3938.75" cy="2801.1719" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="472.5" x="3961.25" y="2812.2192">CardSecuritySetting setSamResource (</text><text fill="#000000" filter="url(#b1do45z70cbkgc0)" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="145" x="4433.75" y="2812.2192">CardReader</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="467.5" x="4586.25" y="2812.2192">samReader, CalypsoSam calypsoSam)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3968.75" y="2846.8091"/><ellipse cx="3938.75" cy="2870.3516" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="540" x="3961.25" y="2881.3989">CardSecuritySetting enableMultipleSession ()</text><ellipse cx="3938.75" cy="2904.9414" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="622.5" x="3961.25" y="2915.9888">CardSecuritySetting enableRatificationMechanism ()</text><ellipse cx="3938.75" cy="2939.5313" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="605" x="3961.25" y="2950.5786">CardSecuritySetting enablePinPlainTransmission ()</text><ellipse cx="3938.75" cy="2974.1211" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="560" x="3961.25" y="2985.1685">CardSecuritySetting enableTransactionAudit ()</text><ellipse cx="3938.75" cy="3008.7109" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="602.5" x="3961.25" y="3019.7583">CardSecuritySetting enableSvLoadAndDebitLog ()</text><ellipse cx="3938.75" cy="3043.3008" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="622.5" x="3961.25" y="3054.3481">CardSecuritySetting authorizeSvNegativeBalance ()</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3968.75" y="3088.938"/><ellipse cx="3938.75" cy="3112.4805" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1060" x="3961.25" y="3123.5278">CardSecuritySetting assignKif (WriteAccessLevel writeAccessLevel, byte kvc, byte kif)</text><ellipse cx="3938.75" cy="3147.0703" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1027.5" x="3961.25" y="3158.1177">CardSecuritySetting assignDefaultKif (WriteAccessLevel writeAccessLevel, byte kif)</text><ellipse cx="3938.75" cy="3181.6602" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="1057.5" x="3961.25" y="3192.7075">CardSecuritySetting assignDefaultKvc (WriteAccessLevel writeAccessLevel, byte kvc)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3968.75" y="3227.2974"/><ellipse cx="3938.75" cy="3250.8398" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="802.5" x="3961.25" y="3261.8872">CardSecuritySetting addAuthorizedSessionKey (byte kif, byte kvc)</text><ellipse cx="3938.75" cy="3285.4297" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="737.5" x="3961.25" y="3296.4771">CardSecuritySetting addAuthorizedSvKey (byte kif, byte kvc)</text><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="0" x="3968.75" y="3331.0669"/><ellipse cx="3938.75" cy="3354.6094" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="850" x="3961.25" y="3365.6567">CardSecuritySetting setPinVerificationCipheringKey (byte kif, byte kvc)</text><ellipse cx="3938.75" cy="3389.1992" fill="#84BE84" rx="7.5" ry="7.5" style="stroke:#038048;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="27.5" lengthAdjust="spacing" textLength="855" x="3961.25" y="3400.2466">CardSecuritySetting setPinModificationCipheringKey (byte kif, byte kvc)</text><!--MD5=[791e09d4c810c8a1c6008939c8d78a95]
+reverse link CalypsoCardSelection to FileOccurrence--><path codeLine="332" d="M764.755,2094.0219 C763.66,2252.8219 764.4375,2433.9269 770,2598.6719 C773.61,2705.5544 782.0925,2826.6719 789.1225,2915.3369 " fill="none" id="CalypsoCardSelection-backto-FileOccurrence" style="stroke:#A80036;stroke-width:2.5;"/><ellipse cx="764.9026" cy="2076.2713" fill="#FFFFFF" rx="20" ry="20" style="stroke:#A80036;stroke-width:2.5;"/><line style="stroke:#A80036;stroke-width:2.5;" x1="764.7502" x2="765.055" y1="2096.2707" y2="2056.2719"/><line style="stroke:#A80036;stroke-width:2.5;" x1="744.9032" x2="784.902" y1="2076.1189" y2="2076.4237"/><!--MD5=[b2f8d5953c89cd71183705a81cb4cd83]
+link CalypsoCardSelection to FileOccurrence--><path codeLine="333" d="M780.4,2057.0219 C786.05,2341.1769 793.325,2706.8619 797.23,2903.1244 " fill="none" id="CalypsoCardSelection-to-FileOccurrence" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="797.4825,2915.8044,807.0306,2893.1089,797.2325,2903.3069,787.0346,2893.5088,797.4825,2915.8044" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="805.2486,2589.1089,812.1447,2566.3545,797.453,2566.6467,805.2486,2589.1089" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="827.5" y="2589.9097">provide</text><!--MD5=[124899d3a846069039d137320287bb3c]
+reverse link CalypsoCardSelection to FileControlInformation--><path codeLine="334" d="M596.795,2092.3719 C542.21,2237.3719 485.22,2401.0019 442.5,2553.6719 C404.5325,2689.3569 376.4,2850.4019 360.97,2949.5019 " fill="none" id="CalypsoCardSelection-backto-FileControlInformation" style="stroke:#A80036;stroke-width:2.5;"/><ellipse cx="603.1537" cy="2075.6244" fill="#FFFFFF" rx="20" ry="20" style="stroke:#A80036;stroke-width:2.5;"/><line style="stroke:#A80036;stroke-width:2.5;" x1="596.0674" x2="610.24" y1="2094.3269" y2="2056.9219"/><line style="stroke:#A80036;stroke-width:2.5;" x1="584.4512" x2="621.8562" y1="2068.5381" y2="2082.7107"/><!--MD5=[d14a378fd0bab8d7334e27ffa02b6b16]
+link CalypsoCardSelection to FileControlInformation--><path codeLine="335" d="M650.4275,2057.0219 C557.8575,2358.1394 437.145,2750.8094 380.09,2936.4069 " fill="none" id="CalypsoCardSelection-to-FileControlInformation" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="376.0925,2949.4094,392.2661,2930.8442,379.7678,2937.4619,373.1501,2924.9637,376.0925,2949.4094" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="506.3269,2588.5595,519.9945,2569.104,505.9486,2564.7861,506.3269,2588.5595" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="532.5" y="2589.9097">provide</text><!--MD5=[957e52cfabfdeac703e0e4a67a1d654b]
+link CardTransactionManager to WriteAccessLevel--><path codeLine="337" d="M5169.325,2226.2469 C5294.75,2358.1544 5406.85,2508.8544 5477.5,2673.6719 C5618.05,3001.4819 5720.975,3215.5269 5477.5,3476.1719 C5405.1,3553.6919 4630.925,3535.5419 4525,3541.1719 C4495.85,3542.7219 4025.3,3546.6144 4000,3561.1719 C3913.225,3611.0969 3855.175,3710.0069 3820.2,3790.1819 " fill="none" id="CardTransactionManager-to-WriteAccessLevel" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="3815.2,3801.8669,3833.237,3785.1064,3820.1119,3790.3724,3814.8459,3777.2473,3815.2,3801.8669" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="5626.8351,3054.8262,5647.1689,3042.5033,5636.0422,3032.9049,5626.8351,3054.8262" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="5657.5" y="3058.6597">use</text><!--MD5=[6e3ea62bcea4255f9e0016e7a14d6e55]
+link CardTransactionManager to SvOperation--><path codeLine="338" d="M4792.275,2479.0719 C4827.85,2522.2444 4866.225,2562.6044 4907.5,2598.6719 C4980.55,2662.5069 5040.275,2608.9044 5112.5,2673.6719 C5190.5,2743.6069 5239.025,2854.4294 5266.25,2936.3444 " fill="none" id="CardTransactionManager-to-SvOperation" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="5270.425,2949.2319,5272.9892,2924.7436,5266.5655,2937.3426,5253.9664,2930.9189,5270.425,2949.2319" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="4928.9959,2585.2902,4917.8235,2564.3023,4907.6208,2574.8776,4928.9959,2585.2902" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="4942.5" y="2589.9097">use</text><!--MD5=[43458ce7ca92b5bf9eba082436bc4f4b]
+link CardTransactionManager to SvAction--><path codeLine="339" d="M3964.125,2479.0244 C3930.725,2544.5269 3898.15,2609.9769 3867.5,2673.6719 C3825.25,2761.4994 3782.1,2863.5569 3751.675,2938.0094 " fill="none" id="CardTransactionManager-to-SvAction" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="3746.9,2949.7144,3764.6546,2932.655,3751.6193,2938.1395,3746.1348,2925.1041,3746.9,2949.7144" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="3929.7493,2587.9551,3945.9156,2570.5203,3932.5802,2564.3478,3929.7493,2587.9551" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="3957.5" y="2589.9097">use</text><!--MD5=[c316da82647688efb33554c922e0ba44]
+reverse link SelectFileControl to CardTransactionManager--><path codeLine="340" d="M3168.3,598.1719 C3192.525,639.2969 3225.35,681.0969 3267.5,706.1719 C3354.75,758.0469 3403.15,682.9719 3495,726.1719 C3560.125,756.7969 3623.2,794.1219 3683.75,835.9719 " fill="none" id="SelectFileControl-backto-CardTransactionManager" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="3161.7,586.5969,3164.198,611.092,3167.9094,597.4455,3181.5559,601.1569,3161.7,586.5969" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="3268.6497,678.8749,3286.1047,695.0192,3292.2605,681.6761,3268.6497,678.8749" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="3302.5" y="697.4097">use</text><!--MD5=[17efe9176b1f62a456b602da9c1703b1]
+reverse link GetDataTag to CardTransactionManager--><path codeLine="341" d="M3644.1,579.8469 C3690.5,644.7719 3755.075,735.1219 3827.275,836.1219 " fill="none" id="GetDataTag-backto-CardTransactionManager" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="3636.825,569.6469,3641.7895,593.7633,3644.1006,579.8113,3658.0526,582.1224,3636.825,569.6469" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="3737.7313,673.9419,3744.9031,696.611,3756.8579,688.0661,3737.7313,673.9419" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="3767.5" y="697.4097">use</text><!--MD5=[290add383f9517a2de7babdd84045efc]
+link CardTransactionManager to CalypsoCard--><path codeLine="342" d="M3655.425,1657.4219 C3444.725,1657.4219 3225.375,1657.4219 3048.4,1657.4219 " fill="none" id="CardTransactionManager-to-CalypsoCard" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="3035.725,1657.4219,3058.225,1667.4219,3048.225,1657.4219,3058.225,1647.4219,3035.725,1657.4219" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="3078.125,1627.8613,3100.7377,1635.2086,3100.7377,1620.514,3078.125,1627.8613" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="497.5" x="3113.125" y="1641.1597">use and provide up to date content</text><!--MD5=[52b5f30b2d37598ca0e4149af55964c4]
+link CardTransactionManager to CardSecuritySetting--><path codeLine="343" d="M4458.425,2479.1094 C4461.925,2541.6294 4465.35,2602.7019 4468.575,2660.1844 " fill="none" id="CardTransactionManager-to-CardSecuritySetting" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="4469.3,2673.1644,4478.0263,2650.1404,4468.6011,2660.6839,4458.0576,2651.2587,4469.3,2673.1644" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="4475.6996,2589.0917,4481.7698,2566.1033,4467.0982,2566.9257,4475.6996,2589.0917" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="4497.5" y="2589.9097">provide</text><!--MD5=[e7462c464ac49a3bd10175a329a45036]
+link CardSecuritySetting to WriteAccessLevel--><path codeLine="345" d="M4121.825,3416.4094 C4079.325,3463.9069 4037.75,3512.8494 4000,3561.1719 C3943.275,3633.7969 3887.775,3721.3444 3846.4,3790.8669 " fill="none" id="CardSecuritySetting-to-WriteAccessLevel" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="3839.9,3801.8644,3859.9745,3787.6073,3846.2733,3791.1112,3842.7694,3777.41,3839.9,3801.8644" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="4055.0936,3529.1808,4074.4106,3515.3183,4062.5732,3506.6115,4055.0936,3529.1808" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="4085" y="3532.4097">use</text><!--MD5=[48cac2ff2978e44d465a059f601e1d50]
+link CardSecuritySetting to CalypsoSam--><path codeLine="346" d="M4392.85,3416.7694 C4371.5,3497.9419 4349.375,3582.1469 4329.525,3657.6144 " fill="none" id="CardSecuritySetting-to-CalypsoSam" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="4326.1,3670.6219,4341.505,3651.4141,4329.2863,3658.5348,4322.1656,3646.3161,4326.1,3670.6219" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="4376.8214,3531.2004,4389.6773,3511.1993,4375.4657,3507.4627,4376.8214,3531.2004" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="4402.5" y="3532.4097">provide</text><!--MD5=[463830dd6010e96d60bfc26cb85b02c8]
+link CalypsoSamSelection to SamProductType--><path codeLine="348" d="M4932.425,4055.2969 C4806.15,4156.1944 4636.475,4291.7644 4515.65,4388.3069 " fill="none" id="CalypsoSamSelection-to-SamProductType" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="4505.575,4396.3544,4529.3887,4390.0968,4515.3324,4388.5413,4516.8879,4374.485,4505.575,4396.3544" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="4692.7345,4275.6642,4714.9869,4267.2888,4705.8141,4255.8087,4692.7345,4275.6642" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="4725" y="4281.1597">use</text><!--MD5=[1d7d1f3a59163c759a2873ea24945c0d]
+reverse link CalypsoSam to SamProductType--><path codeLine="350" d="M4261.125,4197.5719 C4264.15,4228.9244 4268.625,4260.2394 4275,4289.9219 C4280.275,4314.4119 4288.125,4339.6519 4297.075,4363.8919 " fill="none" id="CalypsoSam-backto-SamProductType" style="stroke:#A80036;stroke-width:2.5;"/><ellipse cx="4259.682" cy="4179.3542" fill="#FFFFFF" rx="20" ry="20" style="stroke:#A80036;stroke-width:2.5;"/><line style="stroke:#A80036;stroke-width:2.5;" x1="4261.2641" x2="4258.1" y1="4199.2915" y2="4159.4169"/><line style="stroke:#A80036;stroke-width:2.5;" x1="4239.7447" x2="4279.6194" y1="4180.9362" y2="4177.7722"/><!--MD5=[cf1f36c13265bd4b5b312aa9a8ef60a4]
+link CalypsoSam to SamProductType--><path codeLine="351" d="M4304.35,4158.7594 C4315.65,4224.0444 4327.6,4292.9869 4337.875,4352.2569 " fill="none" id="CalypsoSam-to-SamProductType" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="4340.05,4364.7519,4346.0604,4340.8746,4337.9152,4352.4355,4326.3542,4344.2903,4340.05,4364.7519" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="4339.6339,4280.1778,4343.0131,4256.6428,4328.5342,4259.1514,4339.6339,4280.1778" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="4360" y="4281.1597">provide</text><!--MD5=[3c766b8dbd2d4b637d84ed4972e0a262]
+reverse link SelectFileControl to CalypsoCardSelection--><path codeLine="353" d="M2930.925,556.7469 C2904.025,567.2969 2876.475,577.4469 2850,586.1719 C2604.275,667.0969 2523.6,626.1969 2285,726.1719 C1950,866.5469 1602.83,1074.5469 1325.7225,1258.1469 " fill="none" id="SelectFileControl-backto-CalypsoCardSelection" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="2943.225,551.8719,2918.624,550.8522,2931.6019,556.4712,2925.9829,569.4491,2943.225,551.8719" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="2511.4543,679.1063,2487.7915,681.4278,2493.6752,694.8931,2511.4543,679.1063" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="2522.5" y="697.4097">use</text><!--MD5=[ed4b6019252305bc0cd5d3bef0d383d2]
+reverse link GetDataTag to CalypsoCardSelection--><path codeLine="354" d="M3507.45,580.4219 C3472.75,627.9969 3424.95,679.5719 3367.5,706.1719 C3312.925,731.4469 2342.73,709.2969 2285,726.1719 C1915.685,834.1969 1546.7825,1057.8219 1265.765,1258.5719 " fill="none" id="GetDataTag-backto-CalypsoCardSelection" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="3515.1,569.7219,3493.9014,582.2467,3507.848,579.9032,3510.1915,593.8498,3515.1,569.7219" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="3454.4645,680.4919,3430.693,680.007,3434.948,694.0721,3454.4645,680.4919" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="3465" y="697.4097">use</text><!--MD5=[b9c02494ee2edb3f49e24a11a76ae6d5]
+link CalypsoCard to DirectoryHeader--><path codeLine="356" d="M2713.25,2368.3844 C2720.625,2538.4144 2727.95,2707.0544 2733.425,2833.1219 " fill="none" id="CalypsoCard-to-DirectoryHeader" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="2733.975,2845.9594,2742.9959,2823.0493,2733.4362,2833.471,2723.0145,2823.9113,2733.975,2845.9594" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="2738.0421,2589.0996,2744.4018,2566.1895,2729.721,2566.8268,2738.0421,2589.0996" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="2760" y="2589.9097">provide</text><!--MD5=[435a292fec6bd60cef8a6737227e6c35]
+link CalypsoCard to ElementaryFile--><path codeLine="357" d="M2400.6525,2368.3844 C2315.9925,2581.1894 2232.1975,2791.8194 2181.39,2919.5319 " fill="none" id="CalypsoCard-to-ElementaryFile" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="2176.5775,2931.6294,2194.1875,2914.4208,2181.1989,2920.0151,2175.6046,2907.0265,2176.5775,2931.6294" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="2335.3794,2588.226,2350.5651,2569.9308,2336.9113,2564.4989,2335.3794,2588.226" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="2362.5" y="2589.9097">provide</text><!--MD5=[57dcad9f3791efe87eb3de288cba384a]
+reverse link CalypsoCard to CardProductType--><path codeLine="358" d="M3022.6,2403.3094 C3105.125,2583.7094 3185.5,2759.3469 3241,2880.6994 " fill="none" id="CalypsoCard-backto-CardProductType" style="stroke:#A80036;stroke-width:2.5;"/><ellipse cx="3014.951" cy="2386.5689" fill="#FFFFFF" rx="20" ry="20" style="stroke:#A80036;stroke-width:2.5;"/><line style="stroke:#A80036;stroke-width:2.5;" x1="3023.277" x2="3006.625" y1="2404.7535" y2="2368.3844"/><line style="stroke:#A80036;stroke-width:2.5;" x1="2996.7665" x2="3033.1355" y1="2394.8949" y2="2378.2429"/><!--MD5=[da295e0332042a57370ae8d038ae7841]
+link CalypsoCard to CardProductType--><path codeLine="359" d="M3035.15,2357.2394 C3066.3,2423.2794 3096.7,2489.5094 3125,2553.6719 C3170.35,2656.5144 3216.15,2773.8319 3251.4,2867.7469 " fill="none" id="CalypsoCard-to-CardProductType" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="3256.1,2880.2519,3257.5696,2855.6736,3251.7141,2868.5466,3238.8411,2862.6911,3256.1,2880.2519" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="3159.8756,2588.1213,3157.8209,2564.4338,3144.2902,2570.1654,3159.8756,2588.1213" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="3177.5" y="2589.9097">provide</text><!--MD5=[aba73d32463631a1419cefff8db1a33e]
+link CalypsoCard to SvLoadLogRecord--><path codeLine="360" d="M2329.4375,1901.4219 C2067.7125,2091.5219 1712.745,2373.7419 1452.5,2673.6719 C1432.1075,2697.1744 1412.4125,2722.7469 1393.73,2749.0969 " fill="none" id="CalypsoCard-to-SvLoadLogRecord" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="1386.3425,2759.6294,1407.449,2746.95,1393.5199,2749.3954,1391.0746,2735.4662,1386.3425,2759.6294" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="1543.2361,2585.0036,1564.9275,2575.267,1555.0617,2564.3766,1543.2361,2585.0036" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="1575" y="2589.9097">provide</text><!--MD5=[0ef7c8472eddb1facc6466acd43af4c7]
+link CalypsoCard to SvDebitLogRecord--><path codeLine="361" d="M2329.9275,2105.6719 C2195.61,2280.1969 2043.4425,2483.7594 1912.5,2673.6719 C1892.105,2703.2494 1871.34,2734.5844 1851.05,2765.9944 " fill="none" id="CalypsoCard-to-SvDebitLogRecord" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="1844.1875,2776.6469,1864.7795,2763.1481,1850.9573,2766.1388,1847.9666,2752.3165,1844.1875,2776.6469" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="1997.6615,2586.7304,2016.8849,2572.7383,2004.9892,2564.1113,1997.6615,2586.7304" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="2027.5" y="2589.9097">provide</text><!--MD5=[dace07c6424a6284409add909451346a]
+link DirectoryHeader to WriteAccessLevel--><path codeLine="363" d="M2877.825,3244.3419 C2944.6,3327.5469 3031.875,3418.3719 3130,3476.1719 C3273.525,3560.7119 3353.975,3472.5369 3495,3561.1719 C3585.3,3617.9319 3659.525,3713.8169 3709.2,3791.0794 " fill="none" id="DirectoryHeader-to-WriteAccessLevel" style="stroke:#27AE60;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="3716.35,3802.3344,3712.7458,3777.9774,3709.6559,3791.7779,3695.8555,3788.688,3716.35,3802.3344" style="stroke:#27AE60;stroke-width:2.5;"/><polygon fill="#000000" points="3477.944,3525.9796,3463.0877,3507.416,3455.0136,3519.6936,3477.944,3525.9796" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="52.5" x="3490" y="3532.4097">use</text><!--MD5=[cc1c643465d1c05aadfdd3e7e3ee33ff]
+reverse link ElementaryFile to FileType--><path codeLine="365" d="M2195.3275,3192.8194 C2235.17,3278.4819 2290.7425,3387.1519 2352.5,3476.1719 C2425.215,3580.9844 2521.225,3687.0319 2600.65,3768.3194 " fill="none" id="ElementaryFile-backto-FileType" style="stroke:#A80036;stroke-width:2.5;"/><ellipse cx="2187.5604" cy="3175.8301" fill="#FFFFFF" rx="20" ry="20" style="stroke:#A80036;stroke-width:2.5;"/><line style="stroke:#A80036;stroke-width:2.5;" x1="2195.8784" x2="2179.2425" y1="3194.0183" y2="3157.6419"/><line style="stroke:#A80036;stroke-width:2.5;" x1="2169.3722" x2="2205.7487" y1="3184.1481" y2="3167.5122"/><!--MD5=[78c7db04616214d64a65e1c3389039a2]
+link ElementaryFile to FileHeader--><path codeLine="366" d="M2132.5,3157.8544 C2132.5,3281.6994 2132.5,3486.8269 2132.5,3651.9719 " fill="none" id="ElementaryFile-to-FileHeader" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="2132.5,3664.7944,2142.5,3642.2944,2132.5,3652.2944,2122.5,3642.2944,2132.5,3664.7944" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="2145,3531.6113,2152.3473,3508.9986,2137.6527,3508.9986,2145,3531.6113" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="2167.5" y="3532.4097">provide</text><!--MD5=[86b3bd56e99d104172930610ea72020e]
+link ElementaryFile to FileData--><path codeLine="367" d="M2089.22,3158.3194 C2050.5125,3249.2719 1987.9225,3378.4894 1910,3476.1719 C1837.325,3567.2769 1743.3875,3653.4369 1655.6775,3724.7444 " fill="none" id="ElementaryFile-to-FileData" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="1645.015,3733.3669,1668.7986,3726.9957,1654.735,3725.5073,1656.2233,3711.4437,1645.015,3733.3669" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="1892.4025,3529.0375,1911.9809,3515.5466,1900.3121,3506.6152,1892.4025,3529.0375" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="1922.5" y="3532.4097">provide</text><!--MD5=[0277f54c0239137ab686445791bc46fe]
+link FileHeader to FileType--><path codeLine="369" d="M2364.19,3914.9219 C2433.8125,3914.9219 2509.025,3914.9219 2574.375,3914.9219 " fill="none" id="FileHeader-to-FileType" style="stroke:#3498DB;stroke-width:2.5;stroke-dasharray:7.0,7.0;"/><polygon fill="#3498DB" points="2587.325,3914.9219,2564.825,3904.9219,2574.825,3914.9219,2564.825,3924.9219,2587.325,3914.9219" style="stroke:#3498DB;stroke-width:2.5;"/><polygon fill="#000000" points="2431.875,3885.3613,2409.2623,3878.014,2409.2623,3892.7086,2431.875,3885.3613" style="stroke:#000000;stroke-width:2.5;"/><text fill="#000000" font-family="sans-serif" font-size="32.5" lengthAdjust="spacing" textLength="100" x="2441.875" y="3898.6597">provide</text><!--MD5=[0411cce0a1b1b11784b2a19264c9dafc]
+@startuml
+title
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.0.+ (26/07/2021)
+end title
+
+' == THEME ==
+
+'Couleurs issues de : https://htmlcolorcodes.com/fr/tableau-de-couleur/tableau-de-couleur-design-plat/
+!define C_GREY1 F8F9F9
+!define C_GREY2 F2F3F4
+!define C_GREY3 E5E7E9
+!define C_GREY4 D7DBDD
+!define C_GREY5 CACFD2
+!define C_GREY6 BDC3C7
+!define C_LINK 3498DB
+!define C_USE 27AE60
+
+skinparam Shadowing false
+skinparam ClassFontStyle italic
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #E9F7EF
+skinparam ClassBorderColor<<green>> #27AE60
+hide <<green>> stereotype
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+' == CONTENT ==
+
+legend top
+    __Colors legend__ :
+    * __External public API references__ :
+    ** <back:yellow>**calypsonet-terminal-reader-java-api**</back>
+end legend
+
+package "org.calypsonet.terminal.calypso" as api {
+
+    +class "**final** CalypsoApiProperties" as ApiProperties {
+        +{static} **final** String VERSION
+    }
+    +enum WriteAccessLevel {
+        PERSONALIZATION
+        LOAD
+        DEBIT
+    }
+    +enum SelectFileControl {
+        FIRST_EF
+        NEXT_EF
+        CURRENT_DF
+    }
+    +enum GetDataTag {
+        FCP_FOR_CURRENT_FILE
+        FCI_FOR_CURRENT_DF
+    }
+    package card {
+        +interface "<<<back:yellow>CardSelection</back>>>\nCalypsoCardSelection" as CalypsoCardSelection {
+            +CalypsoCardSelection filterByCardProtocol (String cardProtocol)
+
+            +CalypsoCardSelection filterByPowerOnData (String powerOnDataRegex)
+
+            +CalypsoCardSelection filterByDfName (byte[] aid)
+            +CalypsoCardSelection filterByDfName (String aid)
+            +CalypsoCardSelection setFileOccurrence (FileOccurrence fileOccurrence)
+            +CalypsoCardSelection setFileControlInformation (FileControlInformation fileControlInformation)
+            +CalypsoCardSelection addSuccessfulStatusWord (int statusWord)
+
+            +CalypsoCardSelection acceptInvalidatedCard ()
+
+            +CalypsoCardSelection prepareSelectFile (byte[] lid)
+            +CalypsoCardSelection prepareSelectFile (short lid)
+            +CalypsoCardSelection prepareSelectFile (SelectFileControl selectControl)
+
+            +CalypsoCardSelection prepareGetData (GetDataTag tag)
+
+            +CalypsoCardSelection prepareReadRecordFile (byte sfi, int recordNumber)
+        }
+        +enum FileOccurrence {
+            FIRST
+            LAST
+            NEXT
+            PREVIOUS
+        }
+        +enum FileControlInformation {
+            FCI
+            NO_RESPONSE
+        }
+        +interface "<<<back:yellow>SmartCard</back>>>\nCalypsoCard" as CalypsoCard {
+            +ProductType getProductType ()
+            +boolean isHce ()
+
+            +byte[] getDfName ()
+            +byte[] getApplicationSerialNumber ()
+
+            +byte[] getStartupInfoRawData ()
+            +byte getPlatform ()
+            +byte getApplicationType ()
+            +byte getApplicationSubtype ()
+            +byte getSoftwareIssuer ()
+            +byte getSoftwareVersion ()
+            +byte getSoftwareRevision ()
+            +byte getSessionModification ()
+
+            +DirectoryHeader getDirectoryHeader ()
+            +ElementaryFile getFileBySfi (byte sfi)
+            +ElementaryFile getFileByLid (short lid)
+            +Map<Byte, ElementaryFile> getAllFiles ()
+
+            +boolean isDfInvalidated ()
+            +boolean isDfRatified ()
+
+            +boolean isPkiModeSupported ()
+            +boolean isExtendedModeSupported ()
+            +boolean isRatificationOnDeselectSupported ()
+
+            +boolean isPinFeatureAvailable ()
+            +boolean isPinBlocked ()
+            +int getPinAttemptRemaining ()
+
+            +boolean isSvFeatureAvailable ()
+            +int getSvBalance ()
+            +int getSvLastTNum ()
+            +SvLoadLogRecord getSvLoadLogRecord ()
+            +SvDebitLogRecord getSvDebitLogLastRecord ()
+            +List<SvDebitLogRecord> getSvDebitLogAllRecords ()
+        }
+        +interface DirectoryHeader {
+            +short getLid ()
+            +byte getDfStatus ()
+
+            +byte[] getAccessConditions ()
+            +byte[] getKeyIndexes ()
+
+            +byte getKif (WriteAccessLevel writeAccessLevel)
+            +byte getKvc (WriteAccessLevel writeAccessLevel)
+        }
+        +interface ElementaryFile {
+            +byte getSfi ()
+            +FileHeader getHeader ()
+            +FileData getData ()
+        }
+        +interface FileHeader {
+            +short getLid ()
+            +byte getDfStatus ()
+            +ElementaryFile.Type getEfType ()
+
+            +int getRecordsNumber ()
+            +int getRecordSize ()
+
+            +byte[] getAccessConditions ()
+            +byte[] getKeyIndexes ()
+
+            +Short getSharedReference ()
+        }
+        +enum "Type" as FileType {
+            LINEAR
+            BINARY
+            CYCLIC
+            COUNTERS
+            SIMULATED_COUNTERS
+        }
+        +interface FileData {
+            +byte[] getContent ()
+            +byte[] getContent (int numRecord)
+            +byte[] getContent (int numRecord, int dataOffset, int dataLength)
+            +SortedMap<Integer, byte[]> getAllRecordsContent ()
+
+            +int getContentAsCounterValue (int numCounter)
+            +SortedMap<Integer, Integer> getAllCountersValue ()
+        }
+        +enum "ProductType" as CardProductType {
+            PRIME_REVISION_1
+            PRIME_REVISION_2
+            PRIME_REVISION_3
+            LIGHT
+            BASIC
+            UNKNOWN
+        }
+        +interface SvLoadLogRecord {
+            +byte[] getRawData ()
+
+            +byte[] getLoadDate ()
+            +byte[] getLoadTime ()
+
+            +int getAmount ()
+            +int getBalance ()
+            +byte[] getFreeData ()
+
+            +byte getKvc ()
+            +byte[] getSamId ()
+            +int getSamTNum ()
+            +int getSvTNum ()
+        }
+        +interface SvDebitLogRecord {
+            +byte[] getRawData ()
+
+            +byte[] getDebitDate ()
+            +byte[] getDebitTime ()
+
+            +int getAmount ()
+            +int getBalance ()
+
+            +byte getKvc ()
+            +byte[] getSamId ()
+            +int getSamTNum ()
+            +int getSvTNum ()
+        }
+    }
+    package sam {
+        +interface "<<<back:yellow>CardSelection</back>>>\nCalypsoSamSelection" as CalypsoSamSelection {
+            +CalypsoSamSelection filterByProductType (CalypsoSam.ProductType productType)
+            +CalypsoSamSelection filterBySerialNumber (String serialNumberRegex)
+
+            +CalypsoSamSelection setUnlockData (String unlockData)
+        }
+        +interface "<<<back:yellow>SmartCard</back>>>\nCalypsoSam" as CalypsoSam {
+            +ProductType getProductType ()
+            +String getProductInfo ()
+
+            +byte[] getSerialNumber ()
+            +byte getPlatform ()
+            +byte getApplicationType ()
+            +byte getApplicationSubType ()
+            +byte getSoftwareIssuer ()
+            +byte getSoftwareVersion ()
+            +byte getSoftwareRevision ()
+        }
+        +enum "ProductType" as SamProductType {
+            SAM_C1
+            SAM_S1E1
+            SAM_S1Dx
+            CSAM_F
+            UNKNOWN
+        }
+    }
+    package transaction {
+        +interface CardTransactionManager {
+            +<back:yellow>CardReader</back> getCardReader ()
+            +CalypsoCard getCalypsoCard ()
+            +CardSecuritySetting getCardSecuritySetting ()
+            +String getTransactionAuditData ()
+
+            +CardTransactionManager prepareSelectFile (byte[] lid)
+            +CardTransactionManager prepareSelectFile (SelectFileControl selectFileControl)
+
+            +CardTransactionManager prepareGetData (GetDataTag tag)
+
+            +CardTransactionManager prepareReadRecordFile (byte sfi, int recordNumber)
+            +CardTransactionManager prepareReadRecordFile (byte sfi, int firstRecordNumber, int numberOfRecords, int recordSize)
+            +CardTransactionManager prepareReadCounterFile (byte sfi, int countersNumber)
+
+            +CardTransactionManager prepareCheckPinStatus ()
+
+            +CardTransactionManager prepareAppendRecord (byte sfi, byte[] recordData)
+            +CardTransactionManager prepareUpdateRecord (byte sfi, int recordNumber, byte[] recordData)
+            +CardTransactionManager prepareWriteRecord (byte sfi, int recordNumber, byte[] recordData)
+
+            +CardTransactionManager prepareIncreaseCounter (byte sfi, int counterNumber, int incValue)
+            +CardTransactionManager prepareDecreaseCounter (byte sfi, int counterNumber, int decValue)
+            +CardTransactionManager prepareSetCounter (byte sfi, int counterNumber, int newValue)
+
+            +CardTransactionManager prepareSvGet (SvOperation svOperation, SvAction svAction)
+            +CardTransactionManager prepareSvReload (int amount, byte[] date, byte[] time, byte[] free)
+            +CardTransactionManager prepareSvReload (int amount)
+            +CardTransactionManager prepareSvDebit (int amount, byte[] date, byte[] time)
+            +CardTransactionManager prepareSvDebit (int amount)
+            +CardTransactionManager prepareSvReadAllLogs ()
+
+            +CardTransactionManager prepareInvalidate ()
+            +CardTransactionManager prepareRehabilitate ()
+
+            +CardTransactionManager prepareReleaseCardChannel ()
+
+            +CardTransactionManager processCardCommands ()
+
+            +CardTransactionManager processVerifyPin (byte[] pin)
+            +CardTransactionManager processChangePin (byte[] newPin)
+
+            +CardTransactionManager processOpening (WriteAccessLevel writeAccessLevel)
+            +CardTransactionManager processClosing ()
+            +CardTransactionManager processCancel ()
+        }
+        +enum SvOperation {
+            RELOAD
+            DEBIT
+        }
+        +enum SvAction {
+            DO
+            UNDO
+        }
+        +interface CardSecuritySetting {
+            +CardSecuritySetting setSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
+
+            +CardSecuritySetting enableMultipleSession ()
+            +CardSecuritySetting enableRatificationMechanism ()
+            +CardSecuritySetting enablePinPlainTransmission ()
+            +CardSecuritySetting enableTransactionAudit ()
+            +CardSecuritySetting enableSvLoadAndDebitLog ()
+            +CardSecuritySetting authorizeSvNegativeBalance ()
+
+            +CardSecuritySetting assignKif (WriteAccessLevel writeAccessLevel, byte kvc, byte kif)
+            +CardSecuritySetting assignDefaultKif (WriteAccessLevel writeAccessLevel, byte kif)
+            +CardSecuritySetting assignDefaultKvc (WriteAccessLevel writeAccessLevel, byte kvc)
+
+            +CardSecuritySetting addAuthorizedSessionKey (byte kif, byte kvc)
+            +CardSecuritySetting addAuthorizedSvKey (byte kif, byte kvc)
+
+            +CardSecuritySetting setPinVerificationCipheringKey (byte kif, byte kvc)
+            +CardSecuritySetting setPinModificationCipheringKey (byte kif, byte kvc)
+        }
+    }
+}
+
+' Associations
+
+CalypsoCardSelection +- - FileOccurrence
+CalypsoCardSelection ..> FileOccurrence #C_LINK : provide >
+CalypsoCardSelection +- - FileControlInformation
+CalypsoCardSelection ..> FileControlInformation #C_LINK : provide >
+
+CardTransactionManager ..> WriteAccessLevel #C_USE : use >
+CardTransactionManager ..> SvOperation #C_USE : use >
+CardTransactionManager ..> SvAction #C_USE : use >
+CardTransactionManager .up.> SelectFileControl #C_USE : use >
+CardTransactionManager .up.> GetDataTag #C_USE : use >
+CardTransactionManager .right.> CalypsoCard #C_LINK : use and provide up to date content >
+CardTransactionManager ..> CardSecuritySetting #C_LINK : provide >
+
+CardSecuritySetting ..> WriteAccessLevel #C_USE : use >
+CardSecuritySetting ..> CalypsoSam #C_LINK : provide >
+
+CalypsoSamSelection ..> SamProductType #C_USE : use >
+
+CalypsoSam +- - SamProductType
+CalypsoSam ..> SamProductType #C_LINK : provide >
+
+CalypsoCardSelection .up.> SelectFileControl #C_USE : use >
+CalypsoCardSelection .up.> GetDataTag #C_USE : use >
+
+CalypsoCard ..> DirectoryHeader #C_LINK : provide >
+CalypsoCard ..> ElementaryFile #C_LINK : provide >
+CalypsoCard +- - CardProductType
+CalypsoCard ..> CardProductType #C_LINK : provide >
+CalypsoCard ..> SvLoadLogRecord #C_LINK : provide >
+CalypsoCard ..> SvDebitLogRecord #C_LINK : provide >
+
+DirectoryHeader ..> WriteAccessLevel #C_USE : use >
+
+ElementaryFile +- - FileType
+ElementaryFile ..> FileHeader #C_LINK : provide >
+ElementaryFile ..> FileData #C_LINK : provide >
+
+FileHeader .right.> FileType #C_LINK : provide >
+
+' == LAYOUT ==
+
+'ProductType -[hidden]- SamCardResourceServiceBuilder
+
+' == STYLE ==
+
+package api #C_GREY1 {}
+package card #C_GREY2 {}
+package sam #C_GREY2 {}
+package transaction #C_GREY2 {}
+
+
+@enduml
+
+@startuml
+title
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.0.+ (26/07/2021)
+end title
+
+
+
+skinparam Shadowing false
+skinparam ClassFontStyle italic
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+skinparam ClassBackgroundColor<<green>> #E9F7EF
+skinparam ClassBorderColor<<green>> #27AE60
+hide <<green>> stereotype
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+
+legend top
+    __Colors legend__ :
+    * __External public API references__ :
+    ** <back:yellow>**calypsonet-terminal-reader-java-api**</back>
+end legend
+
+package "org.calypsonet.terminal.calypso" as api {
+
+    +class "**final** CalypsoApiProperties" as ApiProperties {
+        +{static} **final** String VERSION
+    }
+    +enum WriteAccessLevel {
+        PERSONALIZATION
+        LOAD
+        DEBIT
+    }
+    +enum SelectFileControl {
+        FIRST_EF
+        NEXT_EF
+        CURRENT_DF
+    }
+    +enum GetDataTag {
+        FCP_FOR_CURRENT_FILE
+        FCI_FOR_CURRENT_DF
+    }
+    package card {
+        +interface "<<<back:yellow>CardSelection</back>>>\nCalypsoCardSelection" as CalypsoCardSelection {
+            +CalypsoCardSelection filterByCardProtocol (String cardProtocol)
+
+            +CalypsoCardSelection filterByPowerOnData (String powerOnDataRegex)
+
+            +CalypsoCardSelection filterByDfName (byte[] aid)
+            +CalypsoCardSelection filterByDfName (String aid)
+            +CalypsoCardSelection setFileOccurrence (FileOccurrence fileOccurrence)
+            +CalypsoCardSelection setFileControlInformation (FileControlInformation fileControlInformation)
+            +CalypsoCardSelection addSuccessfulStatusWord (int statusWord)
+
+            +CalypsoCardSelection acceptInvalidatedCard ()
+
+            +CalypsoCardSelection prepareSelectFile (byte[] lid)
+            +CalypsoCardSelection prepareSelectFile (short lid)
+            +CalypsoCardSelection prepareSelectFile (SelectFileControl selectControl)
+
+            +CalypsoCardSelection prepareGetData (GetDataTag tag)
+
+            +CalypsoCardSelection prepareReadRecordFile (byte sfi, int recordNumber)
+        }
+        +enum FileOccurrence {
+            FIRST
+            LAST
+            NEXT
+            PREVIOUS
+        }
+        +enum FileControlInformation {
+            FCI
+            NO_RESPONSE
+        }
+        +interface "<<<back:yellow>SmartCard</back>>>\nCalypsoCard" as CalypsoCard {
+            +ProductType getProductType ()
+            +boolean isHce ()
+
+            +byte[] getDfName ()
+            +byte[] getApplicationSerialNumber ()
+
+            +byte[] getStartupInfoRawData ()
+            +byte getPlatform ()
+            +byte getApplicationType ()
+            +byte getApplicationSubtype ()
+            +byte getSoftwareIssuer ()
+            +byte getSoftwareVersion ()
+            +byte getSoftwareRevision ()
+            +byte getSessionModification ()
+
+            +DirectoryHeader getDirectoryHeader ()
+            +ElementaryFile getFileBySfi (byte sfi)
+            +ElementaryFile getFileByLid (short lid)
+            +Map<Byte, ElementaryFile> getAllFiles ()
+
+            +boolean isDfInvalidated ()
+            +boolean isDfRatified ()
+
+            +boolean isPkiModeSupported ()
+            +boolean isExtendedModeSupported ()
+            +boolean isRatificationOnDeselectSupported ()
+
+            +boolean isPinFeatureAvailable ()
+            +boolean isPinBlocked ()
+            +int getPinAttemptRemaining ()
+
+            +boolean isSvFeatureAvailable ()
+            +int getSvBalance ()
+            +int getSvLastTNum ()
+            +SvLoadLogRecord getSvLoadLogRecord ()
+            +SvDebitLogRecord getSvDebitLogLastRecord ()
+            +List<SvDebitLogRecord> getSvDebitLogAllRecords ()
+        }
+        +interface DirectoryHeader {
+            +short getLid ()
+            +byte getDfStatus ()
+
+            +byte[] getAccessConditions ()
+            +byte[] getKeyIndexes ()
+
+            +byte getKif (WriteAccessLevel writeAccessLevel)
+            +byte getKvc (WriteAccessLevel writeAccessLevel)
+        }
+        +interface ElementaryFile {
+            +byte getSfi ()
+            +FileHeader getHeader ()
+            +FileData getData ()
+        }
+        +interface FileHeader {
+            +short getLid ()
+            +byte getDfStatus ()
+            +ElementaryFile.Type getEfType ()
+
+            +int getRecordsNumber ()
+            +int getRecordSize ()
+
+            +byte[] getAccessConditions ()
+            +byte[] getKeyIndexes ()
+
+            +Short getSharedReference ()
+        }
+        +enum "Type" as FileType {
+            LINEAR
+            BINARY
+            CYCLIC
+            COUNTERS
+            SIMULATED_COUNTERS
+        }
+        +interface FileData {
+            +byte[] getContent ()
+            +byte[] getContent (int numRecord)
+            +byte[] getContent (int numRecord, int dataOffset, int dataLength)
+            +SortedMap<Integer, byte[]> getAllRecordsContent ()
+
+            +int getContentAsCounterValue (int numCounter)
+            +SortedMap<Integer, Integer> getAllCountersValue ()
+        }
+        +enum "ProductType" as CardProductType {
+            PRIME_REVISION_1
+            PRIME_REVISION_2
+            PRIME_REVISION_3
+            LIGHT
+            BASIC
+            UNKNOWN
+        }
+        +interface SvLoadLogRecord {
+            +byte[] getRawData ()
+
+            +byte[] getLoadDate ()
+            +byte[] getLoadTime ()
+
+            +int getAmount ()
+            +int getBalance ()
+            +byte[] getFreeData ()
+
+            +byte getKvc ()
+            +byte[] getSamId ()
+            +int getSamTNum ()
+            +int getSvTNum ()
+        }
+        +interface SvDebitLogRecord {
+            +byte[] getRawData ()
+
+            +byte[] getDebitDate ()
+            +byte[] getDebitTime ()
+
+            +int getAmount ()
+            +int getBalance ()
+
+            +byte getKvc ()
+            +byte[] getSamId ()
+            +int getSamTNum ()
+            +int getSvTNum ()
+        }
+    }
+    package sam {
+        +interface "<<<back:yellow>CardSelection</back>>>\nCalypsoSamSelection" as CalypsoSamSelection {
+            +CalypsoSamSelection filterByProductType (CalypsoSam.ProductType productType)
+            +CalypsoSamSelection filterBySerialNumber (String serialNumberRegex)
+
+            +CalypsoSamSelection setUnlockData (String unlockData)
+        }
+        +interface "<<<back:yellow>SmartCard</back>>>\nCalypsoSam" as CalypsoSam {
+            +ProductType getProductType ()
+            +String getProductInfo ()
+
+            +byte[] getSerialNumber ()
+            +byte getPlatform ()
+            +byte getApplicationType ()
+            +byte getApplicationSubType ()
+            +byte getSoftwareIssuer ()
+            +byte getSoftwareVersion ()
+            +byte getSoftwareRevision ()
+        }
+        +enum "ProductType" as SamProductType {
+            SAM_C1
+            SAM_S1E1
+            SAM_S1Dx
+            CSAM_F
+            UNKNOWN
+        }
+    }
+    package transaction {
+        +interface CardTransactionManager {
+            +<back:yellow>CardReader</back> getCardReader ()
+            +CalypsoCard getCalypsoCard ()
+            +CardSecuritySetting getCardSecuritySetting ()
+            +String getTransactionAuditData ()
+
+            +CardTransactionManager prepareSelectFile (byte[] lid)
+            +CardTransactionManager prepareSelectFile (SelectFileControl selectFileControl)
+
+            +CardTransactionManager prepareGetData (GetDataTag tag)
+
+            +CardTransactionManager prepareReadRecordFile (byte sfi, int recordNumber)
+            +CardTransactionManager prepareReadRecordFile (byte sfi, int firstRecordNumber, int numberOfRecords, int recordSize)
+            +CardTransactionManager prepareReadCounterFile (byte sfi, int countersNumber)
+
+            +CardTransactionManager prepareCheckPinStatus ()
+
+            +CardTransactionManager prepareAppendRecord (byte sfi, byte[] recordData)
+            +CardTransactionManager prepareUpdateRecord (byte sfi, int recordNumber, byte[] recordData)
+            +CardTransactionManager prepareWriteRecord (byte sfi, int recordNumber, byte[] recordData)
+
+            +CardTransactionManager prepareIncreaseCounter (byte sfi, int counterNumber, int incValue)
+            +CardTransactionManager prepareDecreaseCounter (byte sfi, int counterNumber, int decValue)
+            +CardTransactionManager prepareSetCounter (byte sfi, int counterNumber, int newValue)
+
+            +CardTransactionManager prepareSvGet (SvOperation svOperation, SvAction svAction)
+            +CardTransactionManager prepareSvReload (int amount, byte[] date, byte[] time, byte[] free)
+            +CardTransactionManager prepareSvReload (int amount)
+            +CardTransactionManager prepareSvDebit (int amount, byte[] date, byte[] time)
+            +CardTransactionManager prepareSvDebit (int amount)
+            +CardTransactionManager prepareSvReadAllLogs ()
+
+            +CardTransactionManager prepareInvalidate ()
+            +CardTransactionManager prepareRehabilitate ()
+
+            +CardTransactionManager prepareReleaseCardChannel ()
+
+            +CardTransactionManager processCardCommands ()
+
+            +CardTransactionManager processVerifyPin (byte[] pin)
+            +CardTransactionManager processChangePin (byte[] newPin)
+
+            +CardTransactionManager processOpening (WriteAccessLevel writeAccessLevel)
+            +CardTransactionManager processClosing ()
+            +CardTransactionManager processCancel ()
+        }
+        +enum SvOperation {
+            RELOAD
+            DEBIT
+        }
+        +enum SvAction {
+            DO
+            UNDO
+        }
+        +interface CardSecuritySetting {
+            +CardSecuritySetting setSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
+
+            +CardSecuritySetting enableMultipleSession ()
+            +CardSecuritySetting enableRatificationMechanism ()
+            +CardSecuritySetting enablePinPlainTransmission ()
+            +CardSecuritySetting enableTransactionAudit ()
+            +CardSecuritySetting enableSvLoadAndDebitLog ()
+            +CardSecuritySetting authorizeSvNegativeBalance ()
+
+            +CardSecuritySetting assignKif (WriteAccessLevel writeAccessLevel, byte kvc, byte kif)
+            +CardSecuritySetting assignDefaultKif (WriteAccessLevel writeAccessLevel, byte kif)
+            +CardSecuritySetting assignDefaultKvc (WriteAccessLevel writeAccessLevel, byte kvc)
+
+            +CardSecuritySetting addAuthorizedSessionKey (byte kif, byte kvc)
+            +CardSecuritySetting addAuthorizedSvKey (byte kif, byte kvc)
+
+            +CardSecuritySetting setPinVerificationCipheringKey (byte kif, byte kvc)
+            +CardSecuritySetting setPinModificationCipheringKey (byte kif, byte kvc)
+        }
+    }
+}
+
+
+CalypsoCardSelection +- - FileOccurrence
+CalypsoCardSelection ..> FileOccurrence #3498DB : provide >
+CalypsoCardSelection +- - FileControlInformation
+CalypsoCardSelection ..> FileControlInformation #3498DB : provide >
+
+CardTransactionManager ..> WriteAccessLevel #27AE60 : use >
+CardTransactionManager ..> SvOperation #27AE60 : use >
+CardTransactionManager ..> SvAction #27AE60 : use >
+CardTransactionManager .up.> SelectFileControl #27AE60 : use >
+CardTransactionManager .up.> GetDataTag #27AE60 : use >
+CardTransactionManager .right.> CalypsoCard #3498DB : use and provide up to date content >
+CardTransactionManager ..> CardSecuritySetting #3498DB : provide >
+
+CardSecuritySetting ..> WriteAccessLevel #27AE60 : use >
+CardSecuritySetting ..> CalypsoSam #3498DB : provide >
+
+CalypsoSamSelection ..> SamProductType #27AE60 : use >
+
+CalypsoSam +- - SamProductType
+CalypsoSam ..> SamProductType #3498DB : provide >
+
+CalypsoCardSelection .up.> SelectFileControl #27AE60 : use >
+CalypsoCardSelection .up.> GetDataTag #27AE60 : use >
+
+CalypsoCard ..> DirectoryHeader #3498DB : provide >
+CalypsoCard ..> ElementaryFile #3498DB : provide >
+CalypsoCard +- - CardProductType
+CalypsoCard ..> CardProductType #3498DB : provide >
+CalypsoCard ..> SvLoadLogRecord #3498DB : provide >
+CalypsoCard ..> SvDebitLogRecord #3498DB : provide >
+
+DirectoryHeader ..> WriteAccessLevel #27AE60 : use >
+
+ElementaryFile +- - FileType
+ElementaryFile ..> FileHeader #3498DB : provide >
+ElementaryFile ..> FileData #3498DB : provide >
+
+FileHeader .right.> FileType #3498DB : provide >
+
+
+
+
+package api #F8F9F9 {}
+package card #F2F3F4 {}
+package sam #F2F3F4 {}
+package transaction #F2F3F4 {}
+
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: fr
+Country: FR
+--></g></svg>
