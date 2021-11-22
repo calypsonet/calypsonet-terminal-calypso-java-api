@@ -116,7 +116,9 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param statusWord A positive int &le; {@code FFFFh}.
    * @return The object instance.
    * @since 1.0.0
+   * @deprecated Use {@link #acceptInvalidatedCard()} method instead.
    */
+  @Deprecated
   CalypsoCardSelection addSuccessfulStatusWord(int statusWord);
 
   /**
