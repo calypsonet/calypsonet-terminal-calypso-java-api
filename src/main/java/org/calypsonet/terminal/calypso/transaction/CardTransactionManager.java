@@ -16,7 +16,6 @@ import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 import org.calypsonet.terminal.calypso.card.CalypsoCard;
 import org.calypsonet.terminal.calypso.card.ElementaryFile;
-import org.calypsonet.terminal.calypso.card.FileData;
 import org.calypsonet.terminal.reader.CardReader;
 
 /**
@@ -123,16 +122,20 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Read Records</b> command to read a single record from the
    * indicated EF.
    *
-   * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
+   * requested file and record exist in the file structure of the card (best effort behavior).
    *
-   * <p>See the method {@link CalypsoCard#getFileBySfi(byte)}, the objects {@link ElementaryFile},
-   * {@link FileData} and their specialized methods according to the type of expected data: e.g.
-   * {@link FileData#getContent(int)}.
+   * <p><b>This method should not be used inside a secure session in contact mode</b> because
+   * additional exchanges with the card will be operated and will corrupt the security of the
+   * session. Instead, use the method {@link #prepareReadRecordFile(byte, int, int, int)} for this
+   * case and provide valid parameters.
    *
    * @param sfi The SFI of the EF to read.
    * @param recordNumber The record number to read.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided arguments is out of range.
+   * @throws IllegalStateException If this method is invoked inside a secure session in contact
+   *     mode.
    * @since 1.0.0
    */
   CardTransactionManager prepareReadRecordFile(byte sfi, int recordNumber);
@@ -141,14 +144,15 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Read Records</b> command to read one or more records from the
    * indicated EF.
    *
-   * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
+   * requested file and records exist in the file structure of the card (best effort behavior).
    *
-   * <p>See the method {@link CalypsoCard#getFileBySfi(byte)}, the objects {@link ElementaryFile},
-   * {@link FileData} and their specialized methods according to the type of expected data: e.g.
-   * {@link FileData#getContent()}.
+   * <p><b>Using this method in a secure session requires providing valid parameters (matching the
+   * card's file structure) to ensure successful session closure</b>. Incorrect parameters can lead
+   * to additional exchanges with the card and thus corrupt the security of the session.
    *
    * @param sfi The SFI of the EF.
-   * @param firstRecordNumber The record number to read (or first record to read in case of several.
+   * @param firstRecordNumber The record number to read (or first record to read in case of several
    *     records)
    * @param numberOfRecords The number of records expected.
    * @param recordSize The record length.
@@ -164,13 +168,9 @@ public interface CardTransactionManager {
    * which should be a counter file.
    *
    * <p>The record will be read up to the counter location indicated in parameter.<br>
-   * Thus all previous counters will also be read.
+   * Thus, all previous counters will also be read.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
-   *
-   * <p>See the method {@link CalypsoCard#getFileBySfi(byte)}, the objects {@link ElementaryFile},
-   * {@link FileData} and their specialized methods according to the type of expected data: e.g.
-   * {@link FileData#getAllCountersValue()} (int)}.
    *
    * @param sfi The SFI of the EF.
    * @param countersNumber The number of the last counter to be read.

@@ -165,6 +165,9 @@ public interface CalypsoCardSelection extends CardSelection {
   /**
    * Adds a command APDU to read a single record from the indicated EF.
    *
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
+   * requested file and record exist in the file structure of the card (best effort behavior).
+   *
    * @param sfi The SFI of the EF to read
    * @param recordNumber The record number to read.
    * @return The object instance.
