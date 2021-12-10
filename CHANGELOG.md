@@ -28,6 +28,7 @@ This is the initial release.
 [1.0.1]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/releases/tag/1.0.0
 
+[#13]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/13
 [#11]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/11
 [#9]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/9
 [#7]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/7
