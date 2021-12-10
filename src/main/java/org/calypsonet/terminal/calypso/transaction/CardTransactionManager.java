@@ -122,8 +122,19 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Read Records</b> command to read a single record from the
    * indicated EF.
    *
-   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
-   * requested file and record exist in the file structure of the card (best effort behavior).
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
+   *
+   * <p>Depending on whether or not we are inside a secure session, there are two types of behavior
+   * following this command:
+   *
+   * <ul>
+   *   <li>Outside a secure session (best effort mode): the following "process" command will not
+   *       fail whatever the existence of the targeted file or record (the {@link CalypsoCard}
+   *       object may not be filled).
+   *   <li>Inside a secure session in contactless mode (strict mode): the following "process"
+   *       command will fail if the targeted file or record does not exist (the {@link CalypsoCard}
+   *       object is always filled or an exception is raised when the reading failed).
+   * </ul>
    *
    * <p><b>This method should not be used inside a secure session in contact mode</b> because
    * additional exchanges with the card will be operated and will corrupt the security of the
@@ -144,12 +155,21 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Read Records</b> command to read one or more records from the
    * indicated EF.
    *
-   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
-   * requested file and records exist in the file structure of the card (best effort behavior).
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
    *
-   * <p><b>Using this method in a secure session requires providing valid parameters (matching the
-   * card's file structure) to ensure successful session closure</b>. Incorrect parameters can lead
-   * to additional exchanges with the card and thus corrupt the security of the session.
+   * <p>Depending on whether or not we are inside a secure session, there are two types of behavior
+   * following this command:
+   *
+   * <ul>
+   *   <li>Outside a secure session (best effort mode): the following "process" command will not
+   *       fail whatever the existence of the targeted file or record (the {@link CalypsoCard}
+   *       object may not be filled).
+   *   <li>Inside a secure session (strict mode): the following "process" command will fail if the
+   *       targeted file or record does not exist (the {@link CalypsoCard} object is always filled
+   *       or an exception is raised when the reading failed).<br>
+   *       Invalid parameters could lead to additional exchanges with the card and thus corrupt the
+   *       security of the session.
+   * </ul>
    *
    * @param sfi The SFI of the EF.
    * @param firstRecordNumber The record number to read (or first record to read in case of several
@@ -171,6 +191,20 @@ public interface CardTransactionManager {
    * Thus, all previous counters will also be read.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
+   *
+   * <p>Depending on whether or not we are inside a secure session, there are two types of behavior
+   * following this command:
+   *
+   * <ul>
+   *   <li>Outside a secure session (best effort mode): the following "process" command will not
+   *       fail whatever the existence of the targeted file or record (the {@link CalypsoCard}
+   *       object may not be filled).
+   *   <li>Inside a secure session (strict mode): the following "process" command will fail if the
+   *       targeted file or record does not exist (the {@link CalypsoCard} object is always filled
+   *       or an exception is raised when the reading failed).<br>
+   *       Invalid parameters could lead to additional exchanges with the card and thus corrupt the
+   *       security of the session.
+   * </ul>
    *
    * @param sfi The SFI of the EF.
    * @param countersNumber The number of the last counter to be read.
