@@ -13,7 +13,6 @@ package org.calypsonet.terminal.calypso.card;
 
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 
 /**
@@ -166,8 +165,7 @@ public interface CalypsoCard extends SmartCard {
    * modifications, which can be canceled if the secure session fails.
    *
    * @param sfi The SFI to search.
-   * @return a not null reference.
-   * @throws NoSuchElementException if requested EF is not found.
+   * @return Null if the requested EF is not found.
    * @since 1.0.0
    */
   ElementaryFile getFileBySfi(byte sfi);
@@ -179,8 +177,7 @@ public interface CalypsoCard extends SmartCard {
    * modifications, which can be canceled if the secure session fails.
    *
    * @param lid The LID to search.
-   * @return a not null reference.
-   * @throws NoSuchElementException if requested EF is not found.
+   * @return Null if the requested EF is not found.
    * @since 1.0.0
    */
   ElementaryFile getFileByLid(short lid);
