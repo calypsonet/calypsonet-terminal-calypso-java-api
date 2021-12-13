@@ -197,10 +197,10 @@ public interface CardTransactionManager {
    *
    * <ul>
    *   <li>Outside a secure session (best effort mode): the following "process" command will not
-   *       fail whatever the existence of the targeted file or record (the {@link CalypsoCard}
+   *       fail whatever the existence of the targeted file or counter (the {@link CalypsoCard}
    *       object may not be filled).
    *   <li>Inside a secure session (strict mode): the following "process" command will fail if the
-   *       targeted file or record does not exist (the {@link CalypsoCard} object is always filled
+   *       targeted file or counter does not exist (the {@link CalypsoCard} object is always filled
    *       or an exception is raised when the reading failed).<br>
    *       Invalid parameters could lead to additional exchanges with the card and thus corrupt the
    *       security of the session.
