@@ -124,7 +124,7 @@ public interface CardTransactionManager {
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
    *
-   * <p>Depending on whether or not we are inside a secure session, there are two types of behavior
+   * <p>Depending on whether we are inside a secure session, there are two types of behavior
    * following this command:
    *
    * <ul>
@@ -157,7 +157,7 @@ public interface CardTransactionManager {
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
    *
-   * <p>Depending on whether or not we are inside a secure session, there are two types of behavior
+   * <p>Depending on whether we are inside a secure session, there are two types of behavior
    * following this command:
    *
    * <ul>
@@ -192,7 +192,7 @@ public interface CardTransactionManager {
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
    *
-   * <p>Depending on whether or not we are inside a secure session, there are two types of behavior
+   * <p>Depending on whether we are inside a secure session, there are two types of behavior
    * following this command:
    *
    * <ul>
@@ -218,7 +218,7 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Verify Pin</b> command without PIN presentation in order to get
    * the attempt counter.
    *
-   * <p>The PIN status will made available in CalypsoCard after the execution of process command.
+   * <p>The PIN status will be made available in CalypsoCard after the execution of process command.
    * <br>
    * Adds it to the list of commands to be sent with the next process command.
    *
@@ -351,8 +351,8 @@ public interface CardTransactionManager {
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
    *
-   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link CalypsoCard#getSvLoadLogRecord()}
-   * ()}, {@link CalypsoCard#getSvDebitLogLastRecord()}, {@link
+   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link
+   * CalypsoCard#getSvLoadLogRecord()}, {@link CalypsoCard#getSvDebitLogLastRecord()}, {@link
    * CalypsoCard#getSvDebitLogAllRecords()}.
    *
    * @param svOperation Informs about the nature of the intended operation: debit or reload.
@@ -476,8 +476,8 @@ public interface CardTransactionManager {
    * objects (see {@link CalypsoCard#getSvLoadLogRecord()} and {@link
    * CalypsoCard#getSvDebitLogAllRecords()}).
    *
-   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link CalypsoCard#getSvLoadLogRecord()}
-   * ()}, {@link CalypsoCard#getSvDebitLogLastRecord()}, {@link
+   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link
+   * CalypsoCard#getSvLoadLogRecord()}, {@link CalypsoCard#getSvDebitLogLastRecord()}, {@link
    * CalypsoCard#getSvDebitLogAllRecords()}.
    *
    * @return The current instance.
@@ -555,7 +555,7 @@ public interface CardTransactionManager {
   CardTransactionManager processCardCommands();
 
   /**
-   * Performs a PIN verification, in order to authenticate the card holder and/or unlock access to
+   * Performs a PIN verification, in order to authenticate the cardholder and/or unlock access to
    * certain card files.
    *
    * <p>This command can be performed both in and out of a secure session. The PIN code can be
@@ -609,7 +609,7 @@ public interface CardTransactionManager {
    * <p>It is the starting point of the sequence:
    *
    * <ul>
-   *   <li>{@link #processOpening(WriteAccessLevel)}
+   *   <li>{@code processOpening(WriteAccessLevel)}
    *   <li>[{@link #processCardCommands()}]
    *   <li>[...]
    *   <li>[{@link #processCardCommands()}]
@@ -626,7 +626,7 @@ public interface CardTransactionManager {
    * object, otherwise a {@link IllegalStateException} is raised.
    *
    * <p>The secure session is opened with the {@link WriteAccessLevel} passed as an argument
-   * depending on whether it is a personalization, reload or debit transaction profile..
+   * depending on whether it is a personalization, reload or debit transaction profile.
    *
    * <p>The possible overflow of the internal session buffer of the card is managed in two ways
    * depending on the setting chosen in {@link CardSecuritySetting}.
@@ -663,6 +663,10 @@ public interface CardTransactionManager {
    * card file then this one is replaced by a setting of the session opening command allowing the
    * retrieval of this data in response to this command.
    *
+   * <p>Please note that the CAAD mechanism may require a file to be read before being modified. For
+   * this mechanism to work properly, this reading must not be placed in the first position of the
+   * prepared commands in order to be correctly taken into account by the SAM.
+   *
    * <p><b>Other operations carried out</b>
    *
    * <ul>
@@ -698,7 +702,9 @@ public interface CardTransactionManager {
    * <p><b>Nominal case</b>
    *
    * <p>The previously prepared commands are integrated into the calculation of the session digest
-   * by the SAM before execution by the card by anticipating their responses.
+   * by the SAM before execution by the card by anticipating their responses.<br>
+   * Therefore, the previous prepared commands <b>should contain only modify commands</b>
+   * (update/write/increase/decrease).
    *
    * <p>Thus, the session closing command containing the terminal signature is integrated into the
    * same APDU group sent to the card via a final card request.
@@ -740,9 +746,10 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @return The current instance.
-   * @throws IllegalStateException If no session is open.
+   * @throws IllegalStateException If no session is open or if previous prepared commands contain
+   *     non modify commands.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   *     errors).
    * @since 1.0.0
    */
   CardTransactionManager processClosing();
