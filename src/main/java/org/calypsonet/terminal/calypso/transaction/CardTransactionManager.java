@@ -702,9 +702,7 @@ public interface CardTransactionManager {
    * <p><b>Nominal case</b>
    *
    * <p>The previously prepared commands are integrated into the calculation of the session digest
-   * by the SAM before execution by the card by anticipating their responses.<br>
-   * Therefore, the previous prepared commands <b>should contain only modify commands</b>
-   * (update/write/increase/decrease).
+   * by the SAM before execution by the card by anticipating their responses.
    *
    * <p>Thus, the session closing command containing the terminal signature is integrated into the
    * same APDU group sent to the card via a final card request.
@@ -746,8 +744,7 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @return The current instance.
-   * @throws IllegalStateException If no session is open or if previous prepared commands contain
-   *     non modify commands.
+   * @throws IllegalStateException If no session is open.
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors).
    * @since 1.0.0
