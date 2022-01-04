@@ -19,12 +19,15 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  * Card specific {@link CardSelection} providing means to filter cards, select applications and
  * define optional commands to be executed during the selection phase.
  *
- * <p>Note: by default, the selection process ignores PRIME revision 3 cards that have been
+ * <p>Note 1: by default, the selection process ignores PRIME revision 3 cards that have been
  * invalidated. The {@link CalypsoCardSelection#acceptInvalidatedCard()} method must be invoked to
  * stop ignoring them.<br>
  * This feature does not apply to earlier revisions for which it is necessary to run a Select File
  * (DF) command to determine the invalidation status. In this case, the rejection or acceptance of
  * invalidated cards will have to be handled by the application.
+ *
+ * <p>Note 2: the APDU commands resulting from the invocation of the "prepare" methods shall be
+ * compliant with the PRIME revision 3 cards.
  *
  * @since 1.0.0
  */
@@ -135,6 +138,9 @@ public interface CalypsoCardSelection extends CardSelection {
   /**
    * Adds a command APDU to select file with an LID provided as a 2-byte byte array.
    *
+   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * Therefore, the command may be rejected by some earlier revision cards.
+   *
    * @param lid LID of the EF to select as a byte array
    * @return The object instance.
    * @throws IllegalArgumentException If the argument is not an array of 2 bytes.
@@ -145,6 +151,9 @@ public interface CalypsoCardSelection extends CardSelection {
   /**
    * Adds a command APDU to select file with an LID provided as a short.
    *
+   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * Therefore, the command may be rejected by some earlier revision cards.
+   *
    * @param lid A short.
    * @return The object instance.
    * @since 1.0.0
@@ -154,6 +163,9 @@ public interface CalypsoCardSelection extends CardSelection {
   /**
    * Adds a command APDU to select file according to the provided {@link SelectFileControl} enum
    * entry indicating the navigation case: FIRST, NEXT or CURRENT.
+   *
+   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * Therefore, the command may be rejected by some earlier revision cards.
    *
    * @param selectControl A {@link SelectFileControl} enum entry.
    * @return The object instance.
@@ -168,6 +180,9 @@ public interface CalypsoCardSelection extends CardSelection {
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
    * requested file and record exist in the file structure of the card (best effort behavior).
    *
+   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * Therefore, the command may be rejected by some earlier revision cards.
+   *
    * @param sfi The SFI of the EF to read
    * @param recordNumber The record number to read.
    * @return The object instance.
@@ -181,6 +196,9 @@ public interface CalypsoCardSelection extends CardSelection {
    *
    * <p>This method can be used to obtain FCI information when it is not provided directly by the
    * select application (e.g. OMAPI case).
+   *
+   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * Therefore, the command may be rejected by some earlier revision cards.
    *
    * @param tag The tag to use.
    * @return The object instance.
