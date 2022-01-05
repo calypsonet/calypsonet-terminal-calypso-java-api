@@ -737,7 +737,7 @@ public interface CardTransactionManager {
    * @since 1.1.0
    */
   CardTransactionManager prepareChangeKey(
-          int keyIndex, byte newKif, byte newKvc, byte issuerKif, byte issuerKvc);
+      int keyIndex, byte newKif, byte newKvc, byte issuerKif, byte issuerKvc);
 
   /**
    * Requests the closing of the card channel.
