@@ -423,7 +423,7 @@ public interface CardTransactionManager {
    *
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
-   * @param sfi The SFI of the file to select or 0 for the current file.
+   * @param sfi The SFI of the EF to select or 0 for the current EF.
    * @param offset The offset.
    * @param data The new data.
    * @return The current instance.
@@ -442,7 +442,7 @@ public interface CardTransactionManager {
    *
    * <p>Note: {@link CalypsoCard} is computed with the provided input data.
    *
-   * @param sfi The SFI of the file to select or 0 for the current file.
+   * @param sfi The SFI of the EF to select or 0 for the current EF.
    * @param offset The offset.
    * @param data The data to write over the existing data.
    * @return The current instance.
@@ -457,9 +457,9 @@ public interface CardTransactionManager {
    *
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
-   * @param counterNumber {@code >=} 01h: Counters file, number of the counter. 00h: Simulated.
-   *     Counter file.
-   * @param sfi SFI of the file to select or 00h for current EF.
+   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated. Counter
+   *     file.
+   * @param sfi SFI of the EF to select or 0 for current EF.
    * @param incValue Value to add to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
    * @return The current instance.
@@ -473,9 +473,9 @@ public interface CardTransactionManager {
    *
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
-   * @param counterNumber {@code >=} 01h: Counters file, number of the counter. 00h: Simulated.
-   *     Counter file.
-   * @param sfi SFI of the file to select or 00h for current EF.
+   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated. Counter
+   *     file.
+   * @param sfi SFI of the EF to select or 0 for current EF.
    * @param decValue Value to subtract to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
    * @return The current instance.
@@ -503,9 +503,9 @@ public interface CardTransactionManager {
    *       determine the success of the operation..
    * </ul>
    *
-   * @param counterNumber {@code >=} 01h: Counters file, number of the counter. 00h: Simulated.
-   *     Counter file.
-   * @param sfi SFI of the file to select or 00h for current EF.
+   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated. Counter
+   *     file.
+   * @param sfi SFI of the EF to select or 0 for current EF.
    * @param newValue The desired value for the counter (defined as a positive int {@code <=}
    *     16777215 [FFFFFFh])
    * @return The current instance.

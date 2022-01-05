@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `prepareUpdateBinary` and `prepareWriteBinary` methods to `CardTransactionManager` API (issue [#19]).
 - `prepareReadBinary` method to `CardTransactionManager` API (issue [#20]).
-- `prepareReadRecord` methods.
-- `prepareReadCounter` method.
+- `prepareReadRecord` methods as a replacement for the `prepareReadRecordFile` methods.
+- `prepareReadCounter` method as a replacement for the `prepareReadCounterFile` method.
 ### Changed
 - Documentation of card selection methods for older cards (issue [#17]).
 ### Deprecated

@@ -34,7 +34,7 @@ public enum SelectFileControl {
   NEXT_EF,
 
   /**
-   * The Calypso DF
+   * The current Calypso DF
    *
    * @since 1.0.0
    */
