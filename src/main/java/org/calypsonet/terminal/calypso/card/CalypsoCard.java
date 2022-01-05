@@ -151,6 +151,16 @@ public interface CalypsoCard extends SmartCard {
   byte getSessionModification();
 
   /**
+   * Gets the traceability information of the product.
+   *
+   * <p>The returned array contains the software issuer ID and the discretionary data.
+   *
+   * @return An empty array if the traceability information is not available.
+   * @since 1.1.0
+   */
+  byte[] getTraceabilityInformation();
+
+  /**
    * Gets the DF metadata.
    *
    * @return Null if is not set.
