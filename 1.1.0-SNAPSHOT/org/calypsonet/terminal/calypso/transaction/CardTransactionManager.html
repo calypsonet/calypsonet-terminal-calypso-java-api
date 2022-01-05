@@ -26,8 +26,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":38,"i13":6,"i14":6,"i15":38,"i16":38,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -163,7 +163,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -248,55 +248,97 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadCounterFile(byte,int)">prepareReadCounterFile</a></span>&#8203;(byte&nbsp;sfi,
-                      int&nbsp;countersNumber)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadBinary(byte,int,int)">prepareReadBinary</a></span>&#8203;(byte&nbsp;sfi,
+                 int&nbsp;offset,
+                 int&nbsp;nbBytesToRead)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of one or multiple <b>Read Binary</b> commands to read all or part of
+ the indicated Binary EF.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadCounter(byte,int)">prepareReadCounter</a></span>&#8203;(byte&nbsp;sfi,
+                  int&nbsp;nbCountersToRead)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Read Records</b> command to reads a record of the indicated EF,
  which should be a counter file.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
-                     int&nbsp;recordNumber)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadCounterFile(byte,int)">prepareReadCounterFile</a></span>&#8203;(byte&nbsp;sfi,
+                      int&nbsp;countersNumber)</code></th>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="#prepareReadCounter(byte,int)"><code>prepareReadCounter(byte, int)</code></a> method instead.</div>
+</div>
+</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecord(byte,int)">prepareReadRecord</a></span>&#8203;(byte&nbsp;sfi,
+                 int&nbsp;recordNumber)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Read Records</b> command to read a single record from the
  indicated EF.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecord(byte,int,int,int)">prepareReadRecord</a></span>&#8203;(byte&nbsp;sfi,
+                 int&nbsp;firstRecordNumber,
+                 int&nbsp;nbRecordsToRead,
+                 int&nbsp;recordSize)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
+ indicated EF.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
+                     int&nbsp;recordNumber)</code></th>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int)"><code>prepareReadRecord(byte, int)</code></a> method instead.</div>
+</div>
+</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int,int,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
                      int&nbsp;firstRecordNumber,
                      int&nbsp;numberOfRecords,
                      int&nbsp;recordSize)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
- indicated EF.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int,int,int)"><code>prepareReadRecord(byte, int, int, int)</code></a> method instead.</div>
+</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareRehabilitate()">prepareRehabilitate</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Rehabilitate</b> command.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReleaseCardChannel()">prepareReleaseCardChannel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Requests the closing of the card channel.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(byte%5B%5D)">prepareSelectFile</a></span>&#8203;(byte[]&nbsp;lid)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Select File</b> command based on the file's LID.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(org.calypsonet.terminal.calypso.SelectFileControl)">prepareSelectFile</a></span>&#8203;(<a href="../SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso">SelectFileControl</a>&nbsp;selectFileControl)</code></th>
 <td class="colLast">
@@ -304,7 +346,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  defined by the ISO standard.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSetCounter(byte,int,int)">prepareSetCounter</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;counterNumber,
@@ -313,7 +355,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a command to set the value of the target counter.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvDebit(int)">prepareSvDebit</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
@@ -321,7 +363,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  current SV balance or to partially or totally cancels the last SV debit command.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)">prepareSvDebit</a></span>&#8203;(int&nbsp;amount,
               byte[]&nbsp;date,
@@ -332,7 +374,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  provided additional data.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)">prepareSvGet</a></span>&#8203;(<a href="SvOperation.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvOperation</a>&nbsp;svOperation,
             <a href="SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvAction</a>&nbsp;svAction)</code></th>
@@ -341,21 +383,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  retrieves the current SV status.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReadAllLogs()">prepareSvReadAllLogs</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of <b>Read Records</b> commands to read all SV logs.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReload(int)">prepareSvReload</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>SV Reload</b> command to increase the current SV balance.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)">prepareSvReload</a></span>&#8203;(int&nbsp;amount,
                byte[]&nbsp;date,
@@ -366,7 +408,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  using the provided additional data.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareUpdateBinary(byte,int,byte%5B%5D)">prepareUpdateBinary</a></span>&#8203;(byte&nbsp;sfi,
                    int&nbsp;offset,
@@ -376,7 +418,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  Binary file with the new data given from the indicated offset.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareUpdateRecord(byte,int,byte%5B%5D)">prepareUpdateRecord</a></span>&#8203;(byte&nbsp;sfi,
                    int&nbsp;recordNumber,
@@ -386,7 +428,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  record contents with the provided data.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteBinary(byte,int,byte%5B%5D)">prepareWriteBinary</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;offset,
@@ -396,7 +438,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  Binary file.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteRecord(byte,int,byte%5B%5D)">prepareWriteRecord</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;recordNumber,
@@ -406,42 +448,42 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  contents with the result of a binary OR between the existing data and the provided data.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processCancel()">processCancel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Aborts a Secure Session.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processCardCommands()">processCardCommands</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Process all previously prepared card commands outside or inside a Secure Session.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processChangePin(byte%5B%5D)">processChangePin</a></span>&#8203;(byte[]&nbsp;newPin)</code></th>
 <td class="colLast">
 <div class="block">Replaces the current PIN with the new value provided.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processClosing()">processClosing</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Terminates the Secure Session sequence started with <a href="#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>processOpening(WriteAccessLevel)</code></a>.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)">processOpening</a></span>&#8203;(<a href="../WriteAccessLevel.html" title="enum in org.calypsonet.terminal.calypso">WriteAccessLevel</a>&nbsp;writeAccessLevel)</code></th>
 <td class="colLast">
 <div class="block">Opens a Calypso Secure Session and then executes all previously prepared commands.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processVerifyPin(byte%5B%5D)">processVerifyPin</a></span>&#8203;(byte[]&nbsp;pin)</code></th>
 <td class="colLast">
@@ -608,8 +650,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareReadRecordFile</h4>
-<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecordFile&#8203;(byte&nbsp;sfi,
+<pre class="methodSignature">@Deprecated
+<a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecordFile&#8203;(byte&nbsp;sfi,
                                              int&nbsp;recordNumber)</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int)"><code>prepareReadRecord(byte, int)</code></a> method instead.</div>
+</div>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to read a single record from the
  indicated EF.
 
@@ -652,10 +698,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareReadRecordFile</h4>
-<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecordFile&#8203;(byte&nbsp;sfi,
+<pre class="methodSignature">@Deprecated
+<a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecordFile&#8203;(byte&nbsp;sfi,
                                              int&nbsp;firstRecordNumber,
                                              int&nbsp;numberOfRecords,
                                              int&nbsp;recordSize)</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int,int,int)"><code>prepareReadRecord(byte, int, int, int)</code></a> method instead.</div>
+</div>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
  indicated EF.
 
@@ -696,8 +746,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareReadCounterFile</h4>
-<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadCounterFile&#8203;(byte&nbsp;sfi,
+<pre class="methodSignature">@Deprecated
+<a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadCounterFile&#8203;(byte&nbsp;sfi,
                                               int&nbsp;countersNumber)</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="#prepareReadCounter(byte,int)"><code>prepareReadCounter(byte, int)</code></a> method instead.</div>
+</div>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to reads a record of the indicated EF,
  which should be a counter file.
 
@@ -729,6 +783,179 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+</dl>
+</li>
+</ul>
+<a id="prepareReadRecord(byte,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareReadRecord</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecord&#8203;(byte&nbsp;sfi,
+                                         int&nbsp;recordNumber)</pre>
+<div class="block">Schedules the execution of a <b>Read Records</b> command to read a single record from the
+ indicated EF.
+
+ <p>Once this command is processed, the result is available in <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>.
+
+ <p>Depending on whether we are inside a secure session, there are two types of behavior
+ following this command:
+
+ <ul>
+   <li>Outside a secure session (best effort mode): the following "process" command will not
+       fail whatever the existence of the targeted file or record (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>
+       object may not be filled).
+   <li>Inside a secure session in contactless mode (strict mode): the following "process"
+       command will fail if the targeted file or record does not exist (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>
+       object is always filled or an exception is raised when the reading failed).
+ </ul>
+
+ <p><b>This method should not be used inside a secure session in contact mode</b> because
+ additional exchanges with the card will be operated and will corrupt the security of the
+ session. Instead, use the method <a href="#prepareReadRecordFile(byte,int,int,int)"><code>prepareReadRecordFile(byte, int, int, int)</code></a> for this
+ case and provide valid parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sfi</code> - The SFI of the EF to read.</dd>
+<dd><code>recordNumber</code> - The record number to read.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided arguments is out of range.</dd>
+<dd><code>java.lang.IllegalStateException</code> - If this method is invoked inside a secure session in contact
+     mode.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
+</dl>
+</li>
+</ul>
+<a id="prepareReadRecord(byte,int,int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareReadRecord</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecord&#8203;(byte&nbsp;sfi,
+                                         int&nbsp;firstRecordNumber,
+                                         int&nbsp;nbRecordsToRead,
+                                         int&nbsp;recordSize)</pre>
+<div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
+ indicated EF.
+
+ <p>Once this command is processed, the result is available in <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>.
+
+ <p>Depending on whether we are inside a secure session, there are two types of behavior
+ following this command:
+
+ <ul>
+   <li>Outside a secure session (best effort mode): the following "process" command will not
+       fail whatever the existence of the targeted file or record (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>
+       object may not be filled).
+   <li>Inside a secure session (strict mode): the following "process" command will fail if the
+       targeted file or record does not exist (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> object is always filled
+       or an exception is raised when the reading failed).<br>
+       Invalid parameters could lead to additional exchanges with the card and thus corrupt the
+       security of the session.
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sfi</code> - The SFI of the EF.</dd>
+<dd><code>firstRecordNumber</code> - The record number to read (or first record to read in case of several
+     records)</dd>
+<dd><code>nbRecordsToRead</code> - The number of records to read.</dd>
+<dd><code>recordSize</code> - The record length.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
+</dl>
+</li>
+</ul>
+<a id="prepareReadBinary(byte,int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareReadBinary</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadBinary&#8203;(byte&nbsp;sfi,
+                                         int&nbsp;offset,
+                                         int&nbsp;nbBytesToRead)</pre>
+<div class="block">Schedules the execution of one or multiple <b>Read Binary</b> commands to read all or part of
+ the indicated Binary EF.
+
+ <p>Once this command is processed, the result is available in <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>.
+
+ <p>Depending on whether we are inside a secure session, there are two types of behavior
+ following this command:
+
+ <ul>
+   <li>Outside a secure session (best effort mode): the following "process" command will not
+       fail whatever the existence of the targeted file or the validity of the offset and number
+       of bytes to read (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> object may not be filled).
+   <li>Inside a secure session (strict mode): the following "process" command will fail if the
+       targeted file does not exist or if the offset and number of bytes to read are not valid
+       (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> object is always filled or an exception is raised when the
+       reading failed).<br>
+       Invalid parameters could lead to additional exchanges with the card and thus corrupt the
+       security of the session.
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sfi</code> - The SFI of the EF.</dd>
+<dd><code>offset</code> - The offset.</dd>
+<dd><code>nbBytesToRead</code> - The number of bytes to read.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - If this command is not supported by this card.</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
+</dl>
+</li>
+</ul>
+<a id="prepareReadCounter(byte,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareReadCounter</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadCounter&#8203;(byte&nbsp;sfi,
+                                          int&nbsp;nbCountersToRead)</pre>
+<div class="block">Schedules the execution of a <b>Read Records</b> command to reads a record of the indicated EF,
+ which should be a counter file.
+
+ <p>The record will be read up to the counter location indicated in parameter.<br>
+ Thus, all previous counters will also be read.
+
+ <p>Once this command is processed, the result is available in <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>.
+
+ <p>Depending on whether we are inside a secure session, there are two types of behavior
+ following this command:
+
+ <ul>
+   <li>Outside a secure session (best effort mode): the following "process" command will not
+       fail whatever the existence of the targeted file or counter (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>
+       object may not be filled).
+   <li>Inside a secure session (strict mode): the following "process" command will fail if the
+       targeted file or counter does not exist (the <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> object is always filled
+       or an exception is raised when the reading failed).<br>
+       Invalid parameters could lead to additional exchanges with the card and thus corrupt the
+       security of the session.
+ </ul></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sfi</code> - The SFI of the EF.</dd>
+<dd><code>nbCountersToRead</code> - The number of counters to read.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
 </dl>
 </li>
 </ul>
@@ -861,7 +1088,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is filled with the provided input data.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - The SFI of the file to select or 0 for the current file.</dd>
+<dd><code>sfi</code> - The SFI of the EF to select or 0 for the current EF.</dd>
 <dd><code>offset</code> - The offset.</dd>
 <dd><code>data</code> - The new data.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -892,7 +1119,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is computed with the provided input data.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - The SFI of the file to select or 0 for the current file.</dd>
+<dd><code>sfi</code> - The SFI of the EF to select or 0 for the current EF.</dd>
 <dd><code>offset</code> - The offset.</dd>
 <dd><code>data</code> - The data to write over the existing data.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -919,9 +1146,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is filled with the provided input data.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>counterNumber</code> - <code>&gt;=</code> 01h: Counters file, number of the counter. 00h: Simulated.
-     Counter file.</dd>
-<dd><code>sfi</code> - SFI of the file to select or 00h for current EF.</dd>
+<dd><code>counterNumber</code> - <code>&gt;=</code> 1: Counters file, number of the counter. 0: Simulated. Counter
+     file.</dd>
+<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
 <dd><code>incValue</code> - Value to add to the counter (defined as a positive int <code>&lt;=</code> 16777215
      [FFFFFFh])</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -947,9 +1174,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is filled with the provided input data.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>counterNumber</code> - <code>&gt;=</code> 01h: Counters file, number of the counter. 00h: Simulated.
-     Counter file.</dd>
-<dd><code>sfi</code> - SFI of the file to select or 00h for current EF.</dd>
+<dd><code>counterNumber</code> - <code>&gt;=</code> 1: Counters file, number of the counter. 0: Simulated. Counter
+     file.</dd>
+<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
 <dd><code>decValue</code> - Value to subtract to the counter (defined as a positive int <code>&lt;=</code> 16777215
      [FFFFFFh])</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -989,9 +1216,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>counterNumber</code> - <code>&gt;=</code> 01h: Counters file, number of the counter. 00h: Simulated.
-     Counter file.</dd>
-<dd><code>sfi</code> - SFI of the file to select or 00h for current EF.</dd>
+<dd><code>counterNumber</code> - <code>&gt;=</code> 1: Counters file, number of the counter. 0: Simulated. Counter
+     file.</dd>
+<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
 <dd><code>newValue</code> - The desired value for the counter (defined as a positive int <code>&lt;=</code>
      16777215 [FFFFFFh])</dd>
 <dt><span class="returnLabel">Returns:</span></dt>

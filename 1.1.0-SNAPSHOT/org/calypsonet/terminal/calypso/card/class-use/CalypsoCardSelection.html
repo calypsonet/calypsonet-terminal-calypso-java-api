@@ -187,27 +187,37 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareReadRecordFile(byte,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
-                     int&nbsp;recordNumber)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareReadRecord(byte,int)">prepareReadRecord</a></span>&#8203;(byte&nbsp;sfi,
+                 int&nbsp;recordNumber)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to read a single record from the indicated EF.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareReadRecordFile(byte,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
+                     int&nbsp;recordNumber)</code></th>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="../CalypsoCardSelection.html#prepareReadRecord(byte,int)"><code>prepareReadRecord(byte, int)</code></a> method instead.</div>
+</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareSelectFile(byte%5B%5D)">prepareSelectFile</a></span>&#8203;(byte[]&nbsp;lid)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to select file with an LID provided as a 2-byte byte array.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareSelectFile(short)">prepareSelectFile</a></span>&#8203;(short&nbsp;lid)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to select file with an LID provided as a short.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareSelectFile(org.calypsonet.terminal.calypso.SelectFileControl)">prepareSelectFile</a></span>&#8203;(<a href="../../SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso">SelectFileControl</a>&nbsp;selectControl)</code></th>
 <td class="colLast">
@@ -215,14 +225,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  entry indicating the navigation case: FIRST, NEXT or CURRENT.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#setFileControlInformation(org.calypsonet.terminal.calypso.card.CalypsoCardSelection.FileControlInformation)">setFileControlInformation</a></span>&#8203;(<a href="../CalypsoCardSelection.FileControlInformation.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCardSelection.FileControlInformation</a>&nbsp;fileControlInformation)</code></th>
 <td class="colLast">
 <div class="block">Sets the file control mode (see ISO7816-4).</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#setFileOccurrence(org.calypsonet.terminal.calypso.card.CalypsoCardSelection.FileOccurrence)">setFileOccurrence</a></span>&#8203;(<a href="../CalypsoCardSelection.FileOccurrence.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCardSelection.FileOccurrence</a>&nbsp;fileOccurrence)</code></th>
 <td class="colLast">
