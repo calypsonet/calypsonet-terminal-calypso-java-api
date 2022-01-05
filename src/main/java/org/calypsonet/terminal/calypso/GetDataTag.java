@@ -31,5 +31,17 @@ public enum GetDataTag {
    *
    * @since 1.0.0
    */
-  FCI_FOR_CURRENT_DF
+  FCI_FOR_CURRENT_DF,
+  /**
+   * List of EFs in the current DF.
+   *
+   * @since 1.1.0
+   */
+  EF_LIST,
+  /**
+   * Product traceability information.
+   *
+   * @since 1.1.0
+   */
+  TRACEABILITY_INFORMATION
 }

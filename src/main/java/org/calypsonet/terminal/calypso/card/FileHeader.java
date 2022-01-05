@@ -21,7 +21,7 @@ public interface FileHeader {
   /**
    * Gets the associated LID.
    *
-   * @return The LID
+   * @return The LID.
    * @since 1.0.0
    */
   short getLid();
@@ -29,10 +29,12 @@ public interface FileHeader {
   /**
    * Gets the DF status.
    *
-   * @return The DF status byte
+   * @return Null if the status is not available (e.g. when the {@code FileHeader} is created
+   *     following the response to a "Get Data" command with the {@link
+   *     org.calypsonet.terminal.calypso.GetDataTag#EF_LIST} tag).
    * @since 1.0.0
    */
-  byte getDfStatus();
+  Byte getDfStatus();
 
   /**
    * Gets the Elementary File type.
@@ -73,7 +75,9 @@ public interface FileHeader {
   /**
    * Gets a reference to the access conditions.
    *
-   * @return A not empty byte array reference.
+   * @return An empty array if the access conditions are not available (e.g. when the {@code
+   *     FileHeader} is created following the response to a "Get Data" command with the {@link
+   *     org.calypsonet.terminal.calypso.GetDataTag#EF_LIST} tag).
    * @since 1.0.0
    */
   byte[] getAccessConditions();
@@ -81,15 +85,19 @@ public interface FileHeader {
   /**
    * Gets a reference to the keys indexes.
    *
-   * @return A not empty byte array reference.
+   * @return An empty array if the key indexes are not available (e.g. when the {@code FileHeader}
+   *     is created following the response to a "Get Data" command with the {@link
+   *     org.calypsonet.terminal.calypso.GetDataTag#EF_LIST} tag).
    * @since 1.0.0
    */
   byte[] getKeyIndexes();
 
   /**
-   * Gets the shared reference of a shared file.
+   * Gets the non-zero unique identifier of the shared data when the file data is shared.
    *
-   * @return Null if file is not shared.
+   * @return Zero if the file data is not shared or null if the information is not available (e.g.
+   *     when the {@code FileHeader} is created following the response to a "Get Data" command with
+   *     the {@link org.calypsonet.terminal.calypso.GetDataTag#EF_LIST} tag).
    * @since 1.0.0
    */
   Short getSharedReference();
