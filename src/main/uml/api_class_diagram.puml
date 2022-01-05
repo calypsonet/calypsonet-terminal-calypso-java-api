@@ -90,7 +90,8 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +CalypsoCardSelection prepareGetData (GetDataTag tag)
 
-            +CalypsoCardSelection prepareReadRecordFile (byte sfi, int recordNumber)
+            +<s>CalypsoCardSelection prepareReadRecordFile (byte sfi, int recordNumber)</s>
+            +CalypsoCardSelection prepareReadRecord (byte sfi, int recordNumber)
         }
         +enum FileOccurrence {
             FIRST
@@ -262,9 +263,13 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +CardTransactionManager prepareGetData (GetDataTag tag)
 
-            +CardTransactionManager prepareReadRecordFile (byte sfi, int recordNumber)
-            +CardTransactionManager prepareReadRecordFile (byte sfi, int firstRecordNumber, int numberOfRecords, int recordSize)
-            +CardTransactionManager prepareReadCounterFile (byte sfi, int countersNumber)
+            +<s>CardTransactionManager prepareReadRecordFile (byte sfi, int recordNumber)</s>
+            +<s>CardTransactionManager prepareReadRecordFile (byte sfi, int firstRecordNumber, int numberOfRecords, int recordSize)</s>
+            +<s>CardTransactionManager prepareReadCounterFile (byte sfi, int countersNumber)</s>
+            +CardTransactionManager prepareReadRecord (byte sfi, int recordNumber)
+            +CardTransactionManager prepareReadRecord (byte sfi, int firstRecordNumber, int nbRecordsToRead, int recordSize)
+            +CardTransactionManager prepareReadBinary (byte sfi, int offset, int nbBytesToRead)
+            +CardTransactionManager prepareReadCounter (byte sfi, int nbCountersToRead)
 
             +CardTransactionManager prepareCheckPinStatus ()
 
