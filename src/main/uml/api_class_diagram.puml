@@ -300,6 +300,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +CardTransactionManager prepareInvalidate ()
             +CardTransactionManager prepareRehabilitate ()
 
+            +CardTransactionManager prepareChangeKey (int keyIndex, byte newKif, byte newKvc, byte issuerKif, byte issuerKvc)
+
             +CardTransactionManager prepareReleaseCardChannel ()
 
             +CardTransactionManager processCardCommands ()
