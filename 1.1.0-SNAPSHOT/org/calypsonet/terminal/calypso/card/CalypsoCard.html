@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -348,62 +348,69 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
+<td class="colFirst"><code>byte[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTraceabilityInformation()">getTraceabilityInformation</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Gets the traceability information of the product.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDfInvalidated()">isDfInvalidated</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Tells if the current DF is invalidated or not.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDfRatified()">isDfRatified</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Tells if the last session with this card has been ratified or not.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isExtendedModeSupported()">isExtendedModeSupported</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the Extended Mode is supported or not (since rev 3.2).</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHce()">isHce</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates if the card is a Calypso HCE (Host Card Emulation) .</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPinBlocked()">isPinBlocked</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates if the PIN is blocked.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPinFeatureAvailable()">isPinFeatureAvailable</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the card has the Calypso PIN feature.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPkiModeSupported()">isPkiModeSupported</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the Public Key Authentication is supported or not (since rev 3.3).</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRatificationOnDeselectSupported()">isRatificationOnDeselectSupported</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates if the ratification is done on deselect (ratification command not necessary).</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSvFeatureAvailable()">isSvFeatureAvailable</a></span>()</code></th>
 <td class="colLast">
@@ -637,6 +644,24 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <dd>The Session Modification byte.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+</dl>
+</li>
+</ul>
+<a id="getTraceabilityInformation()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTraceabilityInformation</h4>
+<pre class="methodSignature">byte[]&nbsp;getTraceabilityInformation()</pre>
+<div class="block">Gets the traceability information of the product.
+
+ <p>The returned array contains the software issuer ID and the discretionary data.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>An empty array if the traceability information is not available.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
 </dl>
 </li>
 </ul>

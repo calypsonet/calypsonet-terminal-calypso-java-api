@@ -158,7 +158,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>byte</code></td>
+<td class="colFirst"><code>java.lang.Byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDfStatus()">getDfStatus</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the DF status.</div>
@@ -211,7 +211,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>java.lang.Short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedReference()">getSharedReference</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the shared reference of a shared file.</div>
+<div class="block">Gets the non-zero unique identifier of the shared data when the file data is shared.</div>
 </td>
 </tr>
 </table>
@@ -241,7 +241,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Gets the associated LID.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The LID</dd>
+<dd>The LID.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -253,11 +253,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getDfStatus</h4>
-<pre class="methodSignature">byte&nbsp;getDfStatus()</pre>
+<pre class="methodSignature">java.lang.Byte&nbsp;getDfStatus()</pre>
 <div class="block">Gets the DF status.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The DF status byte</dd>
+<dd>Null if the status is not available (e.g. when the <code>FileHeader</code> is created
+     following the response to a "Get Data" command with the <a href="../GetDataTag.html#EF_LIST"><code>GetDataTag.EF_LIST</code></a> tag).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -333,7 +334,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Gets a reference to the access conditions.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A not empty byte array reference.</dd>
+<dd>An empty array if the access conditions are not available (e.g. when the <code>
+     FileHeader</code> is created following the response to a "Get Data" command with the <a href="../GetDataTag.html#EF_LIST"><code>GetDataTag.EF_LIST</code></a> tag).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -349,7 +351,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Gets a reference to the keys indexes.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A not empty byte array reference.</dd>
+<dd>An empty array if the key indexes are not available (e.g. when the <code>FileHeader</code>
+     is created following the response to a "Get Data" command with the <a href="../GetDataTag.html#EF_LIST"><code>GetDataTag.EF_LIST</code></a> tag).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -362,10 +365,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>getSharedReference</h4>
 <pre class="methodSignature">java.lang.Short&nbsp;getSharedReference()</pre>
-<div class="block">Gets the shared reference of a shared file.</div>
+<div class="block">Gets the non-zero unique identifier of the shared data when the file data is shared.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>Null if file is not shared.</dd>
+<dd>Zero if the file data is not shared or null if the information is not available (e.g.
+     when the <code>FileHeader</code> is created following the response to a "Get Data" command with
+     the <a href="../GetDataTag.html#EF_LIST"><code>GetDataTag.EF_LIST</code></a> tag).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
