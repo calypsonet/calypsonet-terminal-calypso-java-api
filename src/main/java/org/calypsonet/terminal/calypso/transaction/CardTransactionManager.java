@@ -142,7 +142,7 @@ public interface CardTransactionManager {
    * case and provide valid parameters.
    *
    * @param sfi The SFI of the EF to read.
-   * @param recordNumber The record number to read.
+   * @param recordNumber The record to read.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided arguments is out of range.
    * @throws IllegalStateException If this method is invoked inside a secure session in contact
@@ -174,7 +174,7 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @param sfi The SFI of the EF.
-   * @param firstRecordNumber The record number to read (or first record to read in case of several
+   * @param firstRecordNumber The record to read (or first record to read in case of several
    *     records)
    * @param numberOfRecords The number of records expected.
    * @param recordSize The record length.
@@ -244,7 +244,7 @@ public interface CardTransactionManager {
    * case and provide valid parameters.
    *
    * @param sfi The SFI of the EF to read.
-   * @param recordNumber The record number to read.
+   * @param recordNumber The record to read.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided arguments is out of range.
    * @throws IllegalStateException If this method is invoked inside a secure session in contact
@@ -274,7 +274,7 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @param sfi The SFI of the EF.
-   * @param firstRecordNumber The record number to read (or first record to read in case of several
+   * @param firstRecordNumber The record to read (or first record to read in case of several
    *     records)
    * @param nbRecordsToRead The number of records to read.
    * @param recordSize The record length.
@@ -284,6 +284,41 @@ public interface CardTransactionManager {
    */
   CardTransactionManager prepareReadRecord(
       byte sfi, int firstRecordNumber, int nbRecordsToRead, int recordSize);
+
+  /**
+   * Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
+   * parts of multiple records of the indicated EF.
+   *
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard}.
+   *
+   * <p>Depending on whether we are inside a secure session, there are two types of behavior
+   * following this command:
+   *
+   * <ul>
+   *   <li>Outside a secure session (best effort mode): the following "process" command will not
+   *       fail whatever the existence of the targeted file or the validity of the offset and number
+   *       of bytes to read (the {@link CalypsoCard} object may not be filled).
+   *   <li>Inside a secure session (strict mode): the following "process" command will fail if the
+   *       targeted file does not exist or if the offset and number of bytes to read are not valid
+   *       (the {@link CalypsoCard} object is always filled or an exception is raised when the
+   *       reading failed).<br>
+   *       Invalid parameters could lead to additional exchanges with the card and thus corrupt the
+   *       security of the session.
+   * </ul>
+   *
+   * @param sfi The SFI of the EF.
+   * @param firstRecordNumber The record to read (or first record to read in case of several
+   *     records).
+   * @param nbRecordsToRead The number of records to read.
+   * @param offset The offset in the records where to start reading.
+   * @param nbBytesToRead The number of bytes to read from each record.
+   * @return The current instance.
+   * @throws UnsupportedOperationException If this command is not supported by this card.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
+   * @since 1.1.0
+   */
+  CardTransactionManager prepareReadRecordMultiple(
+      byte sfi, int firstRecordNumber, int nbRecordsToRead, int offset, int nbBytesToRead);
 
   /**
    * Schedules the execution of one or multiple <b>Read Binary</b> commands to read all or part of
@@ -388,7 +423,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
    * @param sfi The sfi to select.
-   * @param recordNumber The record number to update.
+   * @param recordNumber The record to update.
    * @param recordData The new record data. If length {@code <} RecSize, bytes beyond length are.
    *     left unchanged.
    * @return The current instance.
@@ -406,7 +441,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
    * @param sfi The sfi to select.
-   * @param recordNumber The record number to write.
+   * @param recordNumber The record to write.
    * @param recordData The data to overwrite in the record. If length {@code <} RecSize, bytes.
    *     beyond length are left unchanged.
    * @return The current instance.

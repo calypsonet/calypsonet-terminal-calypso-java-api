@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `prepareReadBinary` method to `CardTransactionManager` API (issue [#20]).
 - `prepareReadRecord` methods as a replacement for the `prepareReadRecordFile` methods.
 - `prepareReadCounter` method as a replacement for the `prepareReadCounterFile` method.
+- `prepareReadRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#21]).
 - `EF_LIST` and `TRACEABILITY_INFORMATION` keys to `GetDataTag` API (issue [#18]).
 ### Changed
 - Documentation of card selection methods for older cards (issue [#17]).
@@ -53,6 +54,7 @@ This is the initial release.
 [1.0.1]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/releases/tag/1.0.0
 
+[#21]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/21
 [#20]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/20
 [#19]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/19
 [#18]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/18
