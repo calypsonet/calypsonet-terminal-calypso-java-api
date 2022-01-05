@@ -288,6 +288,8 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +CardTransactionManager prepareIncreaseCounter (byte sfi, int counterNumber, int incValue)
             +CardTransactionManager prepareDecreaseCounter (byte sfi, int counterNumber, int decValue)
+            +CardTransactionManager prepareDecreaseMultiple(byte sfi, int[] counterNumbers, int[] decValues)
+            +CardTransactionManager prepareIncreaseMultiple(byte sfi, int[] counterNumbers, int[] incValues)
             +CardTransactionManager prepareSetCounter (byte sfi, int counterNumber, int newValue)
 
             +CardTransactionManager prepareSvGet (SvOperation svOperation, SvAction svAction)

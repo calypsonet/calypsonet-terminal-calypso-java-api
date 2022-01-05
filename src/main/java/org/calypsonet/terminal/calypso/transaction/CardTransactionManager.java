@@ -488,13 +488,13 @@ public interface CardTransactionManager {
   CardTransactionManager prepareWriteBinary(byte sfi, int offset, byte[] data);
 
   /**
-   * Schedules the execution of a <b>Increase command</b> command to increase the target counter.
+   * Schedules the execution of a <b>Increase</b> command to increase the target counter.
    *
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
-   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated. Counter
-   *     file.
    * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated counter
+   *     file.
    * @param incValue Value to add to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
    * @return The current instance.
@@ -504,13 +504,13 @@ public interface CardTransactionManager {
   CardTransactionManager prepareIncreaseCounter(byte sfi, int counterNumber, int incValue);
 
   /**
-   * Schedules the execution of a <b>Decrease command</b> command to decrease the target counter.
+   * Schedules the execution of a <b>Decrease</b> command to decrease the target counter.
    *
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
-   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated. Counter
-   *     file.
    * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated counter
+   *     file.
    * @param decValue Value to subtract to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
    * @return The current instance.
@@ -518,6 +518,52 @@ public interface CardTransactionManager {
    * @since 1.0.0
    */
   CardTransactionManager prepareDecreaseCounter(byte sfi, int counterNumber, int decValue);
+
+  /**
+   * Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
+   * counters at the same time.
+   *
+   * <p>Note 1: {@link CalypsoCard} is filled with the provided input data.
+   *
+   * <p>Note 2: in the case where this method is invoked just before the invocation of {@link
+   * #processClosing()}, the counter must have been read previously during the same secure session
+   * otherwise an {@link IllegalStateException} will be raised during the execution of {@link
+   * #processClosing()}.
+   *
+   * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param counterNumbers A not empty array of counter numbers {@code >=} 1: Counters file, number
+   *     of the counter. 0: Simulated counter file.
+   * @param incValues A not empty array of values to add to the corresponding counters. Each value
+   *     is defined as a positive int {@code <=} 16777215 [FFFFFFh].
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range or
+   *     inconsistent.
+   * @since 1.1.0
+   */
+  CardTransactionManager prepareIncreaseMultiple(byte sfi, int[] counterNumbers, int[] incValues);
+
+  /**
+   * Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
+   * counters at the same time.
+   *
+   * <p>Note 1: {@link CalypsoCard} is filled with the provided input data.
+   *
+   * <p>Note 2: in the case where this method is invoked just before the invocation of {@link
+   * #processClosing()}, the counter must have been read previously during the same secure session
+   * otherwise an {@link IllegalStateException} will be raised during the execution of {@link
+   * #processClosing()}.
+   *
+   * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param counterNumbers A not empty array of counter numbers {@code >=} 1: Counters file, number
+   *     of the counter. 0: Simulated counter file.
+   * @param decValues A not empty array of values to subtract to the corresponding counters. Each
+   *     value is defined as a positive int {@code <=} 16777215 [FFFFFFh].
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range or
+   *     inconsistent.
+   * @since 1.1.0
+   */
+  CardTransactionManager prepareDecreaseMultiple(byte sfi, int[] counterNumbers, int[] decValues);
 
   /**
    * Schedules the execution of a command to set the value of the target counter.
