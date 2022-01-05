@@ -211,6 +211,27 @@ public interface CalypsoCardSelection extends CardSelection {
   CalypsoCardSelection prepareReadRecord(byte sfi, int recordNumber);
 
   /**
+   * Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
+   * parts of multiple records of the indicated EF.
+   *
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
+   * command is supported by the card and if the requested file and record exist in the file
+   * structure of the card (best effort behavior).
+   *
+   * @param sfi The SFI of the EF.
+   * @param firstRecordNumber The record to read (or first record to read in case of several
+   *     records).
+   * @param nbRecordsToRead The number of records to read.
+   * @param offset The offset in the records where to start reading.
+   * @param nbBytesToRead The number of bytes to read from each record.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
+   * @since 1.1.0
+   */
+  CalypsoCardSelection prepareReadRecordMultiple(
+      byte sfi, int firstRecordNumber, int nbRecordsToRead, int offset, int nbBytesToRead);
+
+  /**
    * Adds a command APDU to retrieve the data indicated by the provided tag.
    *
    * <p>This method can be used to obtain FCI information when it is not provided directly by the
@@ -222,8 +243,6 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param tag The tag to use.
    * @return The object instance.
    * @throws IllegalArgumentException If tag is null.
-   * @throws UnsupportedOperationException If the Get Data command with the provided tag is not
-   *     supported.
    * @since 1.0.0
    */
   CalypsoCardSelection prepareGetData(GetDataTag tag);
