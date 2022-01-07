@@ -11,6 +11,7 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
+import java.util.Map;
 import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
@@ -531,16 +532,18 @@ public interface CardTransactionManager {
    * #processClosing()}.
    *
    * @param sfi SFI of the EF to select or 0 for current EF.
-   * @param counterNumbers A not empty array of counter numbers {@code >=} 1: Counters file, number
-   *     of the counter. 0: Simulated counter file.
-   * @param incValues A not empty array of values to add to the corresponding counters. Each value
-   *     is defined as a positive int {@code <=} 16777215 [FFFFFFh].
+   * @param counterNumberToIncValueMap A non-empty map containing pairs of integers, the first being
+   *     the counter number to be incremented, the second the value of the increment. of counter
+   *     numbers.
    * @return The current instance.
+   * @throws UnsupportedOperationException If the increase multiple command is not available for
+   *     this card.
    * @throws IllegalArgumentException If one of the provided argument is out of range or
    *     inconsistent.
    * @since 1.1.0
    */
-  CardTransactionManager prepareIncreaseMultiple(byte sfi, int[] counterNumbers, int[] incValues);
+  CardTransactionManager prepareIncreaseMultipleCounters(
+      byte sfi, Map<Integer, Integer> counterNumberToIncValueMap);
 
   /**
    * Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
@@ -554,16 +557,18 @@ public interface CardTransactionManager {
    * #processClosing()}.
    *
    * @param sfi SFI of the EF to select or 0 for current EF.
-   * @param counterNumbers A not empty array of counter numbers {@code >=} 1: Counters file, number
-   *     of the counter. 0: Simulated counter file.
-   * @param decValues A not empty array of values to subtract to the corresponding counters. Each
-   *     value is defined as a positive int {@code <=} 16777215 [FFFFFFh].
+   * @param counterNumberToDecValueMap A non-empty map containing pairs of integers, the first being
+   *     the counter number to be decremented, the second the value of the decrement. of counter
+   *     numbers.
    * @return The current instance.
+   * @throws UnsupportedOperationException If the decrease multiple command is not available for
+   *     this card.
    * @throws IllegalArgumentException If one of the provided argument is out of range or
    *     inconsistent.
    * @since 1.1.0
    */
-  CardTransactionManager prepareDecreaseMultiple(byte sfi, int[] counterNumbers, int[] decValues);
+  CardTransactionManager prepareDecreaseMultipleCounters(
+      byte sfi, Map<Integer, Integer> counterNumberToDecValueMap);
 
   /**
    * Schedules the execution of a command to set the value of the target counter.
