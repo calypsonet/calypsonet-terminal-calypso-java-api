@@ -13,6 +13,7 @@ package org.calypsonet.terminal.calypso.transaction;
 
 import java.util.Map;
 import org.calypsonet.terminal.calypso.GetDataTag;
+import org.calypsonet.terminal.calypso.SearchCommandData;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 import org.calypsonet.terminal.calypso.card.CalypsoCard;
@@ -382,6 +383,45 @@ public interface CardTransactionManager {
    * @since 1.1.0
    */
   CardTransactionManager prepareReadCounter(byte sfi, int nbCountersToRead);
+
+  /**
+   * Schedules the execution of a <b>Search Record Multiple</b> command to search data in the
+   * records of the indicated EF, from a given record to the last record of the file. It will return
+   * the list of record numbers containing these data, and if requested it will read the first
+   * record content.
+   *
+   * <p>The command is only possible with a Linear, Cyclic, Counters or Simulated Counter EF.
+   *
+   * <p>The command searches if the given data are present in the records of the file. During the
+   * search, an optional mask is applied. The mask allows to specify precisely the bits to be taken
+   * into account in the comparison.
+   *
+   * <p>See {@link SearchCommandData} class for a description of the parameters.
+   *
+   * <p>Once this command is processed, the result is available in the provided input/output {@link
+   * SearchCommandData} object, and the content of the first matching record in {@link CalypsoCard}
+   * if requested.
+   *
+   * <p>Depending on whether we are inside a secure session, there are two types of behavior
+   * following this command:
+   *
+   * <ul>
+   *   <li>Outside a secure session (best effort mode): the following "process" command will not
+   *       fail whatever the existence of the targeted file or the validity of the record number and
+   *       offset (the {@link SearchCommandData} and {@link CalypsoCard} objects may not be
+   *       updated).
+   *   <li>Inside a secure session (strict mode): the following "process" command will fail if the
+   *       targeted file does not exist or if the record number and the offset are not valid (the
+   *       {@link SearchCommandData} and {@link CalypsoCard} objects are always filled or an
+   *       exception is raised when the reading failed).
+   * </ul>
+   *
+   * @param data The input/output data containing the parameters of the command.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the input data is inconsistent.
+   * @since 1.1.0
+   */
+  CardTransactionManager prepareSearchRecordMultiple(SearchCommandData data);
 
   /**
    * Schedules the execution of a <b>Verify Pin</b> command without PIN presentation in order to get
