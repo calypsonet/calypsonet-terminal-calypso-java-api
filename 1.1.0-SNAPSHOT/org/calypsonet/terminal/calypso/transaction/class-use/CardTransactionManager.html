@@ -164,23 +164,41 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                       int&nbsp;counterNumber,
                       int&nbsp;decValue)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a <b>Decrease command</b> command to decrease the target counter.</div>
+<div class="block">Schedules the execution of a <b>Decrease</b> command to decrease the target counter.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CardTransactionManager.</span><code><span class="memberNameLink"><a href="../CardTransactionManager.html#prepareDecreaseMultipleCounters(byte,java.util.Map)">prepareDecreaseMultipleCounters</a></span>&#8203;(byte&nbsp;sfi,
+                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
+ counters at the same time.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CardTransactionManager.</span><code><span class="memberNameLink"><a href="../CardTransactionManager.html#prepareGetData(org.calypsonet.terminal.calypso.GetDataTag)">prepareGetData</a></span>&#8203;(<a href="../../GetDataTag.html" title="enum in org.calypsonet.terminal.calypso">GetDataTag</a>&nbsp;tag)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to retrieve the data indicated by the provided tag.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CardTransactionManager.</span><code><span class="memberNameLink"><a href="../CardTransactionManager.html#prepareIncreaseCounter(byte,int,int)">prepareIncreaseCounter</a></span>&#8203;(byte&nbsp;sfi,
                       int&nbsp;counterNumber,
                       int&nbsp;incValue)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a <b>Increase command</b> command to increase the target counter.</div>
+<div class="block">Schedules the execution of a <b>Increase</b> command to increase the target counter.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CardTransactionManager.</span><code><span class="memberNameLink"><a href="../CardTransactionManager.html#prepareIncreaseMultipleCounters(byte,java.util.Map)">prepareIncreaseMultipleCounters</a></span>&#8203;(byte&nbsp;sfi,
+                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
+ counters at the same time.</div>
 </td>
 </tr>
 <tr class="altColor">

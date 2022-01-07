@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":38,"i14":6,"i15":6,"i16":38,"i17":38,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":38,"i16":6,"i17":6,"i18":38,"i19":38,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -231,33 +231,51 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                       int&nbsp;counterNumber,
                       int&nbsp;decValue)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a <b>Decrease command</b> command to decrease the target counter.</div>
+<div class="block">Schedules the execution of a <b>Decrease</b> command to decrease the target counter.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareDecreaseMultipleCounters(byte,java.util.Map)">prepareDecreaseMultipleCounters</a></span>&#8203;(byte&nbsp;sfi,
+                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
+ counters at the same time.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareGetData(org.calypsonet.terminal.calypso.GetDataTag)">prepareGetData</a></span>&#8203;(<a href="../GetDataTag.html" title="enum in org.calypsonet.terminal.calypso">GetDataTag</a>&nbsp;tag)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to retrieve the data indicated by the provided tag.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareIncreaseCounter(byte,int,int)">prepareIncreaseCounter</a></span>&#8203;(byte&nbsp;sfi,
                       int&nbsp;counterNumber,
                       int&nbsp;incValue)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a <b>Increase command</b> command to increase the target counter.</div>
+<div class="block">Schedules the execution of a <b>Increase</b> command to increase the target counter.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareIncreaseMultipleCounters(byte,java.util.Map)">prepareIncreaseMultipleCounters</a></span>&#8203;(byte&nbsp;sfi,
+                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
+ counters at the same time.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareInvalidate()">prepareInvalidate</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Invalidate</b> command.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadBinary(byte,int,int)">prepareReadBinary</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;offset,
@@ -267,7 +285,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  the indicated Binary EF.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadCounter(byte,int)">prepareReadCounter</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;nbCountersToRead)</code></th>
@@ -276,7 +294,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  which should be a counter file.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadCounterFile(byte,int)">prepareReadCounterFile</a></span>&#8203;(byte&nbsp;sfi,
                       int&nbsp;countersNumber)</code></th>
@@ -286,7 +304,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecord(byte,int)">prepareReadRecord</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;recordNumber)</code></th>
@@ -295,7 +313,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  indicated EF.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecord(byte,int,int,int)">prepareReadRecord</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;firstRecordNumber,
@@ -306,7 +324,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  indicated EF.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
                      int&nbsp;recordNumber)</code></th>
@@ -316,7 +334,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int,int,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
                      int&nbsp;firstRecordNumber,
@@ -328,7 +346,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordMultiple(byte,int,int,int,int)">prepareReadRecordMultiple</a></span>&#8203;(byte&nbsp;sfi,
                          int&nbsp;firstRecordNumber,
@@ -340,28 +358,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  parts of multiple records of the indicated EF.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareRehabilitate()">prepareRehabilitate</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Rehabilitate</b> command.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReleaseCardChannel()">prepareReleaseCardChannel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Requests the closing of the card channel.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(byte%5B%5D)">prepareSelectFile</a></span>&#8203;(byte[]&nbsp;lid)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Select File</b> command based on the file's LID.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(org.calypsonet.terminal.calypso.SelectFileControl)">prepareSelectFile</a></span>&#8203;(<a href="../SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso">SelectFileControl</a>&nbsp;selectFileControl)</code></th>
 <td class="colLast">
@@ -369,7 +387,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  defined by the ISO standard.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSetCounter(byte,int,int)">prepareSetCounter</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;counterNumber,
@@ -378,7 +396,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a command to set the value of the target counter.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvDebit(int)">prepareSvDebit</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
@@ -386,7 +404,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  current SV balance or to partially or totally cancels the last SV debit command.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)">prepareSvDebit</a></span>&#8203;(int&nbsp;amount,
               byte[]&nbsp;date,
@@ -397,7 +415,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  provided additional data.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)">prepareSvGet</a></span>&#8203;(<a href="SvOperation.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvOperation</a>&nbsp;svOperation,
             <a href="SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvAction</a>&nbsp;svAction)</code></th>
@@ -406,21 +424,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  retrieves the current SV status.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReadAllLogs()">prepareSvReadAllLogs</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of <b>Read Records</b> commands to read all SV logs.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReload(int)">prepareSvReload</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>SV Reload</b> command to increase the current SV balance.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)">prepareSvReload</a></span>&#8203;(int&nbsp;amount,
                byte[]&nbsp;date,
@@ -431,7 +449,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  using the provided additional data.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareUpdateBinary(byte,int,byte%5B%5D)">prepareUpdateBinary</a></span>&#8203;(byte&nbsp;sfi,
                    int&nbsp;offset,
@@ -441,7 +459,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  Binary file with the new data given from the indicated offset.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareUpdateRecord(byte,int,byte%5B%5D)">prepareUpdateRecord</a></span>&#8203;(byte&nbsp;sfi,
                    int&nbsp;recordNumber,
@@ -451,7 +469,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  record contents with the provided data.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteBinary(byte,int,byte%5B%5D)">prepareWriteBinary</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;offset,
@@ -461,7 +479,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  Binary file.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteRecord(byte,int,byte%5B%5D)">prepareWriteRecord</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;recordNumber,
@@ -471,42 +489,42 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  contents with the result of a binary OR between the existing data and the provided data.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processCancel()">processCancel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Aborts a Secure Session.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processCardCommands()">processCardCommands</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Process all previously prepared card commands outside or inside a Secure Session.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processChangePin(byte%5B%5D)">processChangePin</a></span>&#8203;(byte[]&nbsp;newPin)</code></th>
 <td class="colLast">
 <div class="block">Replaces the current PIN with the new value provided.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processClosing()">processClosing</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Terminates the Secure Session sequence started with <a href="#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>processOpening(WriteAccessLevel)</code></a>.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)">processOpening</a></span>&#8203;(<a href="../WriteAccessLevel.html" title="enum in org.calypsonet.terminal.calypso">WriteAccessLevel</a>&nbsp;writeAccessLevel)</code></th>
 <td class="colLast">
 <div class="block">Opens a Calypso Secure Session and then executes all previously prepared commands.</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processVerifyPin(byte%5B%5D)">processVerifyPin</a></span>&#8203;(byte[]&nbsp;pin)</code></th>
 <td class="colLast">
@@ -1212,14 +1230,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareIncreaseCounter&#8203;(byte&nbsp;sfi,
                                               int&nbsp;counterNumber,
                                               int&nbsp;incValue)</pre>
-<div class="block">Schedules the execution of a <b>Increase command</b> command to increase the target counter.
+<div class="block">Schedules the execution of a <b>Increase</b> command to increase the target counter.
 
- <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is filled with the provided input data.</div>
+ <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
+
+ <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>counterNumber</code> - <code>&gt;=</code> 1: Counters file, number of the counter. 0: Simulated. Counter
-     file.</dd>
 <dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>counterNumber</code> - The number of the counter (must be zero in case of a simulated counter).</dd>
 <dd><code>incValue</code> - Value to add to the counter (defined as a positive int <code>&lt;=</code> 16777215
      [FFFFFFh])</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1240,14 +1259,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareDecreaseCounter&#8203;(byte&nbsp;sfi,
                                               int&nbsp;counterNumber,
                                               int&nbsp;decValue)</pre>
-<div class="block">Schedules the execution of a <b>Decrease command</b> command to decrease the target counter.
+<div class="block">Schedules the execution of a <b>Decrease</b> command to decrease the target counter.
 
- <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is filled with the provided input data.</div>
+ <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
+
+ <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>counterNumber</code> - <code>&gt;=</code> 1: Counters file, number of the counter. 0: Simulated. Counter
-     file.</dd>
 <dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>counterNumber</code> - The number of the counter (must be zero in case of a simulated counter).</dd>
 <dd><code>decValue</code> - Value to subtract to the counter (defined as a positive int <code>&lt;=</code> 16777215
      [FFFFFFh])</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1256,6 +1276,68 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+</dl>
+</li>
+</ul>
+<a id="prepareIncreaseMultipleCounters(byte,java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareIncreaseMultipleCounters</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareIncreaseMultipleCounters&#8203;(byte&nbsp;sfi,
+                                                       java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</pre>
+<div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
+ counters at the same time.
+
+ <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
+
+ <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>counterNumberToIncValueMap</code> - The map containing the counter numbers to be incremented and
+     their associated increment values.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - If the increase multiple command is not available for
+     this card.</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range or if the map
+     is null or empty.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
+</dl>
+</li>
+</ul>
+<a id="prepareDecreaseMultipleCounters(byte,java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareDecreaseMultipleCounters</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareDecreaseMultipleCounters&#8203;(byte&nbsp;sfi,
+                                                       java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</pre>
+<div class="block">Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
+ counters at the same time.
+
+ <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
+
+ <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>counterNumberToDecValueMap</code> - The map containing the counter numbers to be decremented and
+     their associated decrement values.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - If the decrease multiple command is not available for
+     this card.</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range or if the map
+     is null or empty.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
 </dl>
 </li>
 </ul>
