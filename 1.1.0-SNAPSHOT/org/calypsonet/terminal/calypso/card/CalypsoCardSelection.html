@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":38,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":38,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6};
+var data = {"i0":6,"i1":38,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":38,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -287,19 +287,27 @@ extends org.calypsonet.terminal.reader.selection.spi.CardSelection</pre>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSearchRecordMultiple(org.calypsonet.terminal.calypso.SearchCommandData)">prepareSearchRecordMultiple</a></span>&#8203;(<a href="../SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a>&nbsp;data)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of a <b>Search Record Multiple</b> command to search data in the
+ records of the indicated EF, from a given record to the last record of the file.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(byte%5B%5D)">prepareSelectFile</a></span>&#8203;(byte[]&nbsp;lid)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to select file with an LID provided as a 2-byte byte array.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(short)">prepareSelectFile</a></span>&#8203;(short&nbsp;lid)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to select file with an LID provided as a short.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(org.calypsonet.terminal.calypso.SelectFileControl)">prepareSelectFile</a></span>&#8203;(<a href="../SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso">SelectFileControl</a>&nbsp;selectControl)</code></th>
 <td class="colLast">
@@ -307,14 +315,14 @@ extends org.calypsonet.terminal.reader.selection.spi.CardSelection</pre>
  entry indicating the navigation case: FIRST, NEXT or CURRENT.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFileControlInformation(org.calypsonet.terminal.calypso.card.CalypsoCardSelection.FileControlInformation)">setFileControlInformation</a></span>&#8203;(<a href="CalypsoCardSelection.FileControlInformation.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCardSelection.FileControlInformation</a>&nbsp;fileControlInformation)</code></th>
 <td class="colLast">
 <div class="block">Sets the file control mode (see ISO7816-4).</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setFileOccurrence(org.calypsonet.terminal.calypso.card.CalypsoCardSelection.FileOccurrence)">setFileOccurrence</a></span>&#8203;(<a href="CalypsoCardSelection.FileOccurrence.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCardSelection.FileOccurrence</a>&nbsp;fileOccurrence)</code></th>
 <td class="colLast">
@@ -676,6 +684,41 @@ extends org.calypsonet.terminal.reader.selection.spi.CardSelection</pre>
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
+</dl>
+</li>
+</ul>
+<a id="prepareSearchRecordMultiple(org.calypsonet.terminal.calypso.SearchCommandData)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareSearchRecordMultiple</h4>
+<pre class="methodSignature"><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a>&nbsp;prepareSearchRecordMultiple&#8203;(<a href="../SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a>&nbsp;data)</pre>
+<div class="block">Schedules the execution of a <b>Search Record Multiple</b> command to search data in the
+ records of the indicated EF, from a given record to the last record of the file. It will return
+ the list of record numbers containing these data, and if requested it will read the first
+ record content.
+
+ <p>The command is only possible with a Linear, Cyclic, Counters or Simulated Counter EF.
+
+ <p>The command searches if the given data are present in the records of the file. During the
+ search, an optional mask is applied. The mask allows to specify precisely the bits to be taken
+ into account in the comparison.
+
+ <p>See <a href="../SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso"><code>SearchCommandData</code></a> class for a description of the parameters.
+
+ <p>Once this command is processed, the result is available in the provided input/output <a href="../SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso"><code>SearchCommandData</code></a> object, and the content of the first matching record in <a href="CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>
+ if requested, if the command is supported by the card and if the requested file, record and
+ offset exist in the file structure of the card (best effort behavior).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>data</code> - The input/output data containing the parameters of the command.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.IllegalArgumentException</code> - If the input data is inconsistent.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>

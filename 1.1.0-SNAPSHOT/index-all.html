@@ -338,6 +338,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Enables the ratification mechanism to handle the early removal of the card preventing the
  terminal from receiving the acknowledgement of the session closing.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#enableRepeatedOffset()">enableRepeatedOffset()</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Allows the command to analyze the data present at the given offset, and repeatedly at each
+ following offset, until the end of the record is reached.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#enableSvLoadAndDebitLog()">enableSvLoadAndDebitLog()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></dt>
 <dd>
 <div class="block">Enables the retrieval of both loading and debit log records.</div>
@@ -363,6 +368,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/GetDataTag.html#FCP_FOR_CURRENT_FILE">FCP_FOR_CURRENT_FILE</a></span> - org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/GetDataTag.html" title="enum in org.calypsonet.terminal.calypso">GetDataTag</a></dt>
 <dd>
 <div class="block">FCP for the current file, as returned by Select File.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#fetchFirstMatchingResult()">fetchFirstMatchingResult()</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Requests to fetch the content of the first matching record into the <a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>.</div>
 </dd>
 <dt><a href="org/calypsonet/terminal/calypso/card/FileData.html" title="interface in org.calypsonet.terminal.calypso.card"><span class="typeNameLink">FileData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/card/package-summary.html">org.calypsonet.terminal.calypso.card</a></dt>
 <dd>
@@ -596,6 +605,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/SvLoadLogRecord.html#getLoadTime()">getLoadTime()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/SvLoadLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvLoadLogRecord</a></dt>
 <dd>
 <div class="block">Gets the load time as an array of bytes</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#getMatchingRecordNumbers()">getMatchingRecordNumbers()</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Returns an array containing the numbers of the records who has matched.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#getPinAttemptRemaining()">getPinAttemptRemaining()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></dt>
 <dd>
@@ -974,6 +987,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Requests the closing of the card channel.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#prepareSearchRecordMultiple(org.calypsonet.terminal.calypso.SearchCommandData)">prepareSearchRecordMultiple(SearchCommandData)</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></dt>
+<dd>
+<div class="block">Schedules the execution of a <b>Search Record Multiple</b> command to search data in the
+ records of the indicated EF, from a given record to the last record of the file.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareSearchRecordMultiple(org.calypsonet.terminal.calypso.SearchCommandData)">prepareSearchRecordMultiple(SearchCommandData)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
+<dd>
+<div class="block">Schedules the execution of a <b>Search Record Multiple</b> command to search data in the
+ records of the indicated EF, from a given record to the last record of the file.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#prepareSelectFile(byte%5B%5D)">prepareSelectFile(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></dt>
 <dd>
 <div class="block">Adds a command APDU to select file with an LID provided as a 2-byte byte array.</div>
@@ -1140,6 +1163,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamRevokedException.html#%3Cinit%3E(java.lang.String)">SamRevokedException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamRevokedException</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso"><span class="typeNameLink">SearchCommandData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/package-summary.html">org.calypsonet.terminal.calypso</a></dt>
+<dd>
+<div class="block">Contains the input/output data of a "Search Record Multiple" card command.</div>
+</dd>
 <dt><a href="org/calypsonet/terminal/calypso/SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso"><span class="typeNameLink">SelectFileControl</span></a> - Enum in <a href="org/calypsonet/terminal/calypso/package-summary.html">org.calypsonet.terminal.calypso</a></dt>
 <dd>
 <div class="block">Enumeration of all expected behaviors of the selection command (see the specifics of this command
@@ -1164,6 +1191,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the file occurrence mode (see ISO7816-4).</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#setMask(byte%5B%5D)">setMask(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Sets the mask of bits to take into account during the comparison (padded right with FFh if
+ absent or incomplete).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#setOffset(int)">setOffset(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Sets the offset in number of bytes from which the analysis should be performed within a record.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#setPinModificationCipheringKey(byte,byte)">setPinModificationCipheringKey(byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></dt>
 <dd>
 <div class="block">Sets the KIF/KVC pair of the PIN modification ciphering key.</div>
@@ -1177,6 +1213,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Defines the SAM and the reader through which it is accessible to be used to handle the relevant
  cryptographic operations.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#setSearchData(byte%5B%5D)">setSearchData(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Sets the data to search.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#setSfi(byte)">setSfi(byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Sets the SFI of the EF in which the search is to be performed.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSamSelection.html#setUnlockData(java.lang.String)">setUnlockData(String)</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSamSelection.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSamSelection</a></dt>
 <dd>
 <div class="block">Sets the lock value expected by the SAM to be unlocked (8 or 16 bytes).</div>
@@ -1186,6 +1230,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">A Simulated Counter EF is a linear file with a single record.<br>
  Simulated Counter EFs are present for compatibility with the Calypso Revision 2 access to
  simulated individual counters.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/SearchCommandData.html#startAtRecord(int)">startAtRecord(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a></dt>
+<dd>
+<div class="block">Sets the number of the record where the search should begin.</div>
 </dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SvAction</span></a> - Enum in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
