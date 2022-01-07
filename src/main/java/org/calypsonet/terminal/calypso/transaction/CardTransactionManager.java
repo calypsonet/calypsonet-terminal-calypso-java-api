@@ -494,8 +494,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
    * @param sfi SFI of the EF to select or 0 for current EF.
-   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated counter
-   *     file.
+   * @param counterNumber The number of the counter (must be zero in case of a simulated counter).
    * @param incValue Value to add to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
    * @return The current instance.
@@ -510,8 +509,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
    * @param sfi SFI of the EF to select or 0 for current EF.
-   * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated counter
-   *     file.
+   * @param counterNumber The number of the counter (must be zero in case of a simulated counter).
    * @param decValue Value to subtract to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
    * @return The current instance.
@@ -532,14 +530,13 @@ public interface CardTransactionManager {
    * #processClosing()}.
    *
    * @param sfi SFI of the EF to select or 0 for current EF.
-   * @param counterNumberToIncValueMap A non-empty map containing pairs of integers, the first being
-   *     the counter number to be incremented, the second the value of the increment. of counter
-   *     numbers.
+   * @param counterNumberToIncValueMap The map containing the counter numbers to be incremented and
+   *     their associated increment values.
    * @return The current instance.
    * @throws UnsupportedOperationException If the increase multiple command is not available for
    *     this card.
-   * @throws IllegalArgumentException If one of the provided argument is out of range or
-   *     inconsistent.
+   * @throws IllegalArgumentException If one of the provided argument is out of range or if the map
+   *     is null or empty.
    * @since 1.1.0
    */
   CardTransactionManager prepareIncreaseMultipleCounters(
@@ -557,14 +554,13 @@ public interface CardTransactionManager {
    * #processClosing()}.
    *
    * @param sfi SFI of the EF to select or 0 for current EF.
-   * @param counterNumberToDecValueMap A non-empty map containing pairs of integers, the first being
-   *     the counter number to be decremented, the second the value of the decrement. of counter
-   *     numbers.
+   * @param counterNumberToDecValueMap The map containing the counter numbers to be decremented and
+   *     their associated decrement values.
    * @return The current instance.
    * @throws UnsupportedOperationException If the decrease multiple command is not available for
    *     this card.
-   * @throws IllegalArgumentException If one of the provided argument is out of range or
-   *     inconsistent.
+   * @throws IllegalArgumentException If one of the provided argument is out of range or if the map
+   *     is null or empty.
    * @since 1.1.0
    */
   CardTransactionManager prepareDecreaseMultipleCounters(
