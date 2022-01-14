@@ -42,6 +42,18 @@ import org.calypsonet.terminal.reader.CardReader;
  *
  * <p>Technical or data errors, security conditions, etc. are reported as exceptions.
  *
+ * <p>For all "prepare" type commands, unless otherwise specified, here are the ranges of values
+ * checked for the various parameters:
+ *
+ * <ul>
+ *   <li>SFI: [0..31] (0 indicates the current DF)
+ *   <li>Record number: [1..255]
+ *   <li>Counter number: [1..255]
+ *   <li>Counter value: [0..16777215]
+ *   <li>Offset: [0..255] or [0..32767] for binary files
+ *   <li>Input data length: [1..255] or [1..32767] for binary files
+ * </ul>
+ *
  * @since 1.0.0
  */
 public interface CardTransactionManager {
@@ -183,7 +195,7 @@ public interface CardTransactionManager {
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0.0
-   * @deprecated Use {@link #prepareReadRecord(byte, int, int, int)} method instead.
+   * @deprecated Use {@link #prepareReadRecords(byte, int, int, int)} method instead.
    */
   @Deprecated
   CardTransactionManager prepareReadRecordFile(
@@ -276,16 +288,15 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @param sfi The SFI of the EF.
-   * @param firstRecordNumber The record to read (or first record to read in case of several
-   *     records)
-   * @param nbRecordsToRead The number of records to read.
+   * @param fromRecordNumber The number of the first record to read.
+   * @param toRecordNumber The number of the last record to read.
    * @param recordSize The record length.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.1.0
    */
-  CardTransactionManager prepareReadRecord(
-      byte sfi, int firstRecordNumber, int nbRecordsToRead, int recordSize);
+  CardTransactionManager prepareReadRecords(
+      byte sfi, int fromRecordNumber, int toRecordNumber, int recordSize);
 
   /**
    * Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
@@ -309,9 +320,8 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @param sfi The SFI of the EF.
-   * @param firstRecordNumber The record to read (or first record to read in case of several
-   *     records).
-   * @param nbRecordsToRead The number of records to read.
+   * @param fromRecordNumber The number of the first record to read.
+   * @param toRecordNumber The number of the last record to read.
    * @param offset The offset in the records where to start reading.
    * @param nbBytesToRead The number of bytes to read from each record.
    * @return The current instance.
@@ -320,7 +330,7 @@ public interface CardTransactionManager {
    * @since 1.1.0
    */
   CardTransactionManager prepareReadRecordMultiple(
-      byte sfi, int firstRecordNumber, int nbRecordsToRead, int offset, int nbBytesToRead);
+      byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead);
 
   /**
    * Schedules the execution of one or multiple <b>Read Binary</b> commands to read all or part of
@@ -499,7 +509,7 @@ public interface CardTransactionManager {
    *
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
-   * @param sfi The SFI of the EF to select or 0 for the current EF.
+   * @param sfi The SFI of the EF to select.
    * @param offset The offset.
    * @param data The new data.
    * @return The current instance.
@@ -518,7 +528,7 @@ public interface CardTransactionManager {
    *
    * <p>Note: {@link CalypsoCard} is computed with the provided input data.
    *
-   * @param sfi The SFI of the EF to select or 0 for the current EF.
+   * @param sfi The SFI of the EF to select.
    * @param offset The offset.
    * @param data The data to write over the existing data.
    * @return The current instance.
@@ -537,7 +547,7 @@ public interface CardTransactionManager {
    * #processClosing()}, the counter must have been read previously otherwise an {@link
    * IllegalStateException} will be raised during the execution of {@link #processClosing()}.
    *
-   * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param sfi SFI of the EF to select.
    * @param counterNumber The number of the counter (must be zero in case of a simulated counter).
    * @param incValue Value to add to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
@@ -556,7 +566,7 @@ public interface CardTransactionManager {
    * #processClosing()}, the counter must have been read previously otherwise an {@link
    * IllegalStateException} will be raised during the execution of {@link #processClosing()}.
    *
-   * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param sfi SFI of the EF to select.
    * @param counterNumber The number of the counter (must be zero in case of a simulated counter).
    * @param decValue Value to subtract to the counter (defined as a positive int {@code <=} 16777215
    *     [FFFFFFh])
@@ -576,7 +586,7 @@ public interface CardTransactionManager {
    * #processClosing()}, the counter must have been read previously otherwise an {@link
    * IllegalStateException} will be raised during the execution of {@link #processClosing()}.
    *
-   * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param sfi SFI of the EF to select.
    * @param counterNumberToIncValueMap The map containing the counter numbers to be incremented and
    *     their associated increment values.
    * @return The current instance.
@@ -599,7 +609,7 @@ public interface CardTransactionManager {
    * #processClosing()}, the counter must have been read previously otherwise an {@link
    * IllegalStateException} will be raised during the execution of {@link #processClosing()}.
    *
-   * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param sfi SFI of the EF to select.
    * @param counterNumberToDecValueMap The map containing the counter numbers to be decremented and
    *     their associated decrement values.
    * @return The current instance.
@@ -633,7 +643,7 @@ public interface CardTransactionManager {
    *
    * @param counterNumber {@code >=} 1: Counters file, number of the counter. 0: Simulated. Counter
    *     file.
-   * @param sfi SFI of the EF to select or 0 for current EF.
+   * @param sfi SFI of the EF to select.
    * @param newValue The desired value for the counter (defined as a positive int {@code <=}
    *     16777215 [FFFFFFh])
    * @return The current instance.

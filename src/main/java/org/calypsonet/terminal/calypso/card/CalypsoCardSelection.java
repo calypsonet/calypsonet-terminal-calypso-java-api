@@ -30,6 +30,18 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  * <p>Note 2: the APDU commands resulting from the invocation of the "prepare" methods shall be
  * compliant with the PRIME revision 3 cards.
  *
+ * <p>For all "prepare" type commands, unless otherwise specified, here are the ranges of values
+ * checked for the various parameters:
+ *
+ * <ul>
+ *   <li>SFI: [0..31] (0 indicates the current DF)
+ *   <li>Record number: [1..255]
+ *   <li>Counter number: [1..255]
+ *   <li>Counter value: [0..16777215]
+ *   <li>Offset: [0..255] or [0..32767] for binary files
+ *   <li>Input data length: [1..255] or [1..32767] for binary files
+ * </ul>
+ *
  * @since 1.0.0
  */
 public interface CalypsoCardSelection extends CardSelection {
@@ -220,9 +232,8 @@ public interface CalypsoCardSelection extends CardSelection {
    * structure of the card (best effort behavior).
    *
    * @param sfi The SFI of the EF.
-   * @param firstRecordNumber The record to read (or first record to read in case of several
-   *     records).
-   * @param nbRecordsToRead The number of records to read.
+   * @param fromRecordNumber The number of the first record to read.
+   * @param toRecordNumber The number of the last record to read.
    * @param offset The offset in the records where to start reading.
    * @param nbBytesToRead The number of bytes to read from each record.
    * @return The current instance.
@@ -230,7 +241,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @since 1.1.0
    */
   CalypsoCardSelection prepareReadRecordMultiple(
-      byte sfi, int firstRecordNumber, int nbRecordsToRead, int offset, int nbBytesToRead);
+      byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead);
 
   /**
    * Schedules the execution of a <b>Search Record Multiple</b> command to search data in the

@@ -8,11 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `prepareUpdateBinary` and `prepareWriteBinary` methods to `CardTransactionManager` API (issue [#19]).
 - `prepareReadBinary` method to `CardTransactionManager` API (issue [#20]).
-- `prepareReadRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#21]).
+- `prepareReadRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#21] and [#38]).
 - `prepareSearchRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#22]).
 - `prepareIncreaseMultiple` and `prepareDecreaseMultiple` methods to `CardTransactionManager` API (issue [#23]).
 - `prepareChangeKey` method to `CardTransactionManager` API (issue [#24]).
-- `prepareReadRecord` methods as a replacement for the `prepareReadRecordFile` methods.
+- `prepareReadRecord` and `prepareReadRecords` methods as a replacement for the `prepareReadRecordFile` methods.
 - `prepareReadCounter` method as a replacement for the `prepareReadCounterFile` method.
 - `EF_LIST` and `TRACEABILITY_INFORMATION` keys to `GetDataTag` API (issue [#18]).
 ### Changed
@@ -57,6 +57,7 @@ This is the initial release.
 [1.0.1]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/releases/tag/1.0.0
 
+[#38]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/38
 [#24]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/24
 [#23]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/23
 [#22]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/22
