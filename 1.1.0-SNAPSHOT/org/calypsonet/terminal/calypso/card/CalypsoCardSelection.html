@@ -141,7 +141,19 @@ extends org.calypsonet.terminal.reader.selection.spi.CardSelection</pre>
  invalidated cards will have to be handled by the application.
 
  <p>Note 2: the APDU commands resulting from the invocation of the "prepare" methods shall be
- compliant with the PRIME revision 3 cards.</div>
+ compliant with the PRIME revision 3 cards.
+
+ <p>For all "prepare" type commands, unless otherwise specified, here are the ranges of values
+ checked for the various parameters:
+
+ <ul>
+   <li>SFI: [0..31] (0 indicates the current EF)
+   <li>Record number: [1..255]
+   <li>Counter number: [1..255]
+   <li>Counter value: [0..16777215]
+   <li>Offset: [0..255] or [0..32767] for binary files
+   <li>Input data length: [1..255] or [1..32767] for binary files
+ </ul></div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
@@ -276,8 +288,8 @@ extends org.calypsonet.terminal.reader.selection.spi.CardSelection</pre>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordMultiple(byte,int,int,int,int)">prepareReadRecordMultiple</a></span>&#8203;(byte&nbsp;sfi,
-                         int&nbsp;firstRecordNumber,
-                         int&nbsp;nbRecordsToRead,
+                         int&nbsp;fromRecordNumber,
+                         int&nbsp;toRecordNumber,
                          int&nbsp;offset,
                          int&nbsp;nbBytesToRead)</code></th>
 <td class="colLast">
@@ -662,8 +674,8 @@ extends org.calypsonet.terminal.reader.selection.spi.CardSelection</pre>
 <li class="blockList">
 <h4>prepareReadRecordMultiple</h4>
 <pre class="methodSignature"><a href="CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a>&nbsp;prepareReadRecordMultiple&#8203;(byte&nbsp;sfi,
-                                               int&nbsp;firstRecordNumber,
-                                               int&nbsp;nbRecordsToRead,
+                                               int&nbsp;fromRecordNumber,
+                                               int&nbsp;toRecordNumber,
                                                int&nbsp;offset,
                                                int&nbsp;nbBytesToRead)</pre>
 <div class="block">Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
@@ -675,9 +687,8 @@ extends org.calypsonet.terminal.reader.selection.spi.CardSelection</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sfi</code> - The SFI of the EF.</dd>
-<dd><code>firstRecordNumber</code> - The record to read (or first record to read in case of several
-     records).</dd>
-<dd><code>nbRecordsToRead</code> - The number of records to read.</dd>
+<dd><code>fromRecordNumber</code> - The number of the first record to read.</dd>
+<dd><code>toRecordNumber</code> - The number of the last record to read.</dd>
 <dd><code>offset</code> - The offset in the records where to start reading.</dd>
 <dd><code>nbBytesToRead</code> - The number of bytes to read from each record.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>

@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":38,"i16":6,"i17":6,"i18":38,"i19":38,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":38,"i16":6,"i17":38,"i18":38,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -144,7 +144,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
        placed in <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a>.
  </ul>
 
- <p>Technical or data errors, security conditions, etc. are reported as exceptions.</div>
+ <p>Technical or data errors, security conditions, etc. are reported as exceptions.
+
+ <p>For all "prepare" type commands, unless otherwise specified, here are the ranges of values
+ checked for the various parameters:
+
+ <ul>
+   <li>SFI: [0..31] (0 indicates the current EF)
+   <li>Record number: [1..255]
+   <li>Counter number: [1..255]
+   <li>Counter value: [0..16777215]
+   <li>Offset: [0..255] or [0..32767] for binary files
+   <li>Input data length: [1..255] or [1..32767] for binary files
+ </ul></div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
@@ -315,17 +327,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecord(byte,int,int,int)">prepareReadRecord</a></span>&#8203;(byte&nbsp;sfi,
-                 int&nbsp;firstRecordNumber,
-                 int&nbsp;nbRecordsToRead,
-                 int&nbsp;recordSize)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
- indicated EF.</div>
-</td>
-</tr>
-<tr id="i18" class="altColor">
-<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
                      int&nbsp;recordNumber)</code></th>
 <td class="colLast">
@@ -334,7 +335,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int,int,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
                      int&nbsp;firstRecordNumber,
@@ -342,20 +343,31 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                      int&nbsp;recordSize)</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int,int,int)"><code>prepareReadRecord(byte, int, int, int)</code></a> method instead.</div>
+<div class="deprecationComment">Use <a href="#prepareReadRecords(byte,int,int,int)"><code>prepareReadRecords(byte, int, int, int)</code></a> method instead.</div>
 </div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordMultiple(byte,int,int,int,int)">prepareReadRecordMultiple</a></span>&#8203;(byte&nbsp;sfi,
-                         int&nbsp;firstRecordNumber,
-                         int&nbsp;nbRecordsToRead,
+                         int&nbsp;fromRecordNumber,
+                         int&nbsp;toRecordNumber,
                          int&nbsp;offset,
                          int&nbsp;nbBytesToRead)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
  parts of multiple records of the indicated EF.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecords(byte,int,int,int)">prepareReadRecords</a></span>&#8203;(byte&nbsp;sfi,
+                  int&nbsp;fromRecordNumber,
+                  int&nbsp;toRecordNumber,
+                  int&nbsp;recordSize)</code></th>
+<td class="colLast">
+<div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
+ indicated EF.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
@@ -753,7 +765,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                                              int&nbsp;numberOfRecords,
                                              int&nbsp;recordSize)</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int,int,int)"><code>prepareReadRecord(byte, int, int, int)</code></a> method instead.</div>
+<div class="deprecationComment">Use <a href="#prepareReadRecords(byte,int,int,int)"><code>prepareReadRecords(byte, int, int, int)</code></a> method instead.</div>
 </div>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
  indicated EF.
@@ -879,16 +891,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
-<a id="prepareReadRecord(byte,int,int,int)">
+<a id="prepareReadRecords(byte,int,int,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>prepareReadRecord</h4>
-<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecord&#8203;(byte&nbsp;sfi,
-                                         int&nbsp;firstRecordNumber,
-                                         int&nbsp;nbRecordsToRead,
-                                         int&nbsp;recordSize)</pre>
+<h4>prepareReadRecords</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecords&#8203;(byte&nbsp;sfi,
+                                          int&nbsp;fromRecordNumber,
+                                          int&nbsp;toRecordNumber,
+                                          int&nbsp;recordSize)</pre>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
  indicated EF.
 
@@ -910,9 +922,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sfi</code> - The SFI of the EF.</dd>
-<dd><code>firstRecordNumber</code> - The record to read (or first record to read in case of several
-     records)</dd>
-<dd><code>nbRecordsToRead</code> - The number of records to read.</dd>
+<dd><code>fromRecordNumber</code> - The number of the first record to read.</dd>
+<dd><code>toRecordNumber</code> - The number of the last record to read.</dd>
 <dd><code>recordSize</code> - The record length.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
@@ -930,8 +941,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>prepareReadRecordMultiple</h4>
 <pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecordMultiple&#8203;(byte&nbsp;sfi,
-                                                 int&nbsp;firstRecordNumber,
-                                                 int&nbsp;nbRecordsToRead,
+                                                 int&nbsp;fromRecordNumber,
+                                                 int&nbsp;toRecordNumber,
                                                  int&nbsp;offset,
                                                  int&nbsp;nbBytesToRead)</pre>
 <div class="block">Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
@@ -956,9 +967,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sfi</code> - The SFI of the EF.</dd>
-<dd><code>firstRecordNumber</code> - The record to read (or first record to read in case of several
-     records).</dd>
-<dd><code>nbRecordsToRead</code> - The number of records to read.</dd>
+<dd><code>fromRecordNumber</code> - The number of the first record to read.</dd>
+<dd><code>toRecordNumber</code> - The number of the last record to read.</dd>
 <dd><code>offset</code> - The offset in the records where to start reading.</dd>
 <dd><code>nbBytesToRead</code> - The number of bytes to read from each record.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1233,7 +1243,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is filled with the provided input data.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - The SFI of the EF to select or 0 for the current EF.</dd>
+<dd><code>sfi</code> - The SFI of the EF to select.</dd>
 <dd><code>offset</code> - The offset.</dd>
 <dd><code>data</code> - The new data.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1264,7 +1274,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is computed with the provided input data.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - The SFI of the EF to select or 0 for the current EF.</dd>
+<dd><code>sfi</code> - The SFI of the EF to select.</dd>
 <dd><code>offset</code> - The offset.</dd>
 <dd><code>data</code> - The data to write over the existing data.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1293,7 +1303,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>sfi</code> - SFI of the EF to select.</dd>
 <dd><code>counterNumber</code> - The number of the counter (must be zero in case of a simulated counter).</dd>
 <dd><code>incValue</code> - Value to add to the counter (defined as a positive int <code>&lt;=</code> 16777215
      [FFFFFFh])</dd>
@@ -1322,7 +1332,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>sfi</code> - SFI of the EF to select.</dd>
 <dd><code>counterNumber</code> - The number of the counter (must be zero in case of a simulated counter).</dd>
 <dd><code>decValue</code> - Value to subtract to the counter (defined as a positive int <code>&lt;=</code> 16777215
      [FFFFFFh])</dd>
@@ -1351,7 +1361,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>sfi</code> - SFI of the EF to select.</dd>
 <dd><code>counterNumberToIncValueMap</code> - The map containing the counter numbers to be incremented and
      their associated increment values.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1382,7 +1392,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>sfi</code> - SFI of the EF to select.</dd>
 <dd><code>counterNumberToDecValueMap</code> - The map containing the counter numbers to be decremented and
      their associated decrement values.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -1427,7 +1437,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>counterNumber</code> - <code>&gt;=</code> 1: Counters file, number of the counter. 0: Simulated. Counter
      file.</dd>
-<dd><code>sfi</code> - SFI of the EF to select or 0 for current EF.</dd>
+<dd><code>sfi</code> - SFI of the EF to select.</dd>
 <dd><code>newValue</code> - The desired value for the counter (defined as a positive int <code>&lt;=</code>
      16777215 [FFFFFFh])</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
