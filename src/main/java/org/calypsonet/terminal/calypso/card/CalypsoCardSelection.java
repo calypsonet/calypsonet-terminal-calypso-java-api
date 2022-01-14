@@ -34,7 +34,7 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  * checked for the various parameters:
  *
  * <ul>
- *   <li>SFI: [0..31] (0 indicates the current DF)
+ *   <li>SFI: [0..31] (0 indicates the current EF)
  *   <li>Record number: [1..255]
  *   <li>Counter number: [1..255]
  *   <li>Counter value: [0..16777215]
