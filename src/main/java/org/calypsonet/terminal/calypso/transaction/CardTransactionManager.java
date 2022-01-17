@@ -819,30 +819,6 @@ public interface CardTransactionManager {
   CardTransactionManager prepareRehabilitate();
 
   /**
-   * Schedules the replacement of one of the current card keys with another key present in the SAM.
-   *
-   * <p>This command can be performed only out of a secure session.
-   *
-   * <p>The change key process transfers the key from the SAM to the card. The new key is
-   * diversified by the SAM from a primary key and encrypted using the indicated issuer key to
-   * secure the transfer to the card. All provided KIFs and KVCs must be present in the SAM.
-   *
-   * @param keyIndex The index of the key to be replaced (1 for the issuer key, 2 for the load key,
-   *     3 for the debit key).
-   * @param newKif The KIF of the new key.
-   * @param newKvc The KVC of the new key.
-   * @param issuerKif The KIF of the current card's issuer key.
-   * @param issuerKvc The KVC of the current card's issuer key.
-   * @return The current instance.
-   * @throws UnsupportedOperationException If the Change Key command is not available for this card.
-   * @throws IllegalArgumentException If the provided key index is out of range.
-   * @throws IllegalStateException If the command is executed while a secure session is open.
-   * @since 1.1.0
-   */
-  CardTransactionManager prepareChangeKey(
-      int keyIndex, byte newKif, byte newKvc, byte issuerKif, byte issuerKvc);
-
-  /**
    * Requests the closing of the card channel.
    *
    * <p>If this command is called before a "process" command (except for processOpening) then the
@@ -934,6 +910,30 @@ public interface CardTransactionManager {
    * @since 1.0.0
    */
   CardTransactionManager processChangePin(byte[] newPin);
+
+  /**
+   * Replaces one of the current card keys with another key present in the SAM.
+   *
+   * <p>This command can be performed only out of a secure session.
+   *
+   * <p>The change key process transfers the key from the SAM to the card. The new key is
+   * diversified by the SAM from a primary key and encrypted using the indicated issuer key to
+   * secure the transfer to the card. All provided KIFs and KVCs must be present in the SAM.
+   *
+   * @param keyIndex The index of the key to be replaced (1 for the issuer key, 2 for the load key,
+   *     3 for the debit key).
+   * @param newKif The KIF of the new key.
+   * @param newKvc The KVC of the new key.
+   * @param issuerKif The KIF of the current card's issuer key.
+   * @param issuerKvc The KVC of the current card's issuer key.
+   * @return The current instance.
+   * @throws UnsupportedOperationException If the Change Key command is not available for this card.
+   * @throws IllegalArgumentException If the provided key index is out of range.
+   * @throws IllegalStateException If the command is executed while a secure session is open.
+   * @since 1.1.0
+   */
+  CardTransactionManager processChangeKey(
+      int keyIndex, byte newKif, byte newKvc, byte issuerKif, byte issuerKvc);
 
   /**
    * Opens a Calypso Secure Session and then executes all previously prepared commands.
