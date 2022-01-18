@@ -166,10 +166,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>int[]</code></td>
+<td class="colFirst"><code>java.util.List&lt;java.lang.Integer&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMatchingRecordNumbers()">getMatchingRecordNumbers</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns an array containing the numbers of the records who has matched.</div>
+<div class="block">Returns a list containing the numbers of the records who has matched.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -238,8 +238,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>sfi</code> - The SFI of the EF.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided sfi is not in the range [0;31].</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>
@@ -260,8 +258,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>recordNumber</code> - The number of the record where the search should begin.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided record number is not in the range [1;255].</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>
@@ -282,8 +278,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>offset</code> - The offset.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided offset is not in the range [0;255].</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>
@@ -320,8 +314,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>data</code> - The data to search.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided data is null or empty.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>
@@ -344,8 +336,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>mask</code> - The mask.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided mask is null or empty.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>
@@ -373,11 +363,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getMatchingRecordNumbers</h4>
-<pre class="methodSignature">int[]&nbsp;getMatchingRecordNumbers()</pre>
-<div class="block">Returns an array containing the numbers of the records who has matched.</div>
+<pre class="methodSignature">java.util.List&lt;java.lang.Integer&gt;&nbsp;getMatchingRecordNumbers()</pre>
+<div class="block">Returns a list containing the numbers of the records who has matched.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>An empty array if no record has matched or if the command has not yet been processed.</dd>
+<dd>An empty list if no record has matched or if the command has not yet been processed.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>
