@@ -81,7 +81,7 @@ package "org.calypsonet.terminal.calypso" as api {
         +SearchCommandData setMask (byte[] mask)
         +SearchCommandData fetchFirstMatchingResult ()
 
-        +int[] getMatchingRecordNumbers ()
+        +List<Integer> getMatchingRecordNumbers ()
     }
     package card {
         +interface "<<<back:yellow>CardSelection</back>>>\nCalypsoCardSelection" as CalypsoCardSelection {

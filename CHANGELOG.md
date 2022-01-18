@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `prepareReadRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#21] and [#38]).
 - `prepareSearchRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#22]).
 - `prepareIncreaseMultiple` and `prepareDecreaseMultiple` methods to `CardTransactionManager` API (issue [#23]).
-- `prepareChangeKey` method to `CardTransactionManager` API (issue [#24]).
+- `processChangeKey` method to `CardTransactionManager` API (issue [#24]).
 - `prepareReadRecord` and `prepareReadRecords` methods as a replacement for the `prepareReadRecordFile` methods.
 - `prepareReadCounter` method as a replacement for the `prepareReadCounterFile` method.
 - `EF_LIST` and `TRACEABILITY_INFORMATION` keys to `GetDataTag` API (issue [#18]).
