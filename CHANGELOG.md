@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `prepareReadRecord` and `prepareReadRecords` methods as a replacement for the `prepareReadRecordFile` methods.
 - `prepareReadCounter` method as a replacement for the `prepareReadCounterFile` method.
 - `EF_LIST` and `TRACEABILITY_INFORMATION` keys to `GetDataTag` API (issue [#18]).
+- Management of card applications having multiple DFs (issue [#40]).
 ### Changed
 - Documentation of card selection methods for older cards (issue [#17]).
 - Documentation of `FileHeader` methods (issue [#18]).
@@ -57,6 +58,7 @@ This is the initial release.
 [1.0.1]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/releases/tag/1.0.0
 
+[#40]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/40
 [#38]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/38
 [#24]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/24
 [#23]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/23
