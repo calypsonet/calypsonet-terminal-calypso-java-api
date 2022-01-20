@@ -95,7 +95,8 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Select File</b> command based on the file's LID.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
-   * {@link CalypsoCard#getFileBySfi(byte)} and {@link ElementaryFile#getHeader()} methods.
+   * {@link CalypsoCard#getFileBySfi(byte, short...)} and {@link ElementaryFile#getHeader()}
+   * methods.
    *
    * @param lid The LID of the EF to select.
    * @return The current instance.
@@ -109,7 +110,8 @@ public interface CardTransactionManager {
    * defined by the ISO standard.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
-   * {@link CalypsoCard#getFileBySfi(byte)} and {@link ElementaryFile#getHeader()} methods.
+   * {@link CalypsoCard#getFileBySfi(byte, short...)} and {@link ElementaryFile#getHeader()}
+   * methods.
    *
    * @param selectFileControl A {@link SelectFileControl} enum entry.
    * @return The current instance.
