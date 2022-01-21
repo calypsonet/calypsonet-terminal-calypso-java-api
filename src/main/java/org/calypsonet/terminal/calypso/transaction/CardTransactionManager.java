@@ -46,11 +46,11 @@ import org.calypsonet.terminal.reader.CardReader;
  *
  * <ul>
  *   <li>SFI: [0..30] (0 indicates the current EF)
- *   <li>Record number: [1..255]
- *   <li>Counter number: [1..255]
+ *   <li>Record number: [1..250]
+ *   <li>Counter number: [1..83]
  *   <li>Counter value: [0..16777215]
- *   <li>Offset: [0..255] or [0..32767] for binary files
- *   <li>Input data length: [1..255] or [1..32767] for binary files
+ *   <li>Offset: [0..249] or [0..32767] for binary files (0 indicates the first byte)
+ *   <li>Input data length: [1..250] or [1..32767] for binary files
  * </ul>
  *
  * @since 1.0.0
@@ -340,7 +340,7 @@ public interface CardTransactionManager {
    * @param sfi The SFI of the EF.
    * @param fromRecordNumber The number of the first record to read.
    * @param toRecordNumber The number of the last record to read.
-   * @param offset The offset in the records where to start reading.
+   * @param offset The offset in the records where to start reading (0 indicates the first byte).
    * @param nbBytesToRead The number of bytes to read from each record.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.
@@ -372,7 +372,7 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @param sfi The SFI of the EF.
-   * @param offset The offset.
+   * @param offset The offset (0 indicates the first byte).
    * @param nbBytesToRead The number of bytes to read.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.
@@ -528,7 +528,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
    * @param sfi The SFI of the EF to select.
-   * @param offset The offset.
+   * @param offset The offset (0 indicates the first byte).
    * @param data The new data.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.
@@ -547,7 +547,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is computed with the provided input data.
    *
    * @param sfi The SFI of the EF to select.
-   * @param offset The offset.
+   * @param offset The offset (0 indicates the first byte).
    * @param data The data to write over the existing data.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.

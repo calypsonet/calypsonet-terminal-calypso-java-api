@@ -34,11 +34,11 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  *
  * <ul>
  *   <li>SFI: [0..30] (0 indicates the current EF)
- *   <li>Record number: [1..255]
- *   <li>Counter number: [1..255]
+ *   <li>Record number: [1..250]
+ *   <li>Counter number: [1..83]
  *   <li>Counter value: [0..16777215]
- *   <li>Offset: [0..255] or [0..32767] for binary files
- *   <li>Input data length: [1..255] or [1..32767] for binary files
+ *   <li>Offset: [0..249] or [0..32767] for binary files (0 indicates the first byte)
+ *   <li>Input data length: [1..250] or [1..32767] for binary files
  * </ul>
  *
  * @since 1.0.0
