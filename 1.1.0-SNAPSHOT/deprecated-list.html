@@ -113,15 +113,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#getAllFiles()">org.calypsonet.terminal.calypso.card.CalypsoCard.getAllFiles()</a></th>
+<td class="colLast">
+<div class="deprecationComment">Since an EF may not have an SFI, the <a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#getFiles()"><code>CalypsoCard.getFiles()</code></a> method must be used
+     instead.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#addSuccessfulStatusWord(int)">org.calypsonet.terminal.calypso.card.CalypsoCardSelection.addSuccessfulStatusWord&#8203;(int)</a></th>
 <td class="colLast">
 <div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#acceptInvalidatedCard()"><code>CalypsoCardSelection.acceptInvalidatedCard()</code></a> method instead.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#prepareReadRecordFile(byte,int)">org.calypsonet.terminal.calypso.card.CalypsoCardSelection.prepareReadRecordFile&#8203;(byte, int)</a></th>
 <td class="colLast">
 <div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#prepareReadRecord(byte,int)"><code>CalypsoCardSelection.prepareReadRecord(byte, int)</code></a> method instead.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#prepareSelectFile(byte%5B%5D)">org.calypsonet.terminal.calypso.card.CalypsoCardSelection.prepareSelectFile&#8203;(byte[])</a></th>
+<td class="colLast">
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#prepareSelectFile(short)"><code>CalypsoCardSelection.prepareSelectFile(short)</code></a> method instead.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -134,6 +147,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareReadRecordFile(byte,int)">org.calypsonet.terminal.calypso.transaction.CardTransactionManager.prepareReadRecordFile&#8203;(byte, int)</a></th>
 <td class="colLast">
 <div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareReadRecord(byte,int)"><code>CardTransactionManager.prepareReadRecord(byte, int)</code></a> method instead.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareSelectFile(byte%5B%5D)">org.calypsonet.terminal.calypso.transaction.CardTransactionManager.prepareSelectFile&#8203;(byte[])</a></th>
+<td class="colLast">
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareSelectFile(short)"><code>CardTransactionManager.prepareSelectFile(short)</code></a> method instead.</div>
 </td>
 </tr>
 </tbody>

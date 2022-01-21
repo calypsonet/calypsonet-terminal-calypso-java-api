@@ -205,36 +205,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareReadRecordMultiple(byte,int,int,int,int)">prepareReadRecordMultiple</a></span>&#8203;(byte&nbsp;sfi,
-                         int&nbsp;fromRecordNumber,
-                         int&nbsp;toRecordNumber,
-                         int&nbsp;offset,
-                         int&nbsp;nbBytesToRead)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
- parts of multiple records of the indicated EF.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareSearchRecordMultiple(org.calypsonet.terminal.calypso.SearchCommandData)">prepareSearchRecordMultiple</a></span>&#8203;(<a href="../../SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso">SearchCommandData</a>&nbsp;data)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Search Record Multiple</b> command to search data in the
- records of the indicated EF, from a given record to the last record of the file.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareSelectFile(byte%5B%5D)">prepareSelectFile</a></span>&#8203;(byte[]&nbsp;lid)</code></th>
 <td class="colLast">
-<div class="block">Adds a command APDU to select file with an LID provided as a 2-byte byte array.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="../CalypsoCardSelection.html#prepareSelectFile(short)"><code>prepareSelectFile(short)</code></a> method instead.</div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CalypsoCardSelection.</span><code><span class="memberNameLink"><a href="../CalypsoCardSelection.html#prepareSelectFile(short)">prepareSelectFile</a></span>&#8203;(short&nbsp;lid)</code></th>
 <td class="colLast">
-<div class="block">Adds a command APDU to select file with an LID provided as a short.</div>
+<div class="block">Adds a command APDU to select an EF by its LID in the current DF.</div>
 </td>
 </tr>
 <tr class="rowColor">

@@ -26,8 +26,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":38,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -191,7 +191,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -201,7 +201,10 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <td class="colFirst"><code>java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAllFiles()">getAllFiles</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets a reference to a map of all known Elementary Files by their associated SFI.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Since an EF may not have an SFI, the <a href="#getFiles()"><code>getFiles()</code></a> method must be used
+     instead.</div>
+</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -236,52 +239,59 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <td class="colFirst"><code><a href="DirectoryHeader.html" title="interface in org.calypsonet.terminal.calypso.card">DirectoryHeader</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDirectoryHeader()">getDirectoryHeader</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the DF metadata.</div>
+<div class="block">Returns the metadata of the current DF.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFileByLid(short)">getFileByLid</a></span>&#8203;(short&nbsp;lid)</code></th>
 <td class="colLast">
-<div class="block">Gets a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided LID value.</div>
+<div class="block">Returns a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided LID value.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFileBySfi(byte)">getFileBySfi</a></span>&#8203;(byte&nbsp;sfi)</code></th>
 <td class="colLast">
-<div class="block">Gets a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided SFI value.</div>
+<div class="block">Returns a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided SFI.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>java.util.Set&lt;<a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFiles()">getFiles</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns a reference to the set of all known Elementary Files contains inside the current DF.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPinAttemptRemaining()">getPinAttemptRemaining</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gives the number of erroneous PIN presentations remaining before blocking.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPlatform()">getPlatform</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the platform identification byte which is the reference of the chip.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="CalypsoCard.ProductType.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCard.ProductType</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProductType()">getProductType</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the card product type.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSessionModification()">getSessionModification</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the session modification byte from the startup info structure.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSoftwareIssuer()">getSoftwareIssuer</a></span>()</code></th>
 <td class="colLast">
@@ -289,7 +299,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
  selected application.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSoftwareRevision()">getSoftwareRevision</a></span>()</code></th>
 <td class="colLast">
@@ -297,7 +307,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
  the Calypso application.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSoftwareVersion()">getSoftwareVersion</a></span>()</code></th>
 <td class="colLast">
@@ -305,112 +315,112 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
  the Calypso application.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStartupInfoRawData()">getStartupInfoRawData</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the raw Calypso startup information.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSvBalance()">getSvBalance</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the current SV balance value</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="SvDebitLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvDebitLogRecord</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSvDebitLogAllRecords()">getSvDebitLogAllRecords</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets list of references to the <a href="SvDebitLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card"><code>SvDebitLogRecord</code></a> read from the card.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="SvDebitLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvDebitLogRecord</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSvDebitLogLastRecord()">getSvDebitLogLastRecord</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets a reference to the last <a href="SvDebitLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card"><code>SvDebitLogRecord</code></a></div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSvLastTNum()">getSvLastTNum</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the last SV transaction number</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="SvLoadLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvLoadLogRecord</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSvLoadLogRecord()">getSvLoadLogRecord</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets a reference to the last <a href="SvLoadLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card"><code>SvLoadLogRecord</code></a></div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTraceabilityInformation()">getTraceabilityInformation</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the traceability information of the product.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDfInvalidated()">isDfInvalidated</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Tells if the current DF is invalidated or not.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDfRatified()">isDfRatified</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Tells if the last session with this card has been ratified or not.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isExtendedModeSupported()">isExtendedModeSupported</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the Extended Mode is supported or not (since rev 3.2).</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHce()">isHce</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates if the card is a Calypso HCE (Host Card Emulation) .</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPinBlocked()">isPinBlocked</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates if the PIN is blocked.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPinFeatureAvailable()">isPinFeatureAvailable</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the card has the Calypso PIN feature.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPkiModeSupported()">isPkiModeSupported</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates whether the Public Key Authentication is supported or not (since rev 3.3).</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRatificationOnDeselectSupported()">isRatificationOnDeselectSupported</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates if the ratification is done on deselect (ratification command not necessary).</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSvFeatureAvailable()">isSvFeatureAvailable</a></span>()</code></th>
 <td class="colLast">
@@ -672,7 +682,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <li class="blockList">
 <h4>getDirectoryHeader</h4>
 <pre class="methodSignature"><a href="DirectoryHeader.html" title="interface in org.calypsonet.terminal.calypso.card">DirectoryHeader</a>&nbsp;getDirectoryHeader()</pre>
-<div class="block">Gets the DF metadata.</div>
+<div class="block">Returns the metadata of the current DF.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Null if is not set.</dd>
@@ -688,7 +698,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <li class="blockList">
 <h4>getFileBySfi</h4>
 <pre class="methodSignature"><a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a>&nbsp;getFileBySfi&#8203;(byte&nbsp;sfi)</pre>
-<div class="block">Gets a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided SFI value.
+<div class="block">Returns a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided SFI.
 
  <p>Note that if a secure session is actually running, then the object contains all session
  modifications, which can be canceled if the secure session fails.</div>
@@ -696,7 +706,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sfi</code> - The SFI to search.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>Null if the requested EF is not found.</dd>
+<dd>Null if the requested EF is not found or if the SFI is equal to 0.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -709,7 +719,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <li class="blockList">
 <h4>getFileByLid</h4>
 <pre class="methodSignature"><a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a>&nbsp;getFileByLid&#8203;(short&nbsp;lid)</pre>
-<div class="block">Gets a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided LID value.
+<div class="block">Returns a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided LID value.
 
  <p>Note that if a secure session is actually running, then the object contains all session
  modifications, which can be canceled if the secure session fails.</div>
@@ -729,7 +739,12 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getAllFiles</h4>
-<pre class="methodSignature">java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a>&gt;&nbsp;getAllFiles()</pre>
+<pre class="methodSignature">@Deprecated
+java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a>&gt;&nbsp;getAllFiles()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Since an EF may not have an SFI, the <a href="#getFiles()"><code>getFiles()</code></a> method must be used
+     instead.</div>
+</div>
 <div class="block">Gets a reference to a map of all known Elementary Files by their associated SFI.
 
  <p>Note that if a secure session is actually running, then the map contains all session
@@ -739,6 +754,25 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <dd>A not null reference (may be empty if no one EF is set).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+</dl>
+</li>
+</ul>
+<a id="getFiles()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFiles</h4>
+<pre class="methodSignature">java.util.Set&lt;<a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a>&gt;&nbsp;getFiles()</pre>
+<div class="block">Returns a reference to the set of all known Elementary Files contains inside the current DF.
+
+ <p>Note that if a secure session is actually running, then the set contains all session
+ modifications, which can be canceled if the secure session fails.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A not null reference (may be empty if no one EF is set).</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
 </dl>
 </li>
 </ul>
