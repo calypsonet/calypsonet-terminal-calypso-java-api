@@ -12,7 +12,6 @@
 package org.calypsonet.terminal.calypso.card;
 
 import org.calypsonet.terminal.calypso.GetDataTag;
-import org.calypsonet.terminal.calypso.SearchCommandData;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.reader.selection.spi.CardSelection;
 
@@ -34,12 +33,12 @@ import org.calypsonet.terminal.reader.selection.spi.CardSelection;
  * checked for the various parameters:
  *
  * <ul>
- *   <li>SFI: [0..31] (0 indicates the current EF)
- *   <li>Record number: [1..255]
- *   <li>Counter number: [1..255]
+ *   <li>SFI: [0..30] (0 indicates the current EF)
+ *   <li>Record number: [1..250]
+ *   <li>Counter number: [1..83]
  *   <li>Counter value: [0..16777215]
- *   <li>Offset: [0..255] or [0..32767] for binary files
- *   <li>Input data length: [1..255] or [1..32767] for binary files
+ *   <li>Offset: [0..249] or [0..32767] for binary files (0 indicates the first byte)
+ *   <li>Input data length: [1..250] or [1..32767] for binary files
  * </ul>
  *
  * @since 1.0.0
@@ -158,16 +157,20 @@ public interface CalypsoCardSelection extends CardSelection {
    * @return The object instance.
    * @throws IllegalArgumentException If the argument is not an array of 2 bytes.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareSelectFile(short)} method instead.
    */
+  @Deprecated
   CalypsoCardSelection prepareSelectFile(byte[] lid);
 
   /**
-   * Adds a command APDU to select file with an LID provided as a short.
+   * Adds a command APDU to select an EF by its LID in the current DF.
    *
-   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * <p>Caution 1: the resulting APDU command must be compliant with PRIME revision 3 cards.
    * Therefore, the command may be rejected by some earlier revision cards.
    *
-   * @param lid A short.
+   * <p>Caution 2: the command will fail if the selected file is not an EF.
+   *
+   * @param lid The LID of the EF to select.
    * @return The object instance.
    * @since 1.0.0
    */
@@ -222,52 +225,6 @@ public interface CalypsoCardSelection extends CardSelection {
    * @since 1.1.0
    */
   CalypsoCardSelection prepareReadRecord(byte sfi, int recordNumber);
-
-  /**
-   * Schedules the execution of one or multiple <b>Read Record Multiple</b> commands to read all or
-   * parts of multiple records of the indicated EF.
-   *
-   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
-   * command is supported by the card and if the requested file and record exist in the file
-   * structure of the card (best effort behavior).
-   *
-   * @param sfi The SFI of the EF.
-   * @param fromRecordNumber The number of the first record to read.
-   * @param toRecordNumber The number of the last record to read.
-   * @param offset The offset in the records where to start reading.
-   * @param nbBytesToRead The number of bytes to read from each record.
-   * @return The current instance.
-   * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.1.0
-   */
-  CalypsoCardSelection prepareReadRecordMultiple(
-      byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead);
-
-  /**
-   * Schedules the execution of a <b>Search Record Multiple</b> command to search data in the
-   * records of the indicated EF, from a given record to the last record of the file. It will return
-   * the list of record numbers containing these data, and if requested it will read the first
-   * record content.
-   *
-   * <p>The command is only possible with a Linear, Cyclic, Counters or Simulated Counter EF.
-   *
-   * <p>The command searches if the given data are present in the records of the file. During the
-   * search, an optional mask is applied. The mask allows to specify precisely the bits to be taken
-   * into account in the comparison.
-   *
-   * <p>See {@link SearchCommandData} class for a description of the parameters.
-   *
-   * <p>Once this command is processed, the result is available in the provided input/output {@link
-   * SearchCommandData} object, and the content of the first matching record in {@link CalypsoCard}
-   * if requested, if the command is supported by the card and if the requested file, record and
-   * offset exist in the file structure of the card (best effort behavior).
-   *
-   * @param data The input/output data containing the parameters of the command.
-   * @return The current instance.
-   * @throws IllegalArgumentException If the input data is inconsistent.
-   * @since 1.1.0
-   */
-  CalypsoCardSelection prepareSearchRecordMultiple(SearchCommandData data);
 
   /**
    * Adds a command APDU to retrieve the data indicated by the provided tag.

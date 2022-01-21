@@ -13,7 +13,6 @@ package org.calypsonet.terminal.calypso.transaction;
 
 import java.util.Map;
 import org.calypsonet.terminal.calypso.GetDataTag;
-import org.calypsonet.terminal.calypso.SearchCommandData;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 import org.calypsonet.terminal.calypso.card.CalypsoCard;
@@ -46,12 +45,12 @@ import org.calypsonet.terminal.reader.CardReader;
  * checked for the various parameters:
  *
  * <ul>
- *   <li>SFI: [0..31] (0 indicates the current EF)
- *   <li>Record number: [1..255]
- *   <li>Counter number: [1..255]
+ *   <li>SFI: [0..30] (0 indicates the current EF)
+ *   <li>Record number: [1..250]
+ *   <li>Counter number: [1..83]
  *   <li>Counter value: [0..16777215]
- *   <li>Offset: [0..255] or [0..32767] for binary files
- *   <li>Input data length: [1..255] or [1..32767] for binary files
+ *   <li>Offset: [0..249] or [0..32767] for binary files (0 indicates the first byte)
+ *   <li>Input data length: [1..250] or [1..32767] for binary files
  * </ul>
  *
  * @since 1.0.0
@@ -95,21 +94,40 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Select File</b> command based on the file's LID.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
-   * {@link CalypsoCard#getFileBySfi(byte)} and {@link ElementaryFile#getHeader()} methods.
+   * {@link CalypsoCard#getFileBySfi(byte)}/{@link CalypsoCard#getFileByLid(short)} and {@link
+   * ElementaryFile#getHeader()} methods.
    *
    * @param lid The LID of the EF to select.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided lid is not 2 bytes long.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareSelectFile(short)} method instead.
    */
+  @Deprecated
   CardTransactionManager prepareSelectFile(byte[] lid);
+
+  /**
+   * Schedules the execution of a <b>Select File</b> command to select an EF by its LID in the
+   * current DF
+   *
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
+   * {@link CalypsoCard#getFileBySfi(byte)}/{@link CalypsoCard#getFileByLid(short)} and {@link
+   * ElementaryFile#getHeader()} methods.
+   *
+   * <p>Caution: the command will fail if the selected file is not an EF.
+   *
+   * @param lid The LID of the EF to select.
+   * @return The current instance.
+   * @since 1.1.0
+   */
+  CardTransactionManager prepareSelectFile(short lid);
 
   /**
    * Schedules the execution of a <b>Select File</b> command using a navigation selectFileControl
    * defined by the ISO standard.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
-   * {@link CalypsoCard#getFileBySfi(byte)} and {@link ElementaryFile#getHeader()} methods.
+   * {@link ElementaryFile#getHeader()} methods.
    *
    * @param selectFileControl A {@link SelectFileControl} enum entry.
    * @return The current instance.
@@ -322,14 +340,14 @@ public interface CardTransactionManager {
    * @param sfi The SFI of the EF.
    * @param fromRecordNumber The number of the first record to read.
    * @param toRecordNumber The number of the last record to read.
-   * @param offset The offset in the records where to start reading.
+   * @param offset The offset in the records where to start reading (0 indicates the first byte).
    * @param nbBytesToRead The number of bytes to read from each record.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.1.0
    */
-  CardTransactionManager prepareReadRecordMultiple(
+  CardTransactionManager prepareReadPartialRecords(
       byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead);
 
   /**
@@ -354,7 +372,7 @@ public interface CardTransactionManager {
    * </ul>
    *
    * @param sfi The SFI of the EF.
-   * @param offset The offset.
+   * @param offset The offset (0 indicates the first byte).
    * @param nbBytesToRead The number of bytes to read.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.
@@ -431,7 +449,7 @@ public interface CardTransactionManager {
    * @throws IllegalArgumentException If the input data is inconsistent.
    * @since 1.1.0
    */
-  CardTransactionManager prepareSearchRecordMultiple(SearchCommandData data);
+  CardTransactionManager prepareSearchRecords(SearchCommandData data);
 
   /**
    * Schedules the execution of a <b>Verify Pin</b> command without PIN presentation in order to get
@@ -510,7 +528,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is filled with the provided input data.
    *
    * @param sfi The SFI of the EF to select.
-   * @param offset The offset.
+   * @param offset The offset (0 indicates the first byte).
    * @param data The new data.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.
@@ -529,7 +547,7 @@ public interface CardTransactionManager {
    * <p>Note: {@link CalypsoCard} is computed with the provided input data.
    *
    * @param sfi The SFI of the EF to select.
-   * @param offset The offset.
+   * @param offset The offset (0 indicates the first byte).
    * @param data The data to write over the existing data.
    * @return The current instance.
    * @throws UnsupportedOperationException If this command is not supported by this card.

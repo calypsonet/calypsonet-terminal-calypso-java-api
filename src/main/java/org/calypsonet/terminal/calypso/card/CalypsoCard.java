@@ -13,6 +13,7 @@ package org.calypsonet.terminal.calypso.card;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 
 /**
@@ -161,7 +162,7 @@ public interface CalypsoCard extends SmartCard {
   byte[] getTraceabilityInformation();
 
   /**
-   * Gets the DF metadata.
+   * Returns the metadata of the current DF.
    *
    * @return Null if is not set.
    * @since 1.0.0
@@ -169,19 +170,19 @@ public interface CalypsoCard extends SmartCard {
   DirectoryHeader getDirectoryHeader();
 
   /**
-   * Gets a reference to the {@link ElementaryFile} that has the provided SFI value.
+   * Returns a reference to the {@link ElementaryFile} that has the provided SFI.
    *
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
    *
    * @param sfi The SFI to search.
-   * @return Null if the requested EF is not found.
+   * @return Null if the requested EF is not found or if the SFI is equal to 0.
    * @since 1.0.0
    */
   ElementaryFile getFileBySfi(byte sfi);
 
   /**
-   * Gets a reference to the {@link ElementaryFile} that has the provided LID value.
+   * Returns a reference to the {@link ElementaryFile} that has the provided LID value.
    *
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
@@ -200,8 +201,22 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return A not null reference (may be empty if no one EF is set).
    * @since 1.0.0
+   * @deprecated Since an EF may not have an SFI, the {@link #getFiles()} method must be used
+   *     instead.
    */
+  @Deprecated
   Map<Byte, ElementaryFile> getAllFiles();
+
+  /**
+   * Returns a reference to the set of all known Elementary Files contains inside the current DF.
+   *
+   * <p>Note that if a secure session is actually running, then the set contains all session
+   * modifications, which can be canceled if the secure session fails.
+   *
+   * @return A not null reference (may be empty if no one EF is set).
+   * @since 1.1.0
+   */
+  Set<ElementaryFile> getFiles();
 
   /**
    * Tells if the current DF is invalidated or not.

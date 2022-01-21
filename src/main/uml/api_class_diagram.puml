@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - calypsonet-terminal-calypso-java-api - 1.1.+ (17/01/2022)
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.1.+ (21/01/2022)
 end title
 
 ' == THEME ==
@@ -72,17 +72,6 @@ package "org.calypsonet.terminal.calypso" as api {
         EF_LIST
         TRACEABILITY_INFORMATION
     }
-    +interface SearchCommandData {
-        +SearchCommandData setSfi (byte sfi)
-        +SearchCommandData startAtRecord (int recordNumber)
-        +SearchCommandData setOffset (int offset)
-        +SearchCommandData enableRepeatedOffset ()
-        +SearchCommandData setSearchData (byte[] data)
-        +SearchCommandData setMask (byte[] mask)
-        +SearchCommandData fetchFirstMatchingResult ()
-
-        +List<Integer> getMatchingRecordNumbers ()
-    }
     package card {
         +interface "<<<back:yellow>CardSelection</back>>>\nCalypsoCardSelection" as CalypsoCardSelection {
             +CalypsoCardSelection filterByCardProtocol (String cardProtocol)
@@ -97,7 +86,7 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +CalypsoCardSelection acceptInvalidatedCard ()
 
-            +CalypsoCardSelection prepareSelectFile (byte[] lid)
+            +<s>CalypsoCardSelection prepareSelectFile (byte[] lid)</s>
             +CalypsoCardSelection prepareSelectFile (short lid)
             +CalypsoCardSelection prepareSelectFile (SelectFileControl selectControl)
 
@@ -105,9 +94,6 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +<s>CalypsoCardSelection prepareReadRecordFile (byte sfi, int recordNumber)</s>
             +CalypsoCardSelection prepareReadRecord (byte sfi, int recordNumber)
-            +CalypsoCardSelection prepareReadRecordMultiple (byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead)
-
-            +CalypsoCardSelection prepareSearchRecordMultiple (SearchCommandData data)
         }
         +enum FileOccurrence {
             FIRST
@@ -140,7 +126,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +DirectoryHeader getDirectoryHeader ()
             +ElementaryFile getFileBySfi (byte sfi)
             +ElementaryFile getFileByLid (short lid)
-            +Map<Byte, ElementaryFile> getAllFiles ()
+            +<s>Map<Byte, ElementaryFile> getAllFiles ()</s>
+            +Set<ElementaryFile> getFiles ()
 
             +boolean isDfInvalidated ()
             +boolean isDfRatified ()
@@ -276,7 +263,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +CardSecuritySetting getCardSecuritySetting ()
             +String getTransactionAuditData ()
 
-            +CardTransactionManager prepareSelectFile (byte[] lid)
+            +<s>CardTransactionManager prepareSelectFile (byte[] lid)</s>
+            +CardTransactionManager prepareSelectFile (short lid)
             +CardTransactionManager prepareSelectFile (SelectFileControl selectFileControl)
 
             +CardTransactionManager prepareGetData (GetDataTag tag)
@@ -286,11 +274,11 @@ package "org.calypsonet.terminal.calypso" as api {
             +<s>CardTransactionManager prepareReadCounterFile (byte sfi, int countersNumber)</s>
             +CardTransactionManager prepareReadRecord (byte sfi, int recordNumber)
             +CardTransactionManager prepareReadRecords (byte sfi, int fromRecordNumber, int toRecordNumber, int recordSize)
-            +CardTransactionManager prepareReadRecordMultiple (byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead)
+            +CardTransactionManager prepareReadPartialRecords (byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead)
             +CardTransactionManager prepareReadBinary (byte sfi, int offset, int nbBytesToRead)
             +CardTransactionManager prepareReadCounter (byte sfi, int nbCountersToRead)
 
-            +CardTransactionManager prepareSearchRecordMultiple (SearchCommandData data)
+            +CardTransactionManager prepareSearchRecords (SearchCommandData data)
 
             +CardTransactionManager prepareCheckPinStatus ()
 
@@ -358,6 +346,17 @@ package "org.calypsonet.terminal.calypso" as api {
             +CardSecuritySetting setPinVerificationCipheringKey (byte kif, byte kvc)
             +CardSecuritySetting setPinModificationCipheringKey (byte kif, byte kvc)
         }
+        +interface SearchCommandData {
+            +SearchCommandData setSfi (byte sfi)
+            +SearchCommandData startAtRecord (int recordNumber)
+            +SearchCommandData setOffset (int offset)
+            +SearchCommandData enableRepeatedOffset ()
+            +SearchCommandData setSearchData (byte[] data)
+            +SearchCommandData setMask (byte[] mask)
+            +SearchCommandData fetchFirstMatchingResult ()
+
+            +List<Integer> getMatchingRecordNumbers ()
+        }
     }
 }
 
@@ -373,7 +372,7 @@ CardTransactionManager ..> SvOperation #C_USE : use >
 CardTransactionManager ..> SvAction #C_USE : use >
 CardTransactionManager .up.> SelectFileControl #C_USE : use >
 CardTransactionManager .up.> GetDataTag #C_USE : use >
-CardTransactionManager .up.> SearchCommandData #C_USE : use >
+CardTransactionManager .right.> SearchCommandData #C_USE : use >
 CardTransactionManager .right.> CalypsoCard #C_LINK : use and provide up to date content >
 CardTransactionManager ..> CardSecuritySetting #C_LINK : provide >
 
@@ -387,7 +386,6 @@ CalypsoSam ..> SamProductType #C_LINK : provide >
 
 CalypsoCardSelection .up.> SelectFileControl #C_USE : use >
 CalypsoCardSelection .up.> GetDataTag #C_USE : use >
-CalypsoCardSelection .up.> SearchCommandData #C_USE : use >
 
 CalypsoCard ..> DirectoryHeader #C_LINK : provide >
 CalypsoCard ..> ElementaryFile #C_LINK : provide >
