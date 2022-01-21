@@ -8,18 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `prepareUpdateBinary` and `prepareWriteBinary` methods to `CardTransactionManager` API (issue [#19]).
 - `prepareReadBinary` method to `CardTransactionManager` API (issue [#20]).
-- `prepareReadRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#21] and [#38]).
-- `prepareSearchRecordMultiple` method to `CalypsoCardSelection` and `CardTransactionManager` APIs (issue [#22]).
+- `prepareReadPartialRecords` method to `CardTransactionManager` APIs (issue [#21] and [#38]).
+- `prepareSearchRecords` method to `CardTransactionManager` APIs (issue [#22]).
 - `prepareIncreaseMultiple` and `prepareDecreaseMultiple` methods to `CardTransactionManager` API (issue [#23]).
 - `processChangeKey` method to `CardTransactionManager` API (issue [#24]).
 - `prepareReadRecord` and `prepareReadRecords` methods as a replacement for the `prepareReadRecordFile` methods.
 - `prepareReadCounter` method as a replacement for the `prepareReadCounterFile` method.
 - `EF_LIST` and `TRACEABILITY_INFORMATION` keys to `GetDataTag` API (issue [#18]).
-- Management of card applications having multiple DFs (issue [#40]).
+- Management of EFs with no SFI (issue [#40]).
 ### Changed
 - Documentation of card selection methods for older cards (issue [#17]).
 - Documentation of `FileHeader` methods (issue [#18]).
+- Documentation of `prepareSelectFile` methods.
 ### Deprecated
+- `prepareSelectFile` methods using a byte array for the LID argument.
 - `prepareReadRecordFile` methods.
 - `prepareReadCounterFile` method.
 

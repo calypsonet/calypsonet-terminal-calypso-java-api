@@ -9,12 +9,13 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  ************************************************************************************** */
-package org.calypsonet.terminal.calypso;
+package org.calypsonet.terminal.calypso.transaction;
 
 import java.util.List;
 
 /**
- * Contains the input/output data of a "Search Record Multiple" card command.
+ * Contains the input/output data of the {@link
+ * CardTransactionManager#prepareSearchRecords(SearchCommandData)} method.
  *
  * @since 1.1.0
  */

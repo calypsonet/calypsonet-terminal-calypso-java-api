@@ -13,7 +13,6 @@ package org.calypsonet.terminal.calypso.transaction;
 
 import java.util.Map;
 import org.calypsonet.terminal.calypso.GetDataTag;
-import org.calypsonet.terminal.calypso.SearchCommandData;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 import org.calypsonet.terminal.calypso.card.CalypsoCard;
@@ -95,23 +94,40 @@ public interface CardTransactionManager {
    * Schedules the execution of a <b>Select File</b> command based on the file's LID.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
-   * {@link CalypsoCard#getFileBySfi(byte, short...)} and {@link ElementaryFile#getHeader()}
-   * methods.
+   * {@link CalypsoCard#getFileBySfi(byte)}/{@link CalypsoCard#getFileByLid(short)} and {@link
+   * ElementaryFile#getHeader()} methods.
    *
    * @param lid The LID of the EF to select.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided lid is not 2 bytes long.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareSelectFile(short)} method instead.
    */
+  @Deprecated
   CardTransactionManager prepareSelectFile(byte[] lid);
+
+  /**
+   * Schedules the execution of a <b>Select File</b> command to select an EF by its LID in the
+   * current DF
+   *
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
+   * {@link CalypsoCard#getFileBySfi(byte)}/{@link CalypsoCard#getFileByLid(short)} and {@link
+   * ElementaryFile#getHeader()} methods.
+   *
+   * <p>Caution: the command will fail if the selected file is not an EF.
+   *
+   * @param lid The LID of the EF to select.
+   * @return The current instance.
+   * @since 1.1.0
+   */
+  CardTransactionManager prepareSelectFile(short lid);
 
   /**
    * Schedules the execution of a <b>Select File</b> command using a navigation selectFileControl
    * defined by the ISO standard.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} through the
-   * {@link CalypsoCard#getFileBySfi(byte, short...)} and {@link ElementaryFile#getHeader()}
-   * methods.
+   * {@link ElementaryFile#getHeader()} methods.
    *
    * @param selectFileControl A {@link SelectFileControl} enum entry.
    * @return The current instance.
@@ -331,7 +347,7 @@ public interface CardTransactionManager {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.1.0
    */
-  CardTransactionManager prepareReadRecordMultiple(
+  CardTransactionManager prepareReadPartialRecords(
       byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead);
 
   /**
@@ -433,7 +449,7 @@ public interface CardTransactionManager {
    * @throws IllegalArgumentException If the input data is inconsistent.
    * @since 1.1.0
    */
-  CardTransactionManager prepareSearchRecordMultiple(SearchCommandData data);
+  CardTransactionManager prepareSearchRecords(SearchCommandData data);
 
   /**
    * Schedules the execution of a <b>Verify Pin</b> command without PIN presentation in order to get

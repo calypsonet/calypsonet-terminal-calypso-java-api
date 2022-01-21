@@ -162,44 +162,36 @@ public interface CalypsoCard extends SmartCard {
   byte[] getTraceabilityInformation();
 
   /**
-   * Returns the metadata of the DF whose absolute path is given as a list of LIDs, or of the root
-   * DF if the path is not specified.
+   * Returns the metadata of the current DF.
    *
-   * @param path The path of the DF as an array of LIDs (optional).
    * @return Null if is not set.
    * @since 1.0.0
    */
-  DirectoryHeader getDirectoryHeader(short... path);
+  DirectoryHeader getDirectoryHeader();
 
   /**
-   * Returns a reference to the {@link ElementaryFile} that has the provided SFI value inside the DF
-   * whose absolute path is given as a list of LIDs, or inside the root DF if the path is not
-   * specified.
+   * Returns a reference to the {@link ElementaryFile} that has the provided SFI.
    *
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
    *
    * @param sfi The SFI to search.
-   * @param path The path of the associated DF as an array of LIDs (optional).
    * @return Null if the requested EF is not found or if the SFI is equal to 0.
    * @since 1.0.0
    */
-  ElementaryFile getFileBySfi(byte sfi, short... path);
+  ElementaryFile getFileBySfi(byte sfi);
 
   /**
-   * Returns a reference to the {@link ElementaryFile} that has the provided LID value inside the DF
-   * whose absolute path is given as a list of LIDs, or inside the root DF if the path is not
-   * specified.
+   * Returns a reference to the {@link ElementaryFile} that has the provided LID value.
    *
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
    *
    * @param lid The LID to search.
-   * @param path The path of the associated DF as an array of LIDs (optional).
    * @return Null if the requested EF is not found.
    * @since 1.0.0
    */
-  ElementaryFile getFileByLid(short lid, short... path);
+  ElementaryFile getFileByLid(short lid);
 
   /**
    * Gets a reference to a map of all known Elementary Files by their associated SFI.
@@ -209,24 +201,22 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return A not null reference (may be empty if no one EF is set).
    * @since 1.0.0
-   * @deprecated Since an EF may not have an SFI, the {@link #getFiles(short...)} method must be
-   *     used instead.
+   * @deprecated Since an EF may not have an SFI, the {@link #getFiles()} method must be used
+   *     instead.
    */
   @Deprecated
   Map<Byte, ElementaryFile> getAllFiles();
 
   /**
-   * Returns a reference to the set of all known Elementary Files contains inside the DF whose
-   * absolute path is given as a list of LIDs, or inside the root DF if the path is not specified.
+   * Returns a reference to the set of all known Elementary Files contains inside the current DF.
    *
    * <p>Note that if a secure session is actually running, then the set contains all session
    * modifications, which can be canceled if the secure session fails.
    *
-   * @param path The path of the associated DF as an array of LIDs (optional).
    * @return A not null reference (may be empty if no one EF is set).
    * @since 1.1.0
    */
-  Set<ElementaryFile> getFiles(short... path);
+  Set<ElementaryFile> getFiles();
 
   /**
    * Tells if the current DF is invalidated or not.
