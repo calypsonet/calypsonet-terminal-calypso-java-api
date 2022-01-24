@@ -347,7 +347,7 @@ public interface CardTransactionManager {
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.1.0
    */
-  CardTransactionManager prepareReadPartialRecords(
+  CardTransactionManager prepareReadRecordsPartially(
       byte sfi, int fromRecordNumber, int toRecordNumber, int offset, int nbBytesToRead);
 
   /**
