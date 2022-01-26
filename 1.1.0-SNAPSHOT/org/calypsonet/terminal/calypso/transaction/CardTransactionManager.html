@@ -237,8 +237,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareDecreaseMultipleCounters(byte,java.util.Map)">prepareDecreaseMultipleCounters</a></span>&#8203;(byte&nbsp;sfi,
-                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareDecreaseCounters(byte,java.util.Map)">prepareDecreaseCounters</a></span>&#8203;(byte&nbsp;sfi,
+                       java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
  counters at the same time.</div>
@@ -262,8 +262,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareIncreaseMultipleCounters(byte,java.util.Map)">prepareIncreaseMultipleCounters</a></span>&#8203;(byte&nbsp;sfi,
-                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareIncreaseCounters(byte,java.util.Map)">prepareIncreaseCounters</a></span>&#8203;(byte&nbsp;sfi,
+                       java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
  counters at the same time.</div>
@@ -1354,6 +1354,37 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
+<a id="prepareIncreaseCounters(byte,java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>prepareIncreaseCounters</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareIncreaseCounters&#8203;(byte&nbsp;sfi,
+                                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</pre>
+<div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
+ counters at the same time.
+
+ <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
+
+ <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sfi</code> - SFI of the EF to select.</dd>
+<dd><code>counterNumberToIncValueMap</code> - The map containing the counter numbers to be incremented and
+     their associated increment values.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.UnsupportedOperationException</code> - If the increase multiple command is not available for
+     this card.</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range or if the map
+     is null or empty.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.1.0</dd>
+</dl>
+</li>
+</ul>
 <a id="prepareDecreaseCounter(byte,int,int)">
 <!--   -->
 </a>
@@ -1383,45 +1414,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
-<a id="prepareIncreaseMultipleCounters(byte,java.util.Map)">
+<a id="prepareDecreaseCounters(byte,java.util.Map)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>prepareIncreaseMultipleCounters</h4>
-<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareIncreaseMultipleCounters&#8203;(byte&nbsp;sfi,
-                                                       java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</pre>
-<div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
- counters at the same time.
-
- <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
-
- <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>sfi</code> - SFI of the EF to select.</dd>
-<dd><code>counterNumberToIncValueMap</code> - The map containing the counter numbers to be incremented and
-     their associated increment values.</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.UnsupportedOperationException</code> - If the increase multiple command is not available for
-     this card.</dd>
-<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range or if the map
-     is null or empty.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.1.0</dd>
-</dl>
-</li>
-</ul>
-<a id="prepareDecreaseMultipleCounters(byte,java.util.Map)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>prepareDecreaseMultipleCounters</h4>
-<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareDecreaseMultipleCounters&#8203;(byte&nbsp;sfi,
-                                                       java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</pre>
+<h4>prepareDecreaseCounters</h4>
+<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareDecreaseCounters&#8203;(byte&nbsp;sfi,
+                                               java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</pre>
 <div class="block">Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
  counters at the same time.
 
