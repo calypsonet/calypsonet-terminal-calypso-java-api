@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `prepareReadBinary` method to `CardTransactionManager` API (issue [#20]).
 - `prepareReadRecordsPartially` method to `CardTransactionManager` APIs (issue [#21] and [#38]).
 - `prepareSearchRecords` method to `CardTransactionManager` APIs (issue [#22]).
-- `prepareIncreaseMultiple` and `prepareDecreaseMultiple` methods to `CardTransactionManager` API (issue [#23]).
+- `prepareIncreaseCounters` and `prepareDecreaseCounters` methods to `CardTransactionManager` API (issue [#23]).
 - `processChangeKey` method to `CardTransactionManager` API (issue [#24]).
 - `prepareReadRecord` and `prepareReadRecords` methods as a replacement for the `prepareReadRecordFile` methods.
 - `prepareReadCounter` method as a replacement for the `prepareReadCounterFile` method.

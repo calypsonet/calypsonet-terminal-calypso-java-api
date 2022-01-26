@@ -576,25 +576,6 @@ public interface CardTransactionManager {
   CardTransactionManager prepareIncreaseCounter(byte sfi, int counterNumber, int incValue);
 
   /**
-   * Schedules the execution of a <b>Decrease</b> command to decrease the target counter.
-   *
-   * <p>Note 1: {@link CalypsoCard} is updated with the provided input data.
-   *
-   * <p>Note 2: in the case where this method is invoked before the invocation of {@link
-   * #processClosing()}, the counter must have been read previously otherwise an {@link
-   * IllegalStateException} will be raised during the execution of {@link #processClosing()}.
-   *
-   * @param sfi SFI of the EF to select.
-   * @param counterNumber The number of the counter (must be zero in case of a simulated counter).
-   * @param decValue Value to subtract to the counter (defined as a positive int {@code <=} 16777215
-   *     [FFFFFFh])
-   * @return The current instance.
-   * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @since 1.0.0
-   */
-  CardTransactionManager prepareDecreaseCounter(byte sfi, int counterNumber, int decValue);
-
-  /**
    * Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
    * counters at the same time.
    *
@@ -614,8 +595,27 @@ public interface CardTransactionManager {
    *     is null or empty.
    * @since 1.1.0
    */
-  CardTransactionManager prepareIncreaseMultipleCounters(
+  CardTransactionManager prepareIncreaseCounters(
       byte sfi, Map<Integer, Integer> counterNumberToIncValueMap);
+
+  /**
+   * Schedules the execution of a <b>Decrease</b> command to decrease the target counter.
+   *
+   * <p>Note 1: {@link CalypsoCard} is updated with the provided input data.
+   *
+   * <p>Note 2: in the case where this method is invoked before the invocation of {@link
+   * #processClosing()}, the counter must have been read previously otherwise an {@link
+   * IllegalStateException} will be raised during the execution of {@link #processClosing()}.
+   *
+   * @param sfi SFI of the EF to select.
+   * @param counterNumber The number of the counter (must be zero in case of a simulated counter).
+   * @param decValue Value to subtract to the counter (defined as a positive int {@code <=} 16777215
+   *     [FFFFFFh])
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
+   * @since 1.0.0
+   */
+  CardTransactionManager prepareDecreaseCounter(byte sfi, int counterNumber, int decValue);
 
   /**
    * Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
@@ -637,7 +637,7 @@ public interface CardTransactionManager {
    *     is null or empty.
    * @since 1.1.0
    */
-  CardTransactionManager prepareDecreaseMultipleCounters(
+  CardTransactionManager prepareDecreaseCounters(
       byte sfi, Map<Integer, Integer> counterNumberToDecValueMap);
 
   /**
