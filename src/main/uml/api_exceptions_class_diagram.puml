@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - Exceptions of calypsonet-terminal-calypso-java-api - 1.0.+ (10/06/2021)
+    Calypsonet - Exceptions of calypsonet-terminal-calypso-java-api - 1.1.+ (2022-02-01)
 end title
 
 ' == THEME ==
@@ -53,96 +53,22 @@ package "org.calypsonet.terminal.calypso" as api {
             #CardTransactionException (String message)
             #CardTransactionException (String message, Throwable cause)
         }
-
-        +class "AtomicTransactionException" as AtomicTransactionException extends CardTransactionException {
-            +AtomicTransactionException (
-                \tString message)
-        }
-        note bottom of AtomicTransactionException: Session buffer would overflow for atomic transaction
-
-        +class "AuthenticationNotVerifiedException" as AuthenticationNotVerifiedException extends CardTransactionException {
-            +AuthenticationNotVerifiedException (
-                \tString message)
-            +AuthenticationNotVerifiedException (
-                \tString message, Throwable cause)
-        }
-        note bottom of AuthenticationNotVerifiedException: R-APDU of CloseSecureSession eq 9000 but SAM no more available
-
-        +class "CardAnomalyException" as CardAnomalyException extends CardTransactionException {
-            +CardAnomalyException (
-                \tString message, Throwable cause)
-        }
-        note bottom of CardAnomalyException: Unexpected Card behaviour
-
-        +class "CardCloseSecureSessionException" as CardCloseSecureSessionException extends CardTransactionException {
-            +CardCloseSecureSessionException (
-                \tString message, Throwable cause)
-        }
-        note bottom of CardCloseSecureSessionException: R-APDU of CloseSecureSession != 9000
-
-        +class "CardIOException" as CardIOException extends CardTransactionException {
-            +CardIOException (
-                \tString message)
-            +CardIOException (
-                \tString message, Throwable cause)
-        }
-
-        +class "CardRevokedException" as CardRevokedException extends CardTransactionException {
-            +CardRevokedException (
-                \tString message)
-        }
-
-        +class "DesynchronizedExchangesException" as DesynchronizedExchangesException extends CardTransactionException {
-            +DesynchronizedExchangesException (
-                \tString message)
-        }
-        note bottom of DesynchronizedExchangesException: R-APDU number != C-APDU number
-
-        +class "InconsistencyDataException" as InconsistencyDataException extends CardTransactionException {
-            +InconsistencyDataException (
-                \tString message)
-        }
-        note bottom of InconsistencyDataException: Data read in session != Data read outside session
-
-        +class "SamAnomalyException" as SamAnomalyException extends CardTransactionException {
-            +SamAnomalyException (
-                \tString message, Throwable cause)
-        }
-        note bottom of SamAnomalyException: Unexpected SAM behaviour
-
-        +class "SamIOException" as SamIOException extends CardTransactionException {
-            +SamIOException (
-                \tString message)
-            +SamIOException (
-                \tString message, Throwable cause)
-        }
-
-        +class "SamRevokedException" as SamRevokedException extends CardTransactionException {
-            +SamRevokedException (
-                \tString message)
-        }
-
-        +class "SessionAuthenticationException" as SessionAuthenticationException extends CardTransactionException {
-            +SessionAuthenticationException (
-                \tString message)
-            +SessionAuthenticationException (
-                \tString message, Throwable cause)
-        }
-        note bottom of SessionAuthenticationException: R-APDU of DigestAuthenticate eq 6985
-
-        +class "SvAuthenticationException" as SvAuthenticationException extends CardTransactionException {
-            +SvAuthenticationException (
-                \tString message)
-            +SvAuthenticationException (
-                \tString message, Throwable cause)
-        }
-        note bottom of SvAuthenticationException: R-APDU of SvCheck eq 6985
-
-        +class "UnauthorizedKeyException" as UnauthorizedKeyException extends CardTransactionException {
-            +UnauthorizedKeyException (
-                \tString message)
-        }
-
+        note bottom of CardTransactionException
+            * **AtomicTransactionException**: Session buffer would overflow for atomic transaction
+            * **AuthenticationNotVerifiedException**: R-APDU of CloseSecureSession eq 9000 but SAM no more available
+            * **CardAnomalyException**: Unexpected Card behaviour
+            * **CardCloseSecureSessionException**: R-APDU of CloseSecureSession != 9000
+            * **CardIOException**
+            * **CardRevokedException**
+            * **DesynchronizedExchangesException**: R-APDU number != C-APDU number
+            * **InconsistencyDataException**: Data read in session != Data read outside session
+            * **SamAnomalyException**: Unexpected SAM behaviour
+            * **SamIOException**
+            * **SamRevokedException**
+            * **SessionAuthenticationException**: R-APDU of DigestAuthenticate eq 6985
+            * **SvAuthenticationException**: R-APDU of SvCheck eq 6985
+            * **UnauthorizedKeyException**
+        end note
     }
 }
 

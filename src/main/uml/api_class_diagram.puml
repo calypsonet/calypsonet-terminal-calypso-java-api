@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - calypsonet-terminal-calypso-java-api - 1.1.+ (26/01/2022)
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.1.+ (2022-02-01)
 end title
 
 ' == THEME ==
