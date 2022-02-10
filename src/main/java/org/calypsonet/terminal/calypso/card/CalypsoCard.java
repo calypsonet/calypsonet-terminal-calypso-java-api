@@ -199,7 +199,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>Note that if a secure session is actually running, then the map contains all session
    * modifications, which can be canceled if the secure session fails.
    *
-   * @return A not null reference (may be empty if no one EF is set).
+   * @return A not null reference (it may be empty if no one EF is set).
    * @since 1.0.0
    * @deprecated Since an EF may not have an SFI, the {@link #getFiles()} method must be used
    *     instead.
@@ -213,7 +213,7 @@ public interface CalypsoCard extends SmartCard {
    * <p>Note that if a secure session is actually running, then the set contains all session
    * modifications, which can be canceled if the secure session fails.
    *
-   * @return A not null reference (may be empty if no one EF is set).
+   * @return A not null reference (it may be empty if no one EF is set).
    * @since 1.1.0
    */
   Set<ElementaryFile> getFiles();
@@ -239,7 +239,7 @@ public interface CalypsoCard extends SmartCard {
    * Tells if the last session with this card has been ratified or not.
    *
    * @return True if the card has been ratified.
-   * @throws IllegalStateException If these methods is invoked when no session has been opened.
+   * @throws IllegalStateException If no session has been opened.
    * @since 1.0.0
    */
   boolean isDfRatified();
@@ -350,10 +350,24 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Gets list of references to the {@link SvDebitLogRecord} read from the card.
    *
-   * @return A empty list if no log records are available.
+   * @return An empty list if no log records are available.
    * @since 1.0.0
    */
   List<SvDebitLogRecord> getSvDebitLogAllRecords();
+
+  /**
+   * Returns the transaction counter value provided in the output data of the last successful "Open
+   * Secure Session" command.
+   *
+   * <p>Please note that there are other commands that can decrement the original card counter (e.g.
+   * Change Key, Change/Verify PIN, SV Debit/Undebit/Reload). For these other commands, the counter
+   * value returned by this method will not be updated.
+   *
+   * @return A positive value.
+   * @throws IllegalStateException If no session has been opened.
+   * @since 1.2.0
+   */
+  int getTransactionCounter();
 
   /**
    * All Calypso Card products supported by this API.

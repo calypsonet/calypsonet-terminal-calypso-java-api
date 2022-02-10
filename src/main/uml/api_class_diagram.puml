@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - calypsonet-terminal-calypso-java-api - 1.1.+ (2022-02-01)
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-10)
 end title
 
 ' == THEME ==
@@ -146,6 +146,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +SvLoadLogRecord getSvLoadLogRecord ()
             +SvDebitLogRecord getSvDebitLogLastRecord ()
             +List<SvDebitLogRecord> getSvDebitLogAllRecords ()
+
+            +int getTransactionCounter ()
         }
         +interface DirectoryHeader {
             +short getLid ()
