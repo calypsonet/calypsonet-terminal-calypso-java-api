@@ -109,6 +109,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +ProductType getProductType ()
             +boolean isHce ()
 
+            +boolean isDfInvalidated ()
+
             +byte[] getDfName ()
             +byte[] getApplicationSerialNumber ()
 
@@ -129,8 +131,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +<s>Map<Byte, ElementaryFile> getAllFiles ()</s>
             +Set<ElementaryFile> getFiles ()
 
-            +boolean isDfInvalidated ()
             +boolean isDfRatified ()
+            +int getTransactionCounter ()
 
             +boolean isPkiModeSupported ()
             +boolean isExtendedModeSupported ()
@@ -146,8 +148,6 @@ package "org.calypsonet.terminal.calypso" as api {
             +SvLoadLogRecord getSvLoadLogRecord ()
             +SvDebitLogRecord getSvDebitLogLastRecord ()
             +List<SvDebitLogRecord> getSvDebitLogAllRecords ()
-
-            +int getTransactionCounter ()
         }
         +interface DirectoryHeader {
             +short getLid ()

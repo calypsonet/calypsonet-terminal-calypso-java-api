@@ -58,6 +58,23 @@ public interface CalypsoCard extends SmartCard {
   boolean isHce();
 
   /**
+   * Tells if the current DF is invalidated or not.
+   *
+   * <p>The invalidation status is determined either from the response to the Select Application
+   * command or from the response to a Select File (DF) command.
+   *
+   * <p>For a PRIME_REVISION_3 card, a 6283h status word is returned in response to the Select
+   * Application command when the corresponding DF is invalidated.
+   *
+   * <p>For older Calypso cards it may be necessary to execute a Select File command in order to
+   * determine the invalidation status.
+   *
+   * @return True if the current DF has been invalidated.
+   * @since 1.0.0
+   */
+  boolean isDfInvalidated();
+
+  /**
    * Gets the DF name as an array of bytes.
    *
    * <p>The DF name is the name of the application DF as defined in ISO/IEC 7816-4.
@@ -219,23 +236,6 @@ public interface CalypsoCard extends SmartCard {
   Set<ElementaryFile> getFiles();
 
   /**
-   * Tells if the current DF is invalidated or not.
-   *
-   * <p>The invalidation status is determined either from the response to the Select Application
-   * command or from the response to a Select File (DF) command.
-   *
-   * <p>For a PRIME_REVISION_3 card, a 6283h status word is returned in response to the Select
-   * Application command when the corresponding DF is invalidated.
-   *
-   * <p>For older Calypso cards it may be necessary to execute a Select File command in order to
-   * determine the invalidation status.
-   *
-   * @return True if the current DF has been invalidated.
-   * @since 1.0.0
-   */
-  boolean isDfInvalidated();
-
-  /**
    * Tells if the last session with this card has been ratified or not.
    *
    * @return True if the card has been ratified.
@@ -243,6 +243,20 @@ public interface CalypsoCard extends SmartCard {
    * @since 1.0.0
    */
   boolean isDfRatified();
+
+  /**
+   * Returns the transaction counter value provided in the output data of the last successful "Open
+   * Secure Session" command.
+   *
+   * <p>Please note that there are other commands that can decrement the original card counter (e.g.
+   * Change Key, Change/Verify PIN, SV Debit/Undebit/Reload). For these other commands, the counter
+   * value returned by this method will not be updated.
+   *
+   * @return A positive value.
+   * @throws IllegalStateException If no session has been opened.
+   * @since 1.2.0
+   */
+  int getTransactionCounter();
 
   /**
    * Indicates whether the Public Key Authentication is supported or not (since rev 3.3).
@@ -354,20 +368,6 @@ public interface CalypsoCard extends SmartCard {
    * @since 1.0.0
    */
   List<SvDebitLogRecord> getSvDebitLogAllRecords();
-
-  /**
-   * Returns the transaction counter value provided in the output data of the last successful "Open
-   * Secure Session" command.
-   *
-   * <p>Please note that there are other commands that can decrement the original card counter (e.g.
-   * Change Key, Change/Verify PIN, SV Debit/Undebit/Reload). For these other commands, the counter
-   * value returned by this method will not be updated.
-   *
-   * @return A positive value.
-   * @throws IllegalStateException If no session has been opened.
-   * @since 1.2.0
-   */
-  int getTransactionCounter();
 
   /**
    * All Calypso Card products supported by this API.
