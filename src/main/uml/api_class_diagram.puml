@@ -263,7 +263,7 @@ package "org.calypsonet.terminal.calypso" as api {
             +<back:yellow>CardReader</back> getCardReader ()
             +CalypsoCard getCalypsoCard ()
             +CardSecuritySetting getCardSecuritySetting ()
-            +String getTransactionAuditData ()
+            +List<byte[]> getTransactionAuditData ()
 
             +<s>CardTransactionManager prepareSelectFile (byte[] lid)</s>
             +CardTransactionManager prepareSelectFile (short lid)
