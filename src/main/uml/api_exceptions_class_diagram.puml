@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - Exceptions of calypsonet-terminal-calypso-java-api - 1.1.+ (2022-02-01)
+    Calypsonet - Exceptions of calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-10)
 end title
 
 ' == THEME ==
