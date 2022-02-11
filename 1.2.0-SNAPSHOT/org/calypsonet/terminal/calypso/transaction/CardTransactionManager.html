@@ -203,10 +203,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colFirst"><code>java.util.List&lt;byte[]&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTransactionAuditData()">getTransactionAuditData</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the audit data of the transaction.</div>
+<div class="block">Returns the audit data of the transaction containing all APDU exchanges with the card and the
+ SAM if present.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -634,13 +635,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getTransactionAuditData</h4>
-<pre class="methodSignature">java.lang.String&nbsp;getTransactionAuditData()</pre>
-<div class="block">Gets the audit data of the transaction.</div>
+<pre class="methodSignature">java.util.List&lt;byte[]&gt;&nbsp;getTransactionAuditData()</pre>
+<div class="block">Returns the audit data of the transaction containing all APDU exchanges with the card and the
+ SAM if present.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>Null if there is no audit data.</dd>
+<dd>An empty list if there is no audit data.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.0.0</dd>
+<dd>1.2.0</dd>
 </dl>
 </li>
 </ul>
