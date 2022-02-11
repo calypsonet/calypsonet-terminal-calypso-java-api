@@ -11,6 +11,7 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
+import java.util.List;
 import java.util.Map;
 import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
@@ -83,12 +84,13 @@ public interface CardTransactionManager {
   CardSecuritySetting getCardSecuritySetting();
 
   /**
-   * Gets the audit data of the transaction.
+   * Returns the audit data of the transaction containing all APDU exchanges with the card and the
+   * SAM if present.
    *
-   * @return Null if there is no audit data.
-   * @since 1.0.0
+   * @return An empty list if there is no audit data.
+   * @since 1.2.0
    */
-  String getTransactionAuditData();
+  List<byte[]> getTransactionAuditData();
 
   /**
    * Schedules the execution of a <b>Select File</b> command based on the file's LID.
