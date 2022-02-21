@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-10)
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-17)
 end title
 
 ' == THEME ==
@@ -71,6 +71,12 @@ package "org.calypsonet.terminal.calypso" as api {
         FCI_FOR_CURRENT_DF
         EF_LIST
         TRACEABILITY_INFORMATION
+    }
+    package spi {
+        +interface SamRevocationServiceSpi {
+            +boolean isSamRevoked (byte[] serialNumber)
+            +boolean isSamRevoked (byte[] serialNumber, int counterValue)
+        }
     }
     package card {
         +interface "<<<back:yellow>CardSelection</back>>>\nCalypsoCardSelection" as CalypsoCardSelection {
@@ -259,11 +265,46 @@ package "org.calypsonet.terminal.calypso" as api {
         }
     }
     package transaction {
-        +interface CardTransactionManager {
+        ' Common to Card and SAM
+        +interface CommonTransactionManager<T extends CommonTransactionManager<T, E>,\nE extends CommonSecuritySetting<E>> {
+            +E getSecuritySetting ()
+            +List<byte[]> getTransactionAuditData ()
+
+            +T prepareComputeSignature (SignatureComputationData data)
+            +T prepareVerifySignature (SignatureVerificationData data)
+
+            +T processCommands ()
+        }
+        +interface SignatureComputationData {
+            +SignatureComputationData setData (byte[] data, byte kif, byte kvc)
+            +SignatureComputationData setSignatureSize (int size)
+            +SignatureComputationData enableSamTraceabilityMode (int offset, boolean usePartialSamSerialNumber)
+            +SignatureComputationData disableBusyMode ()
+            +SignatureComputationData useKeyDiversifier (byte[] keyDiversifier)
+
+            +byte[] getSignature ()
+            +byte[] getSignedData ()
+            +byte[] getSamTraceabilitySerialNumber ()
+            +int getSamTraceabilityKeyCounter ()
+        }
+        +interface SignatureVerificationData {
+            +SignatureVerificationData setData (byte[] data, byte[] signature, byte kif, byte kvc)
+            +SignatureVerificationData checkSamTraceabilityData (int offset, boolean isPartialSamSerialNumber, boolean verifySamRevocationStatus)
+            +SignatureVerificationData disableBusyMode ()
+            +SignatureVerificationData useKeyDiversifier (byte[] keyDiversifier)
+
+            +boolean isSignatureValid ()
+            +byte[] getSamTraceabilitySerialNumber ()
+            +int getSamTraceabilityKeyCounter ()
+        }
+        +interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
+            +T setSamRevocationServiceSpi (SamRevocationServiceSpi service)
+        }
+        ' Card
+        +interface CardTransactionManager extends CommonTransactionManager {
             +<back:yellow>CardReader</back> getCardReader ()
             +CalypsoCard getCalypsoCard ()
-            +CardSecuritySetting getCardSecuritySetting ()
-            +List<byte[]> getTransactionAuditData ()
+            +<s>CardSecuritySetting getCardSecuritySetting ()</s>
 
             +<s>CardTransactionManager prepareSelectFile (byte[] lid)</s>
             +CardTransactionManager prepareSelectFile (short lid)
@@ -309,7 +350,7 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +CardTransactionManager prepareReleaseCardChannel ()
 
-            +CardTransactionManager processCardCommands ()
+            +<s>CardTransactionManager processCardCommands ()</s>
 
             +CardTransactionManager processVerifyPin (byte[] pin)
             +CardTransactionManager processChangePin (byte[] newPin)
@@ -328,13 +369,12 @@ package "org.calypsonet.terminal.calypso" as api {
             DO
             UNDO
         }
-        +interface CardSecuritySetting {
+        +interface CardSecuritySetting extends CommonSecuritySetting {
             +CardSecuritySetting setSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
 
             +CardSecuritySetting enableMultipleSession ()
             +CardSecuritySetting enableRatificationMechanism ()
             +CardSecuritySetting enablePinPlainTransmission ()
-            +CardSecuritySetting enableTransactionAudit ()
             +CardSecuritySetting enableSvLoadAndDebitLog ()
             +CardSecuritySetting authorizeSvNegativeBalance ()
 
@@ -359,10 +399,23 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +List<Integer> getMatchingRecordNumbers ()
         }
+        ' SAM
+        +interface SamTransactionManager extends CommonTransactionManager {
+            +<back:yellow>CardReader</back> getSamReader ()
+            +CalypsoSam getCalypsoSam ()
+        }
+        +interface SamSecuritySetting extends CommonSecuritySetting {
+        }
     }
 }
 
 ' Associations
+
+CommonTransactionManager .left.> SignatureComputationData #C_USE : use >
+CommonTransactionManager .right.> SignatureVerificationData #C_USE : use >
+CommonTransactionManager ..> CommonSecuritySetting #C_LINK : provide >
+
+CommonSecuritySetting ..> SamRevocationServiceSpi #C_USE : use >
 
 CalypsoCardSelection +-- FileOccurrence
 CalypsoCardSelection ..> FileOccurrence #C_LINK : provide >
@@ -382,6 +435,9 @@ CardSecuritySetting ..> WriteAccessLevel #C_USE : use >
 CardSecuritySetting ..> CalypsoSam #C_LINK : provide >
 
 CalypsoSamSelection ..> SamProductType #C_USE : use >
+
+SamTransactionManager ..> CalypsoSam #C_LINK : provide >
+SamTransactionManager ..> SamSecuritySetting #C_LINK : provide >
 
 CalypsoSam +-- SamProductType
 CalypsoSam ..> SamProductType #C_LINK : provide >
@@ -406,11 +462,12 @@ FileHeader .right.> FileType #C_LINK : provide >
 
 ' == LAYOUT ==
 
-'ProductType -[hidden]- SamCardResourceServiceBuilder
+'SignatureComputationData -[hidden]- SignatureVerificationData
 
 ' == STYLE ==
 
 package api #C_GREY1 {}
+package spi #C_GREY2 {}
 package card #C_GREY2 {}
 package sam #C_GREY2 {}
 package transaction #C_GREY2 {}

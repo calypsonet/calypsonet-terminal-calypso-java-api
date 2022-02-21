@@ -6,8 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- `CommonTransactionManager` API.
+- `CommonSecuritySetting` API.
+- `SamTransactionManager` API.
+- `SamSecuritySetting` API.
+- `SignatureComputationData` API (issue [#28]).
+- `prepareComputeSignature` method to `CommonTransactionManager` API (issue [#28]).
+- `SignatureVerificationData` API (issue [#29]).
+- `SamRevocationServiceSpi` SPI (issue [#29]).
+- `prepareVerifySignature` method to `CommonTransactionManager` API (issue [#29]).
+- `getSecuritySetting` method to `CommonTransactionManager` API.
+- `processCommands` method to `CommonTransactionManager` API.
 - `getTransactionCounter` method to `CalypsoCard` API (issue [#42]).
-- `getTransactionAuditData` method to `CardTransactionManager` API (issue [#44]).
+- `getTransactionAuditData` method to `CommonSecuritySetting` API (issue [#44]).
+### Deprecated
+- `getCardSecuritySetting` method in `CardTransactionManager`.
+- `processCardCommands` method in `CardTransactionManager`.
 
 ## [1.1.0] - 2022-02-01
 ### Added
@@ -70,6 +84,8 @@ This is the initial release.
 [#42]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/42
 [#40]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/40
 [#38]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/38
+[#29]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/29
+[#28]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/28
 [#24]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/24
 [#23]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/23
 [#22]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/22

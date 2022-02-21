@@ -11,7 +11,6 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
-import java.util.List;
 import java.util.Map;
 import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
@@ -56,7 +55,8 @@ import org.calypsonet.terminal.reader.CardReader;
  *
  * @since 1.0.0
  */
-public interface CardTransactionManager {
+public interface CardTransactionManager
+    extends CommonTransactionManager<CardTransactionManager, CardSecuritySetting> {
 
   /**
    * Gets the reader used to communicate with the card on which the transaction is performed.
@@ -80,17 +80,10 @@ public interface CardTransactionManager {
    *
    * @return Null if the transaction does not use security settings.
    * @since 1.0.0
+   * @deprecated Use {@link #getSecuritySetting()} instead.
    */
+  @Deprecated
   CardSecuritySetting getCardSecuritySetting();
-
-  /**
-   * Returns the audit data of the transaction containing all APDU exchanges with the card and the
-   * SAM if present.
-   *
-   * @return An empty list if there is no audit data.
-   * @since 1.2.0
-   */
-  List<byte[]> getTransactionAuditData();
 
   /**
    * Schedules the execution of a <b>Select File</b> command based on the file's LID.
@@ -879,7 +872,9 @@ public interface CardTransactionManager {
    * @throws CardTransactionException If a functional error occurs (including card and SAM IO
    *     errors)
    * @since 1.0.0
+   * @deprecated Use {@link #processCommands()} instead.
    */
+  @Deprecated
   CardTransactionManager processCardCommands();
 
   /**

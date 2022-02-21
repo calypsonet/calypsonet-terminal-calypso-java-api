@@ -16,14 +16,11 @@ import org.calypsonet.terminal.calypso.sam.CalypsoSam;
 import org.calypsonet.terminal.reader.CardReader;
 
 /**
- * Data to manage the security operations of a Calypso transaction.
- *
- * <p>Fluent setters allow to define all the required parameters, among which the resource profile
- * of the SAM card is the only mandatory one.
+ * Data to manage the security operations of a Calypso card transaction.
  *
  * @since 1.0.0
  */
-public interface CardSecuritySetting {
+public interface CardSecuritySetting extends CommonSecuritySetting<CardSecuritySetting> {
 
   /**
    * Defines the SAM and the reader through which it is accessible to be used to handle the relevant
@@ -63,14 +60,6 @@ public interface CardSecuritySetting {
    * @since 1.0.0
    */
   CardSecuritySetting enablePinPlainTransmission();
-
-  /**
-   * Enables the collection of transaction data for a later security audit.
-   *
-   * @return The current instance.
-   * @since 1.0.0
-   */
-  CardSecuritySetting enableTransactionAudit();
 
   /**
    * Enables the retrieval of both loading and debit log records.
