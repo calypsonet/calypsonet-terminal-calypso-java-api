@@ -59,7 +59,7 @@ public interface CardTransactionManager
     extends CommonTransactionManager<CardTransactionManager, CardSecuritySetting> {
 
   /**
-   * Gets the reader used to communicate with the card on which the transaction is performed.
+   * Gets the reader used to communicate with the target card on which the transaction is performed.
    *
    * @return A not null reference.
    * @since 1.0.0
@@ -67,7 +67,7 @@ public interface CardTransactionManager
   CardReader getCardReader();
 
   /**
-   * Gets the card on which the transaction is performed.
+   * Gets the target card on which the transaction is performed.
    *
    * @return A not null {@link CalypsoCard} having a {@link CalypsoCard.ProductType} different from
    *     {@link CalypsoCard.ProductType#UNKNOWN}.

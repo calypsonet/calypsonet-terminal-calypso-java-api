@@ -50,6 +50,7 @@ public interface CommonTransactionManager<
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
+   * @see SignatureComputationData
    * @since 1.2.0
    */
   T prepareComputeSignature(SignatureComputationData data);
@@ -63,9 +64,10 @@ public interface CommonTransactionManager<
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
+   * @see SignatureVerificationData
    * @since 1.2.0
    */
-  T prepareVerifySignature(SignatureComputationData data);
+  T prepareVerifySignature(SignatureVerificationData data);
 
   /**
    * Process all previously prepared commands.

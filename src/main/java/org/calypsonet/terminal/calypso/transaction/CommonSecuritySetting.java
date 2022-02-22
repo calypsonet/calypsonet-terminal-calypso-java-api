@@ -11,7 +11,9 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.transaction;
 
+import org.calypsonet.terminal.calypso.sam.CalypsoSam;
 import org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi;
+import org.calypsonet.terminal.reader.CardReader;
 
 /**
  * Common data to manage the security operations of a Calypso transaction.
@@ -20,6 +22,19 @@ import org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi;
  * @since 1.2.0
  */
 public interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
+
+  /**
+   * Defines the control SAM and the reader through which it is accessible to be used to handle the
+   * relevant cryptographic operations.
+   *
+   * @param samReader The control SAM reader.
+   * @param calypsoSam The control Calypso SAM.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the arguments is null or if the product type of
+   *     {@link CalypsoSam} is equal to {@link CalypsoSam.ProductType#UNKNOWN}.
+   * @since 1.2.0
+   */
+  T setControlSamResource(CardReader samReader, CalypsoSam calypsoSam);
 
   /**
    * Sets the service to be used to dynamically check if a SAM is revoked or not.

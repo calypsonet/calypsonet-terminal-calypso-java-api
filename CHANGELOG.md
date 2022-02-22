@@ -19,9 +19,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `processCommands` method to `CommonTransactionManager` API.
 - `getTransactionCounter` method to `CalypsoCard` API (issue [#42]).
 - `getTransactionAuditData` method to `CommonSecuritySetting` API (issue [#44]).
+- `setControlSamResource` method to `CommonSecuritySetting`.
 ### Deprecated
 - `getCardSecuritySetting` method in `CardTransactionManager`.
 - `processCardCommands` method in `CardTransactionManager`.
+- `setSamResource` method in `CardSecuritySetting`.
 
 ## [1.1.0] - 2022-02-01
 ### Added

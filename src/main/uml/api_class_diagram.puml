@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-17)
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-22)
 end title
 
 ' == THEME ==
@@ -289,8 +289,8 @@ package "org.calypsonet.terminal.calypso" as api {
         }
         +interface SignatureVerificationData {
             +SignatureVerificationData setData (byte[] data, byte[] signature, byte kif, byte kvc)
-            +SignatureVerificationData checkSamTraceabilityData (int offset, boolean isPartialSamSerialNumber, boolean verifySamRevocationStatus)
-            +SignatureVerificationData disableBusyMode ()
+            +SignatureVerificationData withSignatureComputedInSamTraceabilityMode (int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus)
+            +SignatureVerificationData withSignatureComputedInNonBusyMode ()
             +SignatureVerificationData useKeyDiversifier (byte[] keyDiversifier)
 
             +boolean isSignatureValid ()
@@ -298,6 +298,7 @@ package "org.calypsonet.terminal.calypso" as api {
             +int getSamTraceabilityKeyCounter ()
         }
         +interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
+            +T setControlSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
             +T setSamRevocationServiceSpi (SamRevocationServiceSpi service)
         }
         ' Card
@@ -370,7 +371,7 @@ package "org.calypsonet.terminal.calypso" as api {
             UNDO
         }
         +interface CardSecuritySetting extends CommonSecuritySetting {
-            +CardSecuritySetting setSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
+            +<s>CardSecuritySetting setSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)</s>
 
             +CardSecuritySetting enableMultipleSession ()
             +CardSecuritySetting enableRatificationMechanism ()

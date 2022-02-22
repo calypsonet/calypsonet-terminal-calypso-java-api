@@ -15,7 +15,7 @@ import org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareVerifySignature(SignatureComputationData)} method.
+ * CommonTransactionManager#prepareVerifySignature(SignatureVerificationData)} method.
  *
  * @since 1.2.0
  */
@@ -35,25 +35,31 @@ public interface SignatureVerificationData {
   SignatureVerificationData setData(byte[] data, byte[] signature, byte kif, byte kvc);
 
   /**
-   * Requests to verify the SAM traceability data.
+   * Indicates that the signature has been computed in "SAM traceability" mode and therefore whether
+   * the revocation status of the signing SAM should be checked or not.
    *
-   * <p>By default, the SAM traceability data verification is disabled.
+   * <p>By default, the signature is not supposed to have been computed in "SAM traceability" mode.
    *
    * @param offset The offset in bits of the SAM traceability data.
-   * @param isPartialSamSerialNumber True if only the 3 LSBytes of the SAM serial number was used.
-   * @param verifySamRevocationStatus True if it is requested to verify if the SAM is revoked or
-   *     not. If true, then the {@link org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi}
+   * @param isPartialSamSerialNumber True if only the 3 LSBytes of the SAM serial number have been
+   *     used.
+   * @param checkSamRevocationStatus True if it is requested to check if the SAM is revoked or not.
+   *     If true, then the {@link org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi}
    *     service must be registered in the security settings using the {@link
    *     CommonSecuritySetting#setSamRevocationService(SamRevocationServiceSpi)} method.
    * @return The current instance.
+   * @see SignatureComputationData#enableSamTraceabilityMode(int, boolean)
+   * @see SamRevocationServiceSpi
+   * @see CommonSecuritySetting#setSamRevocationService(SamRevocationServiceSpi)
    * @since 1.2.0
    */
-  SignatureVerificationData checkSamTraceabilityData(
-      int offset, boolean isPartialSamSerialNumber, boolean verifySamRevocationStatus);
+  SignatureVerificationData withSignatureComputedInSamTraceabilityMode(
+      int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus);
 
   /**
-   * Disables the "Busy" mode. For security reasons, it is recommended to use the "Busy" mode in all
-   * new usages of this command.
+   * Indicates that the signature has been computed in non "Busy" mode.
+   *
+   * <p>By default, the signature is supposed to have been computed in "Busy" mode.
    *
    * <p>The signature may have been generated with "Busy mode" enabled. In this mode, after a "PSO
    * Verify Signature" failing because of an incorrect signature, during a few seconds the SAM
@@ -69,16 +75,18 @@ public interface SignatureVerificationData {
    * <p>Note that after a reset of the SAM, "PSO Verify Signature" commands being in "Busy" mode
    * fail with the busy status until the end of the busy mode duration.
    *
-   * <p>By default, the "Busy" mode is enabled.
-   *
    * @return The current instance.
+   * @see SignatureComputationData#disableBusyMode()
    * @since 1.2.0
    */
-  SignatureVerificationData disableBusyMode();
+  SignatureVerificationData withSignatureComputedInNonBusyMode();
 
   /**
    * Requires to perform a key diversification before verifying the signature using the provided
    * diversifier.
+   *
+   * <p>Note: if the SAM traceability data is present, it is possible that the key used to compute
+   * the signature was diversified according to the serial number of the signing SAM.
    *
    * <p>By default, there will be no new diversification of the key.
    *
@@ -105,7 +113,7 @@ public interface SignatureVerificationData {
    * @return A byte array of 3 or 4 bytes.
    * @throws IllegalStateException If the command has not yet been processed or if the check of the
    *     "SAM traceability" data is disabled.
-   * @see #checkSamTraceabilityData(int, boolean, boolean)
+   * @see #withSignatureComputedInSamTraceabilityMode(int, boolean, boolean)
    * @since 1.2.0
    */
   byte[] getSamTraceabilitySerialNumber();
@@ -117,7 +125,7 @@ public interface SignatureVerificationData {
    * @return A byte array of 3 bytes.
    * @throws IllegalStateException If the command has not yet been processed or if the check of the
    *     "SAM traceability" data is disabled.
-   * @see #checkSamTraceabilityData(int, boolean, boolean)
+   * @see #withSignatureComputedInSamTraceabilityMode(int, boolean, boolean)
    * @since 1.2.0
    */
   int getSamTraceabilityKeyCounter();
