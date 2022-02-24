@@ -52,7 +52,7 @@ package "org.calypsonet.terminal.calypso" as api {
             +**UnauthorizedKeyException**
             +**CardRevokedException**
             +**SamRevokedException**
-            +**SecurityException**: Number of R-APDUs != number of C-APDUs **or** data read in session != data read outside session.
+            +**InconsistentDataException**: Number of R-APDUs != number of C-APDUs **or** data read in session != data read outside session.
             +**InvalidCardSignatureException**: R-APDU of DigestAuthenticate = 6985 **or** R-APDU of SvCheck = 6985.
             +**CardSignatureNotVerifiableException**: R-APDU of CloseSecureSession = 9000 but SAM is no more available.
             +**UnexpectedCommandStatusException**

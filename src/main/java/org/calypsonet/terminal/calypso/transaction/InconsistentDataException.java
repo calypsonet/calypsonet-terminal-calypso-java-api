@@ -12,24 +12,24 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates a detected security problem related to one of the following cases:
+ * Indicates the detection of inconsistent data related to one of the following cases:
  *
  * <ul>
  *   <li>A de-synchronization of the APDU exchanges. This means that the number of APDU responses is
- *       different from the number of APDU requests;
+ *       different from the number of APDU requests.
  *   <li>An inconsistency in the card data. This can happen, for example, if the data read in
  *       session is different from the data read outside the session.
  * </ul>
  *
  * @since 1.2.0
  */
-public class SecurityException extends RuntimeException {
+public class InconsistentDataException extends RuntimeException {
 
   /**
    * @param message The message to identify the exception context.
    * @since 1.2.0
    */
-  public SecurityException(String message) {
+  public InconsistentDataException(String message) {
     super(message);
   }
 }

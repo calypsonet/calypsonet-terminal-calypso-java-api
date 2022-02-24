@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renaming of `AtomicTransactionException` to `SessionBufferOverflowException`.
 - Renaming of `AuthenticationNotVerifiedException` to `CardSignatureNotVerifiableException`.
 - Merging of `CardAnomalyException`, `SamAnomalyException` and `CardCloseSecureSessionException` to `UnexpectedCommandStatusException`.
-- Merging of `DesynchronizedExchangesException` and `InconsistencyDataException` to `SecurityException`.
+- Merging of `DesynchronizedExchangesException` and `InconsistencyDataException` to `InconsistentDataException`.
 - Merging of `SessionAuthenticationException` and `SvAuthenticationException` to `InvalidCardSignatureException`.
 ### Deprecated
 - `CardTransactionManager.getCardSecuritySetting` method.

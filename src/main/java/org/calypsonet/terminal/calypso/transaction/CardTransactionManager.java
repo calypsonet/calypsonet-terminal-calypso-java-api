@@ -902,8 +902,7 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
-   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
-   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws InconsistentDataException If inconsistent data have been detected.
    * @throws SessionBufferOverflowException If a secure session is open and multiple session mode is
    *     disabled and the session buffer capacity is not sufficient.
    * @throws CardSignatureNotVerifiableException If a secure session is open and multiple session
@@ -944,8 +943,7 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
-   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
-   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws InconsistentDataException If inconsistent data have been detected.
    * @since 1.0.0
    */
   CardTransactionManager processVerifyPin(byte[] pin);
@@ -969,8 +967,7 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
-   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
-   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws InconsistentDataException If inconsistent data have been detected.
    * @since 1.0.0
    */
   CardTransactionManager processChangePin(byte[] newPin);
@@ -998,8 +995,7 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
-   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
-   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws InconsistentDataException If inconsistent data have been detected.
    * @since 1.1.0
    */
   CardTransactionManager processChangeKey(
@@ -1096,8 +1092,7 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
-   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
-   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws InconsistentDataException If inconsistent data have been detected.
    * @throws UnauthorizedKeyException If the card requires an unauthorized session key.
    * @throws SessionBufferOverflowException If multiple session mode is disabled and the session
    *     buffer capacity is not sufficient.
@@ -1163,8 +1158,7 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
-   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
-   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws InconsistentDataException If inconsistent data have been detected.
    * @throws SessionBufferOverflowException If multiple session mode is disabled and the session
    *     buffer capacity is not sufficient.
    * @throws CardSignatureNotVerifiableException If session is correctly closed but the SAM is no
