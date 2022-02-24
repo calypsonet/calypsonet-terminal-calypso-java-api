@@ -1,5 +1,5 @@
 /* **************************************************************************************
- * Copyright (c) 2020 Calypso Networks Association https://calypsonet.org/
+ * Copyright (c) 2022 Calypso Networks Association https://calypsonet.org/
  *
  * See the NOTICE file(s) distributed with this work for additional information
  * regarding copyright ownership.
@@ -12,20 +12,18 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates an inconsistency in the card data.
+ * Indicates that the secure session cannot be performed atomically because the session buffer
+ * capacity is not sufficient to handle all the prepared write commands.
  *
- * <p>This can occur, for example, if data read in session is different from data read outside the
- * session.
- *
- * @since 1.0.0
+ * @since 1.2.0
  */
-public class InconsistencyDataException extends CardTransactionException {
+public class SessionBufferOverflowException extends RuntimeException {
 
   /**
-   * @param message The message to identify the exception context
-   * @since 1.0.0
+   * @param message The message to identify the exception context.
+   * @since 1.2.0
    */
-  public InconsistencyDataException(String message) {
+  public SessionBufferOverflowException(String message) {
     super(message);
   }
 }

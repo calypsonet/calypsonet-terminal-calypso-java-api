@@ -138,9 +138,9 @@ public interface CardTransactionManager
    *
    * @param tag The tag to use.
    * @return The object instance.
-   * @throws IllegalArgumentException If tag is null.
    * @throws UnsupportedOperationException If the Get Data command with the provided tag is not
    *     supported.
+   * @throws IllegalArgumentException If tag is null.
    * @since 1.0.0
    */
   CardTransactionManager prepareGetData(GetDataTag tag);
@@ -442,6 +442,7 @@ public interface CardTransactionManager
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
+   * @see SearchCommandData
    * @since 1.1.0
    */
   CardTransactionManager prepareSearchRecords(SearchCommandData data);
@@ -680,8 +681,8 @@ public interface CardTransactionManager
    * @param svAction The type of action: DO a debit or a positive reload, UNDO an undebit or a.
    *     negative reload
    * @return The current instance.
-   * @throws IllegalArgumentException If one of the arguments is null.
    * @throws UnsupportedOperationException If the SV feature is not available for this card.
+   * @throws IllegalArgumentException If one of the arguments is null.
    * @since 1.0.0
    */
   CardTransactionManager prepareSvGet(SvOperation svOperation, SvAction svAction);
@@ -701,9 +702,14 @@ public interface CardTransactionManager
    * @param free 2-byte free value.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
-   * @throws UnsupportedOperationException If the SV feature is not available for this card.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @throws IllegalStateException In one of the following cases:
+   *     <ul>
+   *       <li>Another SV command was already prepared inside the same secure session.
+   *       <li>The SV command is not placed in the first position in the list of prepared commands.
+   *       <li>The SV command does not follow a "SV Get" command.
+   *       <li>The command and the SV operation are not consistent.
+   *     </ul>
+   *
    * @since 1.0.0
    */
   CardTransactionManager prepareSvReload(int amount, byte[] date, byte[] time, byte[] free);
@@ -721,9 +727,14 @@ public interface CardTransactionManager
    *     action, in the range 0..8388608 for an UNDO action.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is out of range.
-   * @throws UnsupportedOperationException If the SV feature is not available for this card.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @throws IllegalStateException In one of the following cases:
+   *     <ul>
+   *       <li>Another SV command was already prepared inside the same secure session.
+   *       <li>The SV command is not placed in the first position in the list of prepared commands.
+   *       <li>The SV command does not follow a "SV Get" command.
+   *       <li>The command and the SV operation are not consistent.
+   *     </ul>
+   *
    * @since 1.0.0
    */
   CardTransactionManager prepareSvReload(int amount);
@@ -747,6 +758,15 @@ public interface CardTransactionManager
    * @param time 2-byte free value.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
+   * @throws IllegalStateException In one of the following cases:
+   *     <ul>
+   *       <li>New value is negative and negative balances are not allowed.
+   *       <li>Another SV command was already prepared inside the same secure session.
+   *       <li>The SV command is not placed in the first position in the list of prepared commands.
+   *       <li>The SV command does not follow a "SV Get" command.
+   *       <li>The command and the SV operation are not consistent.
+   *     </ul>
+   *
    * @since 1.0.0
    */
   CardTransactionManager prepareSvDebit(int amount, byte[] date, byte[] time);
@@ -775,6 +795,15 @@ public interface CardTransactionManager
    *     subtracted and 0..32768 when added.
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
+   * @throws IllegalStateException In one of the following cases:
+   *     <ul>
+   *       <li>New value is negative and negative balances are not allowed.
+   *       <li>Another SV command was already prepared inside the same secure session.
+   *       <li>The SV command is not placed in the first position in the list of prepared commands.
+   *       <li>The SV command does not follow a "SV Get" command.
+   *       <li>The command and the SV operation are not consistent.
+   *     </ul>
+   *
    * @since 1.0.0
    */
   CardTransactionManager prepareSvDebit(int amount);
@@ -869,8 +898,20 @@ public interface CardTransactionManager
    * </ul>
    *
    * @return The current instance.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
+   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws SessionBufferOverflowException If a secure session is open and multiple session mode is
+   *     disabled and the session buffer capacity is not sufficient.
+   * @throws CardSignatureNotVerifiableException If a secure session is open and multiple session
+   *     mode is enabled and an intermediate session is correctly closed but the SAM is no longer
+   *     available to verify the card signature.
+   * @throws InvalidCardSignatureException If a secure session is open and multiple session mode is
+   *     enabled and an intermediate session is correctly closed but the card signature is
+   *     incorrect.
    * @since 1.0.0
    * @deprecated Use {@link #processCommands()} instead.
    */
@@ -899,8 +940,12 @@ public interface CardTransactionManager
    * @throws IllegalArgumentException If the provided argument is out of range.
    * @throws IllegalStateException If commands have been prepared before invoking this process
    *     method.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
+   *     exchanges, an inconsistency in the card data, etc...).
    * @since 1.0.0
    */
   CardTransactionManager processVerifyPin(byte[] pin);
@@ -920,8 +965,12 @@ public interface CardTransactionManager
    * @throws UnsupportedOperationException If the PIN feature is not available for this card.
    * @throws IllegalArgumentException If the provided argument is out of range.
    * @throws IllegalStateException If the command is executed while a secure session is open.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors).
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
+   *     exchanges, an inconsistency in the card data, etc...).
    * @since 1.0.0
    */
   CardTransactionManager processChangePin(byte[] newPin);
@@ -945,6 +994,12 @@ public interface CardTransactionManager
    * @throws UnsupportedOperationException If the Change Key command is not available for this card.
    * @throws IllegalArgumentException If the provided key index is out of range.
    * @throws IllegalStateException If the command is executed while a secure session is open.
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
+   *     exchanges, an inconsistency in the card data, etc...).
    * @since 1.1.0
    */
   CardTransactionManager processChangeKey(
@@ -980,8 +1035,8 @@ public interface CardTransactionManager
    *
    * <ul>
    *   <li>If the session was opened with the default atomic mode and the previously prepared
-   *       commands will cause the buffer to be exceeded, then an {@link AtomicTransactionException}
-   *       is raised and no transmission to the card is made. <br>
+   *       commands will cause the buffer to be exceeded, then an {@link
+   *       SessionBufferOverflowException} is raised and no transmission to the card is made. <br>
    *   <li>If the session was opened with the multiple session mode and the buffer is to be exceeded
    *       then a split into several secure sessions is performed automatically. However, regardless
    *       of the number of intermediate sessions performed, a secure session is opened at the end
@@ -1036,9 +1091,21 @@ public interface CardTransactionManager
    * @param writeAccessLevel An {@link WriteAccessLevel} enum entry.
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is null.
-   * @throws IllegalStateException If no {@link CardSecuritySetting} is available
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @throws IllegalStateException If no {@link CardSecuritySetting} is available.
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
+   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws UnauthorizedKeyException If the card requires an unauthorized session key.
+   * @throws SessionBufferOverflowException If multiple session mode is disabled and the session
+   *     buffer capacity is not sufficient.
+   * @throws CardSignatureNotVerifiableException If multiple session mode is enabled and an
+   *     intermediate session is correctly closed but the SAM is no longer available to verify the
+   *     card signature.
+   * @throws InvalidCardSignatureException If multiple session mode is enabled and an intermediate
+   *     session is correctly closed but the card signature is incorrect.
    * @since 1.0.0
    */
   CardTransactionManager processOpening(WriteAccessLevel writeAccessLevel);
@@ -1092,8 +1159,18 @@ public interface CardTransactionManager
    *
    * @return The current instance.
    * @throws IllegalStateException If no session is open.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors).
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
+   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws SessionBufferOverflowException If multiple session mode is disabled and the session
+   *     buffer capacity is not sufficient.
+   * @throws CardSignatureNotVerifiableException If session is correctly closed but the SAM is no
+   *     longer available to verify the card signature.
+   * @throws InvalidCardSignatureException If session is correctly closed but the card signature is
+   *     incorrect.
    * @since 1.0.0
    */
   CardTransactionManager processClosing();
@@ -1107,8 +1184,9 @@ public interface CardTransactionManager
    *
    * @return The current instance.
    * @throws IllegalStateException If no session is open.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @throws ReaderIOException If a communication error with the card reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws UnexpectedCommandStatusException If the command returns an unexpected status.
    * @since 1.0.0
    */
   CardTransactionManager processCancel();

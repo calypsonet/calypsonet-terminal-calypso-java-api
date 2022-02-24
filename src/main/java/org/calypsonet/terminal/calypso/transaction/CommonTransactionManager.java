@@ -73,8 +73,20 @@ public interface CommonTransactionManager<
    * Process all previously prepared commands.
    *
    * @return The current instance.
-   * @throws CardTransactionException If a functional error occurs (including card and SAM IO
-   *     errors)
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws SecurityException If a security error occurs (e.g. a de-synchronization of the APDU
+   *     exchanges, an inconsistency in the card data, etc...).
+   * @throws SessionBufferOverflowException If a secure session is open and multiple session mode is
+   *     disabled and the session buffer capacity is not sufficient.
+   * @throws CardSignatureNotVerifiableException If a secure session is open and multiple session
+   *     mode is enabled and an intermediate session is correctly closed but the SAM is no longer
+   *     available to verify the card signature.
+   * @throws InvalidCardSignatureException If a secure session is open and multiple session mode is
+   *     enabled and an intermediate session is correctly closed but the card signature is
+   *     incorrect.
    * @since 1.2.0
    */
   T processCommands();

@@ -16,10 +16,10 @@ package org.calypsonet.terminal.calypso.transaction;
  *
  * @since 1.0.0
  */
-public class CardRevokedException extends CardTransactionException {
+public class CardRevokedException extends RuntimeException {
 
   /**
-   * @param message The message to identify the exception context
+   * @param message The message to identify the exception context.
    * @since 1.0.0
    */
   public CardRevokedException(String message) {

@@ -53,7 +53,7 @@ public interface SignatureVerificationData {
    * @see CommonSecuritySetting#setSamRevocationService(SamRevocationServiceSpi)
    * @since 1.2.0
    */
-  SignatureVerificationData withSignatureComputedInSamTraceabilityMode(
+  SignatureVerificationData withSamTraceabilityMode(
       int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus);
 
   /**
@@ -79,7 +79,7 @@ public interface SignatureVerificationData {
    * @see SignatureComputationData#disableBusyMode()
    * @since 1.2.0
    */
-  SignatureVerificationData withSignatureComputedInNonBusyMode();
+  SignatureVerificationData withoutBusyMode();
 
   /**
    * Requires to perform a key diversification before verifying the signature using the provided
@@ -102,31 +102,9 @@ public interface SignatureVerificationData {
    *
    * @return True if the signature is valid.
    * @throws IllegalStateException If the command has not yet been processed.
+   * @throws SamRevokedException If the signature was computed in "SAM traceability" mode and if the
+   *     verification of the SAM revocation status was requested and if the SAM is revoked.
    * @since 1.2.0
    */
   boolean isSignatureValid();
-
-  /**
-   * Returns the full (4 bytes) or partial (3 LSBytes) SAM serial number written in the traceability
-   * information if the check of the "SAM traceability" data has been enabled.
-   *
-   * @return A byte array of 3 or 4 bytes.
-   * @throws IllegalStateException If the command has not yet been processed or if the check of the
-   *     "SAM traceability" data is disabled.
-   * @see #withSignatureComputedInSamTraceabilityMode(int, boolean, boolean)
-   * @since 1.2.0
-   */
-  byte[] getSamTraceabilitySerialNumber();
-
-  /**
-   * Returns the SAM counter value (3 bytes) written in the traceability information if the check of
-   * the "SAM traceability" data has been enabled.
-   *
-   * @return A byte array of 3 bytes.
-   * @throws IllegalStateException If the command has not yet been processed or if the check of the
-   *     "SAM traceability" data is disabled.
-   * @see #withSignatureComputedInSamTraceabilityMode(int, boolean, boolean)
-   * @since 1.2.0
-   */
-  int getSamTraceabilityKeyCounter();
 }

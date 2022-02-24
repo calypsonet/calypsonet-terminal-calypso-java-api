@@ -282,20 +282,16 @@ package "org.calypsonet.terminal.calypso" as api {
             +SignatureComputationData disableBusyMode ()
             +SignatureComputationData useKeyDiversifier (byte[] keyDiversifier)
 
-            +byte[] getSignature ()
             +byte[] getSignedData ()
-            +byte[] getSamTraceabilitySerialNumber ()
-            +int getSamTraceabilityKeyCounter ()
+            +byte[] getSignature ()
         }
         +interface SignatureVerificationData {
             +SignatureVerificationData setData (byte[] data, byte[] signature, byte kif, byte kvc)
-            +SignatureVerificationData withSignatureComputedInSamTraceabilityMode (int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus)
-            +SignatureVerificationData withSignatureComputedInNonBusyMode ()
+            +SignatureVerificationData withSamTraceabilityMode (int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus)
+            +SignatureVerificationData withoutBusyMode ()
             +SignatureVerificationData useKeyDiversifier (byte[] keyDiversifier)
 
             +boolean isSignatureValid ()
-            +byte[] getSamTraceabilitySerialNumber ()
-            +int getSamTraceabilityKeyCounter ()
         }
         +interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
             +T setControlSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)

@@ -104,15 +104,6 @@ public interface SignatureComputationData {
   SignatureComputationData useKeyDiversifier(byte[] keyDiversifier);
 
   /**
-   * Returns the computed signature.
-   *
-   * @return A byte array of 1 to 8 bytes.
-   * @throws IllegalStateException If the command has not yet been processed.
-   * @since 1.2.0
-   */
-  byte[] getSignature();
-
-  /**
    * Returns the data that was used to generate the signature. If the "SAM traceability" mode was
    * enabled, then the signed data are the original data modified with the SAM traceability
    * information.
@@ -124,26 +115,11 @@ public interface SignatureComputationData {
   byte[] getSignedData();
 
   /**
-   * Returns the full (4 bytes) or partial (3 LSBytes) SAM serial number written in the traceability
-   * information if the "SAM traceability" mode has been enabled.
+   * Returns the computed signature.
    *
-   * @return A byte array of 3 or 4 bytes.
-   * @throws IllegalStateException If the command has not yet been processed or if the "SAM
-   *     traceability" is disabled.
-   * @see #enableSamTraceabilityMode(int, boolean)
+   * @return A byte array of 1 to 8 bytes.
+   * @throws IllegalStateException If the command has not yet been processed.
    * @since 1.2.0
    */
-  byte[] getSamTraceabilitySerialNumber();
-
-  /**
-   * Returns the SAM counter value (3 bytes) written in the traceability information if the "SAM
-   * traceability" mode has been enabled.
-   *
-   * @return A byte array of 3 bytes.
-   * @throws IllegalStateException If the command has not yet been processed or if the "SAM
-   *     traceability" is disabled.
-   * @see #enableSamTraceabilityMode(int, boolean)
-   * @since 1.2.0
-   */
-  int getSamTraceabilityKeyCounter();
+  byte[] getSignature();
 }

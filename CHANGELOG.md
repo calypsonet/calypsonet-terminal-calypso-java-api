@@ -6,24 +6,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- `CommonTransactionManager` API.
-- `CommonSecuritySetting` API.
-- `SamTransactionManager` API.
-- `SamSecuritySetting` API.
-- `SignatureComputationData` API (issue [#28]).
-- `prepareComputeSignature` method to `CommonTransactionManager` API (issue [#28]).
-- `SignatureVerificationData` API (issue [#29]).
+- `CalypsoCard.getTransactionCounter` method (issue [#42]).
 - `SamRevocationServiceSpi` SPI (issue [#29]).
-- `prepareVerifySignature` method to `CommonTransactionManager` API (issue [#29]).
-- `getSecuritySetting` method to `CommonTransactionManager` API.
-- `processCommands` method to `CommonTransactionManager` API.
-- `getTransactionCounter` method to `CalypsoCard` API (issue [#42]).
-- `getTransactionAuditData` method to `CommonSecuritySetting` API (issue [#44]).
-- `setControlSamResource` method to `CommonSecuritySetting`.
+- `SignatureComputationData` API (issue [#28]).
+- `SignatureVerificationData` API (issue [#29]).
+- `CommonSecuritySetting` API.
+- `CommonSecuritySetting.setControlSamResource` method as a replacement for the `setSamResource` method.
+- `CommonSecuritySetting.getTransactionAuditData` method (issue [#44]).
+- `CommonTransactionManager` API.
+- `CommonTransactionManager.getSecuritySetting` method as a replacement for the `getCardSecuritySetting` method.
+- `CommonTransactionManager.prepareComputeSignature` method (issue [#28]).
+- `CommonTransactionManager.prepareVerifySignature` method (issue [#29]).
+- `CommonTransactionManager.processCommands` method as a replacement for the `processCardCommands` method.
+- `SamSecuritySetting` API.
+- `SamTransactionManager` API.
+- `ReaderIOException` exception.
+### Changed
+- Renaming of `AtomicTransactionException` to `SessionBufferOverflowException`.
+- Renaming of `AuthenticationNotVerifiedException` to `CardSignatureNotVerifiableException`.
+- Merging of `CardAnomalyException`, `SamAnomalyException` and `CardCloseSecureSessionException` to `UnexpectedCommandStatusException`.
+- Merging of `DesynchronizedExchangesException` and `InconsistencyDataException` to `SecurityException`.
+- Merging of `SessionAuthenticationException` and `SvAuthenticationException` to `InvalidCardSignatureException`.
 ### Deprecated
-- `getCardSecuritySetting` method in `CardTransactionManager`.
-- `processCardCommands` method in `CardTransactionManager`.
-- `setSamResource` method in `CardSecuritySetting`.
+- `CardTransactionManager.getCardSecuritySetting` method.
+- `CardTransactionManager.processCardCommands` method.
+- `CardSecuritySetting.setSamResource` method.
+### Removed
+- `CardTransactionException` abstract common exception.
 
 ## [1.1.0] - 2022-02-01
 ### Added
