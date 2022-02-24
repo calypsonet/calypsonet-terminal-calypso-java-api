@@ -118,7 +118,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></th>
 <td class="colLast">
-<div class="block">Data to manage the security operations of a Calypso transaction.</div>
+<div class="block">Data to manage the security operations of a Calypso card transaction.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -128,9 +128,45 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;T extends <a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;T&gt;&gt;</th>
+<td class="colLast">
+<div class="block">Common data to manage the security operations of a Calypso transaction.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;T extends <a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;T,&#8203;E&gt;,&#8203;E extends <a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;E&gt;&gt;</th>
+<td class="colLast">
+<div class="block">Common service providing the high-level API to manage transactions with a Calypso card or SAM.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamSecuritySetting</a></th>
+<td class="colLast">
+<div class="block">Data to manage the security operations of a Calypso SAM transaction.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></th>
+<td class="colLast">
+<div class="block">Service providing the high-level API to manage transactions with a Calypso SAM.</div>
+</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SearchCommandData</a></th>
 <td class="colLast">
 <div class="block">Contains the input/output data of the <a href="CardTransactionManager.html#prepareSearchRecords(org.calypsonet.terminal.calypso.transaction.SearchCommandData)"><code>CardTransactionManager.prepareSearchRecords(SearchCommandData)</code></a> method.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></th>
+<td class="colLast">
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(SignatureComputationData)</code></a> method.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></th>
+<td class="colLast">
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(SignatureVerificationData)</code></a> method.</div>
 </td>
 </tr>
 </tbody>
@@ -168,36 +204,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
-<th class="colFirst" scope="row"><a href="AtomicTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">AtomicTransactionException</a></th>
-<td class="colLast">
-<div class="block">Indicates that the transaction cannot be done in an atomic way because the capacity of the
- session buffer is not sufficient.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<th class="colFirst" scope="row"><a href="AuthenticationNotVerifiedException.html" title="class in org.calypsonet.terminal.calypso.transaction">AuthenticationNotVerifiedException</a></th>
-<td class="colLast">
-<div class="block">Indicates that the card has correctly closed the secure session, but that it is impossible to
- check the authenticity of the support because the SAM is no more available (timeout, network
- problem,...).</div>
-</td>
-</tr>
-<tr class="altColor">
-<th class="colFirst" scope="row"><a href="CardAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardAnomalyException</a></th>
-<td class="colLast">
-<div class="block">Indicates an anomaly in the card.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<th class="colFirst" scope="row"><a href="CardCloseSecureSessionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardCloseSecureSessionException</a></th>
-<td class="colLast">
-<div class="block">Indicates that the card has refused the secure session closing.</div>
-</td>
-</tr>
-<tr class="altColor">
 <th class="colFirst" scope="row"><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></th>
 <td class="colLast">
-<div class="block">Indicates a communication error with the card.</div>
+<div class="block">Indicates a communication error with the card (e.g.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -207,59 +216,64 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
-<th class="colFirst" scope="row"><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></th>
+<th class="colFirst" scope="row"><a href="CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardSignatureNotVerifiableException</a></th>
 <td class="colLast">
-<div class="block">Parent abstract class of all Calypso card transaction functional exceptions.</div>
+<div class="block">Indicates that the card has correctly closed the secure session, but that it is impossible to
+ check the authenticity of the card session because the SAM is no more available (timeout, network
+ problem, etc...).</div>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colFirst" scope="row"><a href="DesynchronizedExchangesException.html" title="class in org.calypsonet.terminal.calypso.transaction">DesynchronizedExchangesException</a></th>
+<th class="colFirst" scope="row"><a href="InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidCardSignatureException</a></th>
 <td class="colLast">
-<div class="block">Indicates a desynchronization of the APDU exchanges.</div>
+<div class="block">Indicates that the card has correctly closed the secure session, but the card session is not
+ authentic because the signature of the card is incorrect.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colFirst" scope="row"><a href="InconsistencyDataException.html" title="class in org.calypsonet.terminal.calypso.transaction">InconsistencyDataException</a></th>
+<th class="colFirst" scope="row"><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></th>
 <td class="colLast">
-<div class="block">Indicates an inconsistency in the card data.</div>
+<div class="block">Indicates a communication error with the reader of the card or SAM.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colFirst" scope="row"><a href="SamAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamAnomalyException</a></th>
-<td class="colLast">
-<div class="block">Indicates an anomaly in the SAM.</div>
-</td>
-</tr>
-<tr class="altColor">
 <th class="colFirst" scope="row"><a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></th>
 <td class="colLast">
-<div class="block">Indicates a communication error with the SAM (e.g timeout, network,...).</div>
+<div class="block">Indicates a communication error with the SAM (e.g.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="SamRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamRevokedException</a></th>
 <td class="colLast">
 <div class="block">Indicates that the SAM is revoked.</div>
 </td>
 </tr>
-<tr class="altColor">
-<th class="colFirst" scope="row"><a href="SessionAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionAuthenticationException</a></th>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></th>
 <td class="colLast">
-<div class="block">Indicates that the card has correctly closed the secure session, but the support is not authentic
- because the signature of the card is incorrect.</div>
+<div class="block">Indicates a detected security problem related to one of the following cases:
+
+ 
+   A de-synchronization of the APDU exchanges.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionBufferOverflowException</a></th>
+<td class="colLast">
+<div class="block">Indicates that the secure session cannot be performed atomically because the session buffer
+ capacity is not sufficient to handle all the prepared write commands.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colFirst" scope="row"><a href="SvAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction">SvAuthenticationException</a></th>
+<th class="colFirst" scope="row"><a href="UnauthorizedKeyException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnauthorizedKeyException</a></th>
 <td class="colLast">
-<div class="block">Indicates that the "Stored Value" session is not authentic because the signature of the card is
- incorrect.</div>
+<div class="block">Indicates that the card requires an unauthorized session key.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colFirst" scope="row"><a href="UnauthorizedKeyException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnauthorizedKeyException</a></th>
+<th class="colFirst" scope="row"><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></th>
 <td class="colLast">
-<div class="block">Indicates that the current card requires an unauthorized key.</div>
+<div class="block">Indicates that an unexpected command status was returned by the card or SAM.</div>
 </td>
 </tr>
 </tbody>

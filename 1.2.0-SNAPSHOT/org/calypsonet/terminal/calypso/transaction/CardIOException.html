@@ -127,12 +127,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.RuntimeException</li>
 <li>
 <ul class="inheritance">
-<li><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">org.calypsonet.terminal.calypso.transaction.CardTransactionException</a></li>
-<li>
-<ul class="inheritance">
 <li>org.calypsonet.terminal.calypso.transaction.CardIOException</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -151,8 +146,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">CardIOException</span>
-extends <a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></pre>
-<div class="block">Indicates a communication error with the card.</div>
+extends java.lang.RuntimeException</pre>
+<div class="block">Indicates a communication error with the card (e.g. card removal, etc...).</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
@@ -186,7 +181,7 @@ extends <a href="CardTransactionException.html" title="class in org.calypsonet.t
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.Throwable)">CardIOException</a></span>&#8203;(java.lang.String&nbsp;message,
                java.lang.Throwable&nbsp;cause)</code></th>
 <td class="colLast">
-<div class="block">Encapsulates a lower level exception</div>
+<div class="block">Encapsulates a lower level exception.</div>
 </td>
 </tr>
 </table>
@@ -239,7 +234,7 @@ extends <a href="CardTransactionException.html" title="class in org.calypsonet.t
 <pre>public&nbsp;CardIOException&#8203;(java.lang.String&nbsp;message)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>message</code> - The message to identify the exception context</dd>
+<dd><code>message</code> - The message to identify the exception context.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -253,7 +248,7 @@ extends <a href="CardTransactionException.html" title="class in org.calypsonet.t
 <h4>CardIOException</h4>
 <pre>public&nbsp;CardIOException&#8203;(java.lang.String&nbsp;message,
                        java.lang.Throwable&nbsp;cause)</pre>
-<div class="block">Encapsulates a lower level exception</div>
+<div class="block">Encapsulates a lower level exception.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>message</code> - Message to identify the exception context.</dd>

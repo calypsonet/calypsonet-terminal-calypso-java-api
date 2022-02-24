@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":38,"i15":6,"i16":38,"i17":38,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":38,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6,"i43":6};
+var data = {"i0":6,"i1":6,"i2":38,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":38,"i14":6,"i15":38,"i16":38,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":38,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":38,"i38":6,"i39":6,"i40":6,"i41":6,"i42":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -123,8 +123,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><code><a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>,&#8203;<a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&gt;</code></dd>
+</dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">CardTransactionManager</span></pre>
+<pre>public interface <span class="typeNameLabel">CardTransactionManager</span>
+extends <a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>,&#8203;<a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&gt;</pre>
 <div class="block">Service providing the high-level API to manage transactions with a Calypso card.
 
  <p>Depending on the type of operations required, the presence of a SAM may be necessary.
@@ -185,32 +190,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code><a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCalypsoCard()">getCalypsoCard</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the card on which the transaction is performed.</div>
+<div class="block">Gets the target card on which the transaction is performed.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>org.calypsonet.terminal.reader.CardReader</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCardReader()">getCardReader</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the reader used to communicate with the card on which the transaction is performed.</div>
+<div class="block">Gets the reader used to communicate with the target card on which the transaction is performed.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCardSecuritySetting()">getCardSecuritySetting</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the settings defining the security parameters of the transaction.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="CommonTransactionManager.html#getSecuritySetting()"><code>CommonTransactionManager.getSecuritySetting()</code></a> instead.</div>
+</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;byte[]&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTransactionAuditData()">getTransactionAuditData</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Returns the audit data of the transaction containing all APDU exchanges with the card and the
- SAM if present.</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareAppendRecord(byte,byte%5B%5D)">prepareAppendRecord</a></span>&#8203;(byte&nbsp;sfi,
                    byte[]&nbsp;recordData)</code></th>
@@ -219,7 +218,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  indicated cyclic file.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareCheckPinStatus()">prepareCheckPinStatus</a></span>()</code></th>
 <td class="colLast">
@@ -227,7 +226,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  the attempt counter.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareDecreaseCounter(byte,int,int)">prepareDecreaseCounter</a></span>&#8203;(byte&nbsp;sfi,
                       int&nbsp;counterNumber,
@@ -236,7 +235,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a <b>Decrease</b> command to decrease the target counter.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareDecreaseCounters(byte,java.util.Map)">prepareDecreaseCounters</a></span>&#8203;(byte&nbsp;sfi,
                        java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</code></th>
@@ -245,14 +244,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  counters at the same time.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareGetData(org.calypsonet.terminal.calypso.GetDataTag)">prepareGetData</a></span>&#8203;(<a href="../GetDataTag.html" title="enum in org.calypsonet.terminal.calypso">GetDataTag</a>&nbsp;tag)</code></th>
 <td class="colLast">
 <div class="block">Adds a command APDU to retrieve the data indicated by the provided tag.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareIncreaseCounter(byte,int,int)">prepareIncreaseCounter</a></span>&#8203;(byte&nbsp;sfi,
                       int&nbsp;counterNumber,
@@ -261,7 +260,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a <b>Increase</b> command to increase the target counter.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareIncreaseCounters(byte,java.util.Map)">prepareIncreaseCounters</a></span>&#8203;(byte&nbsp;sfi,
                        java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</code></th>
@@ -270,14 +269,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  counters at the same time.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareInvalidate()">prepareInvalidate</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Invalidate</b> command.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadBinary(byte,int,int)">prepareReadBinary</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;offset,
@@ -287,7 +286,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  the indicated Binary EF.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadCounter(byte,int)">prepareReadCounter</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;nbCountersToRead)</code></th>
@@ -296,7 +295,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  which should be a counter file.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadCounterFile(byte,int)">prepareReadCounterFile</a></span>&#8203;(byte&nbsp;sfi,
                       int&nbsp;countersNumber)</code></th>
@@ -306,7 +305,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecord(byte,int)">prepareReadRecord</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;recordNumber)</code></th>
@@ -315,7 +314,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  indicated EF.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
                      int&nbsp;recordNumber)</code></th>
@@ -325,7 +324,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordFile(byte,int,int,int)">prepareReadRecordFile</a></span>&#8203;(byte&nbsp;sfi,
                      int&nbsp;firstRecordNumber,
@@ -337,7 +336,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecords(byte,int,int,int)">prepareReadRecords</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;fromRecordNumber,
@@ -348,7 +347,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  indicated EF.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadRecordsPartially(byte,int,int,int,int)">prepareReadRecordsPartially</a></span>&#8203;(byte&nbsp;sfi,
                            int&nbsp;fromRecordNumber,
@@ -360,21 +359,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  parts of multiple records of the indicated EF.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareRehabilitate()">prepareRehabilitate</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>Rehabilitate</b> command.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReleaseCardChannel()">prepareReleaseCardChannel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Requests the closing of the card channel.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSearchRecords(org.calypsonet.terminal.calypso.transaction.SearchCommandData)">prepareSearchRecords</a></span>&#8203;(<a href="SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SearchCommandData</a>&nbsp;data)</code></th>
 <td class="colLast">
@@ -382,7 +381,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  records of the indicated EF, from a given record to the last record of the file.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(byte%5B%5D)">prepareSelectFile</a></span>&#8203;(byte[]&nbsp;lid)</code></th>
 <td class="colLast">
@@ -391,7 +390,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(short)">prepareSelectFile</a></span>&#8203;(short&nbsp;lid)</code></th>
 <td class="colLast">
@@ -399,7 +398,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  current DF</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSelectFile(org.calypsonet.terminal.calypso.SelectFileControl)">prepareSelectFile</a></span>&#8203;(<a href="../SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso">SelectFileControl</a>&nbsp;selectFileControl)</code></th>
 <td class="colLast">
@@ -407,7 +406,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  defined by the ISO standard.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSetCounter(byte,int,int)">prepareSetCounter</a></span>&#8203;(byte&nbsp;sfi,
                  int&nbsp;counterNumber,
@@ -416,7 +415,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a command to set the value of the target counter.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvDebit(int)">prepareSvDebit</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
@@ -424,7 +423,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  current SV balance or to partially or totally cancels the last SV debit command.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)">prepareSvDebit</a></span>&#8203;(int&nbsp;amount,
               byte[]&nbsp;date,
@@ -435,7 +434,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  provided additional data.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)">prepareSvGet</a></span>&#8203;(<a href="SvOperation.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvOperation</a>&nbsp;svOperation,
             <a href="SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvAction</a>&nbsp;svAction)</code></th>
@@ -444,21 +443,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  retrieves the current SV status.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReadAllLogs()">prepareSvReadAllLogs</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of <b>Read Records</b> commands to read all SV logs.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReload(int)">prepareSvReload</a></span>&#8203;(int&nbsp;amount)</code></th>
 <td class="colLast">
 <div class="block">Schedules the execution of a <b>SV Reload</b> command to increase the current SV balance.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)">prepareSvReload</a></span>&#8203;(int&nbsp;amount,
                byte[]&nbsp;date,
@@ -469,7 +468,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  using the provided additional data.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareUpdateBinary(byte,int,byte%5B%5D)">prepareUpdateBinary</a></span>&#8203;(byte&nbsp;sfi,
                    int&nbsp;offset,
@@ -479,7 +478,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  Binary file with the new data given from the indicated offset.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareUpdateRecord(byte,int,byte%5B%5D)">prepareUpdateRecord</a></span>&#8203;(byte&nbsp;sfi,
                    int&nbsp;recordNumber,
@@ -489,7 +488,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  record contents with the provided data.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteBinary(byte,int,byte%5B%5D)">prepareWriteBinary</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;offset,
@@ -499,7 +498,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  Binary file.</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteRecord(byte,int,byte%5B%5D)">prepareWriteRecord</a></span>&#8203;(byte&nbsp;sfi,
                   int&nbsp;recordNumber,
@@ -509,21 +508,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  contents with the result of a binary OR between the existing data and the provided data.</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processCancel()">processCancel</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Aborts a Secure Session.</div>
 </td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processCardCommands()">processCardCommands</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Process all previously prepared card commands outside or inside a Secure Session.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="CommonTransactionManager.html#processCommands()"><code>CommonTransactionManager.processCommands()</code></a> instead.</div>
+</div>
 </td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processChangeKey(int,byte,byte,byte,byte)">processChangeKey</a></span>&#8203;(int&nbsp;keyIndex,
                 byte&nbsp;newKif,
@@ -534,28 +535,28 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Replaces one of the current card keys with another key present in the SAM.</div>
 </td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processChangePin(byte%5B%5D)">processChangePin</a></span>&#8203;(byte[]&nbsp;newPin)</code></th>
 <td class="colLast">
 <div class="block">Replaces the current PIN with the new value provided.</div>
 </td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processClosing()">processClosing</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Terminates the Secure Session sequence started with <a href="#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>processOpening(WriteAccessLevel)</code></a>.</div>
 </td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)">processOpening</a></span>&#8203;(<a href="../WriteAccessLevel.html" title="enum in org.calypsonet.terminal.calypso">WriteAccessLevel</a>&nbsp;writeAccessLevel)</code></th>
 <td class="colLast">
 <div class="block">Opens a Calypso Secure Session and then executes all previously prepared commands.</div>
 </td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#processVerifyPin(byte%5B%5D)">processVerifyPin</a></span>&#8203;(byte[]&nbsp;pin)</code></th>
 <td class="colLast">
@@ -564,6 +565,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.org.calypsonet.terminal.calypso.transaction.CommonTransactionManager">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.calypsonet.terminal.calypso.transaction.<a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></h3>
+<code><a href="CommonTransactionManager.html#getSecuritySetting()">getSecuritySetting</a>, <a href="CommonTransactionManager.html#getTransactionAuditData()">getTransactionAuditData</a>, <a href="CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)">prepareComputeSignature</a>, <a href="CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)">prepareVerifySignature</a>, <a href="CommonTransactionManager.html#processCommands()">processCommands</a></code></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -587,7 +595,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>getCardReader</h4>
 <pre class="methodSignature">org.calypsonet.terminal.reader.CardReader&nbsp;getCardReader()</pre>
-<div class="block">Gets the reader used to communicate with the card on which the transaction is performed.</div>
+<div class="block">Gets the reader used to communicate with the target card on which the transaction is performed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A not null reference.</dd>
@@ -603,7 +611,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>getCalypsoCard</h4>
 <pre class="methodSignature"><a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a>&nbsp;getCalypsoCard()</pre>
-<div class="block">Gets the card on which the transaction is performed.</div>
+<div class="block">Gets the target card on which the transaction is performed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A not null <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> having a <a href="../card/CalypsoCard.ProductType.html" title="enum in org.calypsonet.terminal.calypso.card"><code>CalypsoCard.ProductType</code></a> different from
@@ -619,30 +627,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getCardSecuritySetting</h4>
-<pre class="methodSignature"><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&nbsp;getCardSecuritySetting()</pre>
+<pre class="methodSignature">@Deprecated
+<a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&nbsp;getCardSecuritySetting()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="CommonTransactionManager.html#getSecuritySetting()"><code>CommonTransactionManager.getSecuritySetting()</code></a> instead.</div>
+</div>
 <div class="block">Gets the settings defining the security parameters of the transaction.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Null if the transaction does not use security settings.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
-</dl>
-</li>
-</ul>
-<a id="getTransactionAuditData()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getTransactionAuditData</h4>
-<pre class="methodSignature">java.util.List&lt;byte[]&gt;&nbsp;getTransactionAuditData()</pre>
-<div class="block">Returns the audit data of the transaction containing all APDU exchanges with the card and the
- SAM if present.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>An empty list if there is no audit data.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.2.0</dd>
 </dl>
 </li>
 </ul>
@@ -737,9 +732,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The object instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If tag is null.</dd>
 <dd><code>java.lang.UnsupportedOperationException</code> - If the Get Data command with the provided tag is not
      supported.</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If tag is null.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1151,6 +1146,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>java.lang.IllegalArgumentException</code> - If the input data is inconsistent.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>SearchCommandData</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1512,8 +1509,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If one of the arguments is null.</dd>
 <dd><code>java.lang.UnsupportedOperationException</code> - If the SV feature is not available for this card.</dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If one of the arguments is null.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1546,9 +1543,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
-<dd><code>java.lang.UnsupportedOperationException</code> - If the SV feature is not available for this card.</dd>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors)</dd>
+<dd><code>java.lang.IllegalStateException</code> - In one of the following cases:
+     <ul>
+       <li>Another SV command was already prepared inside the same secure session.
+       <li>The SV command is not placed in the first position in the list of prepared commands.
+       <li>The SV command does not follow a "SV Get" command.
+       <li>The command and the SV operation are not consistent.
+     </ul></dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1576,9 +1577,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is out of range.</dd>
-<dd><code>java.lang.UnsupportedOperationException</code> - If the SV feature is not available for this card.</dd>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors)</dd>
+<dd><code>java.lang.IllegalStateException</code> - In one of the following cases:
+     <ul>
+       <li>Another SV command was already prepared inside the same secure session.
+       <li>The SV command is not placed in the first position in the list of prepared commands.
+       <li>The SV command does not follow a "SV Get" command.
+       <li>The command and the SV operation are not consistent.
+     </ul></dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1614,6 +1619,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
+<dd><code>java.lang.IllegalStateException</code> - In one of the following cases:
+     <ul>
+       <li>New value is negative and negative balances are not allowed.
+       <li>Another SV command was already prepared inside the same secure session.
+       <li>The SV command is not placed in the first position in the list of prepared commands.
+       <li>The SV command does not follow a "SV Get" command.
+       <li>The command and the SV operation are not consistent.
+     </ul></dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1652,6 +1665,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
+<dd><code>java.lang.IllegalStateException</code> - In one of the following cases:
+     <ul>
+       <li>New value is negative and negative balances are not allowed.
+       <li>Another SV command was already prepared inside the same secure session.
+       <li>The SV command is not placed in the first position in the list of prepared commands.
+       <li>The SV command does not follow a "SV Get" command.
+       <li>The command and the SV operation are not consistent.
+     </ul></dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1765,7 +1786,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>processCardCommands</h4>
-<pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;processCardCommands()</pre>
+<pre class="methodSignature">@Deprecated
+<a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;processCardCommands()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="CommonTransactionManager.html#processCommands()"><code>CommonTransactionManager.processCommands()</code></a> instead.</div>
+</div>
 <div class="block">Process all previously prepared card commands outside or inside a Secure Session.
 
  <ul>
@@ -1786,8 +1811,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors)</dd>
+<dd><code><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></code> - If a communication error with the card reader or SAM reader occurs.</dd>
+<dd><code><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></code> - If a communication error with the card occurs.</dd>
+<dd><code><a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></code> - If a communication error with the SAM occurs.</dd>
+<dd><code><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></code> - If a command returns an unexpected status.</dd>
+<dd><code><a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></code> - If a security error occurs (e.g. a de-synchronization of the APDU
+     exchanges, an inconsistency in the card data, etc...).</dd>
+<dd><code><a href="SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionBufferOverflowException</a></code> - If a secure session is open and multiple session mode is
+     disabled and the session buffer capacity is not sufficient.</dd>
+<dd><code><a href="CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardSignatureNotVerifiableException</a></code> - If a secure session is open and multiple session
+     mode is enabled and an intermediate session is correctly closed but the SAM is no longer
+     available to verify the card signature.</dd>
+<dd><code><a href="InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidCardSignatureException</a></code> - If a secure session is open and multiple session mode is
+     enabled and an intermediate session is correctly closed but the card signature is
+     incorrect.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1824,8 +1861,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is out of range.</dd>
 <dd><code>java.lang.IllegalStateException</code> - If commands have been prepared before invoking this process
      method.</dd>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors)</dd>
+<dd><code><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></code> - If a communication error with the card reader or SAM reader occurs.</dd>
+<dd><code><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></code> - If a communication error with the card occurs.</dd>
+<dd><code><a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></code> - If a communication error with the SAM occurs.</dd>
+<dd><code><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></code> - If a command returns an unexpected status.</dd>
+<dd><code><a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></code> - If a security error occurs (e.g. a de-synchronization of the APDU
+     exchanges, an inconsistency in the card data, etc...).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1855,8 +1896,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>java.lang.UnsupportedOperationException</code> - If the PIN feature is not available for this card.</dd>
 <dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is out of range.</dd>
 <dd><code>java.lang.IllegalStateException</code> - If the command is executed while a secure session is open.</dd>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors).</dd>
+<dd><code><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></code> - If a communication error with the card reader or SAM reader occurs.</dd>
+<dd><code><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></code> - If a communication error with the card occurs.</dd>
+<dd><code><a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></code> - If a communication error with the SAM occurs.</dd>
+<dd><code><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></code> - If a command returns an unexpected status.</dd>
+<dd><code><a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></code> - If a security error occurs (e.g. a de-synchronization of the APDU
+     exchanges, an inconsistency in the card data, etc...).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1894,6 +1939,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>java.lang.UnsupportedOperationException</code> - If the Change Key command is not available for this card.</dd>
 <dd><code>java.lang.IllegalArgumentException</code> - If the provided key index is out of range.</dd>
 <dd><code>java.lang.IllegalStateException</code> - If the command is executed while a secure session is open.</dd>
+<dd><code><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></code> - If a communication error with the card reader or SAM reader occurs.</dd>
+<dd><code><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></code> - If a communication error with the card occurs.</dd>
+<dd><code><a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></code> - If a communication error with the SAM occurs.</dd>
+<dd><code><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></code> - If a command returns an unexpected status.</dd>
+<dd><code><a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></code> - If a security error occurs (e.g. a de-synchronization of the APDU
+     exchanges, an inconsistency in the card data, etc...).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
 </dl>
@@ -1935,8 +1986,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 
  <ul>
    <li>If the session was opened with the default atomic mode and the previously prepared
-       commands will cause the buffer to be exceeded, then an <a href="AtomicTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction"><code>AtomicTransactionException</code></a>
-       is raised and no transmission to the card is made. <br>
+       commands will cause the buffer to be exceeded, then an <a href="SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction"><code>SessionBufferOverflowException</code></a> is raised and no transmission to the card is made. <br>
    <li>If the session was opened with the multiple session mode and the buffer is to be exceeded
        then a split into several secure sessions is performed automatically. However, regardless
        of the number of intermediate sessions performed, a secure session is opened at the end
@@ -1993,9 +2043,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is null.</dd>
-<dd><code>java.lang.IllegalStateException</code> - If no <a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>CardSecuritySetting</code></a> is available</dd>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors)</dd>
+<dd><code>java.lang.IllegalStateException</code> - If no <a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>CardSecuritySetting</code></a> is available.</dd>
+<dd><code><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></code> - If a communication error with the card reader or SAM reader occurs.</dd>
+<dd><code><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></code> - If a communication error with the card occurs.</dd>
+<dd><code><a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></code> - If a communication error with the SAM occurs.</dd>
+<dd><code><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></code> - If a command returns an unexpected status.</dd>
+<dd><code><a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></code> - If a security error occurs (e.g. a de-synchronization of the APDU
+     exchanges, an inconsistency in the card data, etc...).</dd>
+<dd><code><a href="UnauthorizedKeyException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnauthorizedKeyException</a></code> - If the card requires an unauthorized session key.</dd>
+<dd><code><a href="SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionBufferOverflowException</a></code> - If multiple session mode is disabled and the session
+     buffer capacity is not sufficient.</dd>
+<dd><code><a href="CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardSignatureNotVerifiableException</a></code> - If multiple session mode is enabled and an
+     intermediate session is correctly closed but the SAM is no longer available to verify the
+     card signature.</dd>
+<dd><code><a href="InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidCardSignatureException</a></code> - If multiple session mode is enabled and an intermediate
+     session is correctly closed but the card signature is incorrect.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -2057,8 +2119,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalStateException</code> - If no session is open.</dd>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors).</dd>
+<dd><code><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></code> - If a communication error with the card reader or SAM reader occurs.</dd>
+<dd><code><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></code> - If a communication error with the card occurs.</dd>
+<dd><code><a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></code> - If a communication error with the SAM occurs.</dd>
+<dd><code><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></code> - If a command returns an unexpected status.</dd>
+<dd><code><a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></code> - If a security error occurs (e.g. a de-synchronization of the APDU
+     exchanges, an inconsistency in the card data, etc...).</dd>
+<dd><code><a href="SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionBufferOverflowException</a></code> - If multiple session mode is disabled and the session
+     buffer capacity is not sufficient.</dd>
+<dd><code><a href="CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardSignatureNotVerifiableException</a></code> - If session is correctly closed but the SAM is no
+     longer available to verify the card signature.</dd>
+<dd><code><a href="InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidCardSignatureException</a></code> - If session is correctly closed but the card signature is
+     incorrect.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -2081,8 +2153,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalStateException</code> - If no session is open.</dd>
-<dd><code><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></code> - If a functional error occurs (including card and SAM IO
-     errors)</dd>
+<dd><code><a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></code> - If a communication error with the card reader occurs.</dd>
+<dd><code><a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></code> - If a communication error with the card occurs.</dd>
+<dd><code><a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></code> - If the command returns an unexpected status.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>

@@ -138,6 +138,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="altColor">
+<th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#setSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)">org.calypsonet.terminal.calypso.transaction.CardSecuritySetting.setSamResource&#8203;(CardReader, CalypsoSam)</a></th>
+<td class="colLast">
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html#setControlSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)"><code>CommonSecuritySetting.setControlSamResource(CardReader, CalypsoSam)</code></a> instead.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#getCardSecuritySetting()">org.calypsonet.terminal.calypso.transaction.CardTransactionManager.getCardSecuritySetting()</a></th>
+<td class="colLast">
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#getSecuritySetting()"><code>CommonTransactionManager.getSecuritySetting()</code></a> instead.</div>
+</td>
+</tr>
+<tr class="altColor">
 <th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareReadCounterFile(byte,int)">org.calypsonet.terminal.calypso.transaction.CardTransactionManager.prepareReadCounterFile&#8203;(byte, int)</a></th>
 <td class="colLast">
 <div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareReadCounter(byte,int)"><code>CardTransactionManager.prepareReadCounter(byte, int)</code></a> method instead.</div>
@@ -153,6 +165,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareSelectFile(byte%5B%5D)">org.calypsonet.terminal.calypso.transaction.CardTransactionManager.prepareSelectFile&#8203;(byte[])</a></th>
 <td class="colLast">
 <div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareSelectFile(short)"><code>CardTransactionManager.prepareSelectFile(short)</code></a> method instead.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colDeprecatedItemName" scope="row"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#processCardCommands()">org.calypsonet.terminal.calypso.transaction.CardTransactionManager.processCardCommands()</a></th>
+<td class="colLast">
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#processCommands()"><code>CommonTransactionManager.processCommands()</code></a> instead.</div>
 </td>
 </tr>
 </tbody>

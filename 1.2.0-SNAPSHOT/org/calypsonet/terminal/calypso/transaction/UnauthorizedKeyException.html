@@ -127,12 +127,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.RuntimeException</li>
 <li>
 <ul class="inheritance">
-<li><a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">org.calypsonet.terminal.calypso.transaction.CardTransactionException</a></li>
-<li>
-<ul class="inheritance">
 <li>org.calypsonet.terminal.calypso.transaction.UnauthorizedKeyException</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -151,8 +146,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">UnauthorizedKeyException</span>
-extends <a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></pre>
-<div class="block">Indicates that the current card requires an unauthorized key.</div>
+extends java.lang.RuntimeException</pre>
+<div class="block">Indicates that the card requires an unauthorized session key.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
@@ -232,7 +227,7 @@ extends <a href="CardTransactionException.html" title="class in org.calypsonet.t
 <pre>public&nbsp;UnauthorizedKeyException&#8203;(java.lang.String&nbsp;message)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>message</code> - The message to identify the exception context</dd>
+<dd><code>message</code> - The message to identify the exception context.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>

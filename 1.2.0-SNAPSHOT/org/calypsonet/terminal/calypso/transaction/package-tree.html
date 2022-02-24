@@ -112,24 +112,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul>
 <li class="circle">java.lang.RuntimeException
 <ul>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardTransactionException</span></a>
-<ul>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="AtomicTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">AtomicTransactionException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="AuthenticationNotVerifiedException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">AuthenticationNotVerifiedException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardAnomalyException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardCloseSecureSessionException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardCloseSecureSessionException</span></a></li>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardIOException</span></a></li>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardRevokedException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="DesynchronizedExchangesException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">DesynchronizedExchangesException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="InconsistencyDataException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">InconsistencyDataException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SamAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamAnomalyException</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardSignatureNotVerifiableException</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">InvalidCardSignatureException</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">ReaderIOException</span></a></li>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamIOException</span></a></li>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SamRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamRevokedException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SessionAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SessionAuthenticationException</span></a></li>
-<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SvAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SvAuthenticationException</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SecurityException</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SessionBufferOverflowException</span></a></li>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="UnauthorizedKeyException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">UnauthorizedKeyException</span></a></li>
-</ul>
-</li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">UnexpectedCommandStatusException</span></a></li>
 </ul>
 </li>
 </ul>
@@ -143,9 +136,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <section role="region">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonSecuritySetting</span></a>&lt;T&gt;
+<ul>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardSecuritySetting</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamSecuritySetting</span></a></li>
+</ul>
+</li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonTransactionManager</span></a>&lt;T,&#8203;E&gt;
+<ul>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardTransactionManager</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamTransactionManager</span></a></li>
+</ul>
+</li>
 <li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SearchCommandData</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SignatureComputationData</span></a></li>
+<li class="circle">org.calypsonet.terminal.calypso.transaction.<a href="SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SignatureVerificationData</span></a></li>
 </ul>
 </section>
 <section role="region">

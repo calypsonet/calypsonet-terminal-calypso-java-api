@@ -129,25 +129,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Defines for a given write access level the KIF value to use for cards that only provide KVC.</div>
 </dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/AtomicTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">AtomicTransactionException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Indicates that the transaction cannot be done in an atomic way because the capacity of the
- session buffer is not sufficient.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/AtomicTransactionException.html#%3Cinit%3E(java.lang.String)">AtomicTransactionException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/AtomicTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">AtomicTransactionException</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/AuthenticationNotVerifiedException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">AuthenticationNotVerifiedException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Indicates that the card has correctly closed the secure session, but that it is impossible to
- check the authenticity of the support because the SAM is no more available (timeout, network
- problem,...).</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/AuthenticationNotVerifiedException.html#%3Cinit%3E(java.lang.String)">AuthenticationNotVerifiedException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/AuthenticationNotVerifiedException.html" title="class in org.calypsonet.terminal.calypso.transaction">AuthenticationNotVerifiedException</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/AuthenticationNotVerifiedException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">AuthenticationNotVerifiedException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/AuthenticationNotVerifiedException.html" title="class in org.calypsonet.terminal.calypso.transaction">AuthenticationNotVerifiedException</a></dt>
-<dd>
-<div class="block">Encapsulates lower level exception.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#authorizeSvNegativeBalance()">authorizeSvNegativeBalance()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></dt>
 <dd>
 <div class="block">Allows the SV balance to become negative.</div>
@@ -214,27 +195,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">SAM specific <code>CardSelection</code> providing means to filter SAM and define optional commands to
  be executed during the selection phase such as the Unlock command.</div>
 </dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/CardAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardAnomalyException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Indicates an anomaly in the card.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardAnomalyException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">CardAnomalyException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardAnomalyException</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/CardCloseSecureSessionException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardCloseSecureSessionException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Indicates that the card has refused the secure session closing.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardCloseSecureSessionException.html#%3Cinit%3E(java.lang.String,java.lang.Exception)">CardCloseSecureSessionException(String, Exception)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardCloseSecureSessionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardCloseSecureSessionException</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardIOException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
-<div class="block">Indicates a communication error with the card.</div>
+<div class="block">Indicates a communication error with the card (e.g.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardIOException.html#%3Cinit%3E(java.lang.String)">CardIOException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardIOException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">CardIOException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></dt>
 <dd>
-<div class="block">Encapsulates a lower level exception</div>
+<div class="block">Encapsulates a lower level exception.</div>
 </dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/CardRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardRevokedException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
@@ -244,21 +213,31 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardSecuritySetting</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
-<div class="block">Data to manage the security operations of a Calypso transaction.</div>
+<div class="block">Data to manage the security operations of a Calypso card transaction.</div>
 </dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardTransactionException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardSignatureNotVerifiableException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
-<div class="block">Parent abstract class of all Calypso card transaction functional exceptions.</div>
+<div class="block">Indicates that the card has correctly closed the secure session, but that it is impossible to
+ check the authenticity of the card session because the SAM is no more available (timeout, network
+ problem, etc...).</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionException.html#%3Cinit%3E(java.lang.String)">CardTransactionException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSignatureNotVerifiableException.html#%3Cinit%3E(java.lang.String)">CardSignatureNotVerifiableException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardSignatureNotVerifiableException</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">CardTransactionException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardTransactionException</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSignatureNotVerifiableException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">CardSignatureNotVerifiableException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardSignatureNotVerifiableException</a></dt>
 <dd>
-<div class="block">Encapsulates a lower level card transaction exception</div>
+<div class="block">Encapsulates a lower level exception.</div>
 </dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CardTransactionManager</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
 <div class="block">Service providing the high-level API to manage transactions with a Calypso card.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonSecuritySetting</span></a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">T</a>&gt;&gt; - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Common data to manage the security operations of a Calypso transaction.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonTransactionManager</span></a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a>,&#8203;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">E</a>&gt;,&#8203;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">E</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">E</a>&gt;&gt; - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Common service providing the high-level API to manage transactions with a Calypso card or SAM.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html#COUNTERS">COUNTERS</a></span> - org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html" title="enum in org.calypsonet.terminal.calypso.card">ElementaryFile.Type</a></dt>
 <dd>
@@ -292,15 +271,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">For debit operations only.</div>
 </dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/DesynchronizedExchangesException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">DesynchronizedExchangesException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Indicates a desynchronization of the APDU exchanges.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/DesynchronizedExchangesException.html#%3Cinit%3E(java.lang.String)">DesynchronizedExchangesException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/DesynchronizedExchangesException.html" title="class in org.calypsonet.terminal.calypso.transaction">DesynchronizedExchangesException</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="org/calypsonet/terminal/calypso/card/DirectoryHeader.html" title="interface in org.calypsonet.terminal.calypso.card"><span class="typeNameLink">DirectoryHeader</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/card/package-summary.html">org.calypsonet.terminal.calypso.card</a></dt>
 <dd>
 <div class="block">Calypso DF metadata.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#disableBusyMode()">disableBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Disables the "Busy" mode.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SvAction.html#DO">DO</a></span> - org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvAction</a></dt>
 <dd>
@@ -343,13 +320,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Allows the command to analyze the data present at the given offset, and repeatedly at each
  following offset, until the end of the record is reached.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#enableSamTraceabilityMode(int,boolean)">enableSamTraceabilityMode(int, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
+ number and the value of the counter associated with the signing key.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#enableSvLoadAndDebitLog()">enableSvLoadAndDebitLog()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></dt>
 <dd>
 <div class="block">Enables the retrieval of both loading and debit log records.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#enableTransactionAudit()">enableTransactionAudit()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></dt>
-<dd>
-<div class="block">Enables the collection of transaction data for a later security audit.</div>
 </dd>
 </dl>
 <a id="I:F">
@@ -487,15 +465,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#getCalypsoCard()">getCalypsoCard()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
-<div class="block">Gets the card on which the transaction is performed.</div>
+<div class="block">Gets the target card on which the transaction is performed.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#getCalypsoSam()">getCalypsoSam()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
+<dd>
+<div class="block">Gets the target SAM on which the transaction is performed.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#getCardReader()">getCardReader()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
-<div class="block">Gets the reader used to communicate with the card on which the transaction is performed.</div>
+<div class="block">Gets the reader used to communicate with the target card on which the transaction is performed.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#getCardSecuritySetting()">getCardSecuritySetting()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
-<div class="block">Gets the settings defining the security parameters of the transaction.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#getSecuritySetting()"><code>CommonTransactionManager.getSecuritySetting()</code></a> instead.</div>
+</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/FileData.html#getContent()">getContent()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/FileData.html" title="interface in org.calypsonet.terminal.calypso.card">FileData</a></dt>
 <dd>
@@ -673,6 +657,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the SAM ID as an array of bytes</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#getSamReader()">getSamReader()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
+<dd>
+<div class="block">Gets the reader used to communicate with the target SAM on which the transaction is performed.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/SvDebitLogRecord.html#getSamTNum()">getSamTNum()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/SvDebitLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvDebitLogRecord</a></dt>
 <dd>
 <div class="block">Gets the SAM transaction number value as an int</div>
@@ -680,6 +668,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/SvLoadLogRecord.html#getSamTNum()">getSamTNum()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/SvLoadLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvLoadLogRecord</a></dt>
 <dd>
 <div class="block">Gets the SAM transaction number value as an int</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#getSecuritySetting()">getSecuritySetting()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
+<dd>
+<div class="block">Returns the settings defining the security parameters of the transaction.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html#getSerialNumber()">getSerialNumber()</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a></dt>
 <dd>
@@ -696,6 +688,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/FileHeader.html#getSharedReference()">getSharedReference()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/FileHeader.html" title="interface in org.calypsonet.terminal.calypso.card">FileHeader</a></dt>
 <dd>
 <div class="block">Gets the non-zero unique identifier of the shared data when the file data is shared.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#getSignature()">getSignature()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Returns the computed signature.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#getSignedData()">getSignedData()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Returns the data that was used to generate the signature.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#getSoftwareIssuer()">getSoftwareIssuer()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></dt>
 <dd>
@@ -760,10 +760,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the traceability information of the product.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#getTransactionAuditData()">getTransactionAuditData()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#getTransactionAuditData()">getTransactionAuditData()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
 <dd>
 <div class="block">Returns the audit data of the transaction containing all APDU exchanges with the card and the
- SAM if present.</div>
+ SAM.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#getTransactionCounter()">getTransactionCounter()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></dt>
 <dd>
@@ -776,12 +776,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">I</h2>
 <dl>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/InconsistencyDataException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">InconsistencyDataException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">InvalidCardSignatureException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
-<div class="block">Indicates an inconsistency in the card data.</div>
+<div class="block">Indicates that the card has correctly closed the secure session, but the card session is not
+ authentic because the signature of the card is incorrect.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/InconsistencyDataException.html#%3Cinit%3E(java.lang.String)">InconsistencyDataException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/InconsistencyDataException.html" title="class in org.calypsonet.terminal.calypso.transaction">InconsistencyDataException</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/InvalidCardSignatureException.html#%3Cinit%3E(java.lang.String)">InvalidCardSignatureException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidCardSignatureException</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/InvalidCardSignatureException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">InvalidCardSignatureException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidCardSignatureException</a></dt>
+<dd>
+<div class="block">Encapsulates a lower level exception.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#isDfInvalidated()">isDfInvalidated()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></dt>
 <dd>
 <div class="block">Tells if the current DF is invalidated or not.</div>
@@ -813,6 +818,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#isRatificationOnDeselectSupported()">isRatificationOnDeselectSupported()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></dt>
 <dd>
 <div class="block">Indicates if the ratification is done on deselect (ratification command not necessary).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/spi/SamRevocationServiceSpi.html#isSamRevoked(byte%5B%5D)">isSamRevoked(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.spi.<a href="org/calypsonet/terminal/calypso/spi/SamRevocationServiceSpi.html" title="interface in org.calypsonet.terminal.calypso.spi">SamRevocationServiceSpi</a></dt>
+<dd>
+<div class="block">Checks if the SAM with the provided serial number is revoked or not.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/spi/SamRevocationServiceSpi.html#isSamRevoked(byte%5B%5D,int)">isSamRevoked(byte[], int)</a></span> - Method in interface org.calypsonet.terminal.calypso.spi.<a href="org/calypsonet/terminal/calypso/spi/SamRevocationServiceSpi.html" title="interface in org.calypsonet.terminal.calypso.spi">SamRevocationServiceSpi</a></dt>
+<dd>
+<div class="block">Checks if the SAM with the provided serial number and the associated counter value is revoked
+ or not.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#isSignatureValid()">isSignatureValid()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dd>
+<div class="block">Returns the result of the signature verification process by indicating if the signature is
+ valid or not.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#isSvFeatureAvailable()">isSvFeatureAvailable()</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></dt>
 <dd>
@@ -876,6 +895,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Calypso SAM data structures and selection API.</div>
 </dd>
+<dt><a href="org/calypsonet/terminal/calypso/spi/package-summary.html">org.calypsonet.terminal.calypso.spi</a> - package org.calypsonet.terminal.calypso.spi</dt>
+<dd>
+<div class="block">Handlers to be implemented by end user applications.</div>
+</dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a> - package org.calypsonet.terminal.calypso.transaction</dt>
 <dd>
 <div class="block">Calypso card transaction API.</div>
@@ -899,6 +922,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Schedules the execution of a <b>Verify Pin</b> command without PIN presentation in order to get
  the attempt counter.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)">prepareComputeSignature(SignatureComputationData)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
+<dd>
+<div class="block">Schedules the execution of a "PSO Compute Signature" SAM command.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareDecreaseCounter(byte,int,int)">prepareDecreaseCounter(byte, int, int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
@@ -1070,6 +1097,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a <b>Update Record</b> command to overwrites the target file's
  record contents with the provided data.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)">prepareVerifySignature(SignatureVerificationData)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
+<dd>
+<div class="block">Schedules the execution of a "PSO Verify Signature" SAM command.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareWriteBinary(byte,int,byte%5B%5D)">prepareWriteBinary(byte, int, byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
 <div class="block">Schedules the execution of a <b>Write Binary</b> command to write over the indicated data of a
@@ -1102,7 +1133,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#processCardCommands()">processCardCommands()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
-<div class="block">Process all previously prepared card commands outside or inside a Secure Session.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#processCommands()"><code>CommonTransactionManager.processCommands()</code></a> instead.</div>
+</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#processChangeKey(int,byte,byte,byte,byte)">processChangeKey(int, byte, byte, byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
@@ -1115,6 +1148,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#processClosing()">processClosing()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
 <div class="block">Terminates the Secure Session sequence started with <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>CardTransactionManager.processOpening(WriteAccessLevel)</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#processCommands()">processCommands()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
+<dd>
+<div class="block">Process all previously prepared commands.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#processOpening(org.calypsonet.terminal.calypso.WriteAccessLevel)">processOpening(WriteAccessLevel)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
@@ -1131,6 +1168,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">R</h2>
 <dl>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">ReaderIOException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Indicates a communication error with the reader of the card or SAM.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/ReaderIOException.html#%3Cinit%3E(java.lang.String)">ReaderIOException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/ReaderIOException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">ReaderIOException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></dt>
+<dd>
+<div class="block">Encapsulates a lower level exception.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SvOperation.html#RELOAD">RELOAD</a></span> - org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SvOperation.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvOperation</a></dt>
 <dd>
 <div class="block">Increase the balance of the stored value</div>
@@ -1153,21 +1200,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">SAM S1E1</div>
 </dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/SamAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamAnomalyException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Indicates an anomaly in the SAM.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamAnomalyException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">SamAnomalyException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamAnomalyException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamAnomalyException</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamIOException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
-<div class="block">Indicates a communication error with the SAM (e.g timeout, network,...).</div>
+<div class="block">Indicates a communication error with the SAM (e.g.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamIOException.html#%3Cinit%3E(java.lang.String)">SamIOException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamIOException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">SamIOException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></dt>
 <dd>
-<div class="block">Encapsulates a lower level exception</div>
+<div class="block">Encapsulates a lower level exception.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/spi/SamRevocationServiceSpi.html" title="interface in org.calypsonet.terminal.calypso.spi"><span class="typeNameLink">SamRevocationServiceSpi</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/spi/package-summary.html">org.calypsonet.terminal.calypso.spi</a></dt>
+<dd>
+<div class="block">Service to be implemented in order to check dynamically if a SAM is revoked.</div>
 </dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/SamRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamRevokedException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
@@ -1175,25 +1220,52 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamRevokedException.html#%3Cinit%3E(java.lang.String)">SamRevokedException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamRevokedException</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamSecuritySetting</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Data to manage the security operations of a Calypso SAM transaction.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SamTransactionManager</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Service providing the high-level API to manage transactions with a Calypso SAM.</div>
+</dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SearchCommandData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
 <div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareSearchRecords(org.calypsonet.terminal.calypso.transaction.SearchCommandData)"><code>CardTransactionManager.prepareSearchRecords(SearchCommandData)</code></a> method.</div>
 </dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SecurityException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Indicates a detected security problem related to one of the following cases:
+
+ 
+   A de-synchronization of the APDU exchanges.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SecurityException.html#%3Cinit%3E(java.lang.String)">SecurityException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SecurityException.html" title="class in org.calypsonet.terminal.calypso.transaction">SecurityException</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/calypsonet/terminal/calypso/SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso"><span class="typeNameLink">SelectFileControl</span></a> - Enum in <a href="org/calypsonet/terminal/calypso/package-summary.html">org.calypsonet.terminal.calypso</a></dt>
 <dd>
 <div class="block">Enumeration of all expected behaviors of the selection command (see the specifics of this command
  in the ISO7816-4 standard and the Calypso specification).</div>
 </dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/SessionAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SessionAuthenticationException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SessionBufferOverflowException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
-<div class="block">Indicates that the card has correctly closed the secure session, but the support is not authentic
- because the signature of the card is incorrect.</div>
+<div class="block">Indicates that the secure session cannot be performed atomically because the session buffer
+ capacity is not sufficient to handle all the prepared write commands.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SessionAuthenticationException.html#%3Cinit%3E(java.lang.String)">SessionAuthenticationException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SessionAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionAuthenticationException</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SessionBufferOverflowException.html#%3Cinit%3E(java.lang.String)">SessionBufferOverflowException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionBufferOverflowException</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SessionAuthenticationException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">SessionAuthenticationException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SessionAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionAuthenticationException</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html#setControlSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)">setControlSamResource(CardReader, CalypsoSam)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a></dt>
 <dd>
-<div class="block">Encapsulates lower level exception.</div>
+<div class="block">Defines the control SAM and the reader through which it is accessible to be used to handle the
+ relevant cryptographic operations.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#setData(byte%5B%5D,byte%5B%5D,byte,byte)">setData(byte[], byte[], byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dd>
+<div class="block">Sets the signed data, the associated signature and the KIF/KVC of the key to be used for the
+ signature verification.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#setData(byte%5B%5D,byte,byte)">setData(byte[], byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Sets the data to be signed and the KIF/KVC of the key to be used for the signature computation.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#setFileControlInformation(org.calypsonet.terminal.calypso.card.CalypsoCardSelection.FileControlInformation)">setFileControlInformation(CalypsoCardSelection.FileControlInformation)</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></dt>
 <dd>
@@ -1222,8 +1294,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#setSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)">setSamResource(CardReader, CalypsoSam)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></dt>
 <dd>
-<div class="block">Defines the SAM and the reader through which it is accessible to be used to handle the relevant
- cryptographic operations.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html#setControlSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)"><code>CommonSecuritySetting.setControlSamResource(CardReader, CalypsoSam)</code></a> instead.</div>
+</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html#setSamRevocationService(org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi)">setSamRevocationService(SamRevocationServiceSpi)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a></dt>
+<dd>
+<div class="block">Sets the service to be used to dynamically check if a SAM is revoked or not.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SearchCommandData.html#setSearchData(byte%5B%5D)">setSearchData(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SearchCommandData</a></dt>
 <dd>
@@ -1233,9 +1310,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the SFI of the EF in which the search is to be performed.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#setSignatureSize(int)">setSignatureSize(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
+ (optional).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSamSelection.html#setUnlockData(java.lang.String)">setUnlockData(String)</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSamSelection.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSamSelection</a></dt>
 <dd>
 <div class="block">Sets the lock value expected by the SAM to be unlocked (8 or 16 bytes).</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SignatureComputationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(SignatureComputationData)</code></a> method.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SignatureVerificationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(SignatureVerificationData)</code></a> method.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html#SIMULATED_COUNTERS">SIMULATED_COUNTERS</a></span> - org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html" title="enum in org.calypsonet.terminal.calypso.card">ElementaryFile.Type</a></dt>
 <dd>
@@ -1250,17 +1340,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><a href="org/calypsonet/terminal/calypso/transaction/SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SvAction</span></a> - Enum in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
 <div class="block">Defines the type Stored Value of action.</div>
-</dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/SvAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SvAuthenticationException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Indicates that the "Stored Value" session is not authentic because the signature of the card is
- incorrect.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SvAuthenticationException.html#%3Cinit%3E(java.lang.String)">SvAuthenticationException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SvAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction">SvAuthenticationException</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SvAuthenticationException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">SvAuthenticationException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SvAuthenticationException.html" title="class in org.calypsonet.terminal.calypso.transaction">SvAuthenticationException</a></dt>
-<dd>
-<div class="block">Encapsulates lower level exception.</div>
 </dd>
 <dt><a href="org/calypsonet/terminal/calypso/card/SvDebitLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card"><span class="typeNameLink">SvDebitLogRecord</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/card/package-summary.html">org.calypsonet.terminal.calypso.card</a></dt>
 <dd>
@@ -1292,7 +1371,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/UnauthorizedKeyException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">UnauthorizedKeyException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
-<div class="block">Indicates that the current card requires an unauthorized key.</div>
+<div class="block">Indicates that the card requires an unauthorized session key.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/UnauthorizedKeyException.html#%3Cinit%3E(java.lang.String)">UnauthorizedKeyException(String)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/UnauthorizedKeyException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnauthorizedKeyException</a></dt>
 <dd>&nbsp;</dd>
@@ -1300,6 +1379,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">In the case of a <a href="org/calypsonet/terminal/calypso/transaction/SvOperation.html#RELOAD"><code>SvOperation.RELOAD</code></a>, loads a negative amount; in the case of a <a href="org/calypsonet/terminal/calypso/transaction/SvOperation.html#DEBIT"><code>SvOperation.DEBIT</code></a>, cancels, totally or partially, a previous debit.</div>
 </dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">UnexpectedCommandStatusException</span></a> - Exception in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Indicates that an unexpected command status was returned by the card or SAM.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/UnexpectedCommandStatusException.html#%3Cinit%3E(java.lang.String,java.lang.Throwable)">UnexpectedCommandStatusException(String, Throwable)</a></span> - Constructor for exception org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.ProductType.html#UNKNOWN">UNKNOWN</a></span> - org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.ProductType.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCard.ProductType</a></dt>
 <dd>
 <div class="block">Application type is equal to 0 or FFh or if the data provided by the selection process is not
@@ -1308,6 +1393,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.ProductType.html#UNKNOWN">UNKNOWN</a></span> - org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.ProductType.html" title="enum in org.calypsonet.terminal.calypso.sam">CalypsoSam.ProductType</a></dt>
 <dd>
 <div class="block">Unidentified smart card.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#useKeyDiversifier(byte%5B%5D)">useKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Requires to perform a key diversification before signing using the provided diversifier.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#useKeyDiversifier(byte%5B%5D)">useKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dd>
+<div class="block">Requires to perform a key diversification before verifying the signature using the provided
+ diversifier.</div>
 </dd>
 </dl>
 <a id="I:V">
@@ -1415,6 +1509,15 @@ the order they are declared.</div>
 </a>
 <h2 class="title">W</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#withoutBusyMode()">withoutBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dd>
+<div class="block">Indicates that the signature has been computed in non "Busy" mode.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#withSamTraceabilityMode(int,boolean,boolean)">withSamTraceabilityMode(int, boolean, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dd>
+<div class="block">Indicates that the signature has been computed in "SAM traceability" mode and therefore whether
+ the revocation status of the signing SAM should be checked or not.</div>
+</dd>
 <dt><a href="org/calypsonet/terminal/calypso/WriteAccessLevel.html" title="enum in org.calypsonet.terminal.calypso"><span class="typeNameLink">WriteAccessLevel</span></a> - Enum in <a href="org/calypsonet/terminal/calypso/package-summary.html">org.calypsonet.terminal.calypso</a></dt>
 <dd>
 <div class="block">Enumeration of the write access levels for the Calypso card Secure Session.</div>

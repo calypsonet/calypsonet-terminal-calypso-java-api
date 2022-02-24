@@ -26,8 +26,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":38};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -123,12 +123,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Superinterfaces:</dt>
+<dd><code><a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&gt;</code></dd>
+</dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">CardSecuritySetting</span></pre>
-<div class="block">Data to manage the security operations of a Calypso transaction.
-
- <p>Fluent setters allow to define all the required parameters, among which the resource profile
- of the SAM card is the only mandatory one.</div>
+<pre>public interface <span class="typeNameLabel">CardSecuritySetting</span>
+extends <a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&gt;</pre>
+<div class="block">Data to manage the security operations of a Calypso card transaction.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
@@ -147,7 +149,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -234,20 +236,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableTransactionAudit()">enableTransactionAudit</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Enables the collection of transaction data for a later security audit.</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPinModificationCipheringKey(byte,byte)">setPinModificationCipheringKey</a></span>&#8203;(byte&nbsp;kif,
                               byte&nbsp;kvc)</code></th>
 <td class="colLast">
 <div class="block">Sets the KIF/KVC pair of the PIN modification ciphering key.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setPinVerificationCipheringKey(byte,byte)">setPinVerificationCipheringKey</a></span>&#8203;(byte&nbsp;kif,
                               byte&nbsp;kvc)</code></th>
@@ -255,16 +250,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Sets the KIF/KVC pair of the PIN verification ciphering key.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)">setSamResource</a></span>&#8203;(org.calypsonet.terminal.reader.CardReader&nbsp;samReader,
               <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a>&nbsp;calypsoSam)</code></th>
 <td class="colLast">
-<div class="block">Defines the SAM and the reader through which it is accessible to be used to handle the relevant
- cryptographic operations.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="CommonSecuritySetting.html#setControlSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)"><code>CommonSecuritySetting.setControlSamResource(CardReader, CalypsoSam)</code></a> instead.</div>
+</div>
 </td>
 </tr>
 </table>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.org.calypsonet.terminal.calypso.transaction.CommonSecuritySetting">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.calypsonet.terminal.calypso.transaction.<a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a></h3>
+<code><a href="CommonSecuritySetting.html#setControlSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)">setControlSamResource</a>, <a href="CommonSecuritySetting.html#setSamRevocationService(org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi)">setSamRevocationService</a></code></li>
+</ul>
 </li>
 </ul>
 </section>
@@ -287,8 +290,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>setSamResource</h4>
-<pre class="methodSignature"><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&nbsp;setSamResource&#8203;(org.calypsonet.terminal.reader.CardReader&nbsp;samReader,
+<pre class="methodSignature">@Deprecated
+<a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&nbsp;setSamResource&#8203;(org.calypsonet.terminal.reader.CardReader&nbsp;samReader,
                                    <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a>&nbsp;calypsoSam)</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <a href="CommonSecuritySetting.html#setControlSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)"><code>CommonSecuritySetting.setControlSamResource(CardReader, CalypsoSam)</code></a> instead.</div>
+</div>
 <div class="block">Defines the SAM and the reader through which it is accessible to be used to handle the relevant
  cryptographic operations.</div>
 <dl>
@@ -347,22 +354,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h4>enablePinPlainTransmission</h4>
 <pre class="methodSignature"><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&nbsp;enablePinPlainTransmission()</pre>
 <div class="block">Enables the PIN transmission in plain text.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.0.0</dd>
-</dl>
-</li>
-</ul>
-<a id="enableTransactionAudit()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>enableTransactionAudit</h4>
-<pre class="methodSignature"><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&nbsp;enableTransactionAudit()</pre>
-<div class="block">Enables the collection of transaction data for a later security audit.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
