@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - Exceptions of calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-10)
+    Calypsonet - Exceptions of calypsonet-terminal-calypso-java-api - 1.2.+ (2022-02-22)
 end title
 
 ' == THEME ==
@@ -46,29 +46,20 @@ hide <<grey>> stereotype
 ' == CONTENT ==
 
 package "org.calypsonet.terminal.calypso" as api {
-
     package transaction {
-
-        +abstract class "<<RuntimeException>>\nCardTransactionException" as CardTransactionException {
-            #CardTransactionException (String message)
-            #CardTransactionException (String message, Throwable cause)
+        +class "<<RuntimeException>>" as RuntimeException {
+            +**SessionBufferOverflowException**: Session buffer would overflow for atomic session.
+            +**UnauthorizedKeyException**
+            +**CardRevokedException**
+            +**SamRevokedException**
+            +**SecurityException**: Number of R-APDUs != number of C-APDUs **or** data read in session != data read outside session.
+            +**InvalidCardSignatureException**: R-APDU of DigestAuthenticate = 6985 **or** R-APDU of SvCheck = 6985.
+            +**CardSignatureNotVerifiableException**: R-APDU of CloseSecureSession = 9000 but SAM is no more available.
+            +**UnexpectedCommandStatusException**
+            +**ReaderIOException**: Card reader and/or SAM reader communication is broken.
+            +**CardIOException**
+            +**SamIOException**
         }
-        note bottom of CardTransactionException
-            * **AtomicTransactionException**: Session buffer would overflow for atomic transaction
-            * **AuthenticationNotVerifiedException**: R-APDU of CloseSecureSession eq 9000 but SAM no more available
-            * **CardAnomalyException**: Unexpected Card behaviour
-            * **CardCloseSecureSessionException**: R-APDU of CloseSecureSession != 9000
-            * **CardIOException**
-            * **CardRevokedException**
-            * **DesynchronizedExchangesException**: R-APDU number != C-APDU number
-            * **InconsistencyDataException**: Data read in session != Data read outside session
-            * **SamAnomalyException**: Unexpected SAM behaviour
-            * **SamIOException**
-            * **SamRevokedException**
-            * **SessionAuthenticationException**: R-APDU of DigestAuthenticate eq 6985
-            * **SvAuthenticationException**: R-APDU of SvCheck eq 6985
-            * **UnauthorizedKeyException**
-        end note
     }
 }
 
@@ -76,7 +67,7 @@ package "org.calypsonet.terminal.calypso" as api {
 
 ' == LAYOUT ==
 
-'CardTransactionException -[hidden]left- AtomicTransactionException
+'CardTransactionException -[hidden]left- SessionBufferOverflowException
 
 ' == STYLE ==
 

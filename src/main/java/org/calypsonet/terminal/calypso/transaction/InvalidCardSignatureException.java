@@ -1,5 +1,5 @@
 /* **************************************************************************************
- * Copyright (c) 2020 Calypso Networks Association https://calypsonet.org/
+ * Copyright (c) 2022 Calypso Networks Association https://calypsonet.org/
  *
  * See the NOTICE file(s) distributed with this work for additional information
  * regarding copyright ownership.
@@ -12,17 +12,23 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates a communication error with the SAM (e.g. timeout, network error, etc...).
+ * Indicates that the card has correctly closed the secure session, but the card session is not
+ * authentic because the signature of the card is incorrect. This can happen in the following cases:
  *
- * @since 1.0.0
+ * <ul>
+ *   <li>The "Digest Authenticate" SAM command status is 6985h;
+ *   <li>The "SV Check" SAM command status is 6985h;
+ * </ul>
+ *
+ * @since 1.2.0
  */
-public class SamIOException extends RuntimeException {
+public class InvalidCardSignatureException extends RuntimeException {
 
   /**
    * @param message The message to identify the exception context.
-   * @since 1.0.0
+   * @since 1.2.0
    */
-  public SamIOException(String message) {
+  public InvalidCardSignatureException(String message) {
     super(message);
   }
 
@@ -31,9 +37,9 @@ public class SamIOException extends RuntimeException {
    *
    * @param message Message to identify the exception context.
    * @param cause The cause.
-   * @since 1.0.0
+   * @since 1.2.0
    */
-  public SamIOException(String message, Throwable cause) {
+  public InvalidCardSignatureException(String message, Throwable cause) {
     super(message, cause);
   }
 }

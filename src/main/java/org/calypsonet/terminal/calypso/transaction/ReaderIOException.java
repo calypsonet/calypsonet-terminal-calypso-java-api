@@ -1,5 +1,5 @@
 /* **************************************************************************************
- * Copyright (c) 2020 Calypso Networks Association https://calypsonet.org/
+ * Copyright (c) 2022 Calypso Networks Association https://calypsonet.org/
  *
  * See the NOTICE file(s) distributed with this work for additional information
  * regarding copyright ownership.
@@ -12,20 +12,28 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates an anomaly in the card.
+ * Indicates a communication error with the reader of the card or SAM.
  *
- * <p>This can occur if the card is not Calypso compliant.
- *
- * @since 1.0.0
+ * @since 1.2.0
  */
-public class CardAnomalyException extends CardTransactionException {
+public class ReaderIOException extends RuntimeException {
 
   /**
+   * @param message The message to identify the exception context.
+   * @since 1.2.0
+   */
+  public ReaderIOException(String message) {
+    super(message);
+  }
+
+  /**
+   * Encapsulates a lower level exception.
+   *
    * @param message Message to identify the exception context.
    * @param cause The cause.
-   * @since 1.0.0
+   * @since 1.2.0
    */
-  public CardAnomalyException(String message, Throwable cause) {
+  public ReaderIOException(String message, Throwable cause) {
     super(message, cause);
   }
 }

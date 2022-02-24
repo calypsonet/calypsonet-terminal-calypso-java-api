@@ -1,5 +1,5 @@
 /* **************************************************************************************
- * Copyright (c) 2018 Calypso Networks Association https://calypsonet.org/
+ * Copyright (c) 2022 Calypso Networks Association https://calypsonet.org/
  *
  * See the NOTICE file(s) distributed with this work for additional information
  * regarding copyright ownership.
@@ -12,17 +12,24 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates that the card requires an unauthorized session key.
+ * Indicates a detected security problem related to one of the following cases:
  *
- * @since 1.0.0
+ * <ul>
+ *   <li>A de-synchronization of the APDU exchanges. This means that the number of APDU responses is
+ *       different from the number of APDU requests;
+ *   <li>An inconsistency in the card data. This can happen, for example, if the data read in
+ *       session is different from the data read outside the session.
+ * </ul>
+ *
+ * @since 1.2.0
  */
-public class UnauthorizedKeyException extends RuntimeException {
+public class SecurityException extends RuntimeException {
 
   /**
    * @param message The message to identify the exception context.
-   * @since 1.0.0
+   * @since 1.2.0
    */
-  public UnauthorizedKeyException(String message) {
+  public SecurityException(String message) {
     super(message);
   }
 }
