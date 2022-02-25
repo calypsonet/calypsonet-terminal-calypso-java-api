@@ -64,6 +64,8 @@ public interface CommonTransactionManager<
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
+   * @throws SamRevokedException If the signature has been computed in "SAM traceability" mode and
+   *     the SAM revocation status check has been requested and the SAM is revoked.
    * @see SignatureVerificationData
    * @since 1.2.0
    */
