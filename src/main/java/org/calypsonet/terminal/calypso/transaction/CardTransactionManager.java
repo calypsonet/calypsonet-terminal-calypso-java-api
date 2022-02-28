@@ -441,6 +441,8 @@ public interface CardTransactionManager
    *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
+   * @throws UnsupportedOperationException If the "Search Record Multiple" command is not available
+   *     for this card.
    * @throws IllegalArgumentException If the input data is inconsistent.
    * @see SearchCommandData
    * @since 1.1.0
