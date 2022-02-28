@@ -139,6 +139,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">SignatureComputationData.</span><code><span class="memberNameLink"><a href="../SignatureComputationData.html#diversifyKeyWithSpecificValue(byte%5B%5D)">diversifyKeyWithSpecificValue</a></span>&#8203;(byte[]&nbsp;diversifier)</code></th>
+<td class="colLast">
+<div class="block">Requests to perform a key diversification with the provided diversifier before signing.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">SignatureComputationData.</span><code><span class="memberNameLink"><a href="../SignatureComputationData.html#diversifyKeyWithTargetSerialNumber()">diversifyKeyWithTargetSerialNumber</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Requests to perform a key diversification with the full serial number of the target card or SAM
+ before signing.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">SignatureComputationData.</span><code><span class="memberNameLink"><a href="../SignatureComputationData.html#enableSamTraceabilityMode(int,boolean)">enableSamTraceabilityMode</a></span>&#8203;(int&nbsp;offset,
                          boolean&nbsp;usePartialSamSerialNumber)</code></th>
 <td class="colLast">
@@ -161,13 +176,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast">
 <div class="block">Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
  (optional).</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">SignatureComputationData.</span><code><span class="memberNameLink"><a href="../SignatureComputationData.html#useKeyDiversifier(byte%5B%5D)">useKeyDiversifier</a></span>&#8203;(byte[]&nbsp;keyDiversifier)</code></th>
-<td class="colLast">
-<div class="block">Requires to perform a key diversification before signing using the provided diversifier.</div>
 </td>
 </tr>
 </tbody>

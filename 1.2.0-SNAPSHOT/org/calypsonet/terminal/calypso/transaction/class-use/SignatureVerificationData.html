@@ -132,6 +132,22 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">SignatureVerificationData.</span><code><span class="memberNameLink"><a href="../SignatureVerificationData.html#diversifyKeyWithSpecificValue(byte%5B%5D)">diversifyKeyWithSpecificValue</a></span>&#8203;(byte[]&nbsp;diversifier)</code></th>
+<td class="colLast">
+<div class="block">Requests to perform a key diversification with the provided diversifier before verifying the
+ signature.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">SignatureVerificationData.</span><code><span class="memberNameLink"><a href="../SignatureVerificationData.html#diversifyKeyWithTargetSerialNumber()">diversifyKeyWithTargetSerialNumber</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Requests to perform a key diversification with the full serial number of the target card or SAM
+ before verifying the signature.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">SignatureVerificationData.</span><code><span class="memberNameLink"><a href="../SignatureVerificationData.html#setData(byte%5B%5D,byte%5B%5D,byte,byte)">setData</a></span>&#8203;(byte[]&nbsp;data,
        byte[]&nbsp;signature,
        byte&nbsp;kif,
@@ -143,20 +159,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">SignatureVerificationData.</span><code><span class="memberNameLink"><a href="../SignatureVerificationData.html#useKeyDiversifier(byte%5B%5D)">useKeyDiversifier</a></span>&#8203;(byte[]&nbsp;keyDiversifier)</code></th>
-<td class="colLast">
-<div class="block">Requires to perform a key diversification before verifying the signature using the provided
- diversifier.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">SignatureVerificationData.</span><code><span class="memberNameLink"><a href="../SignatureVerificationData.html#withoutBusyMode()">withoutBusyMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Indicates that the signature has been computed in non "Busy" mode.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">SignatureVerificationData.</span><code><span class="memberNameLink"><a href="../SignatureVerificationData.html#withSamTraceabilityMode(int,boolean,boolean)">withSamTraceabilityMode</a></span>&#8203;(int&nbsp;offset,
                        boolean&nbsp;isPartialSamSerialNumber,
