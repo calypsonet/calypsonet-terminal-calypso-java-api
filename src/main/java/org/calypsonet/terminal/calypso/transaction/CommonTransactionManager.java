@@ -92,6 +92,8 @@ public interface CommonTransactionManager<
    * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws InvalidSignatureException If a signature associated to a prepared signature
+   *     verification SAM command is invalid.
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
    * @throws InconsistentDataException If inconsistent data have been detected.
    * @throws SessionBufferOverflowException If a secure session is open and multiple session mode is
