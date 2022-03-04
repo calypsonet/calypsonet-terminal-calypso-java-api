@@ -12,23 +12,21 @@
 package org.calypsonet.terminal.calypso.transaction;
 
 /**
- * Indicates that the card has correctly closed the secure session, but the card session is not
- * authentic because the signature of the card is incorrect. This can happen in the following cases:
+ * Indicates that a signature is incorrect. This can happen in the following cases:
  *
  * <ul>
- *   <li>The "Digest Authenticate" SAM command status is 6988h;
- *   <li>The "SV Check" SAM command status is 6988h;
+ *   <li>The "PSO Verify Signature" SAM command status is 6988h;
  * </ul>
  *
  * @since 1.2.0
  */
-public class InvalidCardSignatureException extends RuntimeException {
+public class InvalidSignatureException extends RuntimeException {
 
   /**
    * @param message The message to identify the exception context.
    * @since 1.2.0
    */
-  public InvalidCardSignatureException(String message) {
+  public InvalidSignatureException(String message) {
     super(message);
   }
 
@@ -39,7 +37,7 @@ public class InvalidCardSignatureException extends RuntimeException {
    * @param cause The cause.
    * @since 1.2.0
    */
-  public InvalidCardSignatureException(String message, Throwable cause) {
+  public InvalidSignatureException(String message, Throwable cause) {
     super(message, cause);
   }
 }

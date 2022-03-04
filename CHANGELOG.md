@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `SamSecuritySetting` API.
 - `SamTransactionManager` API.
 - `ReaderIOException` exception.
+- `InvalidSignatureException` exception.
 ### Changed
 - Renaming of `AtomicTransactionException` to `SessionBufferOverflowException`.
 - Renaming of `AuthenticationNotVerifiedException` to `CardSignatureNotVerifiableException`.
