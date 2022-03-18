@@ -45,6 +45,18 @@ public interface SignatureComputationData {
   SignatureComputationData setSignatureSize(int size);
 
   /**
+   * Sets a specific key diversifier to use before signing (optional).
+   *
+   * <p>By default, the key diversification is performed with the full serial number of the target
+   * card or SAM depending on the transaction context (Card or SAM transaction).
+   *
+   * @param diversifier The diversifier to be used (8 bytes long).
+   * @return The current instance.
+   * @since 1.2.0
+   */
+  SignatureComputationData setKeyDiversifier(byte[] diversifier);
+
+  /**
    * Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
    * number and the value of the counter associated with the signing key.
    *
@@ -63,7 +75,7 @@ public interface SignatureComputationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureComputationData enableSamTraceabilityMode(int offset, boolean usePartialSamSerialNumber);
+  SignatureComputationData withSamTraceabilityMode(int offset, boolean usePartialSamSerialNumber);
 
   /**
    * Disables the "Busy" mode. When enabled, if the "PSO Verify Signature" command used to check the
@@ -76,29 +88,7 @@ public interface SignatureComputationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureComputationData disableBusyMode();
-
-  /**
-   * Requests to perform a key diversification with the full serial number of the target card or SAM
-   * before signing.
-   *
-   * <p>By default, there is no diversification of the key.
-   *
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  SignatureComputationData diversifyKeyWithTargetSerialNumber();
-
-  /**
-   * Requests to perform a key diversification with the provided diversifier before signing.
-   *
-   * <p>By default, there is no diversification of the key.
-   *
-   * @param diversifier The diversifier to be used (8 bytes long).
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  SignatureComputationData diversifyKeyWithSpecificValue(byte[] diversifier);
+  SignatureComputationData withoutBusyMode();
 
   /**
    * Returns the data that was used to generate the signature. If the "SAM traceability" mode was

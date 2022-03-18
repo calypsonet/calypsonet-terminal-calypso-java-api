@@ -35,6 +35,18 @@ public interface SignatureVerificationData {
   SignatureVerificationData setData(byte[] data, byte[] signature, byte kif, byte kvc);
 
   /**
+   * Sets a specific key diversifier to use before verifying the signature (optional).
+   *
+   * <p>By default, the key diversification is performed with the full serial number of the target
+   * card or SAM depending on the transaction context (Card or SAM transaction).
+   *
+   * @param diversifier The diversifier to be used (8 bytes long).
+   * @return The current instance.
+   * @since 1.2.0
+   */
+  SignatureVerificationData setKeyDiversifier(byte[] diversifier);
+
+  /**
    * Indicates that the signature has been computed in "SAM traceability" mode and therefore whether
    * the revocation status of the signing SAM should be checked or not.
    *
@@ -48,7 +60,7 @@ public interface SignatureVerificationData {
    *     service must be registered in the security settings using the {@link
    *     CommonSecuritySetting#setSamRevocationService(SamRevocationServiceSpi)} method.
    * @return The current instance.
-   * @see SignatureComputationData#enableSamTraceabilityMode(int, boolean)
+   * @see SignatureComputationData#withSamTraceabilityMode(int, boolean)
    * @see SamRevocationServiceSpi
    * @see CommonSecuritySetting#setSamRevocationService(SamRevocationServiceSpi)
    * @since 1.2.0
@@ -76,39 +88,10 @@ public interface SignatureVerificationData {
    * fail with the busy status until the end of the busy mode duration.
    *
    * @return The current instance.
-   * @see SignatureComputationData#disableBusyMode()
+   * @see SignatureComputationData#withoutBusyMode()
    * @since 1.2.0
    */
   SignatureVerificationData withoutBusyMode();
-
-  /**
-   * Requests to perform a key diversification with the full serial number of the target card or SAM
-   * before verifying the signature.
-   *
-   * <p>Note: if the SAM traceability data is present, it is possible that the key used to compute
-   * the signature was diversified according to the serial number of the signing SAM.
-   *
-   * <p>By default, there is no diversification of the key.
-   *
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  SignatureVerificationData diversifyKeyWithTargetSerialNumber();
-
-  /**
-   * Requests to perform a key diversification with the provided diversifier before verifying the
-   * signature.
-   *
-   * <p>Note: if the SAM traceability data is present, it is possible that the key used to compute
-   * the signature was diversified according to the serial number of the signing SAM.
-   *
-   * <p>By default, there is no diversification of the key.
-   *
-   * @param diversifier The diversifier to be used (8 bytes long).
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  SignatureVerificationData diversifyKeyWithSpecificValue(byte[] diversifier);
 
   /**
    * Returns the result of the signature verification process by indicating if the signature is
