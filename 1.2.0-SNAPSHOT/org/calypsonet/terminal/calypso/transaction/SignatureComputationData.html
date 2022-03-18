@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -151,51 +151,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#disableBusyMode()">disableBusyMode</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Disables the "Busy" mode.</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#diversifyKeyWithSpecificValue(byte%5B%5D)">diversifyKeyWithSpecificValue</a></span>&#8203;(byte[]&nbsp;diversifier)</code></th>
-<td class="colLast">
-<div class="block">Requests to perform a key diversification with the provided diversifier before signing.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#diversifyKeyWithTargetSerialNumber()">diversifyKeyWithTargetSerialNumber</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Requests to perform a key diversification with the full serial number of the target card or SAM
- before signing.</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableSamTraceabilityMode(int,boolean)">enableSamTraceabilityMode</a></span>&#8203;(int&nbsp;offset,
-                         boolean&nbsp;usePartialSamSerialNumber)</code></th>
-<td class="colLast">
-<div class="block">Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
- number and the value of the counter associated with the signing key.</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
 <td class="colFirst"><code>byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSignature()">getSignature</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the computed signature.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSignedData()">getSignedData</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the data that was used to generate the signature.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setData(byte%5B%5D,byte,byte)">setData</a></span>&#8203;(byte[]&nbsp;data,
        byte&nbsp;kif,
@@ -204,12 +173,35 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Sets the data to be signed and the KIF/KVC of the key to be used for the signature computation.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setKeyDiversifier(byte%5B%5D)">setKeyDiversifier</a></span>&#8203;(byte[]&nbsp;diversifier)</code></th>
+<td class="colLast">
+<div class="block">Sets a specific key diversifier to use before signing (optional).</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSignatureSize(int)">setSignatureSize</a></span>&#8203;(int&nbsp;size)</code></th>
 <td class="colLast">
 <div class="block">Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
  (optional).</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withoutBusyMode()">withoutBusyMode</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Disables the "Busy" mode.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#withSamTraceabilityMode(int,boolean)">withSamTraceabilityMode</a></span>&#8203;(int&nbsp;offset,
+                       boolean&nbsp;usePartialSamSerialNumber)</code></th>
+<td class="colLast">
+<div class="block">Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
+ number and the value of the counter associated with the signing key.</div>
 </td>
 </tr>
 </table>
@@ -274,14 +266,35 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
-<a id="enableSamTraceabilityMode(int,boolean)">
+<a id="setKeyDiversifier(byte[])">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>enableSamTraceabilityMode</h4>
-<pre class="methodSignature"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;enableSamTraceabilityMode&#8203;(int&nbsp;offset,
-                                                   boolean&nbsp;usePartialSamSerialNumber)</pre>
+<h4>setKeyDiversifier</h4>
+<pre class="methodSignature"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;setKeyDiversifier&#8203;(byte[]&nbsp;diversifier)</pre>
+<div class="block">Sets a specific key diversifier to use before signing (optional).
+
+ <p>By default, the key diversification is performed with the full serial number of the target
+ card or SAM depending on the transaction context (Card or SAM transaction).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>diversifier</code> - The diversifier to be used (8 bytes long).</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The current instance.</dd>
+<dt><span class="simpleTagLabel">Since:</span></dt>
+<dd>1.2.0</dd>
+</dl>
+</li>
+</ul>
+<a id="withSamTraceabilityMode(int,boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withSamTraceabilityMode</h4>
+<pre class="methodSignature"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;withSamTraceabilityMode&#8203;(int&nbsp;offset,
+                                                 boolean&nbsp;usePartialSamSerialNumber)</pre>
 <div class="block">Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
  number and the value of the counter associated with the signing key.
 
@@ -305,13 +318,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
-<a id="disableBusyMode()">
+<a id="withoutBusyMode()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>disableBusyMode</h4>
-<pre class="methodSignature"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;disableBusyMode()</pre>
+<h4>withoutBusyMode</h4>
+<pre class="methodSignature"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;withoutBusyMode()</pre>
 <div class="block">Disables the "Busy" mode. When enabled, if the "PSO Verify Signature" command used to check the
  signature fails because of an incorrect signature, other "PSO Verify Signature" command with
  "Busy" mode is rejected for a few seconds by responding with the "busy" status word. For
@@ -319,45 +332,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 
  <p>By default, the "Busy" mode is enabled.</div>
 <dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.2.0</dd>
-</dl>
-</li>
-</ul>
-<a id="diversifyKeyWithTargetSerialNumber()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>diversifyKeyWithTargetSerialNumber</h4>
-<pre class="methodSignature"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;diversifyKeyWithTargetSerialNumber()</pre>
-<div class="block">Requests to perform a key diversification with the full serial number of the target card or SAM
- before signing.
-
- <p>By default, there is no diversification of the key.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.2.0</dd>
-</dl>
-</li>
-</ul>
-<a id="diversifyKeyWithSpecificValue(byte[])">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>diversifyKeyWithSpecificValue</h4>
-<pre class="methodSignature"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;diversifyKeyWithSpecificValue&#8203;(byte[]&nbsp;diversifier)</pre>
-<div class="block">Requests to perform a key diversification with the provided diversifier before signing.
-
- <p>By default, there is no diversification of the key.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>diversifier</code> - The diversifier to be used (8 bytes long).</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>

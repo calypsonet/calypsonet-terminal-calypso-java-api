@@ -275,29 +275,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Calypso DF metadata.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#disableBusyMode()">disableBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
-<dd>
-<div class="block">Disables the "Busy" mode.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#diversifyKeyWithSpecificValue(byte%5B%5D)">diversifyKeyWithSpecificValue(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
-<dd>
-<div class="block">Requests to perform a key diversification with the provided diversifier before signing.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#diversifyKeyWithSpecificValue(byte%5B%5D)">diversifyKeyWithSpecificValue(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
-<dd>
-<div class="block">Requests to perform a key diversification with the provided diversifier before verifying the
- signature.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#diversifyKeyWithTargetSerialNumber()">diversifyKeyWithTargetSerialNumber()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
-<dd>
-<div class="block">Requests to perform a key diversification with the full serial number of the target card or SAM
- before signing.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#diversifyKeyWithTargetSerialNumber()">diversifyKeyWithTargetSerialNumber()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
-<dd>
-<div class="block">Requests to perform a key diversification with the full serial number of the target card or SAM
- before verifying the signature.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SvAction.html#DO">DO</a></span> - org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvAction</a></dt>
 <dd>
 <div class="block">In the case of a <a href="org/calypsonet/terminal/calypso/transaction/SvOperation.html#RELOAD"><code>SvOperation.RELOAD</code></a>, loads a positive amount; in the case of a <a href="org/calypsonet/terminal/calypso/transaction/SvOperation.html#DEBIT"><code>SvOperation.DEBIT</code></a>, debits a positive amount</div>
@@ -338,11 +315,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Allows the command to analyze the data present at the given offset, and repeatedly at each
  following offset, until the end of the record is reached.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#enableSamTraceabilityMode(int,boolean)">enableSamTraceabilityMode(int, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
-<dd>
-<div class="block">Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
- number and the value of the counter associated with the signing key.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html#enableSvLoadAndDebitLog()">enableSvLoadAndDebitLog()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></dt>
 <dd>
@@ -1304,6 +1276,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the file occurrence mode (see ISO7816-4).</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#setKeyDiversifier(byte%5B%5D)">setKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Sets a specific key diversifier to use before signing (optional).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#setKeyDiversifier(byte%5B%5D)">setKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dd>
+<div class="block">Sets a specific key diversifier to use before verifying the signature (optional).</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SearchCommandData.html#setMask(byte%5B%5D)">setMask(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SearchCommandData</a></dt>
 <dd>
 <div class="block">Sets the mask of bits to take into account during the comparison (padded right with FFh if
@@ -1529,9 +1509,18 @@ the order they are declared.</div>
 </a>
 <h2 class="title">W</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#withoutBusyMode()">withoutBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Disables the "Busy" mode.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#withoutBusyMode()">withoutBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
 <dd>
 <div class="block">Indicates that the signature has been computed in non "Busy" mode.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#withSamTraceabilityMode(int,boolean)">withSamTraceabilityMode(int, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dd>
+<div class="block">Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
+ number and the value of the counter associated with the signing key.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#withSamTraceabilityMode(int,boolean,boolean)">withSamTraceabilityMode(int, boolean, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
 <dd>
