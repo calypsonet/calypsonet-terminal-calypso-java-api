@@ -117,7 +117,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">org.calypsonet.terminal.calypso.transaction</a></div>
-<h2 title="Interface CommonSecuritySetting" class="title">Interface CommonSecuritySetting&lt;T extends CommonSecuritySetting&lt;T&gt;&gt;</h2>
+<h2 title="Interface CommonSecuritySetting" class="title">Interface CommonSecuritySetting&lt;S extends CommonSecuritySetting&lt;S&gt;&gt;</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -125,14 +125,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
-<dd><code>T</code> - The type of the lowest level child object.</dd>
+<dd><code>S</code> - The type of the lowest level child object.</dd>
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
 <dd><code><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></code>, <code><a href="SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamSecuritySetting</a></code></dd>
 </dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">CommonSecuritySetting&lt;T extends CommonSecuritySetting&lt;T&gt;&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">CommonSecuritySetting&lt;S extends CommonSecuritySetting&lt;S&gt;&gt;</span></pre>
 <div class="block">Common data to manage the security operations of a Calypso transaction.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -159,7 +159,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">T</a></code></td>
+<td class="colFirst"><code><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setControlSamResource(org.calypsonet.terminal.reader.CardReader,org.calypsonet.terminal.calypso.sam.CalypsoSam)">setControlSamResource</a></span>&#8203;(org.calypsonet.terminal.reader.CardReader&nbsp;samReader,
                      <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a>&nbsp;calypsoSam)</code></th>
 <td class="colLast">
@@ -168,7 +168,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">T</a></code></td>
+<td class="colFirst"><code><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSamRevocationService(org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi)">setSamRevocationService</a></span>&#8203;(<a href="../spi/SamRevocationServiceSpi.html" title="interface in org.calypsonet.terminal.calypso.spi">SamRevocationServiceSpi</a>&nbsp;service)</code></th>
 <td class="colLast">
 <div class="block">Sets the service to be used to dynamically check if a SAM is revoked or not.</div>
@@ -197,7 +197,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>setControlSamResource</h4>
-<pre class="methodSignature"><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">T</a>&nbsp;setControlSamResource&#8203;(org.calypsonet.terminal.reader.CardReader&nbsp;samReader,
+<pre class="methodSignature"><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a>&nbsp;setControlSamResource&#8203;(org.calypsonet.terminal.reader.CardReader&nbsp;samReader,
                         <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a>&nbsp;calypsoSam)</pre>
 <div class="block">Defines the control SAM and the reader through which it is accessible to be used to handle the
  relevant cryptographic operations.</div>
@@ -221,7 +221,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setSamRevocationService</h4>
-<pre class="methodSignature"><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">T</a>&nbsp;setSamRevocationService&#8203;(<a href="../spi/SamRevocationServiceSpi.html" title="interface in org.calypsonet.terminal.calypso.spi">SamRevocationServiceSpi</a>&nbsp;service)</pre>
+<pre class="methodSignature"><a href="CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a>&nbsp;setSamRevocationService&#8203;(<a href="../spi/SamRevocationServiceSpi.html" title="interface in org.calypsonet.terminal.calypso.spi">SamRevocationServiceSpi</a>&nbsp;service)</pre>
 <div class="block">Sets the service to be used to dynamically check if a SAM is revoked or not.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
