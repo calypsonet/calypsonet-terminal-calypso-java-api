@@ -266,8 +266,8 @@ package "org.calypsonet.terminal.calypso" as api {
     }
     package transaction {
         ' Common to Card and SAM
-        +interface CommonTransactionManager<T extends CommonTransactionManager<T, E>,\nE extends CommonSecuritySetting<E>> {
-            +E getSecuritySetting ()
+        +interface CommonTransactionManager<T extends CommonTransactionManager<T, S>,\nS extends CommonSecuritySetting<S>> {
+            +S getSecuritySetting ()
             +List<byte[]> getTransactionAuditData ()
 
             +T prepareComputeSignature (SignatureComputationData data)
@@ -293,9 +293,9 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +boolean isSignatureValid ()
         }
-        +interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
-            +T setControlSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
-            +T setSamRevocationServiceSpi (SamRevocationServiceSpi service)
+        +interface CommonSecuritySetting<S extends CommonSecuritySetting<S>> {
+            +S setControlSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
+            +S setSamRevocationServiceSpi (SamRevocationServiceSpi service)
         }
         ' Card
         +interface CardTransactionManager extends CommonTransactionManager {

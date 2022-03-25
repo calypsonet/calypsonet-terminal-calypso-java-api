@@ -18,10 +18,10 @@ import org.calypsonet.terminal.reader.CardReader;
 /**
  * Common data to manage the security operations of a Calypso transaction.
  *
- * @param <T> The type of the lowest level child object.
+ * @param <S> The type of the lowest level child object.
  * @since 1.2.0
  */
-public interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
+public interface CommonSecuritySetting<S extends CommonSecuritySetting<S>> {
 
   /**
    * Defines the control SAM and the reader through which it is accessible to be used to handle the
@@ -34,7 +34,7 @@ public interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
    *     {@link CalypsoSam} is equal to {@link CalypsoSam.ProductType#UNKNOWN}.
    * @since 1.2.0
    */
-  T setControlSamResource(CardReader samReader, CalypsoSam calypsoSam);
+  S setControlSamResource(CardReader samReader, CalypsoSam calypsoSam);
 
   /**
    * Sets the service to be used to dynamically check if a SAM is revoked or not.
@@ -44,5 +44,5 @@ public interface CommonSecuritySetting<T extends CommonSecuritySetting<T>> {
    * @throws IllegalArgumentException If the provided service is null.
    * @since 1.2.0
    */
-  T setSamRevocationService(SamRevocationServiceSpi service);
+  S setSamRevocationService(SamRevocationServiceSpi service);
 }

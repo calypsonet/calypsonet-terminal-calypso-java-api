@@ -40,7 +40,7 @@ public interface SignatureVerificationData {
    * <p>By default, the key diversification is performed with the full serial number of the target
    * card or SAM depending on the transaction context (Card or SAM transaction).
    *
-   * @param diversifier The diversifier to be used (8 bytes long).
+   * @param diversifier The diversifier to be used (from 1 to 8 bytes long).
    * @return The current instance.
    * @since 1.2.0
    */

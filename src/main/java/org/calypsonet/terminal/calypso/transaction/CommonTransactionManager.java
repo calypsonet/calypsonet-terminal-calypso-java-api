@@ -17,12 +17,12 @@ import java.util.List;
  * Common service providing the high-level API to manage transactions with a Calypso card or SAM.
  *
  * @param <T> The type of the lowest level child object.
- * @param <E> The type of the lowest level child object of the associated {@link
+ * @param <S> The type of the lowest level child object of the associated {@link
  *     CommonSecuritySetting}.
  * @since 1.2.0
  */
 public interface CommonTransactionManager<
-    T extends CommonTransactionManager<T, E>, E extends CommonSecuritySetting<E>> {
+    T extends CommonTransactionManager<T, S>, S extends CommonSecuritySetting<S>> {
 
   /**
    * Returns the settings defining the security parameters of the transaction.
@@ -30,7 +30,7 @@ public interface CommonTransactionManager<
    * @return Null if the transaction does not use security settings.
    * @since 1.2.0
    */
-  E getSecuritySetting();
+  S getSecuritySetting();
 
   /**
    * Returns the audit data of the transaction containing all APDU exchanges with the card and the
