@@ -276,8 +276,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +S getSecuritySetting ()
             +List<byte[]> getTransactionAuditData ()
 
-            +T prepareComputeSignature (SignatureComputationData data)
-            +T prepareVerifySignature (SignatureVerificationData data)
+            +T prepareComputeSignature (SignatureComputationData<?> data)
+            +T prepareVerifySignature (SignatureVerificationData<?> data)
 
             +T processCommands ()
         }

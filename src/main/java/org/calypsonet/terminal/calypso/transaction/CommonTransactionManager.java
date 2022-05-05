@@ -67,7 +67,7 @@ public interface CommonTransactionManager<
    * @see SignatureComputationData
    * @since 1.2.0
    */
-  T prepareComputeSignature(SignatureComputationData data);
+  T prepareComputeSignature(SignatureComputationData<?> data);
 
   /**
    * Schedules the execution of a "PSO Verify Signature" SAM command.
@@ -83,7 +83,7 @@ public interface CommonTransactionManager<
    * @see SignatureVerificationData
    * @since 1.2.0
    */
-  T prepareVerifySignature(SignatureVerificationData data);
+  T prepareVerifySignature(SignatureVerificationData<?> data);
 
   /**
    * Process all previously prepared commands.
