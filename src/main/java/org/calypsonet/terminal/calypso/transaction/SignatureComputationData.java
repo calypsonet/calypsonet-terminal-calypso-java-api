@@ -13,8 +13,8 @@ package org.calypsonet.terminal.calypso.transaction;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method for basic
- * signature computation using the "Data Cipher" command.
+ * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method for common
+ * signature computation modes.
  *
  * @param <T> The type of the lowest level child object.
  * @since 1.2.0

@@ -14,7 +14,7 @@ package org.calypsonet.terminal.calypso.transaction;
 /**
  * Contains the input/output data of the {@link
  * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method for advanced
- * signature computation using the "PSO" command.
+ * signature computation using the "PSO" SAM command.
  *
  * @since 1.2.0
  */

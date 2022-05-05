@@ -288,6 +288,8 @@ package "org.calypsonet.terminal.calypso" as api {
 
             +byte[] getSignature ()
         }
+        +interface BasicSignatureComputationData extends SignatureComputationData {
+        }
         +interface PsoSignatureComputationData extends SignatureComputationData {
             +PsoSignatureComputationData withSamTraceabilityMode (int offset, boolean usePartialSamSerialNumber)
             +PsoSignatureComputationData withoutBusyMode ()
@@ -299,6 +301,8 @@ package "org.calypsonet.terminal.calypso" as api {
             +T setKeyDiversifier (byte[] diversifier)
 
             +boolean isSignatureValid ()
+        }
+        +interface BasicSignatureVerificationData extends SignatureVerificationData {
         }
         +interface PsoSignatureVerificationData extends SignatureVerificationData {
             +PsoSignatureVerificationData withSamTraceabilityMode (int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus)

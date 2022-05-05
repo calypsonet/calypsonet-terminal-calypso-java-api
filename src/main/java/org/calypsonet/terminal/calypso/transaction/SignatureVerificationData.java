@@ -13,8 +13,8 @@ package org.calypsonet.terminal.calypso.transaction;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareVerifySignature(SignatureVerificationData)} method for basic
- * signature verification using the "Data Cipher" command.
+ * CommonTransactionManager#prepareVerifySignature(SignatureVerificationData)} method for common
+ * signature verification modes.
  *
  * @param <T> The type of the lowest level child object.
  * @since 1.2.0

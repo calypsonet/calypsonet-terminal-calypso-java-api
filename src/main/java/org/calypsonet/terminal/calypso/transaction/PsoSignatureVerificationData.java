@@ -16,7 +16,7 @@ import org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi;
 /**
  * Contains the input/output data of the {@link
  * CommonTransactionManager#prepareVerifySignature(SignatureVerificationData)} method for advanced
- * signature verification using the "PSO" command.
+ * signature verification using the "PSO" SAM command.
  *
  * @since 1.2.0
  */
