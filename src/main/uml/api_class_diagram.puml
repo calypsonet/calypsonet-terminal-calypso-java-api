@@ -1,6 +1,6 @@
 @startuml
 title
-    Calypsonet - calypsonet-terminal-calypso-java-api - 1.2.+ (2022-03-18)
+    Calypsonet - calypsonet-terminal-calypso-java-api - 1.2.+ (2022-05-05)
 end title
 
 ' == THEME ==
@@ -15,13 +15,19 @@ end title
 !define C_LINK 3498DB
 !define C_USE 27AE60
 
-skinparam Shadowing false
-skinparam ClassFontStyle italic
-skinparam ClassBorderColor #D4AC0D
+' -- Styles that don't work with new version of plantuml --
 skinparam stereotypeABorderColor #A9DCDF
 skinparam stereotypeIBorderColor #B4A7E5
 skinparam stereotypeCBorderColor #ADD1B2
 skinparam stereotypeEBorderColor #EB93DF
+' -- END --
+
+skinparam ClassBorderThickness 2
+skinparam ArrowThickness 2
+
+' Yellow
+skinparam ClassBackgroundColor #FEFECE
+skinparam ClassBorderColor #D4AC0D
 ' Red
 skinparam ClassBackgroundColor<<red>> #FDEDEC
 skinparam ClassBorderColor<<red>> #E74C3C
@@ -279,19 +285,24 @@ package "org.calypsonet.terminal.calypso" as api {
             +SignatureComputationData setData (byte[] data, byte kif, byte kvc)
             +SignatureComputationData setSignatureSize (int size)
             +SignatureComputationData setKeyDiversifier (byte[] diversifier)
+
+            +byte[] getSignature ()
+        }
+        +interface PsoSignatureComputationData extends SignatureComputationData {
             +SignatureComputationData withSamTraceabilityMode (int offset, boolean usePartialSamSerialNumber)
             +SignatureComputationData withoutBusyMode ()
 
             +byte[] getSignedData ()
-            +byte[] getSignature ()
         }
         +interface SignatureVerificationData {
             +SignatureVerificationData setData (byte[] data, byte[] signature, byte kif, byte kvc)
             +SignatureVerificationData setKeyDiversifier (byte[] diversifier)
-            +SignatureVerificationData withSamTraceabilityMode (int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus)
-            +SignatureVerificationData withoutBusyMode ()
 
             +boolean isSignatureValid ()
+        }
+        +interface PsoSignatureVerificationData extends SignatureVerificationData {
+            +SignatureVerificationData withSamTraceabilityMode (int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus)
+            +SignatureVerificationData withoutBusyMode ()
         }
         +interface CommonSecuritySetting<S extends CommonSecuritySetting<S>> {
             +S setControlSamResource (<back:yellow>CardReader</back> samReader, CalypsoSam calypsoSam)
@@ -408,8 +419,8 @@ package "org.calypsonet.terminal.calypso" as api {
 
 ' Associations
 
-CommonTransactionManager .left.> SignatureComputationData #C_USE : use >
-CommonTransactionManager .right.> SignatureVerificationData #C_USE : use >
+CommonTransactionManager .up.> SignatureComputationData #C_USE : use >
+CommonTransactionManager .up.> SignatureVerificationData #C_USE : use >
 CommonTransactionManager ..> CommonSecuritySetting #C_LINK : provide >
 
 CommonSecuritySetting ..> SamRevocationServiceSpi #C_USE : use >
