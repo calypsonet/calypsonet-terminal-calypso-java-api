@@ -16,9 +16,10 @@ package org.calypsonet.terminal.calypso.transaction;
  * CommonTransactionManager#prepareVerifySignature(SignatureVerificationData)} method for basic
  * signature verification using the "Data Cipher" command.
  *
+ * @param <T> The type of the lowest level child object.
  * @since 1.2.0
  */
-public interface SignatureVerificationData {
+public interface SignatureVerificationData<T extends SignatureVerificationData<T>> {
 
   /**
    * Sets the signed data, the associated signature and the KIF/KVC of the key to be used for the
@@ -31,7 +32,7 @@ public interface SignatureVerificationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureVerificationData setData(byte[] data, byte[] signature, byte kif, byte kvc);
+  T setData(byte[] data, byte[] signature, byte kif, byte kvc);
 
   /**
    * Sets a specific key diversifier to use before verifying the signature (optional).
@@ -43,7 +44,7 @@ public interface SignatureVerificationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureVerificationData setKeyDiversifier(byte[] diversifier);
+  T setKeyDiversifier(byte[] diversifier);
 
   /**
    * Returns the result of the signature verification process by indicating if the signature is

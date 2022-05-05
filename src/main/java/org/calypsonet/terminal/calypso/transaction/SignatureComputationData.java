@@ -16,9 +16,10 @@ package org.calypsonet.terminal.calypso.transaction;
  * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method for basic
  * signature computation using the "Data Cipher" command.
  *
+ * @param <T> The type of the lowest level child object.
  * @since 1.2.0
  */
-public interface SignatureComputationData {
+public interface SignatureComputationData<T extends SignatureComputationData<T>> {
 
   /**
    * Sets the data to be signed and the KIF/KVC of the key to be used for the signature computation.
@@ -29,7 +30,7 @@ public interface SignatureComputationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureComputationData setData(byte[] data, byte kif, byte kvc);
+  T setData(byte[] data, byte kif, byte kvc);
 
   /**
    * Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
@@ -43,7 +44,7 @@ public interface SignatureComputationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureComputationData setSignatureSize(int size);
+  T setSignatureSize(int size);
 
   /**
    * Sets a specific key diversifier to use before signing (optional).
@@ -55,7 +56,7 @@ public interface SignatureComputationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureComputationData setKeyDiversifier(byte[] diversifier);
+  T setKeyDiversifier(byte[] diversifier);
 
   /**
    * Returns the computed signature.

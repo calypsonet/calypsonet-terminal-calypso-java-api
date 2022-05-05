@@ -18,7 +18,8 @@ package org.calypsonet.terminal.calypso.transaction;
  *
  * @since 1.2.0
  */
-public interface PsoSignatureComputationData extends SignatureComputationData {
+public interface PsoSignatureComputationData
+    extends SignatureComputationData<PsoSignatureComputationData> {
 
   /**
    * Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial

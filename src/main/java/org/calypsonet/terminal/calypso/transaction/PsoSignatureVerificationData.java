@@ -20,7 +20,8 @@ import org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi;
  *
  * @since 1.2.0
  */
-public interface PsoSignatureVerificationData extends SignatureVerificationData {
+public interface PsoSignatureVerificationData
+    extends SignatureVerificationData<PsoSignatureVerificationData> {
 
   /**
    * Indicates that the signature has been computed in "SAM traceability" mode and therefore whether
