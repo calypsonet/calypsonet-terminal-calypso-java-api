@@ -13,10 +13,10 @@ package org.calypsonet.terminal.calypso.transaction;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareVerifySignature(SignatureVerificationData)} method for basic
- * signature verification using the "Data Cipher" SAM command.
+ * CommonTransactionManager#prepareVerifySignature(CommonSignatureVerificationData)} method for
+ * basic signature verification using the "Data Cipher" SAM command.
  *
  * @since 1.2.0
  */
 public interface BasicSignatureVerificationData
-    extends SignatureVerificationData<BasicSignatureVerificationData> {}
+    extends CommonSignatureVerificationData<BasicSignatureVerificationData> {}

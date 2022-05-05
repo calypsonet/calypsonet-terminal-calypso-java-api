@@ -13,41 +13,29 @@ package org.calypsonet.terminal.calypso.transaction;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method for common
- * signature computation modes.
+ * CommonTransactionManager#prepareVerifySignature(CommonSignatureVerificationData)} method for
+ * common signature verification modes.
  *
  * @param <T> The type of the lowest level child object.
  * @since 1.2.0
  */
-public interface SignatureComputationData<T extends SignatureComputationData<T>> {
+public interface CommonSignatureVerificationData<T extends CommonSignatureVerificationData<T>> {
 
   /**
-   * Sets the data to be signed and the KIF/KVC of the key to be used for the signature computation.
+   * Sets the signed data, the associated signature and the KIF/KVC of the key to be used for the
+   * signature verification.
    *
-   * @param data The data to be signed.
-   * @param kif The KIF of the key to be used for the signature computation.
-   * @param kvc The KVC of the key to be used for the signature computation.
+   * @param data The signed data.
+   * @param signature The associated signature.
+   * @param kif The KIF of the key to be used for the signature verification.
+   * @param kvc The KVC of the key to be used for the signature verification.
    * @return The current instance.
    * @since 1.2.0
    */
-  T setData(byte[] data, byte kif, byte kvc);
+  T setData(byte[] data, byte[] signature, byte kif, byte kvc);
 
   /**
-   * Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
-   * (optional).
-   *
-   * <p>By default, the signature will be generated on 8 bytes.
-   *
-   * <p>Note: the longer the signature, the more secure it is.
-   *
-   * @param size The expected size [1..8]
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  T setSignatureSize(int size);
-
-  /**
-   * Sets a specific key diversifier to use before signing (optional).
+   * Sets a specific key diversifier to use before verifying the signature (optional).
    *
    * <p>By default, the key diversification is performed with the full serial number of the target
    * card or SAM depending on the transaction context (Card or SAM transaction).
@@ -59,11 +47,12 @@ public interface SignatureComputationData<T extends SignatureComputationData<T>>
   T setKeyDiversifier(byte[] diversifier);
 
   /**
-   * Returns the computed signature.
+   * Returns the result of the signature verification process by indicating if the signature is
+   * valid or not.
    *
-   * @return A byte array of 1 to 8 bytes.
+   * @return True if the signature is valid.
    * @throws IllegalStateException If the command has not yet been processed.
    * @since 1.2.0
    */
-  byte[] getSignature();
+  boolean isSignatureValid();
 }

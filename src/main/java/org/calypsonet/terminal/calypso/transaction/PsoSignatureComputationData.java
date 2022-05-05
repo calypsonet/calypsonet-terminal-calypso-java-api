@@ -13,13 +13,13 @@ package org.calypsonet.terminal.calypso.transaction;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method for advanced
- * signature computation using the "PSO" SAM command.
+ * CommonTransactionManager#prepareComputeSignature(CommonSignatureComputationData)} method for
+ * advanced signature computation using the "PSO" SAM command.
  *
  * @since 1.2.0
  */
 public interface PsoSignatureComputationData
-    extends SignatureComputationData<PsoSignatureComputationData> {
+    extends CommonSignatureComputationData<PsoSignatureComputationData> {
 
   /**
    * Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial

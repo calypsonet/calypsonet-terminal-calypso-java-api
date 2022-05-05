@@ -13,10 +13,10 @@ package org.calypsonet.terminal.calypso.transaction;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method for basic
- * signature computation using the "Data Cipher" SAM command.
+ * CommonTransactionManager#prepareComputeSignature(CommonSignatureComputationData)} method for
+ * basic signature computation using the "Data Cipher" SAM command.
  *
  * @since 1.2.0
  */
 public interface BasicSignatureComputationData
-    extends SignatureComputationData<BasicSignatureComputationData> {}
+    extends CommonSignatureComputationData<BasicSignatureComputationData> {}

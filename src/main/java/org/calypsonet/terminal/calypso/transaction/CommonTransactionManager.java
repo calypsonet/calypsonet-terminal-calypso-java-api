@@ -42,10 +42,10 @@ public interface CommonTransactionManager<
   List<byte[]> getTransactionAuditData();
 
   /**
-   * Schedules the execution of a "PSO Compute Signature" SAM command.
+   * Schedules the execution of a "Data Cipher" or "PSO Compute Signature" SAM command.
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
-   * {@link SignatureComputationData} object.
+   * {@link BasicSignatureComputationData} or {@link PsoSignatureComputationData} objects.
    *
    * <p>The signature may be used for many purposes, for example:
    *
@@ -64,26 +64,31 @@ public interface CommonTransactionManager<
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
-   * @see SignatureComputationData
+   * @see CommonSignatureComputationData
+   * @see BasicSignatureComputationData
+   * @see PsoSignatureComputationData
    * @since 1.2.0
    */
-  T prepareComputeSignature(SignatureComputationData<?> data);
+  T prepareComputeSignature(CommonSignatureComputationData<?> data);
 
   /**
-   * Schedules the execution of a "PSO Verify Signature" SAM command.
+   * Schedules the execution of a "Data Cipher" or "PSO Verify Signature" SAM command.
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
-   * {@link SignatureVerificationData} object.
+   * {@link BasicSignatureVerificationData} or {@link PsoSignatureVerificationData} objects.
    *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
    * @throws SamRevokedException If the signature has been computed in "SAM traceability" mode and
-   *     the SAM revocation status check has been requested and the SAM is revoked.
-   * @see SignatureVerificationData
+   *     the SAM revocation status check has been requested and the SAM is revoked (for PSO mode
+   *     only).
+   * @see CommonSignatureVerificationData
+   * @see BasicSignatureVerificationData
+   * @see PsoSignatureVerificationData
    * @since 1.2.0
    */
-  T prepareVerifySignature(SignatureVerificationData<?> data);
+  T prepareVerifySignature(CommonSignatureVerificationData<?> data);
 
   /**
    * Process all previously prepared commands.

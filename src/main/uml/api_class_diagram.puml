@@ -276,35 +276,35 @@ package "org.calypsonet.terminal.calypso" as api {
             +S getSecuritySetting ()
             +List<byte[]> getTransactionAuditData ()
 
-            +T prepareComputeSignature (SignatureComputationData<?> data)
-            +T prepareVerifySignature (SignatureVerificationData<?> data)
+            +T prepareComputeSignature (CommonSignatureComputationData<?> data)
+            +T prepareVerifySignature (CommonSignatureVerificationData<?> data)
 
             +T processCommands ()
         }
-        +interface SignatureComputationData<T extends SignatureComputationData<T>> {
+        +interface CommonSignatureComputationData<T extends CommonSignatureComputationData<T>> {
             +T setData (byte[] data, byte kif, byte kvc)
             +T setSignatureSize (int size)
             +T setKeyDiversifier (byte[] diversifier)
 
             +byte[] getSignature ()
         }
-        +interface BasicSignatureComputationData extends SignatureComputationData {
+        +interface BasicSignatureComputationData extends CommonSignatureComputationData {
         }
-        +interface PsoSignatureComputationData extends SignatureComputationData {
+        +interface PsoSignatureComputationData extends CommonSignatureComputationData {
             +PsoSignatureComputationData withSamTraceabilityMode (int offset, boolean usePartialSamSerialNumber)
             +PsoSignatureComputationData withoutBusyMode ()
 
             +byte[] getSignedData ()
         }
-        +interface SignatureVerificationData<T extends SignatureVerificationData<T>> {
+        +interface CommonSignatureVerificationData<T extends CommonSignatureVerificationData<T>> {
             +T setData (byte[] data, byte[] signature, byte kif, byte kvc)
             +T setKeyDiversifier (byte[] diversifier)
 
             +boolean isSignatureValid ()
         }
-        +interface BasicSignatureVerificationData extends SignatureVerificationData {
+        +interface BasicSignatureVerificationData extends CommonSignatureVerificationData {
         }
-        +interface PsoSignatureVerificationData extends SignatureVerificationData {
+        +interface PsoSignatureVerificationData extends CommonSignatureVerificationData {
             +PsoSignatureVerificationData withSamTraceabilityMode (int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus)
             +PsoSignatureVerificationData withoutBusyMode ()
         }
@@ -423,8 +423,8 @@ package "org.calypsonet.terminal.calypso" as api {
 
 ' Associations
 
-CommonTransactionManager .up.> SignatureComputationData #C_USE : use >
-CommonTransactionManager .up.> SignatureVerificationData #C_USE : use >
+CommonTransactionManager .up.> CommonSignatureComputationData #C_USE : use >
+CommonTransactionManager .up.> CommonSignatureVerificationData #C_USE : use >
 CommonTransactionManager ..> CommonSecuritySetting #C_LINK : provide >
 
 CommonSecuritySetting ..> SamRevocationServiceSpi #C_USE : use >
@@ -474,7 +474,7 @@ FileHeader .right.> FileType #C_LINK : provide >
 
 ' == LAYOUT ==
 
-'SignatureComputationData -[hidden]- SignatureVerificationData
+'CommonSignatureComputationData -[hidden]- CommonSignatureVerificationData
 
 ' == STYLE ==
 

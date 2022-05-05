@@ -8,10 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `CalypsoCard.getTransactionCounter` method (issue [#42]).
 - `SamRevocationServiceSpi` SPI (issue [#29]).
-- `SignatureComputationData`.
+- `CommonSignatureComputationData`.
 - `BasicSignatureComputationData`.
 - `PsoSignatureComputationData` API (issue [#28]).
-- `SignatureVerificationData`.
+- `CommonSignatureVerificationData`.
 - `BasicSignatureVerificationData`.
 - `PsoSignatureVerificationData` API (issue [#29]).
 - `CommonSecuritySetting` API.
