@@ -81,8 +81,8 @@ public interface CommonTransactionManager<
    * @return The current instance.
    * @throws IllegalArgumentException If the input data is inconsistent.
    * @throws SamRevokedException If the signature has been computed in "SAM traceability" mode and
-   *     the SAM revocation status check has been requested and the SAM is revoked (for PSO mode
-   *     only).
+   *     the SAM revocation status check has been requested and the SAM is revoked (for traceable
+   *     signature only).
    * @see CommonSignatureVerificationData
    * @see BasicSignatureVerificationData
    * @see TraceableSignatureVerificationData
