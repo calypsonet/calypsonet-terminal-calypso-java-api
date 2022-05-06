@@ -45,7 +45,7 @@ public interface CommonTransactionManager<
    * Schedules the execution of a "Data Cipher" or "PSO Compute Signature" SAM command.
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
-   * {@link BasicSignatureComputationData} or {@link PsoSignatureComputationData} objects.
+   * {@link BasicSignatureComputationData} or {@link TraceableSignatureComputationData} objects.
    *
    * <p>The signature may be used for many purposes, for example:
    *
@@ -66,7 +66,7 @@ public interface CommonTransactionManager<
    * @throws IllegalArgumentException If the input data is inconsistent.
    * @see CommonSignatureComputationData
    * @see BasicSignatureComputationData
-   * @see PsoSignatureComputationData
+   * @see TraceableSignatureComputationData
    * @since 1.2.0
    */
   T prepareComputeSignature(CommonSignatureComputationData<?> data);
@@ -75,7 +75,7 @@ public interface CommonTransactionManager<
    * Schedules the execution of a "Data Cipher" or "PSO Verify Signature" SAM command.
    *
    * <p>Once the command is processed, the result will be available in the provided input/output
-   * {@link BasicSignatureVerificationData} or {@link PsoSignatureVerificationData} objects.
+   * {@link BasicSignatureVerificationData} or {@link TraceableSignatureVerificationData} objects.
    *
    * @param data The input/output data containing the parameters of the command.
    * @return The current instance.
@@ -85,7 +85,7 @@ public interface CommonTransactionManager<
    *     only).
    * @see CommonSignatureVerificationData
    * @see BasicSignatureVerificationData
-   * @see PsoSignatureVerificationData
+   * @see TraceableSignatureVerificationData
    * @since 1.2.0
    */
   T prepareVerifySignature(CommonSignatureVerificationData<?> data);

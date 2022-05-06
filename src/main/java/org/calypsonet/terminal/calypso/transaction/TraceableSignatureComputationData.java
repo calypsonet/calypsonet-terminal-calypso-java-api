@@ -14,12 +14,12 @@ package org.calypsonet.terminal.calypso.transaction;
 /**
  * Contains the input/output data of the {@link
  * CommonTransactionManager#prepareComputeSignature(CommonSignatureComputationData)} method for
- * advanced signature computation using the "PSO" SAM command.
+ * traceable signature computation using the "PSO Compute Signature" SAM command.
  *
  * @since 1.2.0
  */
-public interface PsoSignatureComputationData
-    extends CommonSignatureComputationData<PsoSignatureComputationData> {
+public interface TraceableSignatureComputationData
+    extends CommonSignatureComputationData<TraceableSignatureComputationData> {
 
   /**
    * Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
@@ -40,7 +40,7 @@ public interface PsoSignatureComputationData
    * @return The current instance.
    * @since 1.2.0
    */
-  PsoSignatureComputationData withSamTraceabilityMode(
+  TraceableSignatureComputationData withSamTraceabilityMode(
       int offset, boolean usePartialSamSerialNumber);
 
   /**
@@ -54,7 +54,7 @@ public interface PsoSignatureComputationData
    * @return The current instance.
    * @since 1.2.0
    */
-  PsoSignatureComputationData withoutBusyMode();
+  TraceableSignatureComputationData withoutBusyMode();
 
   /**
    * Returns the data that was used to generate the signature. If the "SAM traceability" mode was

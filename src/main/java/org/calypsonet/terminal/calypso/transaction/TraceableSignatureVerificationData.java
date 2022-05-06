@@ -16,12 +16,12 @@ import org.calypsonet.terminal.calypso.spi.SamRevocationServiceSpi;
 /**
  * Contains the input/output data of the {@link
  * CommonTransactionManager#prepareVerifySignature(CommonSignatureVerificationData)} method for
- * advanced signature verification using the "PSO" SAM command.
+ * traceable signature verification using the "PSO Verify Signature" SAM command.
  *
  * @since 1.2.0
  */
-public interface PsoSignatureVerificationData
-    extends CommonSignatureVerificationData<PsoSignatureVerificationData> {
+public interface TraceableSignatureVerificationData
+    extends CommonSignatureVerificationData<TraceableSignatureVerificationData> {
 
   /**
    * Indicates that the signature has been computed in "SAM traceability" mode and therefore whether
@@ -37,12 +37,12 @@ public interface PsoSignatureVerificationData
    *     security settings using the {@link
    *     CommonSecuritySetting#setSamRevocationService(SamRevocationServiceSpi)} method.
    * @return The current instance.
-   * @see PsoSignatureComputationData#withSamTraceabilityMode(int, boolean)
+   * @see TraceableSignatureComputationData#withSamTraceabilityMode(int, boolean)
    * @see SamRevocationServiceSpi
    * @see CommonSecuritySetting#setSamRevocationService(SamRevocationServiceSpi)
    * @since 1.2.0
    */
-  PsoSignatureVerificationData withSamTraceabilityMode(
+  TraceableSignatureVerificationData withSamTraceabilityMode(
       int offset, boolean isPartialSamSerialNumber, boolean checkSamRevocationStatus);
 
   /**
@@ -65,8 +65,8 @@ public interface PsoSignatureVerificationData
    * fail with the busy status until the end of the busy mode duration.
    *
    * @return The current instance.
-   * @see PsoSignatureComputationData#withoutBusyMode()
+   * @see TraceableSignatureComputationData#withoutBusyMode()
    * @since 1.2.0
    */
-  PsoSignatureVerificationData withoutBusyMode();
+  TraceableSignatureVerificationData withoutBusyMode();
 }

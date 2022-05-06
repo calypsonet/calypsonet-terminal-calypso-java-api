@@ -10,10 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `SamRevocationServiceSpi` SPI (issue [#29]).
 - `CommonSignatureComputationData`.
 - `BasicSignatureComputationData`.
-- `PsoSignatureComputationData` API (issue [#28]).
+- `TraceableSignatureComputationData` API (issue [#28]).
 - `CommonSignatureVerificationData`.
 - `BasicSignatureVerificationData`.
-- `PsoSignatureVerificationData` API (issue [#29]).
+- `TraceableSignatureVerificationData` API (issue [#29]).
 - `CommonSecuritySetting` API.
 - `CommonSecuritySetting.setControlSamResource` method as a replacement for the `setSamResource` method.
 - `CommonSecuritySetting.getTransactionAuditData` method (issue [#44]).
