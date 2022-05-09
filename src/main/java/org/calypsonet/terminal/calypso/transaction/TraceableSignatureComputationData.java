@@ -13,48 +13,13 @@ package org.calypsonet.terminal.calypso.transaction;
 
 /**
  * Contains the input/output data of the {@link
- * CommonTransactionManager#prepareComputeSignature(SignatureComputationData)} method.
+ * CommonTransactionManager#prepareComputeSignature(CommonSignatureComputationData)} method for
+ * traceable signature computation using the "PSO Compute Signature" SAM command.
  *
  * @since 1.2.0
  */
-public interface SignatureComputationData {
-
-  /**
-   * Sets the data to be signed and the KIF/KVC of the key to be used for the signature computation.
-   *
-   * @param data The data to be signed.
-   * @param kif The KIF of the key to be used for the signature computation.
-   * @param kvc The KVC of the key to be used for the signature computation.
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  SignatureComputationData setData(byte[] data, byte kif, byte kvc);
-
-  /**
-   * Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
-   * (optional).
-   *
-   * <p>By default, the signature will be generated on 8 bytes.
-   *
-   * <p>Note: the longer the signature, the more secure it is.
-   *
-   * @param size The expected size [1..8]
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  SignatureComputationData setSignatureSize(int size);
-
-  /**
-   * Sets a specific key diversifier to use before signing (optional).
-   *
-   * <p>By default, the key diversification is performed with the full serial number of the target
-   * card or SAM depending on the transaction context (Card or SAM transaction).
-   *
-   * @param diversifier The diversifier to be used (from 1 to 8 bytes long).
-   * @return The current instance.
-   * @since 1.2.0
-   */
-  SignatureComputationData setKeyDiversifier(byte[] diversifier);
+public interface TraceableSignatureComputationData
+    extends CommonSignatureComputationData<TraceableSignatureComputationData> {
 
   /**
    * Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
@@ -75,7 +40,8 @@ public interface SignatureComputationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureComputationData withSamTraceabilityMode(int offset, boolean usePartialSamSerialNumber);
+  TraceableSignatureComputationData withSamTraceabilityMode(
+      int offset, boolean usePartialSamSerialNumber);
 
   /**
    * Disables the "Busy" mode. When enabled, if the "PSO Verify Signature" command used to check the
@@ -88,7 +54,7 @@ public interface SignatureComputationData {
    * @return The current instance.
    * @since 1.2.0
    */
-  SignatureComputationData withoutBusyMode();
+  TraceableSignatureComputationData withoutBusyMode();
 
   /**
    * Returns the data that was used to generate the signature. If the "SAM traceability" mode was
@@ -100,13 +66,4 @@ public interface SignatureComputationData {
    * @since 1.2.0
    */
   byte[] getSignedData();
-
-  /**
-   * Returns the computed signature.
-   *
-   * @return A byte array of 1 to 8 bytes.
-   * @throws IllegalStateException If the command has not yet been processed.
-   * @since 1.2.0
-   */
-  byte[] getSignature();
 }
