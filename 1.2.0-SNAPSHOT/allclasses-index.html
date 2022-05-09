@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":2,"i1":1,"i2":4,"i3":1,"i4":4,"i5":4,"i6":1,"i7":4,"i8":1,"i9":8,"i10":8,"i11":1,"i12":8,"i13":1,"i14":1,"i15":1,"i16":1,"i17":1,"i18":4,"i19":1,"i20":1,"i21":4,"i22":8,"i23":8,"i24":8,"i25":8,"i26":8,"i27":1,"i28":8,"i29":1,"i30":1,"i31":1,"i32":4,"i33":8,"i34":1,"i35":1,"i36":4,"i37":1,"i38":1,"i39":4,"i40":8,"i41":8,"i42":4};
+var data = {"i0":1,"i1":1,"i2":2,"i3":1,"i4":4,"i5":1,"i6":4,"i7":4,"i8":1,"i9":4,"i10":1,"i11":8,"i12":8,"i13":1,"i14":8,"i15":1,"i16":1,"i17":1,"i18":1,"i19":1,"i20":1,"i21":1,"i22":4,"i23":1,"i24":1,"i25":4,"i26":8,"i27":8,"i28":8,"i29":8,"i30":8,"i31":1,"i32":8,"i33":1,"i34":1,"i35":1,"i36":4,"i37":8,"i38":4,"i39":1,"i40":1,"i41":4,"i42":1,"i43":1,"i44":8,"i45":8,"i46":4};
 var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"],4:["t3","Enum Summary"],8:["t4","Exception Summary"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -112,83 +112,97 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/BasicSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">BasicSignatureComputationData</a></td>
+<th class="colLast" scope="row">
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ basic signature computation using the "Data Cipher" SAM command.</div>
+</th>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/BasicSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">BasicSignatureVerificationData</a></td>
+<th class="colLast" scope="row">
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ basic signature verification using the "Data Cipher" SAM command.</div>
+</th>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/CalypsoApiProperties.html" title="class in org.calypsonet.terminal.calypso">CalypsoApiProperties</a></td>
 <th class="colLast" scope="row">
 <div class="block">API properties.</div>
 </th>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></td>
 <th class="colLast" scope="row">
 <div class="block">A dynamic view of the card's content, regularly updated from the selection stage to the end of
  the transaction.</div>
 </th>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.ProductType.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCard.ProductType</a></td>
 <th class="colLast" scope="row">
 <div class="block">All Calypso Card products supported by this API.</div>
 </th>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></td>
 <th class="colLast" scope="row">
 <div class="block">Card specific <code>CardSelection</code> providing means to filter cards, select applications and
  define optional commands to be executed during the selection phase.</div>
 </th>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.FileControlInformation.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCardSelection.FileControlInformation</a></td>
 <th class="colLast" scope="row">
 <div class="block">Types of templates available in return for the Select Application command, according to the
  ISO7816-4 standard.</div>
 </th>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.FileOccurrence.html" title="enum in org.calypsonet.terminal.calypso.card">CalypsoCardSelection.FileOccurrence</a></td>
 <th class="colLast" scope="row">
 <div class="block">Navigation options through the different applications contained in the card according to the
  ISO7816-4 standard.</div>
 </th>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a></td>
 <th class="colLast" scope="row">
 <div class="block">A static and partial view of the SAM's content.</div>
 </th>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.ProductType.html" title="enum in org.calypsonet.terminal.calypso.sam">CalypsoSam.ProductType</a></td>
 <th class="colLast" scope="row">
 <div class="block">All Calypso SAM products supported by this API.</div>
 </th>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSamSelection.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSamSelection</a></td>
 <th class="colLast" scope="row">
 <div class="block">SAM specific <code>CardSelection</code> providing means to filter SAM and define optional commands to
  be executed during the selection phase such as the Unlock command.</div>
 </th>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CardIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardIOException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates a communication error with the card (e.g.</div>
 </th>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CardRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardRevokedException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that the card is revoked.</div>
 </th>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></td>
 <th class="colLast" scope="row">
 <div class="block">Data to manage the security operations of a Calypso card transaction.</div>
 </th>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CardSignatureNotVerifiableException.html" title="class in org.calypsonet.terminal.calypso.transaction">CardSignatureNotVerifiableException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that the card has correctly closed the secure session, but that it is impossible to
@@ -196,61 +210,75 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  problem, etc...).</div>
 </th>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></td>
 <th class="colLast" scope="row">
 <div class="block">Service providing the high-level API to manage transactions with a Calypso card.</div>
 </th>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a>&gt;&gt;</td>
 <th class="colLast" scope="row">
 <div class="block">Common data to manage the security operations of a Calypso transaction.</div>
 </th>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
+<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="type parameter in CommonSignatureComputationData">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="type parameter in CommonSignatureComputationData">T</a>&gt;&gt;</td>
+<th class="colLast" scope="row">
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ common signature computation modes.</div>
+</th>
+</tr>
+<tr id="i18" class="altColor">
+<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="type parameter in CommonSignatureVerificationData">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="type parameter in CommonSignatureVerificationData">T</a>&gt;&gt;</td>
+<th class="colLast" scope="row">
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ common signature verification modes.</div>
+</th>
+</tr>
+<tr id="i19" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a>,&#8203;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a>&gt;,&#8203;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a>&gt;&gt;</td>
 <th class="colLast" scope="row">
 <div class="block">Common service providing the high-level API to manage transactions with a Calypso card or SAM.</div>
 </th>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/DirectoryHeader.html" title="interface in org.calypsonet.terminal.calypso.card">DirectoryHeader</a></td>
 <th class="colLast" scope="row">
 <div class="block">Calypso DF metadata.</div>
 </th>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card">ElementaryFile</a></td>
 <th class="colLast" scope="row">
 <div class="block">Calypso Elementary File.</div>
 </th>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html" title="enum in org.calypsonet.terminal.calypso.card">ElementaryFile.Type</a></td>
 <th class="colLast" scope="row">
 <div class="block">The different types of EF.</div>
 </th>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/FileData.html" title="interface in org.calypsonet.terminal.calypso.card">FileData</a></td>
 <th class="colLast" scope="row">
 <div class="block">Calypso EF content.</div>
 </th>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/FileHeader.html" title="interface in org.calypsonet.terminal.calypso.card">FileHeader</a></td>
 <th class="colLast" scope="row">
 <div class="block">Calypso EF metadata.</div>
 </th>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/GetDataTag.html" title="enum in org.calypsonet.terminal.calypso">GetDataTag</a></td>
 <th class="colLast" scope="row">
 <div class="block">Enumeration of all supported tags for the Get Data command.</div>
 </th>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/InconsistentDataException.html" title="class in org.calypsonet.terminal.calypso.transaction">InconsistentDataException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates the detection of inconsistent data related to one of the following cases:
@@ -259,124 +287,126 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
    A de-synchronization of the APDU exchanges.</div>
 </th>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/InvalidCardSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidCardSignatureException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that the card has correctly closed the secure session, but the card session is not
  authentic because the signature of the card is incorrect.</div>
 </th>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/InvalidSignatureException.html" title="class in org.calypsonet.terminal.calypso.transaction">InvalidSignatureException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that a signature is incorrect.</div>
 </th>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/ReaderIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">ReaderIOException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates a communication error with the reader of the card or SAM.</div>
 </th>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SamIOException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamIOException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates a communication error with the SAM (e.g.</div>
 </th>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/spi/SamRevocationServiceSpi.html" title="interface in org.calypsonet.terminal.calypso.spi">SamRevocationServiceSpi</a></td>
 <th class="colLast" scope="row">
 <div class="block">Service to be implemented in order to check dynamically if a SAM is revoked.</div>
 </th>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SamRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamRevokedException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that the SAM is revoked.</div>
 </th>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamSecuritySetting</a></td>
 <th class="colLast" scope="row">
 <div class="block">Data to manage the security operations of a Calypso SAM transaction.</div>
 </th>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></td>
 <th class="colLast" scope="row">
 <div class="block">Service providing the high-level API to manage transactions with a Calypso SAM.</div>
 </th>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SearchCommandData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SearchCommandData</a></td>
 <th class="colLast" scope="row">
 <div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareSearchRecords(org.calypsonet.terminal.calypso.transaction.SearchCommandData)"><code>CardTransactionManager.prepareSearchRecords(SearchCommandData)</code></a> method.</div>
 </th>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/SelectFileControl.html" title="enum in org.calypsonet.terminal.calypso">SelectFileControl</a></td>
 <th class="colLast" scope="row">
 <div class="block">Enumeration of all expected behaviors of the selection command (see the specifics of this command
  in the ISO7816-4 standard and the Calypso specification).</div>
 </th>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SessionBufferOverflowException.html" title="class in org.calypsonet.terminal.calypso.transaction">SessionBufferOverflowException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that the secure session cannot be performed atomically because the session buffer
  capacity is not sufficient to handle all the prepared write commands.</div>
 </th>
 </tr>
-<tr id="i34" class="altColor">
-<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></td>
-<th class="colLast" scope="row">
-<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(SignatureComputationData)</code></a> method.</div>
-</th>
-</tr>
-<tr id="i35" class="rowColor">
-<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></td>
-<th class="colLast" scope="row">
-<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(SignatureVerificationData)</code></a> method.</div>
-</th>
-</tr>
-<tr id="i36" class="altColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SvAction.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvAction</a></td>
 <th class="colLast" scope="row">
 <div class="block">Defines the type Stored Value of action.</div>
 </th>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/SvDebitLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvDebitLogRecord</a></td>
 <th class="colLast" scope="row">
 <div class="block">Record of a Stored Value debit log.</div>
 </th>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/card/SvLoadLogRecord.html" title="interface in org.calypsonet.terminal.calypso.card">SvLoadLogRecord</a></td>
 <th class="colLast" scope="row">
 <div class="block">Record of a Stored Value load log.</div>
 </th>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/SvOperation.html" title="enum in org.calypsonet.terminal.calypso.transaction">SvOperation</a></td>
 <th class="colLast" scope="row">
 <div class="block">Defines the type of Stored Value operation to be performed.</div>
 </th>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i42" class="altColor">
+<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureComputationData</a></td>
+<th class="colLast" scope="row">
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ traceable signature computation using the "PSO Compute Signature" SAM command.</div>
+</th>
+</tr>
+<tr id="i43" class="rowColor">
+<td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureVerificationData</a></td>
+<th class="colLast" scope="row">
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ traceable signature verification using the "PSO Verify Signature" SAM command.</div>
+</th>
+</tr>
+<tr id="i44" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/UnauthorizedKeyException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnauthorizedKeyException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that the card requires an unauthorized session key.</div>
 </th>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/transaction/UnexpectedCommandStatusException.html" title="class in org.calypsonet.terminal.calypso.transaction">UnexpectedCommandStatusException</a></td>
 <th class="colLast" scope="row">
 <div class="block">Indicates that an unexpected command status was returned by the card or SAM.</div>
 </th>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><a href="org/calypsonet/terminal/calypso/WriteAccessLevel.html" title="enum in org.calypsonet.terminal.calypso">WriteAccessLevel</a></td>
 <th class="colLast" scope="row">
 <div class="block">Enumeration of the write access levels for the Calypso card Secure Session.</div>

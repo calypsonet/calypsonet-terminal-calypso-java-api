@@ -143,6 +143,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Card Calypso Basic</div>
 </dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/BasicSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">BasicSignatureComputationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ basic signature computation using the "Data Cipher" SAM command.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/BasicSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">BasicSignatureVerificationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ basic signature verification using the "Data Cipher" SAM command.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html#BINARY">BINARY</a></span> - org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html" title="enum in org.calypsonet.terminal.calypso.card">ElementaryFile.Type</a></dt>
 <dd>
 <div class="block">A Binary EF contains a single continuous sequence of data bytes from byte #0 (first byte) to
@@ -234,6 +244,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonSecuritySetting</span></a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="type parameter in CommonSecuritySetting">S</a>&gt;&gt; - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
 <div class="block">Common data to manage the security operations of a Calypso transaction.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonSignatureComputationData</span></a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="type parameter in CommonSignatureComputationData">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="type parameter in CommonSignatureComputationData">T</a>&gt;&gt; - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ common signature computation modes.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonSignatureVerificationData</span></a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="type parameter in CommonSignatureVerificationData">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="type parameter in CommonSignatureVerificationData">T</a>&gt;&gt; - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ common signature verification modes.</div>
 </dd>
 <dt><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">CommonTransactionManager</span></a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a>,&#8203;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a>&gt;,&#8203;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a> extends <a href="org/calypsonet/terminal/calypso/transaction/CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a>&gt;&gt; - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
 <dd>
@@ -680,11 +700,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the non-zero unique identifier of the shared data when the file data is shared.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#getSignature()">getSignature()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html#getSignature()">getSignature()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a></dt>
 <dd>
 <div class="block">Returns the computed signature.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#getSignedData()">getSignedData()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html#getSignedData()">getSignedData()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureComputationData</a></dt>
 <dd>
 <div class="block">Returns the data that was used to generate the signature.</div>
 </dd>
@@ -838,7 +858,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Checks if the SAM with the provided serial number and the associated counter value is revoked
  or not.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#isSignatureValid()">isSignatureValid()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html#isSignatureValid()">isSignatureValid()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a></dt>
 <dd>
 <div class="block">Returns the result of the signature verification process by indicating if the signature is
  valid or not.</div>
@@ -933,9 +953,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a <b>Verify Pin</b> command without PIN presentation in order to get
  the attempt counter.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)">prepareComputeSignature(SignatureComputationData)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)">prepareComputeSignature(CommonSignatureComputationData&lt;?&gt;)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
 <dd>
-<div class="block">Schedules the execution of a "PSO Compute Signature" SAM command.</div>
+<div class="block">Schedules the execution of a "Data Cipher" or "PSO Compute Signature" SAM command.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareDecreaseCounter(byte,int,int)">prepareDecreaseCounter(byte, int, int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
@@ -1107,9 +1127,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Schedules the execution of a <b>Update Record</b> command to overwrites the target file's
  record contents with the provided data.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)">prepareVerifySignature(SignatureVerificationData)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)">prepareVerifySignature(CommonSignatureVerificationData&lt;?&gt;)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a></dt>
 <dd>
-<div class="block">Schedules the execution of a "PSO Verify Signature" SAM command.</div>
+<div class="block">Schedules the execution of a "Data Cipher" or "PSO Verify Signature" SAM command.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareWriteBinary(byte,int,byte%5B%5D)">prepareWriteBinary(byte, int, byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>
@@ -1259,12 +1279,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Defines the control SAM and the reader through which it is accessible to be used to handle the
  relevant cryptographic operations.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#setData(byte%5B%5D,byte%5B%5D,byte,byte)">setData(byte[], byte[], byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html#setData(byte%5B%5D,byte%5B%5D,byte,byte)">setData(byte[], byte[], byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a></dt>
 <dd>
 <div class="block">Sets the signed data, the associated signature and the KIF/KVC of the key to be used for the
  signature verification.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#setData(byte%5B%5D,byte,byte)">setData(byte[], byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html#setData(byte%5B%5D,byte,byte)">setData(byte[], byte, byte)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a></dt>
 <dd>
 <div class="block">Sets the data to be signed and the KIF/KVC of the key to be used for the signature computation.</div>
 </dd>
@@ -1276,11 +1296,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the file occurrence mode (see ISO7816-4).</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#setKeyDiversifier(byte%5B%5D)">setKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html#setKeyDiversifier(byte%5B%5D)">setKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a></dt>
 <dd>
 <div class="block">Sets a specific key diversifier to use before signing (optional).</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#setKeyDiversifier(byte%5B%5D)">setKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html#setKeyDiversifier(byte%5B%5D)">setKeyDiversifier(byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a></dt>
 <dd>
 <div class="block">Sets a specific key diversifier to use before verifying the signature (optional).</div>
 </dd>
@@ -1319,7 +1339,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Sets the SFI of the EF in which the search is to be performed.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#setSignatureSize(int)">setSignatureSize(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html#setSignatureSize(int)">setSignatureSize(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a></dt>
 <dd>
 <div class="block">Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
  (optional).</div>
@@ -1327,14 +1347,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSamSelection.html#setUnlockData(java.lang.String)">setUnlockData(String)</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSamSelection.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSamSelection</a></dt>
 <dd>
 <div class="block">Sets the lock value expected by the SAM to be unlocked (8 or 16 bytes).</div>
-</dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SignatureComputationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(SignatureComputationData)</code></a> method.</div>
-</dd>
-<dt><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">SignatureVerificationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
-<dd>
-<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(SignatureVerificationData)</code></a> method.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html#SIMULATED_COUNTERS">SIMULATED_COUNTERS</a></span> - org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/ElementaryFile.Type.html" title="enum in org.calypsonet.terminal.calypso.card">ElementaryFile.Type</a></dt>
 <dd>
@@ -1371,6 +1383,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/GetDataTag.html#TRACEABILITY_INFORMATION">TRACEABILITY_INFORMATION</a></span> - org.calypsonet.terminal.calypso.<a href="org/calypsonet/terminal/calypso/GetDataTag.html" title="enum in org.calypsonet.terminal.calypso">GetDataTag</a></dt>
 <dd>
 <div class="block">Product traceability information.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">TraceableSignatureComputationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ traceable signature computation using the "PSO Compute Signature" SAM command.</div>
+</dd>
+<dt><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><span class="typeNameLink">TraceableSignatureVerificationData</span></a> - Interface in <a href="org/calypsonet/terminal/calypso/transaction/package-summary.html">org.calypsonet.terminal.calypso.transaction</a></dt>
+<dd>
+<div class="block">Contains the input/output data of the <a href="org/calypsonet/terminal/calypso/transaction/CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ traceable signature verification using the "PSO Verify Signature" SAM command.</div>
 </dd>
 </dl>
 <a id="I:U">
@@ -1509,20 +1531,20 @@ the order they are declared.</div>
 </a>
 <h2 class="title">W</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#withoutBusyMode()">withoutBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html#withoutBusyMode()">withoutBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureComputationData</a></dt>
 <dd>
 <div class="block">Disables the "Busy" mode.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#withoutBusyMode()">withoutBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureVerificationData.html#withoutBusyMode()">withoutBusyMode()</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureVerificationData</a></dt>
 <dd>
 <div class="block">Indicates that the signature has been computed in non "Busy" mode.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html#withSamTraceabilityMode(int,boolean)">withSamTraceabilityMode(int, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html#withSamTraceabilityMode(int,boolean)">withSamTraceabilityMode(int, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureComputationData</a></dt>
 <dd>
 <div class="block">Enables the "SAM traceability" mode to securely record in the data to sign the SAM serial
  number and the value of the counter associated with the signing key.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html#withSamTraceabilityMode(int,boolean,boolean)">withSamTraceabilityMode(int, boolean, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></dt>
+<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureVerificationData.html#withSamTraceabilityMode(int,boolean,boolean)">withSamTraceabilityMode(int, boolean, boolean)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/TraceableSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureVerificationData</a></dt>
 <dd>
 <div class="block">Indicates that the signature has been computed in "SAM traceability" mode and therefore whether
  the revocation status of the signing SAM should be checked or not.</div>

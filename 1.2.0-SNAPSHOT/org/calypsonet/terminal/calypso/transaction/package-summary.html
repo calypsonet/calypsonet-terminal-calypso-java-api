@@ -116,6 +116,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<th class="colFirst" scope="row"><a href="BasicSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">BasicSignatureComputationData</a></th>
+<td class="colLast">
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ basic signature computation using the "Data Cipher" SAM command.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="BasicSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">BasicSignatureVerificationData</a></th>
+<td class="colLast">
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ basic signature verification using the "Data Cipher" SAM command.</div>
+</td>
+</tr>
+<tr class="altColor">
 <th class="colFirst" scope="row"><a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a></th>
 <td class="colLast">
 <div class="block">Data to manage the security operations of a Calypso card transaction.</div>
@@ -131,6 +145,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colFirst" scope="row"><a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;S extends <a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;S&gt;&gt;</th>
 <td class="colLast">
 <div class="block">Common data to manage the security operations of a Calypso transaction.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<th class="colFirst" scope="row"><a href="CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a>&lt;T extends <a href="CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a>&lt;T&gt;&gt;</th>
+<td class="colLast">
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ common signature computation modes.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colFirst" scope="row"><a href="CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a>&lt;T extends <a href="CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a>&lt;T&gt;&gt;</th>
+<td class="colLast">
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ common signature verification modes.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -158,15 +186,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
-<th class="colFirst" scope="row"><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a></th>
+<th class="colFirst" scope="row"><a href="TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureComputationData</a></th>
 <td class="colLast">
-<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(SignatureComputationData)</code></a> method.</div>
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)"><code>CommonTransactionManager.prepareComputeSignature(CommonSignatureComputationData)</code></a> method for
+ traceable signature computation using the "PSO Compute Signature" SAM command.</div>
 </td>
 </tr>
 <tr class="altColor">
-<th class="colFirst" scope="row"><a href="SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a></th>
+<th class="colFirst" scope="row"><a href="TraceableSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">TraceableSignatureVerificationData</a></th>
 <td class="colLast">
-<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(SignatureVerificationData)</code></a> method.</div>
+<div class="block">Contains the input/output data of the <a href="CommonTransactionManager.html#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)"><code>CommonTransactionManager.prepareVerifySignature(CommonSignatureVerificationData)</code></a> method for
+ traceable signature verification using the "PSO Verify Signature" SAM command.</div>
 </td>
 </tr>
 </tbody>

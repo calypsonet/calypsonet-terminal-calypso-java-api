@@ -176,16 +176,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)">prepareComputeSignature</a></span>&#8203;(<a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;data)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)">prepareComputeSignature</a></span>&#8203;(<a href="CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a>&lt;?&gt;&nbsp;data)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a "PSO Compute Signature" SAM command.</div>
+<div class="block">Schedules the execution of a "Data Cipher" or "PSO Compute Signature" SAM command.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)">prepareVerifySignature</a></span>&#8203;(<a href="SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a>&nbsp;data)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)">prepareVerifySignature</a></span>&#8203;(<a href="CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a>&lt;?&gt;&nbsp;data)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a "PSO Verify Signature" SAM command.</div>
+<div class="block">Schedules the execution of a "Data Cipher" or "PSO Verify Signature" SAM command.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -245,17 +245,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
-<a id="prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.SignatureComputationData)">
+<a id="prepareComputeSignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureComputationData)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareComputeSignature</h4>
-<pre class="methodSignature"><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a>&nbsp;prepareComputeSignature&#8203;(<a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureComputationData</a>&nbsp;data)</pre>
-<div class="block">Schedules the execution of a "PSO Compute Signature" SAM command.
+<pre class="methodSignature"><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a>&nbsp;prepareComputeSignature&#8203;(<a href="CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureComputationData</a>&lt;?&gt;&nbsp;data)</pre>
+<div class="block">Schedules the execution of a "Data Cipher" or "PSO Compute Signature" SAM command.
 
  <p>Once the command is processed, the result will be available in the provided input/output
- <a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>SignatureComputationData</code></a> object.
+ <a href="BasicSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>BasicSignatureComputationData</code></a> or <a href="TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>TraceableSignatureComputationData</code></a> objects.
 
  <p>The signature may be used for many purposes, for example:
 
@@ -280,21 +280,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.2.0</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="SignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>SignatureComputationData</code></a></dd>
+<dd><a href="CommonSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>CommonSignatureComputationData</code></a>, 
+<a href="BasicSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>BasicSignatureComputationData</code></a>, 
+<a href="TraceableSignatureComputationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>TraceableSignatureComputationData</code></a></dd>
 </dl>
 </li>
 </ul>
-<a id="prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.SignatureVerificationData)">
+<a id="prepareVerifySignature(org.calypsonet.terminal.calypso.transaction.CommonSignatureVerificationData)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>prepareVerifySignature</h4>
-<pre class="methodSignature"><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a>&nbsp;prepareVerifySignature&#8203;(<a href="SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">SignatureVerificationData</a>&nbsp;data)</pre>
-<div class="block">Schedules the execution of a "PSO Verify Signature" SAM command.
+<pre class="methodSignature"><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">T</a>&nbsp;prepareVerifySignature&#8203;(<a href="CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSignatureVerificationData</a>&lt;?&gt;&nbsp;data)</pre>
+<div class="block">Schedules the execution of a "Data Cipher" or "PSO Verify Signature" SAM command.
 
  <p>Once the command is processed, the result will be available in the provided input/output
- <a href="SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>SignatureVerificationData</code></a> object.</div>
+ <a href="BasicSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>BasicSignatureVerificationData</code></a> or <a href="TraceableSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>TraceableSignatureVerificationData</code></a> objects.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>data</code> - The input/output data containing the parameters of the command.</dd>
@@ -303,11 +305,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IllegalArgumentException</code> - If the input data is inconsistent.</dd>
 <dd><code><a href="SamRevokedException.html" title="class in org.calypsonet.terminal.calypso.transaction">SamRevokedException</a></code> - If the signature has been computed in "SAM traceability" mode and
-     the SAM revocation status check has been requested and the SAM is revoked.</dd>
+     the SAM revocation status check has been requested and the SAM is revoked (for traceable
+     signature only).</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.2.0</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="SignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>SignatureVerificationData</code></a></dd>
+<dd><a href="CommonSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>CommonSignatureVerificationData</code></a>, 
+<a href="BasicSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>BasicSignatureVerificationData</code></a>, 
+<a href="TraceableSignatureVerificationData.html" title="interface in org.calypsonet.terminal.calypso.transaction"><code>TraceableSignatureVerificationData</code></a></dd>
 </dl>
 </li>
 </ul>
