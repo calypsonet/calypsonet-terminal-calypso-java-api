@@ -1,6 +1,6 @@
 | Version | Documents |
 |:---:|---|
-| 1.2.0-SNAPSHOT | [API documentation](1.2.0-SNAPSHOT)<br>[API class diagram](1.2.0-SNAPSHOT/api_class_diagram.svg)<br>[API exceptions class diagram](1.2.0-SNAPSHOT/api_exceptions_class_diagram.svg) |
+| 1.2.0 | [API documentation](1.2.0)<br>[API class diagram](1.2.0/api_class_diagram.svg)<br>[API exceptions class diagram](1.2.0/api_exceptions_class_diagram.svg) |
 | 1.1.0 | [API documentation](1.1.0)<br>[API class diagram](1.1.0/api_class_diagram.svg)<br>[API exceptions class diagram](1.1.0/api_exceptions_class_diagram.svg) |
 | 1.0.5 | [API documentation](1.0.5)<br>[API class diagram](1.0.5/api_class_diagram.svg)<br>[API exceptions class diagram](1.0.5/api_exceptions_class_diagram.svg) |
 | 1.0.4 | [API documentation](1.0.4)<br>[API class diagram](1.0.4/api_class_diagram.svg)<br>[API exceptions class diagram](1.0.4/api_exceptions_class_diagram.svg) |
