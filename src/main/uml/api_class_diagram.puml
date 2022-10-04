@@ -264,7 +264,7 @@ package "org.calypsonet.terminal.calypso" as api {
         }
         +enum "ProductType" as SamProductType {
             SAM_C1
-            SAM_C1_HSM
+            HSM_C1
             SAM_S1E1
             SAM_S1Dx
             CSAM_F

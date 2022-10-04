@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- `CalypsoSam.ProductType.SAM_C1_HSM` identifier for HSM products.
+- `CalypsoSam.ProductType.HSM_C1` identifier for HSM products.
 
 ## [1.2.0] - 2022-05-30
 ### Added
