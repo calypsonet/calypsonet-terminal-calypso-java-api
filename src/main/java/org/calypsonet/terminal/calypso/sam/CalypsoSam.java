@@ -107,6 +107,13 @@ public interface CalypsoSam extends SmartCard {
     SAM_C1,
 
     /**
+     * SAM C1 HSM
+     *
+     * @since 1.3.0
+     */
+    SAM_C1_HSM,
+
+    /**
      * SAM S1E1
      *
      * @since 1.0.0
