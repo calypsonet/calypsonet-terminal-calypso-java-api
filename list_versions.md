@@ -1,5 +1,6 @@
 | Version | Documents |
 |:---:|---|
+| 1.3.1-SNAPSHOT | [API documentation](1.3.1-SNAPSHOT)<br>[API class diagram](1.3.1-SNAPSHOT/api_class_diagram.svg) |
 | 1.3.0 | [API documentation](1.3.0)<br>[API class diagram](1.3.0/api_class_diagram.svg) |
 | 1.2.0 | [API documentation](1.2.0)<br>[API class diagram](1.2.0/api_class_diagram.svg)<br>[API exceptions class diagram](1.2.0/api_exceptions_class_diagram.svg) |
 | 1.1.0 | [API documentation](1.1.0)<br>[API class diagram](1.1.0/api_class_diagram.svg)<br>[API exceptions class diagram](1.1.0/api_exceptions_class_diagram.svg) |
