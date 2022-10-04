@@ -1,0 +1,5 @@
+org.calypsonet.terminal.calypso
+org.calypsonet.terminal.calypso.card
+org.calypsonet.terminal.calypso.sam
+org.calypsonet.terminal.calypso.spi
+org.calypsonet.terminal.calypso.transaction
