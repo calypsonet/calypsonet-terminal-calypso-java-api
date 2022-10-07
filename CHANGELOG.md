@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `prepareWriteEventCeiling`, `prepareWriteEventCeilings` methods to `SamTransactionManager` API (issue [#25])
+- `getEventCeilingValue`, `getAllEventCeilingsValue` to `CalypsoSam` and `prepareReadEventCounter`, `prepareReadEventCeilings` to `SamTransactionManager` API (issue [#26])
+- `getEventCounterValue`, `getAllEventCountersValue` methods to `CalypsoSam` and `prepareReadEventCounters`, `prepareReadEventCeiling` methods to `SamTransactionManager`  API (issue [#27])
 
 ## [1.3.0] - 2022-10-04
 ### Added
@@ -110,6 +114,9 @@ This is the initial release.
 [#38]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/38
 [#29]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/29
 [#28]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/28
+[#27]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/27
+[#26]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/26
+[#25]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/25
 [#24]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/24
 [#23]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/23
 [#22]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/22

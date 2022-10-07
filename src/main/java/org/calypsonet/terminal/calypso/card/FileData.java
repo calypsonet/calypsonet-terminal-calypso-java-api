@@ -56,7 +56,7 @@ public interface FileData {
   /**
    * Gets a reference to all known records content.
    *
-   * @return a not null map eventually empty if there's no content.
+   * @return a not null map possibly empty if there's no content.
    * @since 1.0.0
    */
   SortedMap<Integer, byte[]> getAllRecordsContent();

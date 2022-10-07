@@ -11,6 +11,7 @@
  ************************************************************************************** */
 package org.calypsonet.terminal.calypso.sam;
 
+import java.util.SortedMap;
 import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 
 /**
@@ -141,4 +142,40 @@ public interface CalypsoSam extends SmartCard {
      */
     UNKNOWN
   }
+
+  /**
+   * Gets the known value of the event counter #numCounter.<br>
+   *
+   * @param numEventCounter The event counter number (should be {@code >=} 0).
+   * @return The event counter value or null if the event counter value is not set.
+   * @throws IllegalArgumentException if numCounter is {@code <} 0.
+   * @since 1.4.0
+   */
+  Integer getEventCounterValue(int numEventCounter);
+
+  /**
+   * Gets all known event counters value.<br>
+   *
+   * @return an empty map if no event counter is set.
+   * @since 1.4.0
+   */
+  SortedMap<Integer, Integer> getAllEventCountersValue();
+
+  /**
+   * Gets the known value of the event ceiling #numCounter.<br>
+   *
+   * @param numEventCeiling The event ceiling number (should be {@code >=} 0).
+   * @return The event counter value or null if the event ceiling value is not set.
+   * @throws IllegalArgumentException if numCounter is {@code <} 0.
+   * @since 1.4.0
+   */
+  Integer getEventCeilingValue(int numEventCeiling);
+
+  /**
+   * Gets all known event ceilings value.<br>
+   *
+   * @return an empty map if no event ceiling is set.
+   * @since 1.4.0
+   */
+  SortedMap<Integer, Integer> getAllEventCeilingsValue();
 }
