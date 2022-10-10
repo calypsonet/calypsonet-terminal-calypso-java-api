@@ -62,7 +62,7 @@ public interface SamTransactionManager
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoSam}.
    *
-   * @param eventCounterNumber The number of the event counter to read.
+   * @param eventCounterNumber The number of the event counter to read (in range [0..26]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is out of range.
    * @since 1.4.0
@@ -70,13 +70,13 @@ public interface SamTransactionManager
   SamTransactionManager prepareReadEventCounter(int eventCounterNumber);
 
   /**
-   * Schedules the execution of a <b>Read Event Counter</b> command to read one or more event
-   * counters.
+   * Schedules the execution of a <b>Read Event Counter</b> command to read one or more consecutive
+   * event counters.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoSam}.
    *
-   * @param fromEventCounterNumber The number of the first event counter to read.
-   * @param toEventCounterNumber The number of the last event counter to read.
+   * @param fromEventCounterNumber The number of the first event counter to read (in range [0..26]).
+   * @param toEventCounterNumber The number of the last event counter to read (in range [0..26]).
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.4.0
@@ -89,7 +89,7 @@ public interface SamTransactionManager
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoSam}.
    *
-   * @param eventCeilingNumber The number of the event ceiling to read.
+   * @param eventCeilingNumber The number of the event ceiling to read (in range [0..26]).
    * @return The current instance.
    * @throws IllegalArgumentException If the provided argument is out of range.
    * @since 1.4.0
@@ -97,12 +97,13 @@ public interface SamTransactionManager
   SamTransactionManager prepareReadEventCeiling(int eventCeilingNumber);
 
   /**
-   * Schedules the execution of a <b>Read Ceilings</b> command to read one or more event ceilings.
+   * Schedules the execution of a <b>Read Ceilings</b> command to read one or more consecutive event
+   * ceilings.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoSam}.
    *
-   * @param fromEventCeilingNumber The number of the first event ceiling to read.
-   * @param toEventCeilingNumber The number of the last event ceiling to read.
+   * @param fromEventCeilingNumber The number of the first event ceiling to read (in range [0..26]).
+   * @param toEventCeilingNumber The number of the last event ceiling to read (in range [0..26]).
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.4.0

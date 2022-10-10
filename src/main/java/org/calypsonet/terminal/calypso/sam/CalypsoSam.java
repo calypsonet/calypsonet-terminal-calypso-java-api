@@ -148,7 +148,7 @@ public interface CalypsoSam extends SmartCard {
    *
    * @param eventCounterNumber The number of the event counter (in range [0..26]).
    * @return null if the event counter value is not set.
-   * @throws IllegalArgumentException if the argument value is out of range.
+   * @throws IllegalArgumentException If the provided argument is out of range.
    * @since 1.4.0
    */
   Integer getEventCounter(int eventCounterNumber);
@@ -167,7 +167,7 @@ public interface CalypsoSam extends SmartCard {
    *
    * @param eventCeilingNumber The number of the event ceiling (in range [0..26]).
    * @return null if the event ceiling value is not set.
-   * @throws IllegalArgumentException if the argument value is out of range.
+   * @throws IllegalArgumentException If the provided argument is out of range.
    * @since 1.4.0
    */
   Integer getEventCeiling(int eventCeilingNumber);
