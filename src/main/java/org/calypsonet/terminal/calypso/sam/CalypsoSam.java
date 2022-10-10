@@ -144,37 +144,39 @@ public interface CalypsoSam extends SmartCard {
   }
 
   /**
-   * Gets the known value of the event counter #numCounter.<br>
+   * Returns the value of an event counter.<br>
    *
-   * @param eventCounterNumber The event counter number (should be {@code >=} 0).
+   * @param eventCounterNumber The number of the event counter (in range [0..26]).
    * @return The event counter value or null if the event counter value is not set.
-   * @throws IllegalArgumentException if numCounter is {@code <} 0.
+   * @throws IllegalArgumentException if the argument value is out of range.
    * @since 1.4.0
    */
   Integer getEventCounter(int eventCounterNumber);
 
   /**
-   * Gets all known event counters value.<br>
+   * Returns the value of known event counters in a sorted map where {@code key} is counter number
+   * and {@code value} is the counter value.<br>
    *
-   * @return an empty map if no event counter is set.
+   * @return a not null map.
    * @since 1.4.0
    */
   SortedMap<Integer, Integer> getEventCounters();
 
   /**
-   * Gets the known value of the event ceiling #numCounter.<br>
+   * Returns the value of an event ceiling.<br>
    *
-   * @param eventCeilingNumber The event ceiling number (should be {@code >=} 0).
+   * @param eventCeilingNumber The number of the event ceiling (in range [0..26]).
    * @return The event counter value or null if the event ceiling value is not set.
-   * @throws IllegalArgumentException if numCounter is {@code <} 0.
+   * @throws IllegalArgumentException if the argument value is out of range.
    * @since 1.4.0
    */
   Integer getEventCeiling(int eventCeilingNumber);
 
   /**
-   * Gets all known event ceilings value.<br>
+   * Returns the value of known event ceilings in a sorted map where {@code key} is ceiling number
+   * and {@code value} is the ceiling value.<br>
    *
-   * @return an empty map if no event ceiling is set.
+   * @return a not null map.
    * @since 1.4.0
    */
   SortedMap<Integer, Integer> getEventCeilings();
