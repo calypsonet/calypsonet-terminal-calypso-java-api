@@ -154,8 +154,8 @@ public interface CalypsoSam extends SmartCard {
   Integer getEventCounter(int eventCounterNumber);
 
   /**
-   * Returns the value of known event counters in a sorted map where {@code key} is counter number
-   * and {@code value} is the counter value.<br>
+   * Returns the value of known event counters in a sorted map where {@code key} is the counter
+   * number and {@code value} is the counter value.<br>
    *
    * @return a not null map.
    * @since 1.4.0
@@ -173,8 +173,8 @@ public interface CalypsoSam extends SmartCard {
   Integer getEventCeiling(int eventCeilingNumber);
 
   /**
-   * Returns the value of known event ceilings in a sorted map where {@code key} is ceiling number
-   * and {@code value} is the ceiling value.<br>
+   * Returns the value of known event ceilings in a sorted map where {@code key} is the ceiling
+   * number and {@code value} is the ceiling value.<br>
    *
    * @return a not null map.
    * @since 1.4.0
