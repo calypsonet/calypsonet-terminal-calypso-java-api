@@ -109,6 +109,8 @@ public interface CommonTransactionManager<
    * @throws InvalidCardSignatureException If a secure session is open and multiple session mode is
    *     enabled and an intermediate session is correctly closed but the card signature is
    *     incorrect.
+   * @throws SelectFileException If a "Select File" prepared card command indicated that the file
+   *     was not found.
    * @since 1.2.0
    */
   T processCommands();

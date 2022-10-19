@@ -915,6 +915,8 @@ public interface CardTransactionManager
    * @throws InvalidCardSignatureException If a secure session is open and multiple session mode is
    *     enabled and an intermediate session is correctly closed but the card signature is
    *     incorrect.
+   * @throws SelectFileException If a "Select File" prepared card command indicated that the file
+   *     was not found.
    * @since 1.0.0
    * @deprecated Use {@link #processCommands()} instead.
    */
@@ -1107,6 +1109,8 @@ public interface CardTransactionManager
    *     card signature.
    * @throws InvalidCardSignatureException If multiple session mode is enabled and an intermediate
    *     session is correctly closed but the card signature is incorrect.
+   * @throws SelectFileException If a "Select File" prepared card command indicated that the file
+   *     was not found.
    * @since 1.0.0
    */
   CardTransactionManager processOpening(WriteAccessLevel writeAccessLevel);

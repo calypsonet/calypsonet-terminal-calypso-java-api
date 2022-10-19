@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `prepareWriteEventCeiling`, `prepareWriteEventCeilings` methods to `SamTransactionManager` API (issue [#25])
 - `prepareReadEventCeiling`, `prepareReadEventCeilings` methods to `SamTransactionManager` and `getEventCeiling`, `getEventCeilings` methods to `CalypsoSam` API (issue [#26])
 - `prepareReadEventCounter`, `prepareReadEventCounters` methods to `SamTransactionManager` and `getEventCounter`, `getEventCounters` methods to `CalypsoSam` API (issue [#27])
+- `SelectFileException` to manage the status of the "Select File" card command.
 ### Upgraded
 - "Calypsonet Terminal Reader API" to version `1.1.0`
 
