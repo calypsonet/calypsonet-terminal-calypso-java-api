@@ -5,10 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.4.0] - 2022-10-26
 ### Added
-- `prepareWriteEventCeiling`, `prepareWriteEventCeilings` methods to `SamTransactionManager` API (issue [#25])
-- `prepareReadEventCeiling`, `prepareReadEventCeilings` methods to `SamTransactionManager` and `getEventCeiling`, `getEventCeilings` methods to `CalypsoSam` API (issue [#26])
-- `prepareReadEventCounter`, `prepareReadEventCounters` methods to `SamTransactionManager` and `getEventCounter`, `getEventCounters` methods to `CalypsoSam` API (issue [#27])
 - `SelectFileException` to manage the status of the "Select File" card command.
 ### Upgraded
 - "Calypsonet Terminal Reader API" to version `1.1.0`
@@ -100,7 +99,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2021-10-06
 This is the initial release.
 
-[unreleased]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.3.0...HEAD
+[unreleased]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.4.0...HEAD
+[1.4.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.2.0...1.3.0
 [1.2.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/compare/1.0.5...1.1.0
