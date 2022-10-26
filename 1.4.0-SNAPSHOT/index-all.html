@@ -548,24 +548,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Gets the Elementary File type.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html#getEventCeiling(int)">getEventCeiling(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a></dt>
-<dd>
-<div class="block">Returns the value of an event ceiling.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html#getEventCeilings()">getEventCeilings()</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a></dt>
-<dd>
-<div class="block">Returns the value of known event ceilings in a sorted map where <code>key</code> is the ceiling
- number and <code>value</code> is the ceiling value.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html#getEventCounter(int)">getEventCounter(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a></dt>
-<dd>
-<div class="block">Returns the value of an event counter.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html#getEventCounters()">getEventCounters()</a></span> - Method in interface org.calypsonet.terminal.calypso.sam.<a href="org/calypsonet/terminal/calypso/sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a></dt>
-<dd>
-<div class="block">Returns the value of known event counters in a sorted map where <code>key</code> is the counter
- number and <code>value</code> is the counter value.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html#getFileByLid(short)">getFileByLid(short)</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></dt>
 <dd>
 <div class="block">Returns a reference to the <a href="org/calypsonet/terminal/calypso/card/ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided LID value.</div>
@@ -1031,24 +1013,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="deprecationComment">Use <a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareReadCounter(byte,int)"><code>CardTransactionManager.prepareReadCounter(byte, int)</code></a> method instead.</div>
 </div>
 </dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#prepareReadEventCeiling(int)">prepareReadEventCeiling(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
-<dd>
-<div class="block">Schedules the execution of a <b>Read Ceilings</b> command to read a single event ceiling.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#prepareReadEventCeilings(int,int)">prepareReadEventCeilings(int, int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
-<dd>
-<div class="block">Schedules the execution of a <b>Read Ceilings</b> command to read one or more consecutive event
- ceilings.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#prepareReadEventCounter(int)">prepareReadEventCounter(int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
-<dd>
-<div class="block">Schedules the execution of a <b>Read Event Counter</b> command to read a single event counter.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#prepareReadEventCounters(int,int)">prepareReadEventCounters(int, int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
-<dd>
-<div class="block">Schedules the execution of a <b>Read Event Counter</b> command to read one or more consecutive
- event counters.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html#prepareReadRecord(byte,int)">prepareReadRecord(byte, int)</a></span> - Method in interface org.calypsonet.terminal.calypso.card.<a href="org/calypsonet/terminal/calypso/card/CalypsoCardSelection.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCardSelection</a></dt>
 <dd>
 <div class="block">Adds a command APDU to read a single record from the indicated EF.</div>
@@ -1181,14 +1145,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Schedules the execution of a <b>Write Binary</b> command to write over the indicated data of a
  Binary file.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#prepareWriteEventCeiling(int,int)">prepareWriteEventCeiling(int, int)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
-<dd>
-<div class="block">Schedules the execution of a <b>Write Ceilings</b> command to write a single event ceiling.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html#prepareWriteEventCeilings(int,java.util.List)">prepareWriteEventCeilings(int, List&lt;Integer&gt;)</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></dt>
-<dd>
-<div class="block">Schedules the execution of a <b>Write Ceilings</b> command to write multiple event ceilings.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html#prepareWriteRecord(byte,int,byte%5B%5D)">prepareWriteRecord(byte, int, byte[])</a></span> - Method in interface org.calypsonet.terminal.calypso.transaction.<a href="org/calypsonet/terminal/calypso/transaction/CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a></dt>
 <dd>

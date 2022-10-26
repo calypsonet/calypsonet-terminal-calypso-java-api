@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6};
+var data = {"i0":6,"i1":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -185,54 +185,6 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <div class="block">Gets the reader used to communicate with the target SAM on which the transaction is performed.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadEventCeiling(int)">prepareReadEventCeiling</a></span>&#8203;(int&nbsp;eventCeilingNumber)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Read Ceilings</b> command to read a single event ceiling.</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadEventCeilings(int,int)">prepareReadEventCeilings</a></span>&#8203;(int&nbsp;fromEventCeilingNumber,
-                        int&nbsp;toEventCeilingNumber)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Read Ceilings</b> command to read one or more consecutive event
- ceilings.</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadEventCounter(int)">prepareReadEventCounter</a></span>&#8203;(int&nbsp;eventCounterNumber)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Read Event Counter</b> command to read a single event counter.</div>
-</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareReadEventCounters(int,int)">prepareReadEventCounters</a></span>&#8203;(int&nbsp;fromEventCounterNumber,
-                        int&nbsp;toEventCounterNumber)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Read Event Counter</b> command to read one or more consecutive
- event counters.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteEventCeiling(int,int)">prepareWriteEventCeiling</a></span>&#8203;(int&nbsp;eventCeilingNumber,
-                        int&nbsp;newValue)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Write Ceilings</b> command to write a single event ceiling.</div>
-</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareWriteEventCeilings(int,java.util.List)">prepareWriteEventCeilings</a></span>&#8203;(int&nbsp;fromEventCeilingNumber,
-                         java.util.List&lt;java.lang.Integer&gt;&nbsp;newValues)</code></th>
-<td class="colLast">
-<div class="block">Schedules the execution of a <b>Write Ceilings</b> command to write multiple event ceilings.</div>
-</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.org.calypsonet.terminal.calypso.transaction.CommonTransactionManager">
@@ -276,7 +228,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <a id="getCalypsoSam()">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>getCalypsoSam</h4>
 <pre class="methodSignature"><a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a>&nbsp;getCalypsoSam()</pre>
@@ -287,152 +239,6 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
      <a href="../sam/CalypsoSam.ProductType.html#UNKNOWN"><code>CalypsoSam.ProductType.UNKNOWN</code></a>.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.2.0</dd>
-</dl>
-</li>
-</ul>
-<a id="prepareReadEventCounter(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>prepareReadEventCounter</h4>
-<pre class="methodSignature"><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>&nbsp;prepareReadEventCounter&#8203;(int&nbsp;eventCounterNumber)</pre>
-<div class="block">Schedules the execution of a <b>Read Event Counter</b> command to read a single event counter.
-
- <p>Once this command is processed, the result is available in <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam"><code>CalypsoSam</code></a>.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>eventCounterNumber</code> - The number of the event counter to read (in range [0..26]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is out of range.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="prepareReadEventCounters(int,int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>prepareReadEventCounters</h4>
-<pre class="methodSignature"><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>&nbsp;prepareReadEventCounters&#8203;(int&nbsp;fromEventCounterNumber,
-                                               int&nbsp;toEventCounterNumber)</pre>
-<div class="block">Schedules the execution of a <b>Read Event Counter</b> command to read one or more consecutive
- event counters.
-
- <p>Once this command is processed, the result is available in <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam"><code>CalypsoSam</code></a>.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>fromEventCounterNumber</code> - The number of the first event counter to read (in range [0..26]).</dd>
-<dd><code>toEventCounterNumber</code> - The number of the last event counter to read (in range [0..26]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="prepareReadEventCeiling(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>prepareReadEventCeiling</h4>
-<pre class="methodSignature"><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>&nbsp;prepareReadEventCeiling&#8203;(int&nbsp;eventCeilingNumber)</pre>
-<div class="block">Schedules the execution of a <b>Read Ceilings</b> command to read a single event ceiling.
-
- <p>Once this command is processed, the result is available in <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam"><code>CalypsoSam</code></a>.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>eventCeilingNumber</code> - The number of the event ceiling to read (in range [0..26]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is out of range.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="prepareReadEventCeilings(int,int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>prepareReadEventCeilings</h4>
-<pre class="methodSignature"><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>&nbsp;prepareReadEventCeilings&#8203;(int&nbsp;fromEventCeilingNumber,
-                                               int&nbsp;toEventCeilingNumber)</pre>
-<div class="block">Schedules the execution of a <b>Read Ceilings</b> command to read one or more consecutive event
- ceilings.
-
- <p>Once this command is processed, the result is available in <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam"><code>CalypsoSam</code></a>.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>fromEventCeilingNumber</code> - The number of the first event ceiling to read (in range [0..26]).</dd>
-<dd><code>toEventCeilingNumber</code> - The number of the last event ceiling to read (in range [0..26]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="prepareWriteEventCeiling(int,int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>prepareWriteEventCeiling</h4>
-<pre class="methodSignature"><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>&nbsp;prepareWriteEventCeiling&#8203;(int&nbsp;eventCeilingNumber,
-                                               int&nbsp;newValue)</pre>
-<div class="block">Schedules the execution of a <b>Write Ceilings</b> command to write a single event ceiling.
-
- <p>Once this command is processed, the ceiling value available in <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam"><code>CalypsoSam</code></a> is
- updated.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>eventCeilingNumber</code> - The number of the event ceiling to write.</dd>
-<dd><code>newValue</code> - The desired value for the event ceiling (defined as a positive int <code>&lt;=</code>
-     16777215 [FFFFFFh]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is out of range.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="prepareWriteEventCeilings(int,java.util.List)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>prepareWriteEventCeilings</h4>
-<pre class="methodSignature"><a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>&nbsp;prepareWriteEventCeilings&#8203;(int&nbsp;fromEventCeilingNumber,
-                                                java.util.List&lt;java.lang.Integer&gt;&nbsp;newValues)</pre>
-<div class="block">Schedules the execution of a <b>Write Ceilings</b> command to write multiple event ceilings.
-
- <p>Once this command is processed, the ceiling values available in <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam"><code>CalypsoSam</code></a> are
- updated.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>fromEventCeilingNumber</code> - The number of the first event ceiling to write.</dd>
-<dd><code>newValues</code> - A list of event ceilings values to be written from the indicated position
-     (each event ceiling value is defined as a positive int <code>&lt;=</code> 16777215 [FFFFFFh]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>The current instance.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
 </dl>
 </li>
 </ul>

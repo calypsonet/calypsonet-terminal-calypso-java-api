@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -195,78 +195,48 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>java.lang.Integer</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEventCeiling(int)">getEventCeiling</a></span>&#8203;(int&nbsp;eventCeilingNumber)</code></th>
-<td class="colLast">
-<div class="block">Returns the value of an event ceiling.</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>java.util.SortedMap&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEventCeilings()">getEventCeilings</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Returns the value of known event ceilings in a sorted map where <code>key</code> is the ceiling
- number and <code>value</code> is the ceiling value.</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>java.lang.Integer</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEventCounter(int)">getEventCounter</a></span>&#8203;(int&nbsp;eventCounterNumber)</code></th>
-<td class="colLast">
-<div class="block">Returns the value of an event counter.</div>
-</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.SortedMap&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEventCounters()">getEventCounters</a></span>()</code></th>
-<td class="colLast">
-<div class="block">Returns the value of known event counters in a sorted map where <code>key</code> is the counter
- number and <code>value</code> is the counter value.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPlatform()">getPlatform</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the platform identifier</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProductInfo()">getProductInfo</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets a text description of the SAM.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="CalypsoSam.ProductType.html" title="enum in org.calypsonet.terminal.calypso.sam">CalypsoSam.ProductType</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProductType()">getProductType</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the SAM product type.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSerialNumber()">getSerialNumber</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the SAM serial number as an array of bytes</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSoftwareIssuer()">getSoftwareIssuer</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the software issuer identifier</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSoftwareRevision()">getSoftwareRevision</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the software revision number</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSoftwareVersion()">getSoftwareVersion</a></span>()</code></th>
 <td class="colLast">
@@ -428,7 +398,7 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <a id="getSoftwareRevision()">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>getSoftwareRevision</h4>
 <pre class="methodSignature">byte&nbsp;getSoftwareRevision()</pre>
@@ -438,76 +408,6 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <dd>A byte</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
-</dl>
-</li>
-</ul>
-<a id="getEventCounter(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getEventCounter</h4>
-<pre class="methodSignature">java.lang.Integer&nbsp;getEventCounter&#8203;(int&nbsp;eventCounterNumber)</pre>
-<div class="block">Returns the value of an event counter.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>eventCounterNumber</code> - The number of the event counter (in range [0..26]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>null if the event counter value is not set.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="getEventCounters()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getEventCounters</h4>
-<pre class="methodSignature">java.util.SortedMap&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;getEventCounters()</pre>
-<div class="block">Returns the value of known event counters in a sorted map where <code>key</code> is the counter
- number and <code>value</code> is the counter value.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a not null map.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="getEventCeiling(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getEventCeiling</h4>
-<pre class="methodSignature">java.lang.Integer&nbsp;getEventCeiling&#8203;(int&nbsp;eventCeilingNumber)</pre>
-<div class="block">Returns the value of an event ceiling.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>eventCeilingNumber</code> - The number of the event ceiling (in range [0..26]).</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>null if the event ceiling value is not set.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
-</dl>
-</li>
-</ul>
-<a id="getEventCeilings()">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>getEventCeilings</h4>
-<pre class="methodSignature">java.util.SortedMap&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;getEventCeilings()</pre>
-<div class="block">Returns the value of known event ceilings in a sorted map where <code>key</code> is the ceiling
- number and <code>value</code> is the ceiling value.</div>
-<dl>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a not null map.</dd>
-<dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.4.0</dd>
 </dl>
 </li>
 </ul>
