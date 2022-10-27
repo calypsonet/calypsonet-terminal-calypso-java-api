@@ -30,22 +30,15 @@ rm -rf $version-rc*
 echo "Create target directory $version..."
 mkdir $version
 
-echo "Copy javadoc and uml files..."
+echo "Copy javadoc files..."
 cp -rf ../build/docs/javadoc/* $version/
-cp -rf ../src/main/uml/api_*.svg $version/
 
 echo "Update versions list..."
 echo "| Version | Documents |" > list_versions.md
 echo "|:---:|---|" >> list_versions.md
 for directory in `ls -rd [0-9]*/ | cut -f1 -d'/'`
 do
-  diagrams=""
-  for diagram in `ls $directory/api_*.svg | cut -f2 -d'/'`
-  do
-    name=`echo "$diagram" | tr _ " " | cut -f1 -d'.' | sed -r 's/^api/API/g'`
-    diagrams="$diagrams<br>[$name]($directory/$diagram)"
-  done
-  echo "| $directory | [API documentation]($directory)$diagrams |" >> list_versions.md
+  echo "| $directory | [API documentation]($directory) |" >> list_versions.md
 done
 
 echo "Computed all versions:"
