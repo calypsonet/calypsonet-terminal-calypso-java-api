@@ -240,8 +240,8 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareDecreaseCounters(byte,java.util.Map)">prepareDecreaseCounters</a></span>&#8203;(byte&nbsp;sfi,
                        java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
- counters at the same time.</div>
+<div class="block">Schedules the execution of a <b>Decrease Multiple</b> command or multiple <b>Decrease</b>
+ commands to decrease multiple target counters at the same time.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -265,8 +265,8 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#prepareIncreaseCounters(byte,java.util.Map)">prepareIncreaseCounters</a></span>&#8203;(byte&nbsp;sfi,
                        java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</code></th>
 <td class="colLast">
-<div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
- counters at the same time.</div>
+<div class="block">Schedules the execution of a <b>Increase Multiple</b> command or multiple <b>Increase</b>
+ commands to increase multiple target counters at the same time.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
@@ -1339,7 +1339,11 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 
  <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
 
- <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
+ <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.
+
+ <p>Note 3: if several counters of the same file have to be incremented at the same time of the
+ transaction, it is recommended to use the method <a href="#prepareIncreaseCounters(byte,java.util.Map)"><code>prepareIncreaseCounters(byte, Map)</code></a>
+ for optimization reasons.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sfi</code> - SFI of the EF to select.</dd>
@@ -1363,8 +1367,10 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <h4>prepareIncreaseCounters</h4>
 <pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareIncreaseCounters&#8203;(byte&nbsp;sfi,
                                                java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToIncValueMap)</pre>
-<div class="block">Schedules the execution of a <b>Increase Multiple</b> command to increase multiple target
- counters at the same time.
+<div class="block">Schedules the execution of a <b>Increase Multiple</b> command or multiple <b>Increase</b>
+ commands to increase multiple target counters at the same time.
+
+ <p>The decision to execute one or the other command is made according to the type of card.
 
  <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
 
@@ -1377,8 +1383,6 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.UnsupportedOperationException</code> - If the increase multiple command is not available for
-     this card.</dd>
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range or if the map
      is null or empty.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -1399,7 +1403,11 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 
  <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
 
- <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.</div>
+ <p>Note 2: in the case where this method is invoked before the invocation of <a href="#processClosing()"><code>processClosing()</code></a>, the counter must have been read previously otherwise an <code>IllegalStateException</code> will be raised during the execution of <a href="#processClosing()"><code>processClosing()</code></a>.
+
+ <p>Note 3: if several counters of the same file have to be decremented at the same time of the
+ transaction, it is recommended to use the method <a href="#prepareDecreaseCounters(byte,java.util.Map)"><code>prepareDecreaseCounters(byte, Map)</code></a>
+ for optimization reasons.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sfi</code> - SFI of the EF to select.</dd>
@@ -1423,8 +1431,10 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <h4>prepareDecreaseCounters</h4>
 <pre class="methodSignature"><a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareDecreaseCounters&#8203;(byte&nbsp;sfi,
                                                java.util.Map&lt;java.lang.Integer,&#8203;java.lang.Integer&gt;&nbsp;counterNumberToDecValueMap)</pre>
-<div class="block">Schedules the execution of a <b>Decrease Multiple</b> command to decrease multiple target
- counters at the same time.
+<div class="block">Schedules the execution of a <b>Decrease Multiple</b> command or multiple <b>Decrease</b>
+ commands to decrease multiple target counters at the same time.
+
+ <p>The decision to execute one or the other command is made according to the type of card.
 
  <p>Note 1: <a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card"><code>CalypsoCard</code></a> is updated with the provided input data.
 
@@ -1437,8 +1447,6 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.UnsupportedOperationException</code> - If the decrease multiple command is not available for
-     this card.</dd>
 <dd><code>java.lang.IllegalArgumentException</code> - If one of the provided argument is out of range or if the map
      is null or empty.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -1708,7 +1716,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.UnsupportedOperationException</code> - If the application is not of type Stored Value.</dd>
+<dd><code>java.lang.UnsupportedOperationException</code> - If the SV feature is not available for this card.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
 </dl>
@@ -1862,7 +1870,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The current instance.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.UnsupportedOperationException</code> - If the PIN feature is not available for this card</dd>
+<dd><code>java.lang.UnsupportedOperationException</code> - If the PIN feature is not available for this card.</dd>
 <dd><code>java.lang.IllegalArgumentException</code> - If the provided argument is out of range.</dd>
 <dd><code>java.lang.IllegalStateException</code> - If commands have been prepared before invoking this process
      method.</dd>
