@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+- Added precision in the documentation of the methods of the `CardTransactionManager` API.
 - UML diagrams moved to a dedicated repository (see `README.md` file).
 
 ## [1.4.0] - 2022-10-26
