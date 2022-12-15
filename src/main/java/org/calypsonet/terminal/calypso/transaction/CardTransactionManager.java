@@ -889,6 +889,24 @@ public interface CardTransactionManager
   CardTransactionManager prepareReleaseCardChannel();
 
   /**
+   * Requests to mutually authenticate the card and the terminal before the secure session is
+   * closed.
+   *
+   * <p>This ensures the authenticity of the card before sending sensitive commands.
+   *
+   * <p>The use of this feature will penalize the execution time of the secure session and should
+   * therefore be used only for the case mentioned above. As a reminder, closing the secure session
+   * also performs a mutual authentication of the card and the terminal.
+   *
+   * <p>When it is needed, it is advised to use this command only once at the beginning of the
+   * secure session.
+   *
+   * @return The current instance.
+   * @since 1.5.0
+   */
+  CardTransactionManager prepareEarlyMutualAuthentication();
+
+  /**
    * Process all previously prepared card commands outside or inside a Secure Session.
    *
    * <ul>
