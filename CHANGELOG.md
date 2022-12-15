@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - `CardTransactionManager.prepareEarlyMutualAuthentication` method.
+- `CardTransactionManager.prepareActivateEncryption` method.
+- `CardTransactionManager.prepareDeactivateEncryption` method.
 
 ## [1.4.1] - 2022-11-17
 ### Changed

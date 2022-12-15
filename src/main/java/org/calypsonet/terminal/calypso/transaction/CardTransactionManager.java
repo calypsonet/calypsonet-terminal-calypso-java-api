@@ -902,9 +902,51 @@ public interface CardTransactionManager
    * secure session.
    *
    * @return The current instance.
+   * @see CardTransactionManager#prepareActivateEncryption()
+   * @see CardTransactionManager#prepareDeactivateEncryption()
    * @since 1.5.0
    */
   CardTransactionManager prepareEarlyMutualAuthentication();
+
+  /**
+   * Requests the encryption of all following commands.
+   *
+   * <p>This ensures data confidentiality and prevents man-in-the-middle attacks.
+   *
+   * <p>The use of data encryption is resource intensive and increases transaction times. It is
+   * therefore recommended to limit encryption to commands that require it.
+   *
+   * <p>Furthermore, if mutual authentication is also required, for performance reasons, it is
+   * advised to place the prepareEarlyMutualAuthentication and prepareActivateEncryption calls
+   * consecutively (in any order) for optimization purpose.
+   *
+   * <p>This command only makes sense in the context of a secure session.
+   *
+   * @return The current instance.
+   * @see CardTransactionManager#prepareDeactivateEncryption()
+   * @see CardTransactionManager#prepareEarlyMutualAuthentication()
+   * @since 1.5.0
+   */
+  CardTransactionManager prepareActivateEncryption();
+
+  /**
+   * Requests to stop encryption for the following commands.
+   *
+   * <p>This restores the exchange operations with the card to its normal mode.
+   *
+   * <p>This command only makes sense in the context of a secure session in which encryption of
+   * commands has been previously requested.
+   *
+   * <p>Note: the {@link CardTransactionManager#processClosing()} method automatically stops the
+   * encryption.
+   *
+   * @return The current instance.
+   * @see CardTransactionManager#prepareActivateEncryption()
+   * @see CardTransactionManager#prepareEarlyMutualAuthentication()
+   * @see CardTransactionManager#processClosing()
+   * @since 1.5.0
+   */
+  CardTransactionManager prepareDeactivateEncryption();
 
   /**
    * Process all previously prepared card commands outside or inside a Secure Session.
