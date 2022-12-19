@@ -902,6 +902,8 @@ public interface CardTransactionManager
    * secure session.
    *
    * @return The current instance.
+   * @throws UnsupportedOperationException The "Manage Secure Session" command is not available for
+   *     this context (Card and/or SAM does not support the extended mode).
    * @see CardTransactionManager#prepareActivateEncryption()
    * @see CardTransactionManager#prepareDeactivateEncryption()
    * @since 1.5.0
@@ -923,6 +925,8 @@ public interface CardTransactionManager
    * <p>This command only makes sense in the context of a secure session.
    *
    * @return The current instance.
+   * @throws UnsupportedOperationException The "Manage Secure Session" command is not available for
+   *     this context (Card and/or SAM does not support the extended mode).
    * @see CardTransactionManager#prepareDeactivateEncryption()
    * @see CardTransactionManager#prepareEarlyMutualAuthentication()
    * @since 1.5.0
@@ -941,6 +945,8 @@ public interface CardTransactionManager
    * encryption.
    *
    * @return The current instance.
+   * @throws UnsupportedOperationException The "Manage Secure Session" command is not available for
+   *     this context (Card and/or SAM does not support the extended mode).
    * @see CardTransactionManager#prepareActivateEncryption()
    * @see CardTransactionManager#prepareEarlyMutualAuthentication()
    * @see CardTransactionManager#processClosing()
