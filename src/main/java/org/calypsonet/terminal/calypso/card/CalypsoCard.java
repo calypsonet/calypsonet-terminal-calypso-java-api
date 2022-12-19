@@ -271,7 +271,10 @@ public interface CalypsoCard extends SmartCard {
   /**
    * Indicates whether the Extended Mode is supported or not (since rev 3.2).
    *
-   * <p>This boolean is interpreted from the Application Type byte
+   * <p>This boolean is initially the result of the interpretation of the application type byte but
+   * may be updated after the secure session is opened. Indeed, depending on the type of key used,
+   * the extended mode functionalities may not be available (non-AES keys) and this information is
+   * provided by the card in response to the "Open Secure Session" command.
    *
    * @return True if the Extended Mode is supported.
    * @since 1.0.0
