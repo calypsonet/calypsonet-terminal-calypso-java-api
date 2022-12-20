@@ -35,7 +35,10 @@ import org.calypsonet.terminal.reader.CardReader;
  * <p>Technical or data errors, security conditions, etc. are reported as exceptions.
  *
  * @since 1.2.0
+ * @deprecated Will be soon removed. Use dedicated crypto API instead (e.g. Terminal Calypso Crypto
+ *     Legacy SAM API, Terminal Calypso Crypto Open SAM API, etc...).
  */
+@Deprecated
 public interface SamTransactionManager
     extends CommonTransactionManager<SamTransactionManager, SamSecuritySetting> {
 
@@ -44,7 +47,9 @@ public interface SamTransactionManager
    *
    * @return A not null reference.
    * @since 1.2.0
+   * @deprecated Useless accessor (will be soon removed).
    */
+  @Deprecated
   CardReader getSamReader();
 
   /**
@@ -53,6 +58,8 @@ public interface SamTransactionManager
    * @return A not null {@link CalypsoSam} having a {@link CalypsoSam.ProductType} different from
    *     {@link CalypsoSam.ProductType#UNKNOWN}.
    * @since 1.2.0
+   * @deprecated Useless accessor (will be soon removed).
    */
+  @Deprecated
   CalypsoSam getCalypsoSam();
 }

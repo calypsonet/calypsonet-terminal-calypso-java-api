@@ -63,7 +63,9 @@ public interface CardTransactionManager
    *
    * @return A not null reference.
    * @since 1.0.0
+   * @deprecated Useless accessor (will be soon removed).
    */
+  @Deprecated
   CardReader getCardReader();
 
   /**
@@ -72,7 +74,9 @@ public interface CardTransactionManager
    * @return A not null {@link CalypsoCard} having a {@link CalypsoCard.ProductType} different from
    *     {@link CalypsoCard.ProductType#UNKNOWN}.
    * @since 1.0.0
+   * @deprecated Useless accessor (will be soon removed).
    */
+  @Deprecated
   CalypsoCard getCalypsoCard();
 
   /**
@@ -80,7 +84,7 @@ public interface CardTransactionManager
    *
    * @return Null if the transaction does not use security settings.
    * @since 1.0.0
-   * @deprecated Use {@link #getSecuritySetting()} instead.
+   * @deprecated Use {@link #getSecuritySetting()} instead. (will be soon removed)
    */
   @Deprecated
   CardSecuritySetting getCardSecuritySetting();
@@ -96,7 +100,7 @@ public interface CardTransactionManager
    * @return The current instance.
    * @throws IllegalArgumentException If the provided lid is not 2 bytes long.
    * @since 1.0.0
-   * @deprecated Use {@link #prepareSelectFile(short)} method instead.
+   * @deprecated Use {@link #prepareSelectFile(short)} method instead. (will be soon removed)
    */
   @Deprecated
   CardTransactionManager prepareSelectFile(byte[] lid);
@@ -175,7 +179,7 @@ public interface CardTransactionManager
    * @throws IllegalStateException If this method is invoked inside a secure session in contact
    *     mode.
    * @since 1.0.0
-   * @deprecated Use {@link #prepareReadRecord(byte, int)} method instead.
+   * @deprecated Use {@link #prepareReadRecord(byte, int)} method instead. (will be soon removed)
    */
   @Deprecated
   CardTransactionManager prepareReadRecordFile(byte sfi, int recordNumber);
@@ -208,7 +212,8 @@ public interface CardTransactionManager
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0.0
-   * @deprecated Use {@link #prepareReadRecords(byte, int, int, int)} method instead.
+   * @deprecated Use {@link #prepareReadRecords(byte, int, int, int)} method instead. (will be soon
+   *     removed)
    */
   @Deprecated
   CardTransactionManager prepareReadRecordFile(
@@ -242,7 +247,7 @@ public interface CardTransactionManager
    * @return The current instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0.0
-   * @deprecated Use {@link #prepareReadCounter(byte, int)} method instead.
+   * @deprecated Use {@link #prepareReadCounter(byte, int)} method instead. (will be soon removed)
    */
   @Deprecated
   CardTransactionManager prepareReadCounterFile(byte sfi, int countersNumber);
@@ -992,7 +997,7 @@ public interface CardTransactionManager
    * @throws SelectFileException If a "Select File" prepared card command indicated that the file
    *     was not found.
    * @since 1.0.0
-   * @deprecated Use {@link #processCommands()} instead.
+   * @deprecated Use {@link #processCommands()} instead. (will be soon removed)
    */
   @Deprecated
   CardTransactionManager processCardCommands();

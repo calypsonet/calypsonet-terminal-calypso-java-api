@@ -219,7 +219,7 @@ public interface CalypsoCard extends SmartCard {
    * @return A not null reference (it may be empty if no one EF is set).
    * @since 1.0.0
    * @deprecated Since an EF may not have an SFI, the {@link #getFiles()} method must be used
-   *     instead.
+   *     instead. (will be soon removed)
    */
   @Deprecated
   Map<Byte, ElementaryFile> getAllFiles();

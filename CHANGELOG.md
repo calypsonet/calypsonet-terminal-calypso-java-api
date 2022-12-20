@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `CardTransactionManager.prepareEarlyMutualAuthentication` method.
 - `CardTransactionManager.prepareActivateEncryption` method.
 - `CardTransactionManager.prepareDeactivateEncryption` method.
+### Deprecated
+- `SamSecuritySetting` API.
+- `SamTransactionManager` API.
+- `CommonTransactionManager.getSecuritySetting` method.
+- `CardTransactionManager.getCardReader` method.
+- `CardTransactionManager.getCalypsoCard` method.
+- `CalypsoSam.ProductType.CSAM_F` value.
 
 ## [1.4.1] - 2022-11-17
 ### Changed

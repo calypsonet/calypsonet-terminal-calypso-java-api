@@ -131,7 +131,9 @@ public interface CalypsoSam extends SmartCard {
      * SAM CSAM_F
      *
      * @since 1.0.0
+     * @deprecated Unused product type (will soon be removed).
      */
+    @Deprecated
     CSAM_F,
 
     /**

@@ -15,5 +15,8 @@ package org.calypsonet.terminal.calypso.transaction;
  * Data to manage the security operations of a Calypso SAM transaction.
  *
  * @since 1.2.0
+ * @deprecated Will be soon removed. Use dedicated crypto API instead (e.g. Terminal Calypso Crypto
+ *     Legacy SAM API, Terminal Calypso Crypto Open SAM API, etc...).
  */
+@Deprecated
 public interface SamSecuritySetting extends CommonSecuritySetting<SamSecuritySetting> {}

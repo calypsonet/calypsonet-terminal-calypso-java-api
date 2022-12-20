@@ -29,7 +29,9 @@ public interface CommonTransactionManager<
    *
    * @return Null if the transaction does not use security settings.
    * @since 1.2.0
+   * @deprecated Useless accessor (will be soon removed).
    */
+  @Deprecated
   S getSecuritySetting();
 
   /**

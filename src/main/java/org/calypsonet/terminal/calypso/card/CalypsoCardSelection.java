@@ -131,7 +131,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @param statusWord A positive int &le; {@code FFFFh}.
    * @return The object instance.
    * @since 1.0.0
-   * @deprecated Use {@link #acceptInvalidatedCard()} method instead.
+   * @deprecated Use {@link #acceptInvalidatedCard()} method instead. (will be soon removed)
    */
   @Deprecated
   CalypsoCardSelection addSuccessfulStatusWord(int statusWord);
@@ -157,7 +157,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @return The object instance.
    * @throws IllegalArgumentException If the argument is not an array of 2 bytes.
    * @since 1.0.0
-   * @deprecated Use {@link #prepareSelectFile(short)} method instead.
+   * @deprecated Use {@link #prepareSelectFile(short)} method instead. (will be soon removed)
    */
   @Deprecated
   CalypsoCardSelection prepareSelectFile(byte[] lid);
@@ -204,7 +204,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @return The object instance.
    * @throws IllegalArgumentException If one of the provided argument is out of range.
    * @since 1.0.0
-   * @deprecated Use {@link #prepareReadRecord(byte, int)} method instead.
+   * @deprecated Use {@link #prepareReadRecord(byte, int)} method instead. (will be soon removed)
    */
   @Deprecated
   CalypsoCardSelection prepareReadRecordFile(byte sfi, int recordNumber);

@@ -32,7 +32,8 @@ public interface CardSecuritySetting extends CommonSecuritySetting<CardSecurityS
    * @throws IllegalArgumentException If one of the arguments is null or if the product type of
    *     {@link CalypsoSam} is equal to {@link CalypsoSam.ProductType#UNKNOWN}.
    * @since 1.0.0
-   * @deprecated Use {@link #setControlSamResource(CardReader, CalypsoSam)} instead.
+   * @deprecated Use {@link #setControlSamResource(CardReader, CalypsoSam)} instead. (will be soon
+   *     removed)
    */
   @Deprecated
   CardSecuritySetting setSamResource(CardReader samReader, CalypsoSam calypsoSam);
