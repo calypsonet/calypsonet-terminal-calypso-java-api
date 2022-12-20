@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":38,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":38,"i17":6,"i18":38,"i19":38,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":38,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":38,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6};
+var data = {"i0":38,"i1":38,"i2":38,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":38,"i17":6,"i18":38,"i19":38,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":38,"i26":6,"i27":6,"i28":6,"i29":6,"i30":6,"i31":6,"i32":6,"i33":6,"i34":6,"i35":6,"i36":6,"i37":6,"i38":6,"i39":6,"i40":38,"i41":6,"i42":6,"i43":6,"i44":6,"i45":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -191,14 +191,18 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <td class="colFirst"><code><a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCalypsoCard()">getCalypsoCard</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the target card on which the transaction is performed.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>org.calypsonet.terminal.reader.CardReader</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCardReader()">getCardReader</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the reader used to communicate with the target card on which the transaction is performed.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -617,7 +621,11 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <ul class="blockList">
 <li class="blockList">
 <h4>getCardReader</h4>
-<pre class="methodSignature">org.calypsonet.terminal.reader.CardReader&nbsp;getCardReader()</pre>
+<pre class="methodSignature">@Deprecated
+org.calypsonet.terminal.reader.CardReader&nbsp;getCardReader()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 <div class="block">Gets the reader used to communicate with the target card on which the transaction is performed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -633,7 +641,11 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <ul class="blockList">
 <li class="blockList">
 <h4>getCalypsoCard</h4>
-<pre class="methodSignature"><a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a>&nbsp;getCalypsoCard()</pre>
+<pre class="methodSignature">@Deprecated
+<a href="../card/CalypsoCard.html" title="interface in org.calypsonet.terminal.calypso.card">CalypsoCard</a>&nbsp;getCalypsoCard()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 <div class="block">Gets the target card on which the transaction is performed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -653,7 +665,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <pre class="methodSignature">@Deprecated
 <a href="CardSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardSecuritySetting</a>&nbsp;getCardSecuritySetting()</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="CommonTransactionManager.html#getSecuritySetting()"><code>CommonTransactionManager.getSecuritySetting()</code></a> instead.</div>
+<div class="deprecationComment">Use <a href="CommonTransactionManager.html#getSecuritySetting()"><code>CommonTransactionManager.getSecuritySetting()</code></a> instead. (will be soon removed)</div>
 </div>
 <div class="block">Gets the settings defining the security parameters of the transaction.</div>
 <dl>
@@ -673,7 +685,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <pre class="methodSignature">@Deprecated
 <a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareSelectFile&#8203;(byte[]&nbsp;lid)</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="#prepareSelectFile(short)"><code>prepareSelectFile(short)</code></a> method instead.</div>
+<div class="deprecationComment">Use <a href="#prepareSelectFile(short)"><code>prepareSelectFile(short)</code></a> method instead. (will be soon removed)</div>
 </div>
 <div class="block">Schedules the execution of a <b>Select File</b> command based on the file's LID.
 
@@ -773,7 +785,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadRecordFile&#8203;(byte&nbsp;sfi,
                                              int&nbsp;recordNumber)</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int)"><code>prepareReadRecord(byte, int)</code></a> method instead.</div>
+<div class="deprecationComment">Use <a href="#prepareReadRecord(byte,int)"><code>prepareReadRecord(byte, int)</code></a> method instead. (will be soon removed)</div>
 </div>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to read a single record from the
  indicated EF.
@@ -823,7 +835,8 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
                                              int&nbsp;numberOfRecords,
                                              int&nbsp;recordSize)</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="#prepareReadRecords(byte,int,int,int)"><code>prepareReadRecords(byte, int, int, int)</code></a> method instead.</div>
+<div class="deprecationComment">Use <a href="#prepareReadRecords(byte,int,int,int)"><code>prepareReadRecords(byte, int, int, int)</code></a> method instead. (will be soon
+     removed)</div>
 </div>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to read one or more records from the
  indicated EF.
@@ -869,7 +882,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;prepareReadCounterFile&#8203;(byte&nbsp;sfi,
                                               int&nbsp;countersNumber)</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="#prepareReadCounter(byte,int)"><code>prepareReadCounter(byte, int)</code></a> method instead.</div>
+<div class="deprecationComment">Use <a href="#prepareReadCounter(byte,int)"><code>prepareReadCounter(byte, int)</code></a> method instead. (will be soon removed)</div>
 </div>
 <div class="block">Schedules the execution of a <b>Read Records</b> command to reads a record of the indicated EF,
  which should be a counter file.
@@ -1918,7 +1931,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <pre class="methodSignature">@Deprecated
 <a href="CardTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CardTransactionManager</a>&nbsp;processCardCommands()</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
-<div class="deprecationComment">Use <a href="CommonTransactionManager.html#processCommands()"><code>CommonTransactionManager.processCommands()</code></a> instead.</div>
+<div class="deprecationComment">Use <a href="CommonTransactionManager.html#processCommands()"><code>CommonTransactionManager.processCommands()</code></a> instead. (will be soon removed)</div>
 </div>
 <div class="block">Process all previously prepared card commands outside or inside a Secure Session.
 

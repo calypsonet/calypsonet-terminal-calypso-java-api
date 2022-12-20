@@ -123,8 +123,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code><a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamSecuritySetting</a>&gt;</code></dd>
 </dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">SamSecuritySetting</span>
+<pre>@Deprecated
+public interface <span class="typeNameLabel">SamSecuritySetting</span>
 extends <a href="CommonSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonSecuritySetting</a>&lt;<a href="SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamSecuritySetting</a>&gt;</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Will be soon removed. Use dedicated crypto API instead (e.g. Terminal Calypso Crypto
+     Legacy SAM API, Terminal Calypso Crypto Open SAM API, etc...).</div>
+</div>
 <div class="block">Data to manage the security operations of a Calypso SAM transaction.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>

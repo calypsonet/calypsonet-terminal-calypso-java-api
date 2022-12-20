@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":38,"i1":38};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -129,8 +129,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code><a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>,&#8203;<a href="SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamSecuritySetting</a>&gt;</code></dd>
 </dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">SamTransactionManager</span>
+<pre>@Deprecated
+public interface <span class="typeNameLabel">SamTransactionManager</span>
 extends <a href="CommonTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">CommonTransactionManager</a>&lt;<a href="SamTransactionManager.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamTransactionManager</a>,&#8203;<a href="SamSecuritySetting.html" title="interface in org.calypsonet.terminal.calypso.transaction">SamSecuritySetting</a>&gt;</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Will be soon removed. Use dedicated crypto API instead (e.g. Terminal Calypso Crypto
+     Legacy SAM API, Terminal Calypso Crypto Open SAM API, etc...).</div>
+</div>
 <div class="block">Service providing the high-level API to manage transactions with a Calypso SAM.
 
  <p>The target <a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam"><code>CalypsoSam</code></a> object provided to the build is kept and updated at each step of
@@ -166,7 +171,7 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -176,14 +181,18 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <td class="colFirst"><code><a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCalypsoSam()">getCalypsoSam</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the target SAM on which the transaction is performed.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>org.calypsonet.terminal.reader.CardReader</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSamReader()">getSamReader</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Gets the reader used to communicate with the target SAM on which the transaction is performed.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 </td>
 </tr>
 </table>
@@ -216,7 +225,11 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <ul class="blockList">
 <li class="blockList">
 <h4>getSamReader</h4>
-<pre class="methodSignature">org.calypsonet.terminal.reader.CardReader&nbsp;getSamReader()</pre>
+<pre class="methodSignature">@Deprecated
+org.calypsonet.terminal.reader.CardReader&nbsp;getSamReader()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 <div class="block">Gets the reader used to communicate with the target SAM on which the transaction is performed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -232,7 +245,11 @@ extends <a href="CommonTransactionManager.html" title="interface in org.calypson
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getCalypsoSam</h4>
-<pre class="methodSignature"><a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a>&nbsp;getCalypsoSam()</pre>
+<pre class="methodSignature">@Deprecated
+<a href="../sam/CalypsoSam.html" title="interface in org.calypsonet.terminal.calypso.sam">CalypsoSam</a>&nbsp;getCalypsoSam()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 <div class="block">Gets the target SAM on which the transaction is performed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

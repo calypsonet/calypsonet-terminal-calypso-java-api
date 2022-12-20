@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":38,"i1":6,"i2":6,"i3":6,"i4":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -154,7 +154,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -164,7 +164,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSecuritySetting()">getSecuritySetting</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the settings defining the security parameters of the transaction.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -219,7 +221,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getSecuritySetting</h4>
-<pre class="methodSignature"><a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a>&nbsp;getSecuritySetting()</pre>
+<pre class="methodSignature">@Deprecated
+<a href="CommonTransactionManager.html" title="type parameter in CommonTransactionManager">S</a>&nbsp;getSecuritySetting()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Useless accessor (will be soon removed).</div>
+</div>
 <div class="block">Returns the settings defining the security parameters of the transaction.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
