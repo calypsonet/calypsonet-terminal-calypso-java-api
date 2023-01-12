@@ -1287,8 +1287,8 @@ public interface CardTransactionManager
    *
    * <p>As a prerequisite it is mandatory to have executed a selection scenario including the usage
    * of one of the methods {@link
-   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel)} or {@link
-   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)}.
+   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean)} or {@link
+   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean, byte, int)}.
    *
    * <p>The secure session parameters will be those used with the above-mentioned method when
    * selecting.
@@ -1299,8 +1299,8 @@ public interface CardTransactionManager
    * <p>If however the data to be read with the secure login command is present despite the failure
    * of the command (obtained with a regular "read record"), then it will be re-read in session and
    * compared to its previously read value. This guarantees the authenticity of the data expected
-   * with {@link CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)}
-   * whatever the status of the pre-opening command.
+   * with {@link CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean,
+   * byte, int)} whatever the status of the pre-opening command.
    *
    * <p>The details of the operations performed during the opening and closing of the session are
    * available in the description of the methods {@link #processOpening(WriteAccessLevel)} and
@@ -1309,9 +1309,9 @@ public interface CardTransactionManager
    * @return The current instance.
    * @throws IllegalStateException If no {@link CardSecuritySetting} is available or if a secure
    *     session is open or if no method {@link
-   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel)} or {@link
-   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)} has been
-   *     called during the selection step.
+   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean)} or {@link
+   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean, byte, int)}
+   *     has been called during the selection step.
    * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
@@ -1329,8 +1329,8 @@ public interface CardTransactionManager
    *     session is correctly closed but the card signature is incorrect.
    * @throws SelectFileException If a "Select File" prepared card command indicated that the file
    *     was not found.
-   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel)
-   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)
+   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean)
+   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean, byte, int)
    * @see #processOpening(WriteAccessLevel)
    * @see #processClosing()
    * @since 1.6.0

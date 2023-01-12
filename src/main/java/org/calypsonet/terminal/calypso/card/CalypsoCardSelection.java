@@ -258,12 +258,14 @@ public interface CalypsoCardSelection extends CardSelection {
    * {@link WriteAccessLevel}, no record reading).
    *
    * @param writeAccessLevel The write access level.
+   * @param useExtendedMode true if the secure session is operated in extended mode.
    * @return The object instance.
    * @throws IllegalArgumentException If writeAccessLevel is null.
    * @see CardTransactionManager#processSingleStepSecureSession()
    * @since 1.6.0
    */
-  CalypsoCardSelection prepareSingleStepSecureSession(WriteAccessLevel writeAccessLevel);
+  CalypsoCardSelection prepareSingleStepSecureSession(
+      WriteAccessLevel writeAccessLevel, boolean useExtendedMode);
 
   /**
    * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
@@ -284,6 +286,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * {@link WriteAccessLevel}, same record reading).
    *
    * @param writeAccessLevel The write access level.
+   * @param useExtendedMode true if the secure session is operated in extended mode.
    * @param sfi The SFI of the EF to read
    * @param recordNumber The record number to read.
    * @return The object instance.
@@ -293,7 +296,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * @since 1.6.0
    */
   CalypsoCardSelection prepareSingleStepSecureSession(
-      WriteAccessLevel writeAccessLevel, byte sfi, int recordNumber);
+      WriteAccessLevel writeAccessLevel, boolean useExtendedMode, byte sfi, int recordNumber);
 
   /**
    * Navigation options through the different applications contained in the card according to the
