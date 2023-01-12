@@ -23,7 +23,7 @@ public class CalypsoApiProperties {
    *
    * @since 1.0.0
    */
-  public static final String VERSION = "1.5";
+  public static final String VERSION = "1.6";
 
   /** Private constructor */
   private CalypsoApiProperties() {}

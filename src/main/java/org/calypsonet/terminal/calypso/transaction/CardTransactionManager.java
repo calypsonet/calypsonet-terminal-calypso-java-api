@@ -16,6 +16,7 @@ import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
 import org.calypsonet.terminal.calypso.WriteAccessLevel;
 import org.calypsonet.terminal.calypso.card.CalypsoCard;
+import org.calypsonet.terminal.calypso.card.CalypsoCardSelection;
 import org.calypsonet.terminal.calypso.card.ElementaryFile;
 import org.calypsonet.terminal.reader.CardReader;
 
@@ -1275,4 +1276,64 @@ public interface CardTransactionManager
    * @since 1.0.0
    */
   CardTransactionManager processCancel();
+
+  /**
+   * Processes a complete secure session in one call: opens the secure session, executes all
+   * previously prepared commands and then closes the secure session.
+   *
+   * <p>This implies that all operations performed with the card will have to be defined before
+   * calling this method because there is no possible interaction with the application between the
+   * opening and closing of the session.
+   *
+   * <p>As a prerequisite it is mandatory to have executed a selection scenario including the usage
+   * of one of the methods {@link
+   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel)} or {@link
+   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)}.
+   *
+   * <p>The secure session parameters will be those used with the above-mentioned method when
+   * selecting.
+   *
+   * <p>If the card does not support the pre-open mode then there will be no optimization of the
+   * number of exchanges.
+   *
+   * <p>If however the data to be read with the secure login command is present despite the failure
+   * of the command (obtained with a regular "read record"), then it will be re-read in session and
+   * compared to its previously read value. This guarantees the authenticity of the data expected
+   * with {@link CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)}
+   * whatever the status of the pre-opening command.
+   *
+   * <p>The details of the operations performed during the opening and closing of the session are
+   * available in the description of the methods {@link #processOpening(WriteAccessLevel)} and
+   * {@link #processClosing()}.
+   *
+   * @return The current instance.
+   * @throws IllegalStateException If no {@link CardSecuritySetting} is available or if a secure
+   *     session is open or if no method {@link
+   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel)} or {@link
+   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)} has been
+   *     called during the selection step.
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws InvalidSignatureException If a signature associated to a prepared signature
+   *     verification SAM command is invalid.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws InconsistentDataException If inconsistent data have been detected.
+   * @throws UnauthorizedKeyException If the card requires an unauthorized session key.
+   * @throws SessionBufferOverflowException If multiple session mode is disabled and the session
+   *     buffer capacity is not sufficient.
+   * @throws CardSignatureNotVerifiableException If multiple session mode is enabled and an
+   *     intermediate session is correctly closed but the SAM is no longer available to verify the
+   *     card signature.
+   * @throws InvalidCardSignatureException If multiple session mode is enabled and an intermediate
+   *     session is correctly closed but the card signature is incorrect.
+   * @throws SelectFileException If a "Select File" prepared card command indicated that the file
+   *     was not found.
+   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel)
+   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, byte, int)
+   * @see #processOpening(WriteAccessLevel)
+   * @see #processClosing()
+   * @since 1.6.0
+   */
+  CardTransactionManager processSingleStepSecureSession();
 }

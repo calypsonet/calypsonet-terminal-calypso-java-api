@@ -13,6 +13,8 @@ package org.calypsonet.terminal.calypso.card;
 
 import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
+import org.calypsonet.terminal.calypso.WriteAccessLevel;
+import org.calypsonet.terminal.calypso.transaction.CardTransactionManager;
 import org.calypsonet.terminal.reader.selection.spi.CardSelection;
 
 /**
@@ -191,6 +193,22 @@ public interface CalypsoCardSelection extends CardSelection {
   CalypsoCardSelection prepareSelectFile(SelectFileControl selectControl);
 
   /**
+   * Adds a command APDU to retrieve the data indicated by the provided tag.
+   *
+   * <p>This method can be used to obtain FCI information when it is not provided directly by the
+   * select application (e.g. OMAPI case).
+   *
+   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * Therefore, the command may be rejected by some earlier revision cards.
+   *
+   * @param tag The tag to use.
+   * @return The object instance.
+   * @throws IllegalArgumentException If tag is null.
+   * @since 1.0.0
+   */
+  CalypsoCardSelection prepareGetData(GetDataTag tag);
+
+  /**
    * Adds a command APDU to read a single record from the indicated EF.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
@@ -227,20 +245,55 @@ public interface CalypsoCardSelection extends CardSelection {
   CalypsoCardSelection prepareReadRecord(byte sfi, int recordNumber);
 
   /**
-   * Adds a command APDU to retrieve the data indicated by the provided tag.
+   * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
+   * feature, this optimizes exchanges with the card in the case of deterministic secure sessions
+   * that can be executed in a single step.
    *
-   * <p>This method can be used to obtain FCI information when it is not provided directly by the
-   * select application (e.g. OMAPI case).
+   * <p>The use of this method is a prerequisite for the use of the {@link
+   * CardTransactionManager#processSingleStepSecureSession} method. It is not advised to use it in
+   * other cases.
    *
-   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
-   * Therefore, the command may be rejected by some earlier revision cards.
+   * <p>The secure session opening which will be done by {@link
+   * CardTransactionManager#processSingleStepSecureSession} will use the same parameters (same
+   * {@link WriteAccessLevel}, no record reading).
    *
-   * @param tag The tag to use.
+   * @param writeAccessLevel The write access level.
    * @return The object instance.
-   * @throws IllegalArgumentException If tag is null.
-   * @since 1.0.0
+   * @throws IllegalArgumentException If writeAccessLevel is null.
+   * @see CardTransactionManager#processSingleStepSecureSession()
+   * @since 1.6.0
    */
-  CalypsoCardSelection prepareGetData(GetDataTag tag);
+  CalypsoCardSelection prepareSingleStepSecureSession(WriteAccessLevel writeAccessLevel);
+
+  /**
+   * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
+   * feature, this optimizes exchanges with the card in the case of deterministic secure sessions
+   * that can be executed in a single step.
+   *
+   * <p>If the command is supported by the card, the data read from the EF record will be certified
+   * by the coming secure session.
+   *
+   * <p>The use of this method is a prerequisite for the use of the {@link
+   * CardTransactionManager#processSingleStepSecureSession} method. It is not advised to use it in
+   * other cases.
+   *
+   * <p>The specified record will not be read if the command is not supported by the card.
+   *
+   * <p>The secure session opening which will be done by {@link
+   * CardTransactionManager#processSingleStepSecureSession} will use the same parameters (same
+   * {@link WriteAccessLevel}, same record reading).
+   *
+   * @param writeAccessLevel The write access level.
+   * @param sfi The SFI of the EF to read
+   * @param recordNumber The record number to read.
+   * @return The object instance.
+   * @throws IllegalArgumentException If writeAccessLevel is null or if one of the provided argument
+   *     is out of range.
+   * @see CardTransactionManager#processSingleStepSecureSession()
+   * @since 1.6.0
+   */
+  CalypsoCardSelection prepareSingleStepSecureSession(
+      WriteAccessLevel writeAccessLevel, byte sfi, int recordNumber);
 
   /**
    * Navigation options through the different applications contained in the card according to the
