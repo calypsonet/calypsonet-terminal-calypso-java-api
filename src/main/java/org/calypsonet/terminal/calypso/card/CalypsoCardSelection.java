@@ -249,23 +249,31 @@ public interface CalypsoCardSelection extends CardSelection {
    * feature, this optimizes exchanges with the card in the case of deterministic secure sessions
    * that can be executed in a single step.
    *
-   * <p>The use of this method is a prerequisite for the use of the {@link
-   * CardTransactionManager#processSingleStepSecureSession} method. It is not advised to use it in
-   * other cases.
+   * <p>The use of this method or one of the following methods is a prerequisite for the use of the
+   * {@link CardTransactionManager#processPreOpenedSecureSession()} method:
+   *
+   * <ul>
+   *   <li>{@link #preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)}
+   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+   * </ul>
+   *
+   * It is not advised to use it in other cases.
    *
    * <p>The secure session opening which will be done by {@link
-   * CardTransactionManager#processSingleStepSecureSession} will use the same parameters (same
+   * CardTransactionManager#processPreOpenedSecureSession()} will use the same parameters (same
    * {@link WriteAccessLevel}, no record reading).
    *
    * @param writeAccessLevel The write access level.
-   * @param useExtendedMode true if the secure session is operated in extended mode.
    * @return The object instance.
    * @throws IllegalArgumentException If writeAccessLevel is null.
-   * @see CardTransactionManager#processSingleStepSecureSession()
+   * @see #preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+   * @see CardTransactionManager#processPreOpenedSecureSession()
    * @since 1.6.0
    */
-  CalypsoCardSelection prepareSingleStepSecureSession(
-      WriteAccessLevel writeAccessLevel, boolean useExtendedMode);
+  CalypsoCardSelection preparePreOpenSecureSession(WriteAccessLevel writeAccessLevel);
 
   /**
    * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
@@ -275,28 +283,37 @@ public interface CalypsoCardSelection extends CardSelection {
    * <p>If the command is supported by the card, the data read from the EF record will be certified
    * by the coming secure session.
    *
-   * <p>The use of this method is a prerequisite for the use of the {@link
-   * CardTransactionManager#processSingleStepSecureSession} method. It is not advised to use it in
-   * other cases.
+   * <p>The use of this method or one of the following methods is a prerequisite for the use of the
+   * {@link CardTransactionManager#processPreOpenedSecureSession()} method:
+   *
+   * <ul>
+   *   <li>{@link #preparePreOpenSecureSession(WriteAccessLevel)}
+   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)}
+   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+   * </ul>
+   *
+   * It is not advised to use it in other cases.
    *
    * <p>The specified record will not be read if the command is not supported by the card.
    *
    * <p>The secure session opening which will be done by {@link
-   * CardTransactionManager#processSingleStepSecureSession} will use the same parameters (same
+   * CardTransactionManager#processPreOpenedSecureSession()} will use the same parameters (same
    * {@link WriteAccessLevel}, same record reading).
    *
    * @param writeAccessLevel The write access level.
-   * @param useExtendedMode true if the secure session is operated in extended mode.
    * @param sfi The SFI of the EF to read
    * @param recordNumber The record number to read.
    * @return The object instance.
    * @throws IllegalArgumentException If writeAccessLevel is null or if one of the provided argument
    *     is out of range.
-   * @see CardTransactionManager#processSingleStepSecureSession()
+   * @see #preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+   * @see CardTransactionManager#processPreOpenedSecureSession()
    * @since 1.6.0
    */
-  CalypsoCardSelection prepareSingleStepSecureSession(
-      WriteAccessLevel writeAccessLevel, boolean useExtendedMode, byte sfi, int recordNumber);
+  CalypsoCardSelection preparePreOpenSecureSession(
+      WriteAccessLevel writeAccessLevel, byte sfi, int recordNumber);
 
   /**
    * Navigation options through the different applications contained in the card according to the

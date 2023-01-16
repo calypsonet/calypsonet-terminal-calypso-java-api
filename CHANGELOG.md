@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- `CalypsoCardSelection.prepareSingleStepSecureSession` methods (pre-open mode).
-- `CardTransactionManager.processSingleStepSecureSession` method (pre-open mode).
+- `CalypsoCardSelection.preparePreOpenSecureSession` methods (pre-open mode).
+- `CardTransactionManager.processPreOpenedSecureSession` method (pre-open mode).
 
 ## [1.5.0] - 2022-12-22
 ### Added

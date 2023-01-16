@@ -961,6 +961,87 @@ public interface CardTransactionManager
   CardTransactionManager prepareDeactivateEncryption();
 
   /**
+   * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
+   * feature, this optimizes exchanges with the card in the case of deterministic secure sessions
+   * that can be executed in a single step.
+   *
+   * <p>The use of this method or one of the following methods is a prerequisite for the use of the
+   * {@link #processPreOpenedSecureSession()} method:
+   *
+   * <ul>
+   *   <li>{@link #preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+   *   <li>{@link CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)}
+   *   <li>{@link CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+   * </ul>
+   *
+   * It is not advised to use it in other cases.
+   *
+   * <p>The pre-opened state of the session will be effective only after the call to the {@link
+   * #processCommands()} method.
+   *
+   * <p>The use of this method is incompatible with the {@link #processOpening(WriteAccessLevel)},
+   * {@link #processOpening(WriteAccessLevel, byte, int)} and {@link #processClosing()} methods.
+   *
+   * <p>The secure session opening which will be done by {@link #processPreOpenedSecureSession()}
+   * will use the same parameters (same {@link WriteAccessLevel}, no record reading).
+   *
+   * @param writeAccessLevel The write access level.
+   * @return The object instance.
+   * @throws IllegalArgumentException If writeAccessLevel is null.
+   * @see #preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+   * @see #processPreOpenedSecureSession()
+   * @since 1.6.0
+   */
+  CardTransactionManager preparePreOpenSecureSession(WriteAccessLevel writeAccessLevel);
+
+  /**
+   * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
+   * feature, this optimizes exchanges with the card in the case of deterministic secure sessions
+   * that can be executed in a single step.
+   *
+   * <p>If the command is supported by the card, the data read from the EF record will be certified
+   * by the coming secure session.
+   *
+   * <p>The use of this method or one of the following methods is a prerequisite for the use of the
+   * {@link #processPreOpenedSecureSession()} method:
+   *
+   * <ul>
+   *   <li>{@link #preparePreOpenSecureSession(WriteAccessLevel)}
+   *   <li>{@link CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)}
+   *   <li>{@link CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+   * </ul>
+   *
+   * It is not advised to use it in other cases.
+   *
+   * <p>The pre-opened state of the session will be effective only after the call to the {@link
+   * #processCommands()} method.
+   *
+   * <p>The use of this method is incompatible with the {@link #processOpening(WriteAccessLevel)},
+   * {@link #processOpening(WriteAccessLevel, byte, int)} and {@link #processClosing()} methods.
+   *
+   * <p>The specified record will not be read if the command is not supported by the card.
+   *
+   * <p>The secure session opening which will be done by {@link #processPreOpenedSecureSession()}
+   * will use the same parameters (same {@link WriteAccessLevel}, same record reading).
+   *
+   * @param writeAccessLevel The write access level.
+   * @param sfi The SFI of the EF to read
+   * @param recordNumber The record number to read.
+   * @return The object instance.
+   * @throws IllegalArgumentException If writeAccessLevel is null or if one of the provided argument
+   *     is out of range.
+   * @see #preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+   * @see #processPreOpenedSecureSession()
+   * @since 1.6.0
+   */
+  CardTransactionManager preparePreOpenSecureSession(
+      WriteAccessLevel writeAccessLevel, byte sfi, int recordNumber);
+
+  /**
    * Process all previously prepared card commands outside or inside a Secure Session.
    *
    * <ul>
@@ -1094,9 +1175,11 @@ public interface CardTransactionManager
    *
    * <ul>
    *   <li>{@code processOpening(WriteAccessLevel)}
-   *   <li>[{@link #processCardCommands()}]
    *   <li>[...]
-   *   <li>[{@link #processCardCommands()}]
+   *   <li>[{@link #processCommands()}]
+   *   <li>[...]
+   *   <li>[{@link #processCommands()}]
+   *   <li>[...]
    *   <li>{@link #processClosing()}
    * </ul>
    *
@@ -1143,14 +1226,6 @@ public interface CardTransactionManager
    *   <li>Receiving grouped responses and updating {@link CalypsoCard} with the collected data.
    * </ul>
    *
-   * For optimization purposes, if the first command prepared is the reading of a single record of a
-   * card file then this one is replaced by a setting of the session opening command allowing the
-   * retrieval of this data in response to this command.
-   *
-   * <p>Please note that the CAAD mechanism may require a file to be read before being modified. For
-   * this mechanism to work properly, this reading must not be placed in the first position of the
-   * prepared commands in order to be correctly taken into account by the SAM.
-   *
    * <p><b>Other operations carried out</b>
    *
    * <ul>
@@ -1194,6 +1269,120 @@ public interface CardTransactionManager
    * @since 1.0.0
    */
   CardTransactionManager processOpening(WriteAccessLevel writeAccessLevel);
+
+  /**
+   * Opens a Calypso Secure Session and then executes all previously prepared commands.
+   *
+   * <p>It is the starting point of the sequence:
+   *
+   * <ul>
+   *   <li>{@code processOpening(WriteAccessLevel)}
+   *   <li>[...]
+   *   <li>[{@link #processCommands()}]
+   *   <li>[...]
+   *   <li>[{@link #processCommands()}]
+   *   <li>[...]
+   *   <li>{@link #processClosing()}
+   * </ul>
+   *
+   * <p>Each of the steps in this sequence may or may not be preceded by the preparation of one or
+   * more commands and ends with an update of the {@link CalypsoCard} object provided when
+   * CardTransactionManager was created.
+   *
+   * <p>As a prerequisite for invoking this method, since the Calypso Secure Session involves the
+   * use of a SAM, the CardTransactionManager must have been built in secure mode, i.e. the
+   * constructor used must be the one expecting a reference to a valid {@link CardSecuritySetting}
+   * object, otherwise a {@link IllegalStateException} is raised.
+   *
+   * <p>The secure session is opened with the {@link WriteAccessLevel} passed as an argument
+   * depending on whether it is a personalization, reload or debit transaction profile.
+   *
+   * <p>The possible overflow of the internal session buffer of the card is managed in two ways
+   * depending on the setting chosen in {@link CardSecuritySetting}.
+   *
+   * <ul>
+   *   <li>If the session was opened with the default atomic mode and the previously prepared
+   *       commands will cause the buffer to be exceeded, then an {@link
+   *       SessionBufferOverflowException} is raised and no transmission to the card is made. <br>
+   *   <li>If the session was opened with the multiple session mode and the buffer is to be exceeded
+   *       then a split into several secure sessions is performed automatically. However, regardless
+   *       of the number of intermediate sessions performed, a secure session is opened at the end
+   *       of the execution of this method.
+   * </ul>
+   *
+   * <p>Be aware that in the "MULTIPLE" case we lose the benefit of the atomicity of the secure
+   * session.
+   *
+   * <p><b>Card and SAM exchanges in detail</b>
+   *
+   * <p>When executing this method, communications with the card and the SAM are (in that order) :
+   *
+   * <ul>
+   *   <li>Sending the card diversifier (Calypso card serial number) to the SAM and receiving the
+   *       terminal challenge
+   *   <li>Grouped sending to the card of
+   *       <ul>
+   *         <li>the open secure session command including the challenge terminal.
+   *         <li>all previously prepared commands
+   *       </ul>
+   *   <li>Receiving grouped responses and updating {@link CalypsoCard} with the collected data.
+   * </ul>
+   *
+   * <p>For optimization purposes, the specified record will be read directly by the "Open Secure
+   * Session" command.
+   *
+   * <p>Please note that the CAAD mechanism may require a file to be read before being modified. For
+   * this mechanism to work properly, please do not use this method to read files that are a
+   * prerequisite to the CAAD mechanism. Use methods {@link #prepareReadRecord(byte, int)}, {@link
+   * #prepareReadRecords(byte, int, int, int)} and {@link #processOpening(WriteAccessLevel)}
+   * instead.
+   *
+   * <p><b>Other operations carried out</b>
+   *
+   * <ul>
+   *   <li>The card KIF, KVC and card challenge received in response to the open secure session
+   *       command are kept for a later initialization of the session's digest (see {@link
+   *       #processClosing}).
+   *   <li>All data received in response to the open secure session command and the responses to the
+   *       prepared commands are also stored for later calculation of the digest.
+   *   <li>If a list of authorized KVCs has been defined in {@link CardSecuritySetting} and the KVC
+   *       of the card does not belong to this list then a {@link UnauthorizedKeyException} is
+   *       thrown.
+   * </ul>
+   *
+   * <p>All unexpected results (communication errors, data or security errors, etc. are notified to
+   * the calling application through dedicated exceptions.
+   *
+   * <p><i>Note: to understand in detail how the secure session works please refer to the card
+   * specification documents.</i>
+   *
+   * @param writeAccessLevel An {@link WriteAccessLevel} enum entry.
+   * @param sfi The SFI of the EF to read
+   * @param recordNumber The record number to read.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided argument is null.
+   * @throws IllegalStateException If no {@link CardSecuritySetting} is available.
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws InvalidSignatureException If a signature associated to a prepared signature
+   *     verification SAM command is invalid.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws InconsistentDataException If inconsistent data have been detected.
+   * @throws UnauthorizedKeyException If the card requires an unauthorized session key.
+   * @throws SessionBufferOverflowException If multiple session mode is disabled and the session
+   *     buffer capacity is not sufficient.
+   * @throws CardSignatureNotVerifiableException If multiple session mode is enabled and an
+   *     intermediate session is correctly closed but the SAM is no longer available to verify the
+   *     card signature.
+   * @throws InvalidCardSignatureException If multiple session mode is enabled and an intermediate
+   *     session is correctly closed but the card signature is incorrect.
+   * @throws SelectFileException If a "Select File" prepared card command indicated that the file
+   *     was not found.
+   * @since 1.6.0
+   */
+  CardTransactionManager processOpening(
+      WriteAccessLevel writeAccessLevel, byte sfi, int recordNumber);
 
   /**
    * Terminates the Secure Session sequence started with {@link #processOpening(WriteAccessLevel)}.
@@ -1287,8 +1476,8 @@ public interface CardTransactionManager
    *
    * <p>As a prerequisite it is mandatory to have executed a selection scenario including the usage
    * of one of the methods {@link
-   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean)} or {@link
-   * CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean, byte, int)}.
+   * CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)} or {@link
+   * CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)}.
    *
    * <p>The secure session parameters will be those used with the above-mentioned method when
    * selecting.
@@ -1299,8 +1488,8 @@ public interface CardTransactionManager
    * <p>If however the data to be read with the secure login command is present despite the failure
    * of the command (obtained with a regular "read record"), then it will be re-read in session and
    * compared to its previously read value. This guarantees the authenticity of the data expected
-   * with {@link CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean,
-   * byte, int)} whatever the status of the pre-opening command.
+   * with {@link CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+   * whatever the status of the pre-opening command.
    *
    * <p>The details of the operations performed during the opening and closing of the session are
    * available in the description of the methods {@link #processOpening(WriteAccessLevel)} and
@@ -1308,10 +1497,11 @@ public interface CardTransactionManager
    *
    * @return The current instance.
    * @throws IllegalStateException If no {@link CardSecuritySetting} is available or if a secure
-   *     session is open or if no method {@link
-   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean)} or {@link
-   *     CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean, byte, int)}
-   *     has been called during the selection step.
+   *     session is open or if no method {@link #preparePreOpenSecureSession(WriteAccessLevel)},
+   *     {@link #preparePreOpenSecureSession(WriteAccessLevel, byte, int)}, {@link
+   *     CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)} or {@link
+   *     CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)} has been
+   *     called during the selection step.
    * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
    * @throws CardIOException If a communication error with the card occurs.
    * @throws SamIOException If a communication error with the SAM occurs.
@@ -1329,11 +1519,13 @@ public interface CardTransactionManager
    *     session is correctly closed but the card signature is incorrect.
    * @throws SelectFileException If a "Select File" prepared card command indicated that the file
    *     was not found.
-   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean)
-   * @see CalypsoCardSelection#prepareSingleStepSecureSession(WriteAccessLevel, boolean, byte, int)
+   * @see #preparePreOpenSecureSession(WriteAccessLevel)
+   * @see #preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel, byte, int)
    * @see #processOpening(WriteAccessLevel)
    * @see #processClosing()
    * @since 1.6.0
    */
-  CardTransactionManager processSingleStepSecureSession();
+  CardTransactionManager processPreOpenedSecureSession();
 }
