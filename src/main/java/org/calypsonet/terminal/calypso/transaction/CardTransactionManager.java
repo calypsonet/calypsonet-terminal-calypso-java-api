@@ -890,7 +890,9 @@ public interface CardTransactionManager
    *
    * @return The current instance.
    * @since 1.0.0
+   * @deprecated Use {@link #processCommands(boolean)} method instead.
    */
+  @Deprecated
   CardTransactionManager prepareReleaseCardChannel();
 
   /**
@@ -1030,8 +1032,32 @@ public interface CardTransactionManager
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
    * @throws InconsistentDataException If inconsistent data have been detected.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareVerifyPin(byte[])} method instead.
    */
+  @Deprecated
   CardTransactionManager processVerifyPin(byte[] pin);
+
+  /**
+   * Schedules the execution of a PIN verification command in order to authenticate the cardholder
+   * and/or unlock access to certain card files.
+   *
+   * <p>This command can be performed both in and out of a secure session. The PIN code can be
+   * transmitted in plain text or encrypted according to the parameter set in {@link
+   * CardSecuritySetting}. By default, the transmission is encrypted.
+   *
+   * <p>If the execution is done out of session but an encrypted transmission is requested, then
+   * CardTransactionManager must be constructed with {@link CardSecuritySetting}.
+   *
+   * <p>If CardTransactionManager is constructed without {@link CardSecuritySetting} the
+   * transmission in done in plain.
+   *
+   * @param pin The PIN code value (4-byte long byte array).
+   * @return The current instance.
+   * @throws UnsupportedOperationException If the PIN feature is not available for this card.
+   * @throws IllegalArgumentException If the provided argument is out of range.
+   * @since 1.6.0
+   */
+  CardTransactionManager prepareVerifyPin(byte[] pin);
 
   /**
    * Replaces the current PIN with the new value provided.
@@ -1054,8 +1080,30 @@ public interface CardTransactionManager
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
    * @throws InconsistentDataException If inconsistent data have been detected.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareChangePin(byte[])} method instead.
    */
+  @Deprecated
   CardTransactionManager processChangePin(byte[] newPin);
+
+  /**
+   * Schedules the execution of a PIN modification command to replace the current PIN with the new
+   * value provided.
+   *
+   * <p>This command can be performed only out of a secure session. The new PIN code can be
+   * transmitted in plain text or encrypted according to the parameter set in {@link
+   * CardSecuritySetting}. By default, the transmission is encrypted.
+   *
+   * <p>When the PIN is transmitted plain, this command must be preceded by a successful Verify PIN
+   * command (see {@link #prepareVerifyPin(byte[])}).
+   *
+   * @param newPin The new PIN code value (4-byte long byte array).
+   * @return The current instance.
+   * @throws UnsupportedOperationException If the PIN feature is not available for this card.
+   * @throws IllegalArgumentException If the provided argument is out of range.
+   * @throws IllegalStateException If the command is executed while a secure session is open.
+   * @since 1.6.0
+   */
+  CardTransactionManager prepareChangePin(byte[] newPin);
 
   /**
    * Replaces one of the current card keys with another key present in the SAM.
@@ -1082,8 +1130,35 @@ public interface CardTransactionManager
    * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
    * @throws InconsistentDataException If inconsistent data have been detected.
    * @since 1.1.0
+   * @deprecated Use {@link #prepareChangeKey(int, byte, byte, byte, byte)} method instead.
    */
+  @Deprecated
   CardTransactionManager processChangeKey(
+      int keyIndex, byte newKif, byte newKvc, byte issuerKif, byte issuerKvc);
+
+  /**
+   * Schedules the execution of a key loading command to replace one of the current card keys with
+   * another key present in the SAM.
+   *
+   * <p>This command can be performed only out of a secure session.
+   *
+   * <p>The change key process transfers the key from the SAM to the card. The new key is
+   * diversified by the SAM from a primary key and encrypted using the indicated issuer key to
+   * secure the transfer to the card. All provided KIFs and KVCs must be present in the SAM.
+   *
+   * @param keyIndex The index of the key to be replaced (1 for the issuer key, 2 for the load key,
+   *     3 for the debit key).
+   * @param newKif The KIF of the new key.
+   * @param newKvc The KVC of the new key.
+   * @param issuerKif The KIF of the current card's issuer key.
+   * @param issuerKvc The KVC of the current card's issuer key.
+   * @return The current instance.
+   * @throws UnsupportedOperationException If the Change Key command is not available for this card.
+   * @throws IllegalArgumentException If the provided key index is out of range.
+   * @throws IllegalStateException If the command is executed while a secure session is open.
+   * @since 1.6.0
+   */
+  CardTransactionManager prepareChangeKey(
       int keyIndex, byte newKif, byte newKvc, byte issuerKif, byte issuerKvc);
 
   /**
@@ -1093,9 +1168,11 @@ public interface CardTransactionManager
    *
    * <ul>
    *   <li>{@code processOpening(WriteAccessLevel)}
-   *   <li>[{@link #processCardCommands()}]
    *   <li>[...]
-   *   <li>[{@link #processCardCommands()}]
+   *   <li>[{@link #processCommands()}]
+   *   <li>[...]
+   *   <li>[{@link #processCommands()}]
+   *   <li>[...]
    *   <li>{@link #processClosing()}
    * </ul>
    *
@@ -1142,14 +1219,6 @@ public interface CardTransactionManager
    *   <li>Receiving grouped responses and updating {@link CalypsoCard} with the collected data.
    * </ul>
    *
-   * For optimization purposes, if the first command prepared is the reading of a single record of a
-   * card file then this one is replaced by a setting of the session opening command allowing the
-   * retrieval of this data in response to this command.
-   *
-   * <p>Please note that the CAAD mechanism may require a file to be read before being modified. For
-   * this mechanism to work properly, this reading must not be placed in the first position of the
-   * prepared commands in order to be correctly taken into account by the SAM.
-   *
    * <p><b>Other operations carried out</b>
    *
    * <ul>
@@ -1191,8 +1260,39 @@ public interface CardTransactionManager
    * @throws SelectFileException If a "Select File" prepared card command indicated that the file
    *     was not found.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareOpenSecureSession(WriteAccessLevel)} method instead.
    */
+  @Deprecated
   CardTransactionManager processOpening(WriteAccessLevel writeAccessLevel);
+
+  /**
+   * Schedules the execution of a secure session opening command.
+   *
+   * <p>This feature is only available for a transaction initialized in secure mode.
+   *
+   * <p>The secure session will be opened with the provided {@link WriteAccessLevel} depending on
+   * whether it is a personalization, reload or debit transaction profile.
+   *
+   * <p>Note that if the next prepared command is a "Read One Record" or "Read One Or More
+   * Counters", then it will by default be merged with the "Open Secure Session" command for
+   * optimization purposes.
+   *
+   * <p>This mechanism may in some cases be incompatible with the security constraints and can be
+   * disabled via the {@link CardSecuritySetting#disableReadOnSessionOpening()} method.
+   *
+   * @param writeAccessLevel The write access level to be used.
+   * @return The current instance.
+   * @throws IllegalArgumentException If the provided argument is null.
+   * @throws IllegalStateException In the following cases:
+   *     <ul>
+   *       <li>No {@link CardSecuritySetting} is available
+   *       <li>A secure session opening is already prepared
+   *       <li>A secure session is already opened
+   *     </ul>
+   *
+   * @since 1.6.0
+   */
+  CardTransactionManager prepareOpenSecureSession(WriteAccessLevel writeAccessLevel);
 
   /**
    * Terminates the Secure Session sequence started with {@link #processOpening(WriteAccessLevel)}.
@@ -1257,8 +1357,31 @@ public interface CardTransactionManager
    * @throws InvalidCardSignatureException If session is correctly closed but the card signature is
    *     incorrect.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareCloseSecureSession()} method instead.
    */
+  @Deprecated
   CardTransactionManager processClosing();
+
+  /**
+   * Schedules the execution of a secure session closing command.
+   *
+   * <p>The ratification mechanism is disabled by default but can be enabled via the {@link
+   * CardSecuritySetting#enableRatificationMechanism()} method.
+   *
+   * <p>In this case, a ratification command is added after the "Close Secure Session" command when
+   * the communication is done in contactless mode.
+   *
+   * @return The current instance.
+   * @throws IllegalStateException In the following cases:
+   *     <ul>
+   *       <li>No secure session is opened and no secure session opening is prepared
+   *       <li>A secure session closing is already prepared
+   *       <li>A secure session canceling is prepared
+   *     </ul>
+   *
+   * @since 1.6.0
+   */
+  CardTransactionManager prepareCloseSecureSession();
 
   /**
    * Aborts a Secure Session.
@@ -1273,6 +1396,18 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws UnexpectedCommandStatusException If the command returns an unexpected status.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareCancelSecureSession()} method instead.
    */
+  @Deprecated
   CardTransactionManager processCancel();
+
+  /**
+   * Schedules the execution of a secure session canceling command.
+   *
+   * <p>This command will be executed in safe mode and will not raise any exceptions.
+   *
+   * @return The current instance.
+   * @since 1.6.0
+   */
+  CardTransactionManager prepareCancelSecureSession();
 }

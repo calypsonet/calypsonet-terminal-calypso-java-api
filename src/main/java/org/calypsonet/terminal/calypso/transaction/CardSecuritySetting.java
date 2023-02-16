@@ -85,6 +85,20 @@ public interface CardSecuritySetting extends CommonSecuritySetting<CardSecurityS
   CardSecuritySetting authorizeSvNegativeBalance();
 
   /**
+   * Disables the automatic merging of the "Open Secure Session" command with a possible "Read
+   * Record" command.
+   *
+   * <p>By default, this optimization is performed when the command that follows the session opening
+   * is a "Read Record" command.
+   *
+   * <p>This mechanism may in some cases be incompatible with the security requirements.
+   *
+   * @return The current instance.
+   * @since 1.6.0
+   */
+  CardSecuritySetting disableReadOnSessionOpening();
+
+  /**
    * Defines for a given write access level the KIF value to use for cards that only provide KVC.
    *
    * @param writeAccessLevel The write access level.

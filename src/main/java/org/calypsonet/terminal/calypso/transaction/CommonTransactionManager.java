@@ -114,6 +114,45 @@ public interface CommonTransactionManager<
    * @throws SelectFileException If a "Select File" prepared card command indicated that the file
    *     was not found.
    * @since 1.2.0
+   * @deprecated Use {@link #processCommands(boolean)} method instead.
    */
+  @Deprecated
   T processCommands();
+
+  /**
+   * Processes all previously prepared commands and closes the physical channel if requested.
+   *
+   * <p>All APDUs corresponding to the prepared commands are sent to the card, their responses are
+   * retrieved and used to update the card image associated with the transaction.
+   *
+   * <p>For read commands, the card image is updated with the APDU output data.
+   *
+   * <p>For write commands, the card image is updated with the APDU input data (provided the command
+   * is successful).
+   *
+   * <p>The process is interrupted at the first failed command.
+   *
+   * @param closePhysicalChannel True if the physical channel must be closed after the operation.
+   * @return The current instance.
+   * @throws ReaderIOException If a communication error with the card reader or SAM reader occurs.
+   * @throws CardIOException If a communication error with the card occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws InvalidSignatureException If a signature associated to a prepared signature
+   *     verification SAM command is invalid.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @throws InconsistentDataException If inconsistent data have been detected.
+   * @throws UnauthorizedKeyException If the card requires an unauthorized session key.
+   * @throws SessionBufferOverflowException If a secure session is open and multiple session mode is
+   *     disabled and the session buffer capacity is not sufficient.
+   * @throws CardSignatureNotVerifiableException If a secure session is open and multiple session
+   *     mode is enabled and an intermediate session is correctly closed but the SAM is no longer
+   *     available to verify the card signature.
+   * @throws InvalidCardSignatureException If a secure session is open and multiple session mode is
+   *     enabled and an intermediate session is correctly closed but the card signature is
+   *     incorrect.
+   * @throws SelectFileException If a "Select File" prepared card command indicated that the file
+   *     was not found.
+   * @since 1.6.0
+   */
+  T processCommands(boolean closePhysicalChannel);
 }

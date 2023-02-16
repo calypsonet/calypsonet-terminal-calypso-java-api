@@ -191,6 +191,22 @@ public interface CalypsoCardSelection extends CardSelection {
   CalypsoCardSelection prepareSelectFile(SelectFileControl selectControl);
 
   /**
+   * Adds a command APDU to retrieve the data indicated by the provided tag.
+   *
+   * <p>This method can be used to obtain FCI information when it is not provided directly by the
+   * select application (e.g. OMAPI case).
+   *
+   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
+   * Therefore, the command may be rejected by some earlier revision cards.
+   *
+   * @param tag The tag to use.
+   * @return The object instance.
+   * @throws IllegalArgumentException If tag is null.
+   * @since 1.0.0
+   */
+  CalypsoCardSelection prepareGetData(GetDataTag tag);
+
+  /**
    * Adds a command APDU to read a single record from the indicated EF.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
@@ -226,21 +242,40 @@ public interface CalypsoCardSelection extends CardSelection {
    */
   CalypsoCardSelection prepareReadRecord(byte sfi, int recordNumber);
 
-  /**
-   * Adds a command APDU to retrieve the data indicated by the provided tag.
-   *
-   * <p>This method can be used to obtain FCI information when it is not provided directly by the
-   * select application (e.g. OMAPI case).
-   *
-   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
-   * Therefore, the command may be rejected by some earlier revision cards.
-   *
-   * @param tag The tag to use.
-   * @return The object instance.
-   * @throws IllegalArgumentException If tag is null.
-   * @since 1.0.0
-   */
-  CalypsoCardSelection prepareGetData(GetDataTag tag);
+  //  /**
+  //   * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
+  //   * feature, this optimizes exchanges with the card in the case of deterministic secure
+  // sessions
+  //   * that can be executed in a single step.
+  //   *
+  //   * <p>The use of this method or one of the following methods is a prerequisite for the use of
+  // the
+  //   * {@link CardTransactionManager#processPreOpenedSecureSession()} method:
+  //   *
+  //   * <ul>
+  //   *   <li>{@link #preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
+  //   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)}
+  //   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte,
+  // int)}
+  //   * </ul>
+  //   *
+  //   * It is not advised to use it in other cases.
+  //   *
+  //   * <p>The secure session opening which will be done by {@link
+  //   * CardTransactionManager#processPreOpenedSecureSession()} will use the same parameters (same
+  //   * {@link WriteAccessLevel}, no record reading).
+  //   *
+  //   * @param writeAccessLevel The write access level.
+  //   * @return The object instance.
+  //   * @throws IllegalArgumentException If writeAccessLevel is null.
+  //   * @throws IllegalStateException If "Pre-Open" command is already prepared.
+  //   * @see #preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+  //   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)
+  //   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte, int)
+  //   * @see CardTransactionManager#processPreOpenedSecureSession()
+  //   * @since 1.6.0
+  //   */
+  //  CalypsoCardSelection preparePreOpenSecureSession(WriteAccessLevel writeAccessLevel);
 
   /**
    * Navigation options through the different applications contained in the card according to the

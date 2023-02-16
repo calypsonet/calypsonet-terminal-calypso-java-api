@@ -5,6 +5,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `CommonTransactionManager.processCommands(boolean)` method.
+- `CardTransactionManager.prepareVerifyPin` method.
+- `CardTransactionManager.prepareChangePin` method.
+- `CardTransactionManager.prepareChangeKey` method.
+- `CardTransactionManager.prepareOpenSecureSession` method.
+- `CardTransactionManager.prepareCloseSecureSession` method.
+- `CardTransactionManager.prepareCancelSecureSession` method.
+- `CardSecuritySetting.disableReadOnSessionOpening` method.
+### Deprecated
+- `CommonTransactionManager.processCommands()` method.
+- `CardTransactionManager.prepareReleaseCardChannel` method.
+- `CardTransactionManager.processVerifyPin` method.
+- `CardTransactionManager.processChangePin` method.
+- `CardTransactionManager.processChangeKey` method.
+- `CardTransactionManager.processOpening` method.
+- `CardTransactionManager.processClosing` method.
+- `CardTransactionManager.processCancel` method.
 
 ## [1.5.0] - 2022-12-22
 ### Added
