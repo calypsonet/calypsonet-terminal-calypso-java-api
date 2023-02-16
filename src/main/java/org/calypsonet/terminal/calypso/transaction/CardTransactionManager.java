@@ -1396,11 +1396,15 @@ public interface CardTransactionManager
    * @throws CardIOException If a communication error with the card occurs.
    * @throws UnexpectedCommandStatusException If the command returns an unexpected status.
    * @since 1.0.0
+   * @deprecated Use {@link #prepareCancelSecureSession()} method instead.
    */
+  @Deprecated
   CardTransactionManager processCancel();
 
   /**
    * Schedules the execution of a secure session canceling command.
+   *
+   * <p>This command will be executed in safe mode and will not raise any exceptions.
    *
    * @return The current instance.
    * @since 1.6.0
