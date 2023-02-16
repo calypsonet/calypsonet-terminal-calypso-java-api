@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `CardTransactionManager.prepareOpenSecureSession` method.
 - `CardTransactionManager.prepareCloseSecureSession` method.
 - `CardTransactionManager.prepareCancelSecureSession` method.
+- `CardSecuritySetting.disableReadOnSessionOpening` method.
 ### Deprecated
 - `CommonTransactionManager.processCommands()` method.
 - `CardTransactionManager.prepareReleaseCardChannel` method.
