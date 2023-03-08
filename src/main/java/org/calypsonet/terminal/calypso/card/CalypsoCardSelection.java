@@ -211,7 +211,7 @@ public interface CalypsoCardSelection extends CardSelection {
    * Adds a command APDU to read a single record from the indicated EF.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
-   * requested file and record exist in the file structure of the card (best effort behavior).
+   * requested file and record exist in the file structure of the card (best-effort mode).
    *
    * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
    * Therefore, the command may be rejected by some earlier revision cards.
@@ -289,8 +289,43 @@ public interface CalypsoCardSelection extends CardSelection {
    * feature, this optimizes future exchanges with the card in the case of secure sessions intended
    * to be executed in a single step.
    *
-   * <p>Caution: the resulting APDU command is compliant with PRIME revision 3 cards supporting the
-   * extended mode. Therefore, the command may be rejected by some earlier revision cards.
+   * <p>The objective of the pre-opening is to allow the grouping of all the commands of a secure
+   * session. This functionality is only relevant in the case of a distributed system where the
+   * ticketing processing is done remotely in order to allow a complete secure session to be carried
+   * out in a single exchange between the server and the terminal.
+   *
+   * <p>This mechanism is based on the anticipation of the APDU responses of the card.
+   *
+   * <p>In order to achieve the objective of a single exchange, it is essential to read locally
+   * beforehand (out of session) all the data that will have to be read in session. If not,
+   * additional exchanges will be made.
+   *
+   * <p>Then, the remote ticketing processing must prepare all the commands of the session (from
+   * opening to closing) before executing it.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * transaction
+   *   .prepareOpenSecureSession(...)
+   *   .prepare...
+   *   [...]
+   *   .prepare...
+   *   .prepareCloseSecureSession()
+   *   .processCommands(...);
+   * }</pre>
+   *
+   * <b>Caution</b>: this feature will be ineffective in the following cases:
+   *
+   * <ul>
+   *   <li>the card or the SAM does not support the extended mode
+   *   <li>the session contains commands that necessarily require exchanges with the card during the
+   *       session (e.g. PIN, Stored Value, encryption, early mutual authentication, data not
+   *       previously read outside the session)
+   *   <li>the session is opened with an access level different from the pre-opening one
+   *   <li>an intermediate "processCommand(...)" call has been made
+   *   <li>the session uses asymmetric cryptography
+   * </ul>
    *
    * @param writeAccessLevel The write access level.
    * @return The object instance.

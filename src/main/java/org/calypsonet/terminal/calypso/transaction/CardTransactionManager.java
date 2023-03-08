@@ -706,9 +706,12 @@ public interface CardTransactionManager
    * Schedules the execution of a <b>SV Reload</b> command to increase the current SV balance and
    * using the provided additional data.
    *
-   * <p>Note #1: a communication with the SAM is done here.
+   * <p>Once this command is processed, the SV data is updated in {@link CalypsoCard}.
    *
-   * <p>Note #2: the key used is the reload key.
+   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link
+   * CalypsoCard#getSvLoadLogRecord()}.
+   *
+   * <p>Note #1: the key used is the reload key.
    *
    * @param amount The value to be reloaded, positive or negative integer in the range.
    *     -8388608..8388607
@@ -732,11 +735,14 @@ public interface CardTransactionManager
   /**
    * Schedules the execution of a <b>SV Reload</b> command to increase the current SV balance.
    *
+   * <p>Once this command is processed, the SV data is updated in {@link CalypsoCard}.
+   *
+   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link
+   * CalypsoCard#getSvLoadLogRecord()}.
+   *
    * <p>Note #1: the optional SV additional data are set to zero.
    *
-   * <p>Note #2: a communication with the SAM is done here.
-   *
-   * <p>Note #3: the key used is the reload key.
+   * <p>Note #2: the key used is the reload key.
    *
    * @param amount The value to be reloaded, positive integer in the range 0..8388607 for a DO.
    *     action, in the range 0..8388608 for an UNDO action.
@@ -763,9 +769,12 @@ public interface CardTransactionManager
    * previous debit according to the type operation chosen in when invoking the previous SV Get
    * command.
    *
-   * <p>Note #1: a communication with the SAM is done here.
+   * <p>Once this command is processed, the SV data is updated in {@link CalypsoCard}.
    *
-   * <p>Note #2: the key used is the reload key.
+   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link
+   * CalypsoCard#getSvDebitLogLastRecord()}, {@link CalypsoCard#getSvDebitLogAllRecords()}.
+   *
+   * <p>Note #1: the key used is the debit key
    *
    * @param amount The amount to be subtracted or added, positive integer in the range 0..32767 when
    *     subtracted and 0..32768 when added.
@@ -793,18 +802,14 @@ public interface CardTransactionManager
    * <p>It consists in decreasing the current balance of the SV by a certain amount or canceling a
    * previous debit.
    *
+   * <p>Once this command is processed, the SV data is updated in {@link CalypsoCard}.
+   *
+   * <p>See the methods {@link CalypsoCard#getSvBalance()}, {@link
+   * CalypsoCard#getSvDebitLogLastRecord()}, {@link CalypsoCard#getSvDebitLogAllRecords()}.
+   *
    * <p>Note #1: the optional SV additional data are set to zero.
    *
-   * <p>Note #2: a communication with the SAM is done here.
-   *
-   * <p>Note #3: the key used is the reload key.The information fields such as date and time are set
-   * to 0. The extraInfo field propagated in Logs are automatically generated with the type of
-   * transaction and amount.
-   *
-   * <p>Note #4: operations that would result in a negative balance are forbidden (SV Exception
-   * raised).
-   *
-   * <p>Note #5: the key used is the debit key
+   * <p>Note #2: the key used is the debit key
    *
    * @param amount The amount to be subtracted or added, positive integer in the range 0..32767 when
    *     subtracted and 0..32768 when added.
@@ -1275,7 +1280,7 @@ public interface CardTransactionManager
    *
    * <p>Note that if the next prepared command is a "Read One Record" or "Read One Or More
    * Counters", then it will by default be merged with the "Open Secure Session" command for
-   * optimization purposes.
+   * optimization purposes except if the "pre-open" mode is active.
    *
    * <p>This mechanism may in some cases be incompatible with the security constraints and can be
    * disabled via the {@link CardSecuritySetting#disableReadOnSessionOpening()} method.
@@ -1290,6 +1295,8 @@ public interface CardTransactionManager
    *       <li>A secure session is already opened
    *     </ul>
    *
+   * @see
+   *     org.calypsonet.terminal.calypso.card.CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)
    * @since 1.6.0
    */
   CardTransactionManager prepareOpenSecureSession(WriteAccessLevel writeAccessLevel);

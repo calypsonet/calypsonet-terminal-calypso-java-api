@@ -14,6 +14,12 @@ package org.calypsonet.terminal.calypso.card;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import org.calypsonet.terminal.calypso.GetDataTag;
+import org.calypsonet.terminal.calypso.SelectFileControl;
+import org.calypsonet.terminal.calypso.WriteAccessLevel;
+import org.calypsonet.terminal.calypso.transaction.CardTransactionManager;
+import org.calypsonet.terminal.calypso.transaction.SvAction;
+import org.calypsonet.terminal.calypso.transaction.SvOperation;
 import org.calypsonet.terminal.reader.selection.spi.SmartCard;
 
 /**
@@ -174,6 +180,8 @@ public interface CalypsoCard extends SmartCard {
    * <p>The returned array contains the software issuer ID and the discretionary data.
    *
    * @return An empty array if the traceability information is not available.
+   * @see CalypsoCardSelection#prepareGetData(GetDataTag)
+   * @see CardTransactionManager#prepareGetData(GetDataTag)
    * @since 1.1.0
    */
   byte[] getTraceabilityInformation();
@@ -182,6 +190,10 @@ public interface CalypsoCard extends SmartCard {
    * Returns the metadata of the current DF.
    *
    * @return Null if is not set.
+   * @see CalypsoCardSelection#prepareSelectFile(short)
+   * @see CalypsoCardSelection#prepareSelectFile(SelectFileControl)
+   * @see CardTransactionManager#prepareSelectFile(short)
+   * @see CardTransactionManager#prepareSelectFile(SelectFileControl)
    * @since 1.0.0
    */
   DirectoryHeader getDirectoryHeader();
@@ -191,6 +203,9 @@ public interface CalypsoCard extends SmartCard {
    *
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
+   *
+   * <p>The file structure of the card image is updated as a result of file read and write
+   * operations.
    *
    * @param sfi The SFI to search.
    * @return Null if the requested EF is not found or if the SFI is equal to 0.
@@ -203,6 +218,9 @@ public interface CalypsoCard extends SmartCard {
    *
    * <p>Note that if a secure session is actually running, then the object contains all session
    * modifications, which can be canceled if the secure session fails.
+   *
+   * <p>The file structure of the card image is updated as a result of file read and write
+   * operations.
    *
    * @param lid The LID to search.
    * @return Null if the requested EF is not found.
@@ -230,6 +248,9 @@ public interface CalypsoCard extends SmartCard {
    * <p>Note that if a secure session is actually running, then the set contains all session
    * modifications, which can be canceled if the secure session fails.
    *
+   * <p>The file structure of the card image is updated as a result of file read and write
+   * operations.
+   *
    * @return A not null reference (it may be empty if no one EF is set).
    * @since 1.1.0
    */
@@ -240,6 +261,8 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return True if the card has been ratified.
    * @throws IllegalStateException If no session has been opened.
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CardTransactionManager#prepareOpenSecureSession(WriteAccessLevel)
    * @since 1.0.0
    */
   boolean isDfRatified();
@@ -254,6 +277,8 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return A positive value.
    * @throws IllegalStateException If no session has been opened.
+   * @see CalypsoCardSelection#preparePreOpenSecureSession(WriteAccessLevel)
+   * @see CardTransactionManager#prepareOpenSecureSession(WriteAccessLevel)
    * @since 1.2.0
    */
   int getTransactionCounter();
@@ -307,6 +332,8 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return True if the PIN status is blocked
    * @throws IllegalStateException If the PIN has not been checked.
+   * @see CardTransactionManager#prepareCheckPinStatus()
+   * @see CardTransactionManager#prepareVerifyPin(byte[])
    * @since 1.0.0
    */
   boolean isPinBlocked();
@@ -316,6 +343,8 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return The number of remaining attempts.
    * @throws IllegalStateException If the PIN has not been checked.
+   * @see CardTransactionManager#prepareCheckPinStatus()
+   * @see CardTransactionManager#prepareVerifyPin(byte[])
    * @since 1.0.0
    */
   int getPinAttemptRemaining();
@@ -335,6 +364,11 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return An int
    * @throws IllegalStateException If no SV Get command has been executed.
+   * @see CardTransactionManager#prepareSvGet(SvOperation, SvAction)
+   * @see CardTransactionManager#prepareSvDebit(int)
+   * @see CardTransactionManager#prepareSvDebit(int, byte[], byte[])
+   * @see CardTransactionManager#prepareSvReload(int)
+   * @see CardTransactionManager#prepareSvReload(int, byte[], byte[], byte[])
    * @since 1.0.0
    */
   int getSvBalance();
@@ -344,6 +378,11 @@ public interface CalypsoCard extends SmartCard {
    *
    * @return An int
    * @throws IllegalStateException If no SV Get command has been executed.
+   * @see CardTransactionManager#prepareSvGet(SvOperation, SvAction)
+   * @see CardTransactionManager#prepareSvDebit(int)
+   * @see CardTransactionManager#prepareSvDebit(int, byte[], byte[])
+   * @see CardTransactionManager#prepareSvReload(int)
+   * @see CardTransactionManager#prepareSvReload(int, byte[], byte[], byte[])
    * @since 1.0.0
    */
   int getSvLastTNum();
@@ -352,6 +391,11 @@ public interface CalypsoCard extends SmartCard {
    * Gets a reference to the last {@link SvLoadLogRecord}
    *
    * @return A last SV load log record object or null if not available.
+   * @see CardTransactionManager#prepareSvGet(SvOperation, SvAction)
+   * @see CardTransactionManager#prepareSvDebit(int)
+   * @see CardTransactionManager#prepareSvDebit(int, byte[], byte[])
+   * @see CardTransactionManager#prepareSvReload(int)
+   * @see CardTransactionManager#prepareSvReload(int, byte[], byte[], byte[])
    * @since 1.0.0
    */
   SvLoadLogRecord getSvLoadLogRecord();
@@ -360,6 +404,11 @@ public interface CalypsoCard extends SmartCard {
    * Gets a reference to the last {@link SvDebitLogRecord}
    *
    * @return A last SV debit log record object or null if not available.
+   * @see CardTransactionManager#prepareSvGet(SvOperation, SvAction)
+   * @see CardTransactionManager#prepareSvDebit(int)
+   * @see CardTransactionManager#prepareSvDebit(int, byte[], byte[])
+   * @see CardTransactionManager#prepareSvReload(int)
+   * @see CardTransactionManager#prepareSvReload(int, byte[], byte[], byte[])
    * @since 1.0.0
    */
   SvDebitLogRecord getSvDebitLogLastRecord();
@@ -368,6 +417,11 @@ public interface CalypsoCard extends SmartCard {
    * Gets list of references to the {@link SvDebitLogRecord} read from the card.
    *
    * @return An empty list if no log records are available.
+   * @see CardTransactionManager#prepareSvGet(SvOperation, SvAction)
+   * @see CardTransactionManager#prepareSvDebit(int)
+   * @see CardTransactionManager#prepareSvDebit(int, byte[], byte[])
+   * @see CardTransactionManager#prepareSvReload(int)
+   * @see CardTransactionManager#prepareSvReload(int, byte[], byte[], byte[])
    * @since 1.0.0
    */
   List<SvDebitLogRecord> getSvDebitLogAllRecords();
