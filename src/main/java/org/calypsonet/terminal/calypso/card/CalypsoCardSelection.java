@@ -13,6 +13,7 @@ package org.calypsonet.terminal.calypso.card;
 
 import org.calypsonet.terminal.calypso.GetDataTag;
 import org.calypsonet.terminal.calypso.SelectFileControl;
+import org.calypsonet.terminal.calypso.WriteAccessLevel;
 import org.calypsonet.terminal.reader.selection.spi.CardSelection;
 
 /**
@@ -226,13 +227,13 @@ public interface CalypsoCardSelection extends CardSelection {
   CalypsoCardSelection prepareReadRecordFile(byte sfi, int recordNumber);
 
   /**
-   * Adds a command APDU to read a single record from the indicated EF.
+   * Adds an APDU command to read a single record from the indicated Linear or Cyclic EF.
    *
    * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
-   * requested file and record exist in the file structure of the card (best effort behavior).
+   * requested file and record exist in the file structure of the card (best-effort mode).
    *
-   * <p>Caution: the resulting APDU command must be compliant with PRIME revision 3 cards.
-   * Therefore, the command may be rejected by some earlier revision cards.
+   * <p>Caution: the resulting APDU command is compliant with PRIME revision 3 cards. Therefore, the
+   * command may be rejected by some earlier revision cards.
    *
    * @param sfi The SFI of the EF to read
    * @param recordNumber The record number to read.
@@ -242,40 +243,62 @@ public interface CalypsoCardSelection extends CardSelection {
    */
   CalypsoCardSelection prepareReadRecord(byte sfi, int recordNumber);
 
-  //  /**
-  //   * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
-  //   * feature, this optimizes exchanges with the card in the case of deterministic secure
-  // sessions
-  //   * that can be executed in a single step.
-  //   *
-  //   * <p>The use of this method or one of the following methods is a prerequisite for the use of
-  // the
-  //   * {@link CardTransactionManager#processPreOpenedSecureSession()} method:
-  //   *
-  //   * <ul>
-  //   *   <li>{@link #preparePreOpenSecureSession(WriteAccessLevel, byte, int)}
-  //   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)}
-  //   *   <li>{@link CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte,
-  // int)}
-  //   * </ul>
-  //   *
-  //   * It is not advised to use it in other cases.
-  //   *
-  //   * <p>The secure session opening which will be done by {@link
-  //   * CardTransactionManager#processPreOpenedSecureSession()} will use the same parameters (same
-  //   * {@link WriteAccessLevel}, no record reading).
-  //   *
-  //   * @param writeAccessLevel The write access level.
-  //   * @return The object instance.
-  //   * @throws IllegalArgumentException If writeAccessLevel is null.
-  //   * @throws IllegalStateException If "Pre-Open" command is already prepared.
-  //   * @see #preparePreOpenSecureSession(WriteAccessLevel, byte, int)
-  //   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel)
-  //   * @see CardTransactionManager#preparePreOpenSecureSession(WriteAccessLevel, byte, int)
-  //   * @see CardTransactionManager#processPreOpenedSecureSession()
-  //   * @since 1.6.0
-  //   */
-  //  CalypsoCardSelection preparePreOpenSecureSession(WriteAccessLevel writeAccessLevel);
+  /**
+   * Adds one or multiple APDU commands to read all or part of the indicated Binary EF.
+   *
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
+   * requested file exist in the file structure of the card and if the offset and number of bytes to
+   * read are valid (best-effort mode).
+   *
+   * <p>Caution: the resulting APDU command is compliant with PRIME revision 3 cards. Therefore, the
+   * command may be rejected by some earlier revision cards.
+   *
+   * @param sfi The SFI of the EF.
+   * @param offset The offset (0 indicates the first byte).
+   * @param nbBytesToRead The number of bytes to read.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
+   * @since 1.7.0
+   */
+  CalypsoCardSelection prepareReadBinary(byte sfi, int offset, int nbBytesToRead);
+
+  /**
+   * Adds an APDU command to read a part of a record of the indicated EF, which should be a counter
+   * file.
+   *
+   * <p>The record will be read up to the counter location indicated in parameter.<br>
+   * Thus, all previous counters will also be read.
+   *
+   * <p>Once this command is processed, the result is available in {@link CalypsoCard} if the
+   * requested file and the counter number exist in the file structure of the card (best-effort
+   * mode).
+   *
+   * <p>Caution: the resulting APDU command is compliant with PRIME revision 3 cards. Therefore, the
+   * command may be rejected by some earlier revision cards.
+   *
+   * @param sfi The SFI of the EF.
+   * @param nbCountersToRead The number of counters to read.
+   * @return The current instance.
+   * @throws IllegalArgumentException If one of the provided argument is out of range.
+   * @since 1.7.0
+   */
+  CalypsoCardSelection prepareReadCounter(byte sfi, int nbCountersToRead);
+
+  /**
+   * Adds an APDU command to attempt a secure session pre-opening. For cards that support this
+   * feature, this optimizes future exchanges with the card in the case of secure sessions intended
+   * to be executed in a single step.
+   *
+   * <p>Caution: the resulting APDU command is compliant with PRIME revision 3 cards supporting the
+   * extended mode. Therefore, the command may be rejected by some earlier revision cards.
+   *
+   * @param writeAccessLevel The write access level.
+   * @return The object instance.
+   * @throws IllegalArgumentException If writeAccessLevel is null.
+   * @throws IllegalStateException If "Pre-Open" command is already prepared.
+   * @since 1.7.0
+   */
+  CalypsoCardSelection preparePreOpenSecureSession(WriteAccessLevel writeAccessLevel);
 
   /**
    * Navigation options through the different applications contained in the card according to the
