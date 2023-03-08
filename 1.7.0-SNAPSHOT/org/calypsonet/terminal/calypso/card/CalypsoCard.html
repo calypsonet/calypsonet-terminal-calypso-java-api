@@ -706,6 +706,9 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <dd>An empty array if the traceability information is not available.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.1.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="CalypsoCardSelection.html#prepareGetData(org.calypsonet.terminal.calypso.GetDataTag)"><code>CalypsoCardSelection.prepareGetData(GetDataTag)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareGetData(org.calypsonet.terminal.calypso.GetDataTag)"><code>CardTransactionManager.prepareGetData(GetDataTag)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -722,6 +725,11 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <dd>Null if is not set.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="CalypsoCardSelection.html#prepareSelectFile(short)"><code>CalypsoCardSelection.prepareSelectFile(short)</code></a>, 
+<a href="CalypsoCardSelection.html#prepareSelectFile(org.calypsonet.terminal.calypso.SelectFileControl)"><code>CalypsoCardSelection.prepareSelectFile(SelectFileControl)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSelectFile(short)"><code>CardTransactionManager.prepareSelectFile(short)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSelectFile(org.calypsonet.terminal.calypso.SelectFileControl)"><code>CardTransactionManager.prepareSelectFile(SelectFileControl)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -735,7 +743,10 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <div class="block">Returns a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided SFI.
 
  <p>Note that if a secure session is actually running, then the object contains all session
- modifications, which can be canceled if the secure session fails.</div>
+ modifications, which can be canceled if the secure session fails.
+
+ <p>The file structure of the card image is updated as a result of file read and write
+ operations.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sfi</code> - The SFI to search.</dd>
@@ -756,7 +767,10 @@ extends org.calypsonet.terminal.reader.selection.spi.SmartCard</pre>
 <div class="block">Returns a reference to the <a href="ElementaryFile.html" title="interface in org.calypsonet.terminal.calypso.card"><code>ElementaryFile</code></a> that has the provided LID value.
 
  <p>Note that if a secure session is actually running, then the object contains all session
- modifications, which can be canceled if the secure session fails.</div>
+ modifications, which can be canceled if the secure session fails.
+
+ <p>The file structure of the card image is updated as a result of file read and write
+ operations.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>lid</code> - The LID to search.</dd>
@@ -801,7 +815,10 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <div class="block">Returns a reference to the set of all known Elementary Files contains inside the current DF.
 
  <p>Note that if a secure session is actually running, then the set contains all session
- modifications, which can be canceled if the secure session fails.</div>
+ modifications, which can be canceled if the secure session fails.
+
+ <p>The file structure of the card image is updated as a result of file read and write
+ operations.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A not null reference (it may be empty if no one EF is set).</dd>
@@ -825,6 +842,9 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd><code>java.lang.IllegalStateException</code> - If no session has been opened.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="CalypsoCardSelection.html#preparePreOpenSecureSession(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>CalypsoCardSelection.preparePreOpenSecureSession(WriteAccessLevel)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareOpenSecureSession(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>CardTransactionManager.prepareOpenSecureSession(WriteAccessLevel)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -848,6 +868,9 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd><code>java.lang.IllegalStateException</code> - If no session has been opened.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.2.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="CalypsoCardSelection.html#preparePreOpenSecureSession(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>CalypsoCardSelection.preparePreOpenSecureSession(WriteAccessLevel)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareOpenSecureSession(org.calypsonet.terminal.calypso.WriteAccessLevel)"><code>CardTransactionManager.prepareOpenSecureSession(WriteAccessLevel)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -942,6 +965,9 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd><code>java.lang.IllegalStateException</code> - If the PIN has not been checked.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../transaction/CardTransactionManager.html#prepareCheckPinStatus()"><code>CardTransactionManager.prepareCheckPinStatus()</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareVerifyPin(byte%5B%5D)"><code>CardTransactionManager.prepareVerifyPin(byte[])</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -960,6 +986,9 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd><code>java.lang.IllegalStateException</code> - If the PIN has not been checked.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../transaction/CardTransactionManager.html#prepareCheckPinStatus()"><code>CardTransactionManager.prepareCheckPinStatus()</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareVerifyPin(byte%5B%5D)"><code>CardTransactionManager.prepareVerifyPin(byte[])</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -996,6 +1025,12 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd><code>java.lang.IllegalStateException</code> - If no SV Get command has been executed.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../transaction/CardTransactionManager.html#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)"><code>CardTransactionManager.prepareSvGet(SvOperation, SvAction)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int)"><code>CardTransactionManager.prepareSvDebit(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvDebit(int, byte[], byte[])</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int)"><code>CardTransactionManager.prepareSvReload(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvReload(int, byte[], byte[], byte[])</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1014,6 +1049,12 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd><code>java.lang.IllegalStateException</code> - If no SV Get command has been executed.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../transaction/CardTransactionManager.html#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)"><code>CardTransactionManager.prepareSvGet(SvOperation, SvAction)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int)"><code>CardTransactionManager.prepareSvDebit(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvDebit(int, byte[], byte[])</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int)"><code>CardTransactionManager.prepareSvReload(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvReload(int, byte[], byte[], byte[])</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1030,6 +1071,12 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd>A last SV load log record object or null if not available.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../transaction/CardTransactionManager.html#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)"><code>CardTransactionManager.prepareSvGet(SvOperation, SvAction)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int)"><code>CardTransactionManager.prepareSvDebit(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvDebit(int, byte[], byte[])</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int)"><code>CardTransactionManager.prepareSvReload(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvReload(int, byte[], byte[], byte[])</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1046,6 +1093,12 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd>A last SV debit log record object or null if not available.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../transaction/CardTransactionManager.html#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)"><code>CardTransactionManager.prepareSvGet(SvOperation, SvAction)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int)"><code>CardTransactionManager.prepareSvDebit(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvDebit(int, byte[], byte[])</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int)"><code>CardTransactionManager.prepareSvReload(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvReload(int, byte[], byte[], byte[])</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1062,6 +1115,12 @@ java.util.Map&lt;java.lang.Byte,&#8203;<a href="ElementaryFile.html" title="inte
 <dd>An empty list if no log records are available.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.0.0</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../transaction/CardTransactionManager.html#prepareSvGet(org.calypsonet.terminal.calypso.transaction.SvOperation,org.calypsonet.terminal.calypso.transaction.SvAction)"><code>CardTransactionManager.prepareSvGet(SvOperation, SvAction)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int)"><code>CardTransactionManager.prepareSvDebit(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvDebit(int,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvDebit(int, byte[], byte[])</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int)"><code>CardTransactionManager.prepareSvReload(int)</code></a>, 
+<a href="../transaction/CardTransactionManager.html#prepareSvReload(int,byte%5B%5D,byte%5B%5D,byte%5B%5D)"><code>CardTransactionManager.prepareSvReload(int, byte[], byte[], byte[])</code></a></dd>
 </dl>
 </li>
 </ul>
