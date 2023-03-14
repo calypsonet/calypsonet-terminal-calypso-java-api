@@ -1417,4 +1417,29 @@ public interface CardTransactionManager
    * @since 1.6.0
    */
   CardTransactionManager prepareCancelSecureSession();
+
+  /**
+   * Prepares the SAM for the next transaction by anticipating all security context configuration
+   * operations.
+   *
+   * <p>This feature is only useful if the currently allocated SAM will be used for the next
+   * transaction. It is particularly relevant to optimize the transaction time in a ticketing
+   * context of user card validation.
+   *
+   * <p>For this optimization to be effective, it is necessary to call this method at the very end
+   * of the current transaction, i.e. <u>after</u> having notified the user of the access right
+   * (e.g. after opening the gate).
+   *
+   * @throws IllegalStateException In the following cases:
+   *     <ul>
+   *       <li>No {@link CardSecuritySetting} is available
+   *       <li>Unprocessed card commands are pending
+   *     </ul>
+   *
+   * @throws ReaderIOException If a communication error with the SAM reader occurs.
+   * @throws SamIOException If a communication error with the SAM occurs.
+   * @throws UnexpectedCommandStatusException If a command returns an unexpected status.
+   * @since 1.8.0
+   */
+  void initSamContextForNextTransaction();
 }
